@@ -172,3 +172,108 @@ body{
     background-color: white;
     color: red;
 }
+
+.filter a{
+    color: #bdc3c7;
+    border: 1px solid #bdc3c7;
+    padding: 10px 18px;
+    display: block;
+}
+
+.filter li{
+    display: inline-block;
+    padding: 5px;
+}
+
+.filter .current{
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+
+.filter{
+    text-align: center;
+    width: 100%;
+}
+
+.section .heading{
+    text-align: center;
+    padding-bottom: 40px;
+    width: 100%;
+}
+
+.itemsContiner{
+    width: 100%;
+}
+
+.items li{
+    display: inline-block;
+    padding: 5px;
+}
+
+.items li img{
+    width: 100%;
+    -webkit-transition: all 0.2s linear, 0.3s;
+    -moz-transition: all 0.2s linear, 0.3s;
+    -o-transition: all 0.2s linear, 0.3s;
+    -ms-transition: all 0.2s linear, 0.3s;
+    -transition: all 0.2s linear, 0.3s;
+}
+
+.item > button:first-child{
+    position: absolute;
+    width: 40px;
+    height: 15%;
+    top: 50%;
+    margin: 50px auto 0 -40px;
+    z-index: 3;
+    float: left;
+    left: -150px;
+    -webkit-transition: all 0.2s linear, 0.3s;
+    -moz-transition: all 0.2s linear, 0.3s;
+    -o-transition: all 0.2s linear, 0.3s;
+    -ms-transition: all 0.2s linear, 0.3s;
+    -transition: all 0.2s linear, 0.3s;
+}
+
+.items .item{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.items .imageOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    -webkit-transition: all 0.2s linear, 1s;
+    -moz-transition: all 0.2s linear, 1s;
+    -o-transition: all 0.2s linear, 1s;
+    -ms-transition: all 0.2s linear, 1s;
+    -transition: all 0.2s linear, 1s;
+}
+
+.items .item:hover .imageOverlay{
+    opacity: 1;
+}
+
+.items .item:hover .btn{
+    left: 150px;
+
+}
+
+.items .item:hover img{
+    -webkit-transform: scale(1.05, 1.05);
+    -moz-transform: scale(1.05, 1.05);
+    -o-transform: scale(1.05, 1.05);
+    -ms-transform: scale(1.05, 1.05);
+    -transform: scale(1.05, 1.05);
+}
+
+.items{
+    margin-left: 100px;
+}
