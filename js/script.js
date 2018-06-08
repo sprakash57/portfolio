@@ -9,13 +9,13 @@ $(window).on("load",function(){
 $(document).ready(function() {
 
 	$('#slides').superslides({
-		animation: 'fade',
-		play: 5000,
-		pagination: false
+		animation: 'slide',
+		play: 4000,
+		pagination: true
 	});
 
 	var typed = new Typed(".typed", {
-		strings: ["Software Engineer.", "Web Developer.", "Student."],
+		strings: ["Web Developer.", "Student.", "Android Rookie.", "Anime freak."],
 		typeSpeed: 70,
 		loop: true,
 		startDelay: 1000,
@@ -123,7 +123,7 @@ $(document).ready(function() {
         $("html, body").animate({scrollTop:targetPosition-50},"slow");
     });
 
-    const nav = $("#navigation");
+  /*  const nav = $("#navigation");
     const navTop = nav.offset().top;
     $(window).on("scroll", stickyNavigation);
     function stickyNavigation(){
@@ -135,7 +135,7 @@ $(document).ready(function() {
             body.css("padding-top",0);
             body.removeClass("fixedNav");
         }
-    }
+    } */
 });
 
 

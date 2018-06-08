@@ -12,27 +12,17 @@ body {
 	z-index: 3;
 	background-color: rgba(0, 0, 0, 0.4);
 }
+#navigation{
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
 
+}
 .slides-navigation {
 	z-index: 6;
 }
-
-.slides-navigation .prev,
-.slides-navigation .next {
-	width: 47px;
-	height: 47px;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.slides-navigation a.prev {
-	left: 20px;
-	background-image: url(../img/icons/prev.png);
-}
-
-.slides-navigation a.next {
-	right: 20px;
-	background-image: url(../img/icons/next.png);
+.slides-pagination a{
+    background: #fff;
 }
 
 .titleMessage {
@@ -53,7 +43,8 @@ body {
 }
 
 .titleMessage .heading .main {
-	font-size: 50px;
+    font-size: 50px;
+    font-family: 'Concert One', cursive;
 }
 
 .titleMessage .heading .sub {
@@ -64,14 +55,35 @@ body {
 	padding: 100px 0;
 }
 
-.aboutImage {
-	max-width: 100%;
+.card{
+    box-shadow: 0 6px 12px 0 #5e003e;
+    transition: 0.3s;
+    padding-left: 0;
+    padding-right:0;
+    border-radius: 15px;
 }
 
+.aboutImage {
+    max-width: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.myName{
+    padding-left: 10px;
+    margin-top: 50px;
+
+}
+
+.card:hover {
+    box-shadow: 0 12px 24px 0 #5e003e;
+}
+
+
+
 .skillsSection,
-.contactSection
+.portfolioSection
  {
-	background-color: #e74c3c;
+	background-color: #5e003e;
 	color: #fff;
 }
 
@@ -95,7 +107,7 @@ body {
 }
 
 .chart .percent {
-	color: #000;
+	color: #fff;
     line-height: 152px;
     display: inline-block;
     font-size: 35px;
@@ -105,6 +117,9 @@ body {
 	content: '%';
 }
 
+.plus:after{
+    content: "+";
+}
 
 .squareItem {
 	margin-top: 30px;
@@ -142,7 +157,7 @@ body {
 	font-size: 56px;
 	margin-bottom: 10px;
 	font-weight: 400;
-	color: #e74c3c;
+	color: #5e003e;
 }
 
 .squareContent h3 {
@@ -163,23 +178,23 @@ body {
 }
 
 .contactButton {
-	color: #fff;
+	color: #5e003e;
     padding: 15px 20px;
     display: inline-block;
     margin-top: 20px;
-    border: 1px solid #fff;
+    border: 1px solid #5e003e;
     border-radius: 2px;
 }
 
 .contactButton:hover {
 	text-decoration: none;
-	color: #e74c3c;
-	background-color: #fff;
+	color: #fff;
+	background-color: #5e003e;
 }
 
 .filter a {
-	color: #bdc3c7;
-	border: 1px solid #bdc3c7;
+	color: white;
+	border: 1px solid white;
 	padding: 10px 18px;
 	display: block;
 }
@@ -190,8 +205,8 @@ body {
 }
 
 .filter .current {
-	background-color: #e74c3c;;
-	border-color: #e74c3c;
+	background-color: #5e003e;;
+	border-color: #5e003e;
 	color: #fff;
 }
 
@@ -251,7 +266,7 @@ body {
 .items button {
 	width: 40px;
     height: 40px;
-    background-color: #e74c3c;
+    background-color: #5e003e;
     position: relative;
     display: inline-block;
 
@@ -307,7 +322,7 @@ body {
 }
 
 .copyrightSection{
-    background-color: #e74c3c;
+    background-color: #5e003e;
     color: #fff;
     padding: 30px 5px;
 }
@@ -318,7 +333,7 @@ body {
 
 #navigation{
     width: 100%;
-    background-color: #e74c3c;
+    background-color: #5e003e;
     padding: 20px 10px;
     z-index: 100;   
 }
@@ -358,3 +373,10 @@ body {
     height: 100%;
     background: url(../img/icons/loader.gif) center center no-repeat;
 }
+
+.items #subject{
+    position: relative;
+    color: black;
+    background-color: white;
+}
+
