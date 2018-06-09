@@ -3,7 +3,7 @@
 
 <head>
     <title>My Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="css/superslides.css">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Concert+One|Satisfy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jura|Ubuntu+Condensed" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
 
@@ -29,9 +29,10 @@
         <div class="overlay"></div>
 
         <div class="slides-container">
-            <img src="img/slide1.jpg" alt="">
+            <img src="img/idea.jpeg" alt="">
             <img src="img/slide2.jpeg" alt="">
-            <img src="img/slide3.jpeg" alt="">
+            <img src="img/coding.jpeg" alt="">
+            <img src="img/smartphone.jpeg" alt="">
         </div>
 
         <div class="titleMessage">
@@ -44,7 +45,9 @@
     </div>
 
     <nav id="navigation" class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#"><i class="fa fa-home"></i></a>
+        <a class="navbar-brand" href="#">
+            <i class="fa fa-home" style="color:white;"></i>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -68,7 +71,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact me</a>
                 </li>
-                
+
             </ul>
         </div>
     </nav>
@@ -82,35 +85,43 @@
                 <div class="col-md-4 card">
                     <img class="aboutImage" src="img/about.jpg">
                     <div class="myName">
-                        <h3><b>Sunny Prakash</b></h3>
+                        <h3>
+                            <b>Sunny Prakash</b>
+                        </h3>
                         <p>Web Developer</p>
                     </div>
                 </div>
-                
+
                 <div class="col-md-7 card offset-md-1" style="padding-left:20px;">
-                    <h3>A lit'l intoduction...</h3>
-                    <p>Hi there! I'm Sunny Prakash from Patna, India. I am currently working as a Java developer at Cognizant Technology Solutions. I
-                        have 3+ years of experience software service industry, mobile apps and websites for both myself, and for clients.
-                        I have good grasp and hands-on experience in Java and Front-end/UI technologies mentioned below -
+                    <h3 id="intro">&nbsp;A lit'l intoduction...</h3>
+                    <p>Hi there! I'm Sunny Prakash from Patna, India. I am currently working as a Java developer at Cognizant
+                        Technology Solutions. I have 3+ years of experience software service industry, mobile apps and websites
+                        for both myself, and for clients. I have good grasp and hands-on experience in Java and Front-end/UI
+                        technologies mentioned below -
                     </p>
                     <ul>
-                        <li><strong>Frameworks: </strong>Spring, Hibernate/JPA, Angular 4, Bootstrap</li>
-                        <li><strong>Tools: </strong>Android Studio, Eclipse, Postman, IntelliJ, VS Code</li>
-                        <li><strong>Web tech: </strong>HTML, CSS, Javascript, JQuery, Maven</li>
-                        <li><strong>Database: </strong>Oracle 11g, Sqlite, MySQL</li>
-                        <li><strong>Servers: </strong>Apache Tomcat</li>
-                        <li><strong>Methodologies: </strong>Kanban</li>
+                        <li>
+                            <strong>Frameworks: </strong>Spring, Hibernate/JPA, Angular 4, Bootstrap</li>
+                        <li>
+                            <strong>Tools: </strong>Android Studio, Eclipse, Postman, IntelliJ, VS Code</li>
+                        <li>
+                            <strong>Web tech: </strong>HTML, CSS, Javascript, JQuery, Maven</li>
+                        <li>
+                            <strong>Database: </strong>Oracle 11g, Sqlite, MySQL</li>
+                        <li>
+                            <strong>Servers: </strong>Apache Tomcat</li>
+                        <li>
+                            <strong>Methodologies: </strong>Kanban</li>
                     </ul>
-                    <h5>Academics</h5>    
-                    <p>I graduated from Birla Institute of Technology, Mesra with first class (CGPA 7.64) 
-                       in Electronics & Communication.
+                    <h5 id="intro" style="margin-top:0px;">&nbsp;Academics</h5>
+                    <p>I graduated from Birla Institute of Technology, Mesra with first class (CGPA 7.64) in Electronics & Communication.
                     </p>
-                    <h5>Certifications</h5>
+                    <h5 id="intro" style="margin-top:0px;">&nbsp;Certifications</h5>
                     <ul>
                         <li>COGNIZANT CERTIFIED PROFESSIONAL – General Insurance.</li>
                         <li>Successfully completed Power searching with Google course 2012.</li>
                     </ul>
-                    <h5>I do have hobbies</h5>
+                    <h5 id="intro" style="margin-top:0px;">&nbsp;I do have hobbies</h5>
                     <ul>
                         <li>Worked as a volunteer for Outreach Cognizant</li>
                         <li>Ever lasting apetite for new tech and gadgets</li>
@@ -167,21 +178,30 @@
                     </div>
 
                     <div class="skill">
-                            <span class="chart" data-percent="75">
-                                <span class="percent">75</span>
-                                <canvas height="152" width="152"></canvas>
-                            </span>
-                            <h4>Javascript</h4>
-                            <p>Used in most of my web based projects</p>
+                        <span class="chart" data-percent="75">
+                            <span class="percent">75</span>
+                            <canvas height="152" width="152"></canvas>
+                        </span>
+                        <h4>Javascript</h4>
+                        <p>Used in most of my web based projects</p>
                     </div>
 
                     <div class="skill">
-                            <span class="chart" data-percent="60">
-                                <span class="percent">60</span>
-                                <canvas height="152" width="152"></canvas>
-                            </span>
-                            <h4>MySql</h4>
-                            <p>Database and queries</p>
+                        <span class="chart" data-percent="60">
+                            <span class="percent">60</span>
+                            <canvas height="152" width="152"></canvas>
+                        </span>
+                        <h4>Angular</h4>
+                        <p>Good grasp to the basics</p>
+                    </div>
+
+                    <div class="skill">
+                        <span class="chart" data-percent="70">
+                            <span class="percent">70</span>
+                            <canvas height="152" width="152"></canvas>
+                        </span>
+                        <h4>Android</h4>
+                        <p>Second favourite after Web</p>
                     </div>
 
 
@@ -223,7 +243,7 @@
                                 <i class="fab fa-android"></i>
                             </div>
                             <div class="squareContent">
-                                <h2 class="counter">2</h2>
+                                <h2 class="counter">1</h2>
                                 <h3>Android Apps</h3>
                             </div>
                         </div>
@@ -237,7 +257,7 @@
                                 <i class="fa fa-briefcase"></i>
                             </div>
                             <div class="squareContent">
-                                <h2 class="counter">7</h2>
+                                <h2 class="counter">6</h2>
                                 <h3>Projects</h3>
                             </div>
                         </div>
@@ -251,7 +271,7 @@
                                 <i class="fab fa-chrome"></i>
                             </div>
                             <div class="squareContent">
-                                <h2 class="counter">2</h2>
+                                <h2 class="counter">3</h2>
                                 <h3>Websites Made</h3>
                             </div>
                         </div>
@@ -301,12 +321,12 @@
 
                     <ul class="items">
 
-                        <li class="web col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <li class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
 
 
                             <div class="item">
 
-                                <img src="img/portfolio/thumbnails/dog-square.jpeg">
+                                <img src="img/portfolio/thumbnails/appthumb.png">
 
 
                                 <div class="icons">
@@ -318,7 +338,7 @@
 
                                 <div class="imageOverlay"></div>
                                 <div class="subject">
-                                    <p>Connect 3</p>
+                                    <span>Connect 3</span>
                                 </div>
 
                             </div>
@@ -326,12 +346,12 @@
 
                         </li>
 
-                        <li class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                        <li class="web col-xs-6 col-sm-4 col-md-3 col-lg-3">
 
 
                             <div class="item">
 
-                                <img src="img/portfolio/thumbnails/dog-square.jpeg">
+                                <img src="img/portfolio/thumbnails/pacthumb.png">
 
 
                                 <div class="icons">
@@ -342,7 +362,55 @@
 
                                 <div class="imageOverlay"></div>
                                 <div class="subject">
-                                    <p>Connect 3</p>
+                                    <span>Pac-Man</span>
+                                </div>
+
+                            </div>
+
+
+                        </li>
+
+                        <li class="web col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+                            <div class="item">
+
+                                <img src="img/portfolio/thumbnails/tributethumb.png">
+
+
+                                <div class="icons">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview3">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+
+                                <div class="imageOverlay"></div>
+                                <div class="subject">
+                                    <span>Tribute</span>
+                                </div>
+
+                            </div>
+
+
+                        </li>
+
+                        <li class="web col-xs-6 col-sm-4 col-md-3 col-lg-3">
+
+
+                            <div class="item">
+
+                                <img src="img/portfolio/thumbnails/ngthumb.png">
+
+
+                                <div class="icons">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview4">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+
+                                <div class="imageOverlay"></div>
+                                <div class="subject">
+                                    <span>Product page</span>
                                 </div>
 
                             </div>
@@ -355,18 +423,18 @@
 
                             <div class="item">
 
-                                <img src="img/portfolio/thumbnails/dog-square.jpeg">
+                                <img src="img/portfolio/thumbnails/crm.png">
 
 
                                 <div class="icons">
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview3">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview5">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
 
                                 <div class="imageOverlay"></div>
                                 <div class="subject">
-                                    <p>Connect 3</p>
+                                    <Span>CRM</Span>
                                 </div>
 
                             </div>
@@ -379,71 +447,21 @@
 
                             <div class="item">
 
-                                <img src="img/portfolio/thumbnails/dog-square.jpeg">
+                                <img src="img/portfolio/thumbnails/portfolio.png">
 
 
                                 <div class="icons">
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview4">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview7">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </div>
 
                                 <div class="imageOverlay"></div>
                                 <div class="subject">
-                                    <p>Connect 3</p>
+                                    <span>Portfolio</span>
                                 </div>
 
                             </div>
-
-
-                        </li>
-
-                        <li class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
-
-
-                            <div class="item">
-
-                                <img src="img/portfolio/thumbnails/dog-square.jpeg">
-
-
-                                <div class="icons">
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview5">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-
-                                <div class="imageOverlay"></div>
-                                <div class="subject">
-                                    <p>Connect 3</p>
-                                </div>
-
-                            </div>
-
-
-                        </li>
-
-
-                        <li class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
-
-
-                            <div class="item">
-
-                                <img src="img/portfolio/thumbnails/dog-square.jpeg">
-
-
-                                <div class="icons">
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#preview6">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </div>
-
-                                <div class="imageOverlay"></div>
-                                <div class="container" id = "subject">
-                                    <p>Connect 3</p>
-                                </div>
-
-                            </div>
-
 
                         </li>
 
@@ -457,15 +475,31 @@
 
     </div>
 
-    <div id="contact" class="contactSection section">
+    <div id="contact" class="contactSection">
 
         <div class="col-md-12 text-center">
 
             <p class="subHeading">Like what you see?</p>
             <h2>I'd love to hear from you!</h2>
-            <a href="mailTo:reece@gmail.com" class="contactButton">GET IN TOUCH!</a>
-
+            <a href="mailTo:reece@gmail.com" class="contactButton">GET IN TOUCH</a>
         </div>
+
+        <div class="col-md-12 text-center" style="top:30px;">
+            <a href="https://github.com/sprakash57" class="social">
+                <i class="fab fa-github-square"></i>
+            </a>
+            <a href="https://www.facebook.com/sprgm" class="social">
+                <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sunny-prakash-3780ba49/" class="social">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/sunny_pr_" class="social">
+                <i class="fab fa-twitter-square"></i>
+            </a>
+        </div>
+
+
 
     </div>
 
@@ -497,13 +531,26 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Connect 3</h4>
             </div>
             <div class="modal-body">
-                modal-body
+                <p>Connect 3 is 3x3 classic TIc Tac Toe board game. the player who succeeds in placing three of their marks
+                    in a horizontal, vertical or diagonal row wins the game. Currently this app is available on Play store.
+                    Because of its responsive layout it is suitable for Phone and tablets. it features -</p>
+                <ul>
+                    <li>1 player(Easy 😪, Bookworm 🤓, Smart mode 😎)</li>
+                    <li>2 player</li>
+                    <li>Scoreboard</li>
+                </ul>
+                <div>
+                    <strong>Youtube:</strong> https://youtu.be/Vd955qsbJ9w</div>
+                <div>
+                    <strong>Download:</strong> https://play.google.com/store/apps/details?id=com.droidvista.sunny.tictactoe</div>
+                <hr>
+                <strong>Technology used:</strong> Java, Android Studio, Shared preferences.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -513,13 +560,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Pac-Man</h4>
             </div>
             <div class="modal-body">
-                Another modal
+                <p>Old and gold arcade style Pac-Man game. this is written in pure Javascript.</p>
+                <p>
+                    <strong>GitHub: </strong>https://github.com/sprakash57/Pac-Man</p>
+                <strong>Technology used:</strong> Javascript, HTML Canvas, Visual studio Code.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -529,13 +579,16 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Tribute to the Missile-Man of India</h4>
             </div>
             <div class="modal-body">
-                Another modal
+                <P>A simple HTML page depicting the timeline of Dr. A.P.J. Abdul Kalam Azad.</P>
+                <p>
+                    <strong>GitHub: </strong>https://github.com/sprakash57/Tribute-Page</p>
+                <strong>Technology used:</strong> HTML, Bootstrap, Visual studio Code.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -545,13 +598,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Product Management</h4>
             </div>
             <div class="modal-body">
-                Another modal
+                <p>This is the first angular app developed by me. This app is all about displaying the list of items getting
+                    fetched from the server. It covers all the fundamental concepts of angular such as: Nested components,
+                    Routing, Services and Dependency injection and Http request.</p>
+                <p>
+                    <strong>GitHub: </strong>https://github.com/sprakash57/Product-page</p>
+                <strong>Technology used:</strong> Angular 4, Typescript, HTML, CSS, Bootstrap, Visual studio Code.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -561,29 +619,38 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">Customer Relationship Management</h4>
             </div>
             <div class="modal-body">
-                Another modal
+                <p>A trimmed down version of Customer Relationship Management built with Spring and JPA. Full CRUD operation
+                    enabled. You can also search for employee from the home page itself. Soon it will be integrated with
+                    Rest API.</p>
+                <p>
+                    <strong>GitHub: </strong>https://github.com/sprakash57/web-customer-tracker</p>
+                <strong>Technology used:</strong> Spring MVC, Hibernate/JPA, Eclipse, Maven, Postman.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="preview6" role="dialog">
+<div class="modal fade" id="preview7" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
+                <h4 class="modal-title">My Portfolio Website</h4>
             </div>
             <div class="modal-body">
-                Another modal
+                <p>This has all the information about me. Cooked with Front-end basics and has some third party Javascript sprinkled
+                    all across the webpage.</p>
+                <p>
+                    <strong>GitHub: </strong>https://github.com/sprakash57/My-portfolio</p>
+                <strong>Technology used:</strong> HTML, CSS, Bootstrap, carouselJs, typedJs, JQuery.
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
