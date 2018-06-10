@@ -4,8 +4,6 @@ $(window).on("load", function () {
 	});
 });
 
-
-
 $(document).ready(function () {
 
 	$('#slides').superslides({
@@ -73,12 +71,8 @@ $(document).ready(function () {
 			})
 
 			countUpFinished = true;
-
 		}
-
-
 	});
-
 
 	$("[data-fancybox]").fancybox();
 
