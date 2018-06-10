@@ -1,12 +1,12 @@
-$(window).on("load",function(){
-    $(".loader .inner").fadeOut(1000, function(){
-        $(".loader").fadeOut(1250);
-    });
+$(window).on("load", function () {
+	$(".loader .inner").fadeOut(1000, function () {
+		$(".loader").fadeOut(1300);
+	});
 });
 
 
 
-$(document).ready(function() {
+$(document).ready(function () {
 
 	$('#slides').superslides({
 		animation: 'slide',
@@ -23,53 +23,49 @@ $(document).ready(function() {
 	});
 
 	$('.owl-carousel').owlCarousel({
-	    loop:true,
-	    items: 4,
-	    responsive:{
-	        0:{
-	            items:1
-	        },
-	        480:{
-	            items:2
-	        },
-	        768:{
-	            items:3
-	        },
-	        938:{
-	            items:4
-	        }
-	    }
+		loop: true,
+		items: 4,
+		responsive: {
+			0: {
+				items: 1
+			},
+			480: {
+				items: 2
+			},
+			768: {
+				items: 3
+			},
+			938: {
+				items: 4
+			}
+		}
 	});
-
-
-	
-
 
 	var skillsTopOffset = $(".skillsSection").offset().top;
 	var statsTopOffset = $(".statsSection").offset().top;
 	var countUpFinished = false;
-	$(window).scroll(function() {
+	$(window).scroll(function () {
 
-		if(window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
+		if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
 
 			$('.chart').easyPieChart({
-		        easing: 'easeInOut',
-		        barColor: '#fff',
-		        trackColor: false,
-		        scaleColor: false,
-		        lineWidth: 4,
-		        size: 152,
-		        onStep: function(from, to, percent) {
-		        	$(this.el).find('.percent').text(Math.round(percent));
-		        }
-		    });
+				easing: 'easeInOut',
+				barColor: '#fff',
+				trackColor: false,
+				scaleColor: false,
+				lineWidth: 4,
+				size: 152,
+				onStep: function (from, to, percent) {
+					$(this.el).find('.percent').text(Math.round(percent));
+				}
+			});
 
 
 		}
 
 
-		if(!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
-			$(".counter").each(function() {
+		if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
+			$(".counter").each(function () {
 				var element = $(this);
 				var endVal = parseInt(element.text());
 
@@ -94,48 +90,48 @@ $(document).ready(function() {
 			easing: 'linear',
 			queue: false
 		}
-    });
-    
-    $("#filters a").click(function(){
-        $("#filters .current").removeClass("current");
-        $(this).addClass("current");
+	});
 
-        var selector = $(this).attr("data-filter");
+	$("#filters a").click(function () {
+		$("#filters .current").removeClass("current");
+		$(this).addClass("current");
 
-        $(".items").isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 1500,
-                easing: 'linear',
-                queue: false
-            }
-        });
+		var selector = $(this).attr("data-filter");
 
-        return false; //Stop the anchor tag to go anywhere
+		$(".items").isotope({
+			filter: selector,
+			animationOptions: {
+				duration: 1500,
+				easing: 'linear',
+				queue: false
+			}
+		});
 
-    });
+		return false; //Stop the anchor tag to go anywhere
 
-    $("#navigation li a").click(function(e){
-        e.preventDefault();
+	});
 
-        var targetElement = $(this).attr("href");
-        var targetPosition = $(targetElement).offset().top;
-        $("html, body").animate({scrollTop:targetPosition-50},"slow");
-    });
+	$("#navigation li a").click(function (e) {
+		e.preventDefault();
 
-  /*  const nav = $("#navigation");
-    const navTop = nav.offset().top;
-    $(window).on("scroll", stickyNavigation);
-    function stickyNavigation(){
-        var body = $("body");
-        if($(window).scrollTop() >= navTop){
-            body.css("padding-top",nav.outerHeight()+"px");
-            body.addClass("fixedNav");
-        }else{
-            body.css("padding-top",0);
-            body.removeClass("fixedNav");
-        }
-    } */
+		var targetElement = $(this).attr("href");
+		var targetPosition = $(targetElement).offset().top;
+		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
+	});
+
+	/*  const nav = $("#navigation");
+	  const navTop = nav.offset().top;
+	  $(window).on("scroll", stickyNavigation);
+	  function stickyNavigation(){
+		  var body = $("body");
+		  if($(window).scrollTop() >= navTop){
+			  body.css("padding-top",nav.outerHeight()+"px");
+			  body.addClass("fixedNav");
+		  }else{
+			  body.css("padding-top",0);
+			  body.removeClass("fixedNav");
+		  }
+	  } */
 });
 
 
