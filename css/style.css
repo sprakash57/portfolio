@@ -161,7 +161,8 @@ body {
 .squareContent h3 {
 	font-size: 13px;
 	font-weight: 600;
-	margin: 0;
+    margin: 0;
+    color: #5e003e;
 }
 
 .squareIcon {
@@ -208,6 +209,10 @@ body {
 	text-decoration: none;
 	color: #fff;
 	background-color: #5e003e;
+}
+
+.textColor{
+    color: #5e003e;
 }
 
 .filter a {
