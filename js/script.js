@@ -45,7 +45,6 @@ $(document).ready(function () {
 	$(window).scroll(function () {
 
 		if (window.pageYOffset > skillsTopOffset - $(window).height() + 200) {
-
 			$('.chart').easyPieChart({
 				easing: 'easeInOut',
 				barColor: '#fff',
@@ -57,26 +56,17 @@ $(document).ready(function () {
 					$(this.el).find('.percent').text(Math.round(percent));
 				}
 			});
-
-
 		}
-
-
 		if (!countUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
 			$(".counter").each(function () {
 				var element = $(this);
 				var endVal = parseInt(element.text());
-
 				element.countup(endVal);
 			})
-
 			countUpFinished = true;
 		}
 	});
-
 	$("[data-fancybox]").fancybox();
-
-
 	$(".items").isotope({
 		filter: '*',
 		animationOptions: {
@@ -85,13 +75,10 @@ $(document).ready(function () {
 			queue: false
 		}
 	});
-
 	$("#filters a").click(function () {
 		$("#filters .current").removeClass("current");
 		$(this).addClass("current");
-
 		var selector = $(this).attr("data-filter");
-
 		$(".items").isotope({
 			filter: selector,
 			animationOptions: {
@@ -100,14 +87,10 @@ $(document).ready(function () {
 				queue: false
 			}
 		});
-
 		return false; //Stop the anchor tag to go anywhere
-
 	});
-
 	$("#navigation li a").click(function (e) {
 		e.preventDefault();
-
 		var targetElement = $(this).attr("href");
 		var targetPosition = $(targetElement).offset().top;
 		$("html, body").animate({ scrollTop: targetPosition - 50 }, "slow");
