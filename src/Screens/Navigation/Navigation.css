@@ -1,0 +1,23 @@
+/* Navigation styling */
+.navigation{
+    top:0;
+    width: 100%;
+    background-image: linear-gradient(#5e003e, #5e003e);
+  }
+
+  .navigation .text-design,
+  .navigation .mr-auto .text-design{
+    color: white;
+    padding: 10px 20px; 
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.navigation .text-design:hover,
+.navigation .mr-auto .text-design:hover{
+    color: white;
+}
+
+.navigation .text-design:focus,
+.navigation .mr-auto .text-design:focus{
+    color: yellow;
+}
