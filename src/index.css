@@ -1,6 +1,8 @@
+/*App level styling*/
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -8,8 +10,76 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+} */
+
+/* Navigation styling */
+.navigation{
+  width: 100%;
+  background:#7e002b;
+}
+
+.navigation .text-design,
+.navigation .justify-content-end .text-design{
+  color: white;
+  padding: 10px 20px; 
+  font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.navigation .text-design:hover,
+.navigation .text-design:hover{
+  color: white;
+}
+
+.navigation .text-design:focus,
+.navigation .mr-auto .text-design:focus{
+  color: yellow;
+}
+
+/*Welcome page style */
+.content {
+  text-align: center;
+  padding-top: 22%;
+  letter-spacing: 8px;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.welcome {
+  background: url('./Assets/welcome.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 92%;
+  opacity: 0.9;
+}
+
+h1, .intro{
+  color:white;
+  text-shadow: 0px 4px 2px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.2),
+               0px 18px 23px rgba(0,0,0,0.1);
+}
+
+h1{
+  font-weight: 700;
+  font-size: 4em;
+  font-family: 'Jura', sans-serif;
+  
+}
+
+.intro{
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 1.7em;
+
 }
 
