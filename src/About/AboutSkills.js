@@ -1,0 +1,36 @@
+import React from 'react';
+
+const skills = [
+    {
+        "title":"Languages: ",
+        "value": "Java, JavaScript(ES5 & ES6)"
+    },
+    {
+        "title":"Frameworks: ",
+        "value": "Spring, JPA/Hibernate, Bootstrap, Android"
+    },
+    {
+        "title":"Web Technologies: ",
+        "value": "React.js, Redux.js, CSS3, HTML5, LESS, GraphQL, jQuery, JSP"
+    },
+    {
+        "title":"Databases and Server: ",
+        "value": "MySQL, Sqlite, Apache Tomcat"
+    },
+    {
+        "title":"Miscellanious: ",
+        "value": "git, Jira, Android Studio, VS Code, Eclipse, TestCafe, Maven"
+    },
+]
+
+const AboutSkills = () => (
+    <React.Fragment>
+        <h5 className="intro" style={{marginTop:0}}>&nbsp;Skillset</h5>
+        <ul className="textColor">
+            {skills.map((item, index) => <li key={index}><strong>{item.title}</strong>{item.value}</li>)}
+        </ul>
+    </React.Fragment>
+
+);
+
+export default AboutSkills;

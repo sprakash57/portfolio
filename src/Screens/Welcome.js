@@ -10,7 +10,7 @@ import {Container, Col, Row} from 'react-bootstrap';
             <div className="content">
               <h1>SUNNY PRAKASH</h1>
               <Typed
-                className="intro"
+                className="usp"
                 strings={['Android Dev','Web development','Anime freak','Learning never stops']} 
                 typeSpeed={65}
                 backSpeed={40}
