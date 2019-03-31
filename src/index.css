@@ -115,3 +115,23 @@ h1{
   color: #5e003e;
 }
 
+/*About page children styling---------------------------------->*/
+.childCards-enter {
+  opacity: 0;
+  transform: translate(20px);
+}
+.childCards-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+/* .childCards-exit {
+  opacity: 1;
+}
+.childCards-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+} */
+
+
