@@ -25,7 +25,7 @@ const skills = [
 
 const AboutSkills = () => (
     <React.Fragment>
-        <h5 className="intro" style={{marginTop:0}}>&nbsp;Skillset</h5>
+        <h3 className="intro">&nbsp;Skillset</h3>
         <ul className="textColor">
             {skills.map((item, index) => <li key={index}><strong>{item.title}</strong>{item.value}</li>)}
         </ul>

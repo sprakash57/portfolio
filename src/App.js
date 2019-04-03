@@ -3,9 +3,9 @@ import Navigation from './Screens/Navigation';
 import Welcome from './Screens/Welcome';
 import {HashRouter, Switch, Route} from 'react-router-dom';
 import Contact from './Screens/Contact';
-import Stats from './Screens/Stats';
+import Stats from './Screens/Stats/Stats';
 import Portfolio from './Screens/Portfolio';
-import About from './About/About';
+import About from './Screens/About/About';
 
 class App extends Component {
   render() {

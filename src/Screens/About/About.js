@@ -5,7 +5,7 @@ import AboutIntroduction from './AboutIntroduction';
 import AboutSkills from './AboutSkills';
 import AboutAcademics from './AboutAcademics';
 import AboutCert from './AboutCert';
-import { CSSTransition } from 'react-transition-group';
+//import { CSSTransition } from 'react-transition-group';
 
 const Components = [<AboutIntroduction/>, <AboutSkills/>, <AboutAcademics/>, <AboutCert/>];
 
@@ -34,13 +34,11 @@ export default class About extends React.Component {
                 <Row>
                     <Col md={4} className="card">
                         <AboutAvatar/>
-                    </Col>
-                    <CSSTransition timeout={300} classNames="childCards">
-                        <Col md={{span:7, offset:1}} className="card" style={{paddingLeft:20}}>
+                    </Col> 
+                    <Col md={{span:7, offset:1}} className="card">
                             {Components[this.state.componentIndex]}
                             <Button variant="primary" onClick={this.handleShowMore}>Show more...</Button>
-                        </Col>
-                    </CSSTransition>
+                    </Col>    
                 </Row>
             </Container>
         </div>
