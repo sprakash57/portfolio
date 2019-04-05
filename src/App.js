@@ -4,7 +4,7 @@ import Welcome from './Screens/Welcome';
 import {HashRouter, Switch, Route} from 'react-router-dom';
 import Contact from './Screens/Contact';
 import Stats from './Screens/Stats/Stats';
-import Portfolio from './Screens/Portfolio';
+import Portfolio from './Screens/Portfolio/Portfolio';
 import About from './Screens/About/About';
 
 class App extends Component {

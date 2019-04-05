@@ -1,0 +1,41 @@
+.sticky-l, .sticky-r {
+    z-index: 150;
+    max-width: 30%;
+    min-height: 150px;
+    margin: -10px 10px 10px;
+    padding: 10px;
+    font-family: "Gloria Hallelujah", "Comic Sans", "Chalkboard SE", "Comic Neue", cursive;
+    font-size: 14px;
+    color: #000;
+    box-shadow: -2px 2px 2px rgba(0,0,0,0.3);
+  }
+
+  .sticky-l {
+    transform: rotate(-5deg);
+  }
+
+  .sticky-r {
+    transform: rotate(5deg);
+  }
+
+  .sticky-l:before, .sticky-l:after, .sticky-r:before, .sticky-r:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    right: 0;
+  }
+  .sticky-l:before, .sticky-r:before {
+    border-top: solid 8px #fff;
+    border-right: solid 8px #fff;
+    border-left: solid 8px transparent;
+    border-bottom: solid 8px transparent;
+  }
+  .sticky-l:after, .sticky-r:after {
+    border-bottom: solid 8px #dddd33;
+    border-left: solid 8px #dddd33;
+    border-right: solid 8px transparent;
+    border-top: solid 8px transparent;
+  }
