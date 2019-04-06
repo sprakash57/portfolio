@@ -1,70 +1,108 @@
 import React from 'react';
-import { Row, Container } from 'react-bootstrap';
+import { Row, Container, Button } from 'react-bootstrap';
 import PortfolioSticky from './Portfolio-sticky';
 import './Portfolio.css';
 
 const workDone = [
     {
-        "id": 1,
+        "id": 0,
         "title": "Hire.me",
         "classes": "sticky-l",
-        "background": "#ffc"
+        "background": "#ffc",
+        "tech":"Android"
+    },
+    {
+        "id": 1,
+        "title": "Redux Tasker",
+        "classes": "sticky-l",
+        "background": "#cfc",
+        "tech":"Web"
     },
     {
         "id": 2,
-        "title": "Redux Tasker",
-        "classes": "sticky-l",
-        "background": "#cfc"
+        "title": "Connect 3",
+        "classes": "sticky-r",
+        "background": "#e380bc",
+        "tech":"Android"
     },
     {
         "id": 3,
-        "title": "Connect 3",
+        "title": "Whats the weather",
         "classes": "sticky-r",
-        "background": "#e380bc"
+        "background": "#ccf",
+        "tech":"Web"
     },
     {
         "id": 4,
-        "title": "Whats the weather",
+        "title": "Book-explorer",
         "classes": "sticky-r",
-        "background": "#ccf"
+        "background": "#e380bc",
+        "tech":"Web"
     },
     {
         "id": 5,
-        "title": "Book-explorer",
+        "title": "gitHub user search",
         "classes": "sticky-r",
-        "background": "#e380bc"
+        "background": "#bf8",
+        "tech":"Web"
     },
     {
         "id": 6,
-        "title": "gitHub user search",
-        "classes": "sticky-r",
-        "background": "#bf8"
+        "title": "Customer-tracker",
+        "classes": "sticky-l",
+        "background": "#ffc",
+        "tech":"Web"
     },
     {
         "id": 7,
-        "title": "Customer-tracker",
-        "classes": "sticky-l",
-        "background": "#ffc"
-    },
-    {
-        "id": 8,
         "title": "Portfolio",
         "classes": "sticky-r",
-        "background": "#f3a456"
+        "background": "#f3a456",
+        "tech":"Web"
     }
 ];
 
-const Portfolio = () => (
-    <div className="section">
-        <Container>
-            <div className="heading">
-                    <h2>Portfolio</h2>
+class Portfolio extends React.Component{ 
+    constructor(){
+        super();
+        this.state = {
+            workDone
+        }
+    }
+
+    handleAll = () => {
+        this.setState({workDone});
+    }
+
+    handleAndroid = () => {
+        this.setState({workDone: workDone.filter(item => item.tech === "Android")});
+    }
+
+    handleWeb = () => {
+        this.setState({workDone: workDone.filter(item => item.tech === "Web")});
+    }
+
+    render(){
+        const {workDone} = this.state;
+        return (
+            <div className="section">
+                <Container>
+                    <div className="heading">
+                        <h2>Portfolio</h2>
+                    </div>
+                    <div style={{marginBottom: 20}}>
+                        <Button onClick={this.handleAll}>All</Button>
+                        <Button onClick={this.handleAndroid}>Android</Button>
+                        <Button onClick={this.handleWeb}>Web</Button>
+                    </div>
+                    <Row>
+                        {workDone.map(item => <PortfolioSticky key={item.id} attr={item}/>)}
+                    </Row>
+                </Container>
             </div>
-            <Row>
-                {workDone.map(item => <PortfolioSticky key={item.id} attr={item}/>)}
-            </Row>
-        </Container>
-    </div>
-);
+        );
+    }
+
+}
 
 export default Portfolio;
