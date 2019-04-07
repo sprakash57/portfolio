@@ -82,10 +82,10 @@ const Stats = () => (
                     <h2>Companies served</h2>
                 </div>
                 <Col sm={{span:3, offset:3}} className="company">
-                    <img src={cognizant}/>
+                    <img src={cognizant} alt="cogmizant"/>
                 </Col>
                 <Col sm={{span:3}} className="company">
-                    <img src={gslab}/>
+                    <img src={gslab} alt="gslab"/>
                 </Col>
             </Row>
             
