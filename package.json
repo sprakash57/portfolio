@@ -2,9 +2,10 @@
   "name": "sprakash57.github.io",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sprakash57.github.io/",
+  "homepage": "https://sprakash57.github.io/Portfolio",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "emailjs-com": "^2.3.2",
     "gh-pages": "^2.0.1",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.5",
