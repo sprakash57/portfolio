@@ -3,7 +3,6 @@ import Typed from 'react-typed';
 import {Container, Col, Row} from 'react-bootstrap';
    
   const Welcome = () => (
-    <div className="welcome">
       <Container>
         <Row>
           <Col xs={12}>
@@ -19,8 +18,10 @@ import {Container, Col, Row} from 'react-bootstrap';
             </div>
           </Col>  
         </Row>  
+        <div>
+          <a className="resumeBtn" href="#">My Resume</a> 
+        </div>
       </Container>
-    </div>
   );
 
 export default Welcome;

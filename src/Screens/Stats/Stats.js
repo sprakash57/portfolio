@@ -48,7 +48,7 @@ const Stats = () => (
                 <Col md={3} sm={6}>
                     <div className="squareItem">
                         <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "blue", className: "global-class-name"}}>
+                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
                                 <div className="squareIcon">
                                     <FaBriefcase/> 
                                 </div>         
@@ -88,7 +88,8 @@ const Stats = () => (
                     <img src={gslab} alt="gslab"/>
                 </Col>
             </Row>
-            
+
+              
         </Container>
         
 
