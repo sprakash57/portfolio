@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 const Navigation = () => (
     <Navbar className="navigation" expand="lg" fixed="top">
-        <Link to="/" style={{fontSize: 40}}>SU:PR</Link>
+        <Link to="/" style={{fontSize: 30}}>SU:PR</Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto justify-content-end">
