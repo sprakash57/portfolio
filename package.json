@@ -5,6 +5,7 @@
   "homepage": "https://sprakash57.github.io/Portfolio",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
     "emailjs-com": "^2.3.2",
     "gh-pages": "^2.0.1",
     "react": "^16.8.4",
