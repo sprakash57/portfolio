@@ -1,2 +1,1 @@
-## Sorry!! The website you are looking for is down currently. I am developing it from the scratch with [React](https://reactjs.org/).
-## It will up soon. Thank you!!
+## You can visit this [link](https://sprakash57.github.io/portfolio). Work is in progress.
