@@ -35,7 +35,7 @@ import cx from 'classnames';
                 backSpeed={40}
                 loop
               />
-              <div style={{paddingTop: 80}}>
+              <div style={{paddingTop: 60}}>
                 <a 
                   className="resumeBtn" 
                   href="https://drive.google.com/open?id=1nfWrLujpIlUHXG2bi3nxOB7q_lIdCPt0"

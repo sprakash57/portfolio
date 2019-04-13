@@ -5,7 +5,7 @@ import AboutIntroduction from './AboutIntroduction';
 import AboutSkills from './AboutSkills';
 import AboutAcademics from './AboutAcademics';
 import AboutCert from './AboutCert';
-//import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 const Components = [<AboutIntroduction/>, <AboutSkills/>, <AboutAcademics/>, <AboutCert/>];
 
@@ -13,16 +13,37 @@ export default class About extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            componentIndex: 0
+            componentIndex: 0,
+            btnClick: false
         }
     }
 
-    handleShowMore = () => {
+    handleNext = () => {
+        let toggleNext = !this.state.btnClick;
         if(this.state.componentIndex >= Components.length - 1){
-            this.setState({componentIndex: 0});
+            this.setState({
+                componentIndex: 0, 
+                btnClick: toggleNext
+            });
         }else {
             this.setState(({componentIndex}) => ({
-                componentIndex: componentIndex + 1
+                componentIndex: componentIndex + 1,
+                btnClick: toggleNext
+            }));
+        }
+    }
+
+    handlePrev = () => {
+        let togglePrev = !this.state.btnClick;
+        if(this.state.componentIndex <= 0){
+            this.setState({
+                componentIndex: Components.length - 1, 
+                btnClick: togglePrev
+            })
+        }else {
+            this.setState(({componentIndex}) => ({
+                componentIndex: componentIndex - 1, 
+                btnClick: togglePrev
             }));
         }
     }
@@ -36,10 +57,22 @@ export default class About extends React.Component {
                         <AboutAvatar/>
                     </Col> 
                     <Col md={{span:7, offset:1}} className="card">
-                            {Components[this.state.componentIndex]}
-                            <Button variant="primary" onClick={this.handleShowMore}>Show more...</Button>
+                        <CSSTransition
+                            in={this.state.btnClick}
+                            timeout={300}
+                            classNames="renderAbout"
+                        >
+                            <div className="renderAbout">
+                                {Components[this.state.componentIndex]}
+                            </div>
+                        </CSSTransition>
+                        <div className="toggleChildBtn">
+                            <Button variant="primary" onClick={this.handlePrev}>Prev</Button>
+                            <Button variant="primary" onClick={this.handleNext}>Next</Button>
+                        </div>  
                     </Col>    
                 </Row>
+                
             </Container>
         </div>
         );
