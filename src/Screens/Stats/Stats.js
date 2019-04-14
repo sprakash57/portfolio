@@ -10,13 +10,10 @@ const Stats = () => (
     <div className="statsSection section">
         <Container>
             <Row>
-                <div className="heading">
-                    <h2>Stats - number game</h2>
-                </div>
                 <Col md={3} sm={6}>
                     <div className="squareItem">
                         <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "blue", className: "global-class-name"}}>
+                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
                                 <div className="squareIcon">
                                     <FaClock/> 
                                 </div>         
@@ -32,7 +29,7 @@ const Stats = () => (
                 <Col md={3} sm={6}>
                     <div className="squareItem">
                         <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "blue", className: "global-class-name"}}>
+                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
                                 <div className="squareIcon">
                                     <FaAndroid/> 
                                 </div>         
@@ -64,7 +61,7 @@ const Stats = () => (
                 <Col md={3} sm={6}>
                     <div className="squareItem">
                         <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "blue", className: "global-class-name"}}>
+                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
                                 <div className="squareIcon">
                                     <FaChrome/> 
                                 </div>         

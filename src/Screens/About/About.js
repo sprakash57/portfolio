@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Col, Row, Button} from 'react-bootstrap';
+import { Container, Col, Row } from 'react-bootstrap';
 import AboutAvatar from './AboutAvatar';
 import AboutIntroduction from './AboutIntroduction';
 import AboutSkills from './AboutSkills';
@@ -50,7 +50,6 @@ export default class About extends React.Component {
 
     render(){
         return(
-            <div className="section">
             <Container>
                 <Row>
                     <Col md={4} className="card">
@@ -67,14 +66,12 @@ export default class About extends React.Component {
                             </div>
                         </CSSTransition>
                         <div className="toggleChildBtn">
-                            <Button variant="primary" onClick={this.handlePrev}>Prev</Button>
-                            <Button variant="primary" onClick={this.handleNext}>Next</Button>
+                            <button className="prevBtn" onClick={this.handlePrev}>Prev</button>
+                            <button className="nextBtn" onClick={this.handleNext}>Next</button>
                         </div>  
                     </Col>    
-                </Row>
-                
+                </Row>  
             </Container>
-        </div>
         );
     }
 }
