@@ -1,96 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Col, Row, Container} from 'react-bootstrap';
-import { FaClock, FaAndroid, FaBriefcase, FaChrome } from 'react-icons/fa';
-import {IconContext} from 'react-icons';
 import cognizant from '../../Assets/cogni.png';
 import gslab from '../../Assets/gslab.jpg';
 import './Stats.css';
+import StatsClock from './Stats-clock';
+import StatsAndroid from './Stats-android';
+import StatsChrome from './Stats-chrome';
+import StatsBriefcase from './Stats-briefcase';
 
-const Stats = () => (
-    <div className="statsSection section">
-        <Container>
+// const StatsApi = [
+//     {
+//         "icon": <FaClock/>,
+//         "value": "4+",
+//         "title": "Years of Experience"
+//     },
+//     {
+//         "icon": <FaAndroid/>,
+//         "value": "32",
+//         "title": "App Downloads"
+//     },
+//     {
+//         "icon": <FaBriefcase/>,
+//         "value": "6",
+//         "title": "Projects worked on"
+//     },
+//     {
+//         "icon": <FaChrome/>,
+//         "value": "5",
+//         "title": "Webapps made"
+//     }
+// ]
+
+const Stats = () => {
+    return (
+        <Container className="statsContainer">
             <Row>
-                <Col md={3} sm={6}>
-                    <div className="squareItem">
-                        <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
-                                <div className="squareIcon">
-                                    <FaClock/> 
-                                </div>         
-                            </IconContext.Provider>
-                            <div className="squareContent">
-                                <h2 className="counter plus">4+</h2>
-                                <h3>Years of experience</h3>
-                            </div>
-                        </div>
-                    </div>
-                </Col>
-
-                <Col md={3} sm={6}>
-                    <div className="squareItem">
-                        <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
-                                <div className="squareIcon">
-                                    <FaAndroid/> 
-                                </div>         
-                            </IconContext.Provider>
-                            <div className="squareContent">
-                                <h2 className="counter">32</h2>
-                                <h3>App downloads</h3>
-                            </div>
-                        </div>
-                    </div>
-                </Col>
-
-                <Col md={3} sm={6}>
-                    <div className="squareItem">
-                        <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
-                                <div className="squareIcon">
-                                    <FaBriefcase/> 
-                                </div>         
-                            </IconContext.Provider>
-                            <div className="squareContent">
-                                <h2 className="counter">6</h2>
-                                <h3>Projects worked on</h3>
-                            </div>
-                        </div>
-                    </div>
-                </Col>
-
-                <Col md={3} sm={6}>
-                    <div className="squareItem">
-                        <div className="squareInnerContainer">
-                            <IconContext.Provider value={{color: "white", className: "global-class-name"}}>
-                                <div className="squareIcon">
-                                    <FaChrome/> 
-                                </div>         
-                            </IconContext.Provider>
-                            <div className="squareContent">
-                                <h2 className="counter">5</h2>
-                                <h3>Webapps made</h3>
-                            </div>
-                        </div>
-                    </div>
-                </Col>
+                <StatsClock />
+                <StatsAndroid />
+                <StatsBriefcase />
+                <StatsChrome />
             </Row>
-            <Row>
-                <div className="heading">
-                    <h2>Companies served</h2>
-                </div>
-                <Col sm={{span:3, offset:3}} className="company">
-                    <img src={cognizant} alt="cogmizant"/>
+            <Row className="employerSection">
+                <Col md={4} sm={12}>
+                    <h2>EMPLOYERS</h2>
                 </Col>
-                <Col sm={{span:3}} className="company">
+                <Col md={{span:4}} sm={12}>
+                    <img src={cognizant} alt="cognizant"/>
+                </Col>
+                <Col md={{span:4}} sm={12}>
                     <img src={gslab} alt="gslab"/>
                 </Col>
-            </Row>
-
-              
+            </Row>       
         </Container>
-        
-
-    </div>
-);
+    );
+}
 
 export default Stats;
