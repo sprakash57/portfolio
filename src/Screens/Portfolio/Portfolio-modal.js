@@ -1,8 +1,15 @@
 import React from 'react';
 import {Modal, Button} from 'react-bootstrap';
+import { Icon } from '@iconify/react';
 
 class PortfolioModal extends React.Component {
+
+    handleClick = () => {
+        window.open(this.props.content.url);
+    }
+
     render(){
+        const { title, stack, body } = this.props.content;
         return (
             <Modal
                 {...this.props}
@@ -10,18 +17,16 @@ class PortfolioModal extends React.Component {
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title id="contained-modal-title-vcenter">
-                        {this.props.content.title}
+                    <Modal.Title id="contained-modal-title-vcenter" onClick={this.handleClick}>
+                        { title }
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                        dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-                        ac consectetur ac, vestibulum at eros.
-                    </p>
+                    { stack !== undefined && stack.map(item => <Icon icon={item}/>)}
+                    <p>{ body }</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={this.props.onHide}>close</Button>
+                    <Button variant="danger" onClick={this.props.onHide}>close</Button>
                 </Modal.Footer>
             </Modal>
         )

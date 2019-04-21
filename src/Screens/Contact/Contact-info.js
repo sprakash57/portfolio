@@ -1,42 +1,40 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import { Icon } from '@iconify/react';
+import locationIcon from '@iconify/react/dashicons/location';
+import phoneIcon from '@iconify/react/fe/phone';
+import baselineMail from '@iconify/react/ic/baseline-mail';
+
+
 
 const ContactInfo = () => (
-    <Col md={{span:5, offset:1}} sm={12}>
-        <h2>Connect with me</h2>
-        <div className="map">
+    <Col md={{span:5, offset:1}} sm={12} className="form-info">
+        <div className="form-title">
+            <h1>Contact me</h1>
+        </div>
+        <div className="form-map">
             <iframe 
-                width="100%" 
-                src="http://maps.google.com/maps?q=18.60372692298375, 73.73677968978883&z=8&output=embed"
+                width="100%"
+                height="100%" 
+                src="https://maps.google.com/maps?q=18.60372692298375, 73.73677968978883&z=8&output=embed"
                 frameBorder="0" 
-                scrolling="no" 
-                marginHeight="0" 
-                marginWidth="0">
+                scrolling="no">
             </iframe>
         </div>
-        <div className="address">
-            <p>Lorem ipsum pune 411057</p>
+        <div className="address-section">
+            <div>
+                <Icon icon={locationIcon} />
+                <span>Hinjawadi, Phase 1, Pune 411057</span>
+            </div>
+            <div>
+                <Icon icon={phoneIcon} />
+                <span>+91 7044080165/ +91 8084508679</span>
+            </div>
+            <div>
+                <Icon icon={baselineMail} />
+                <span>sunny.prakashgm@gmail.com</span>
+            </div>
         </div>
-        <div className="phone">
-            <p>7044080165</p>
-        </div>
-        <div className="email">
-            <p>sunnypr12@outlook.com</p>
-        </div>
-        <Row>
-            <Col sm={3}>
-                <p>gitHub</p>
-            </Col>
-            <Col sm={3}>
-                <p>Linkedin</p>
-            </Col>
-            <Col sm={3}>
-                <p>Playstore</p>
-            </Col>
-            <Col sm={3}>
-                <p>twitter</p>
-            </Col>
-        </Row>
     </Col>
 );
 

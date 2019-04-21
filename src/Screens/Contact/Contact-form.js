@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Form, Button } from 'react-bootstrap';
+import './Contact.css';
 
 class ContactForm extends React.Component{
     constructor(){
@@ -91,7 +92,9 @@ class ContactForm extends React.Component{
     render(){
         return (
                 <Col md={6}>
-                    <h2>Any message or feedback!!</h2>
+                    <div className="form-title">
+                        <h1>Get in touch</h1>
+                    </div>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="formBasicEmail">
                             <Form.Control type="text" value={this.state.name} placeholder="Name/Company" onChange={this.handleName}/>

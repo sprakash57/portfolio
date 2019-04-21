@@ -1,0 +1,71 @@
+.form-section {
+    position: relative;
+    top: 25px;
+}
+
+@media screen and (max-width: 480px) {
+    .form-info {
+        margin-top: 20px;
+    }
+    
+}
+
+.form-title {
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: 'Jua', sans-serif;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.form-map {
+    height: 50%;
+    max-height: 50%;
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #81d26c;
+    box-shadow: 2px 4px 10px #0d1c05; 
+}
+
+.address-section {
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 8px 4px rgba(0, 0, 0, 0.2);
+}
+
+.address-section div svg {
+    background-color: #81d26c;
+    color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    padding: 4px;
+    margin-bottom: 8px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.address-section div span{
+    font-size: 1.1rem;
+    position: relative;
+    left: 15px;
+    bottom: 19px;
+}
+
+.form-social {
+    position: relative;
+    top: 30px;
+    width: 30%;
+    max-width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px ridge transparent;
+    background-color: white;
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.form-social svg {
+    font-size: 2.2rem;
+    position: relative;
+    top: 3px;
+}

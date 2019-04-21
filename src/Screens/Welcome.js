@@ -17,7 +17,6 @@ import cx from 'classnames';
         return {"greeting":"Good Evening!!", "bgStyle": "night"}
     }
   }
-
    
   const Welcome = () => (
       <Container>

@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://sprakash57.github.io/portfolio/",
   "dependencies": {
+    "@iconify/react": "^1.0.7",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "emailjs-com": "^2.3.2",
