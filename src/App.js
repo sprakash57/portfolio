@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navigation from './Screens/Navigation';
 import Welcome from './Screens/Welcome';
 import {HashRouter, Route} from 'react-router-dom';
-import { Container } from 'react-bootstrap';
 import Contact from './Screens/Contact/Contact';
 import Stats from './Screens/Stats/Stats';
 import Portfolio from './Screens/Portfolio/Portfolio';

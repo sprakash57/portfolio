@@ -6,7 +6,7 @@ const PortfolioSticky = (props) => {
     return (
     <Col onClick={props.onClick} xs={6} md={3} className={classes} style={{background}}>
         <h6 className="stickyTitle">{title}</h6>
-        <img className="sticky-image" src={image}/>
+        <img className="sticky-image" src={image} alt="Project images"/>
     </Col>
 );
 }

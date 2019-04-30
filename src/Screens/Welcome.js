@@ -2,19 +2,24 @@ import React from 'react';
 import Typed from 'react-typed';
 import {Container, Col, Row} from 'react-bootstrap';
 import cx from 'classnames';
+import { Icon } from '@iconify/react';
+import sunsetIcon from '@iconify/react/noto-v1/sunset';
+import sunriseovermountainsIcon from '@iconify/react/fxemoji/sunriseovermountains';
+import sunIcon from '@iconify/react/twemoji/sun';
+import nightWithStars from '@iconify/react/twemoji/night-with-stars';
+
 
   const getTime = () => {
-    let hrs = new Date().getHours();
-    console.log(hrs);
+    const hrs = new Date().getHours();
     switch(true) {
       case (hrs < 12):
-        return {"greeting":"Good Morning!!", "bgStyle": "morning"}
+        return {"greeting":"Good Morning!!", "bgIcon": sunriseovermountainsIcon, "bgStyle":"morning"}
       case (hrs >= 12 && hrs < 16):
-        return {"greeting":"Good Afternoon!!", "bgStyle": "noon"}
-      case (hrs >= 16 && hrs < 22):
-        return {"greeting":"Good Evening!!", "bgStyle": "evening"}
+        return {"greeting":"Good Afternoon!!", "bgIcon": sunIcon, "bgStyle":"noon"}
+      case (hrs >= 16 && hrs < 19):
+        return {"greeting":"Good Evening!!", "bgIcon": sunsetIcon, "bgStyle":"evening"}
       default:
-        return {"greeting":"Good Evening!!", "bgStyle": "night"}
+        return {"greeting":"Good Evening!!", "bgIcon": nightWithStars, "bgStyle":"night"}
     }
   }
    
@@ -22,16 +27,17 @@ import cx from 'classnames';
       <Container>
         <Row>
           <Col xs={12}>
-          <div className={cx(getTime().bgStyle, 'time')}>
-              <h3>{getTime().greeting}</h3>
-          </div>
+            <div>
+              <h2 className={cx(getTime().bgStyle, "greetings")}>{getTime().greeting}</h2>
+              <Icon icon={getTime().bgIcon} className="greetings-icon"/>
+            </div>
             <div className="content">
               <h1>SUNNY PRAKASH</h1>
               <Typed
                 className="usp"
                 strings={['Android Dev','Web developer','Anime freak','Learning everyday']} 
                 typeSpeed={65}
-                backSpeed={40}
+                backSpeed={65}
                 loop
               />
               <div style={{paddingTop: 60}}>
@@ -44,6 +50,6 @@ import cx from 'classnames';
           </Col>           
         </Row>  
       </Container>
-  );
+    );
 
 export default Welcome;
