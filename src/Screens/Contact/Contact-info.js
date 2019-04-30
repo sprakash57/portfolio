@@ -1,11 +1,9 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
 import locationIcon from '@iconify/react/dashicons/location';
 import phoneIcon from '@iconify/react/fe/phone';
 import baselineMail from '@iconify/react/ic/baseline-mail';
-
-
 
 const ContactInfo = () => (
     <Col md={{span:5, offset:1}} sm={12} className="form-info">
@@ -14,6 +12,7 @@ const ContactInfo = () => (
         </div>
         <div className="form-map">
             <iframe 
+                title="map"
                 width="100%"
                 height="100%" 
                 src="https://maps.google.com/maps?q=18.60372692298375, 73.73677968978883&z=8&output=embed"
@@ -24,7 +23,7 @@ const ContactInfo = () => (
         <div className="address-section">
             <div>
                 <Icon icon={locationIcon} />
-                <span>Hinjawadi, Phase 1, Pune 411057</span>
+                <span>Hinjawadi, Phase 1, Pune 411057, India</span>
             </div>
             <div>
                 <Icon icon={phoneIcon} />

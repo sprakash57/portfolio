@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Col, Row, Container} from 'react-bootstrap';
 import cognizant from '../../Assets/cogni.png';
 import gslab from '../../Assets/gslab.jpg';
