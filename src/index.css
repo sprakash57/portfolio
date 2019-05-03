@@ -95,10 +95,10 @@ html {
 }
 
 .navigation a:hover {
-  text-decoration: none;
+  text-decoration: none;  
 }
 
-.navigation a:focus {
+.active {
   font-size: 1.8rem;
 }
 
