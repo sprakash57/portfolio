@@ -7,8 +7,19 @@ import Stats from './Screens/Stats/Stats';
 import Portfolio from './Screens/Portfolio/Portfolio';
 import About from './Screens/About/About';
 import { CSSTransition } from 'react-transition-group';
+import cx from 'classnames';
 
 class App extends Component {
+
+  state = {
+    blur: false
+  }
+
+  handlebur = (expanded) => {
+    console.log(expanded);
+    this.setState({blur: expanded});
+  }
+
   render() {
     const { env } = this.props;
     const routes = [
@@ -22,7 +33,7 @@ class App extends Component {
     return (
       <HashRouter>
         <React.Fragment>
-          <Navigation/>
+          <Navigation onToggleClick={this.handlebur}/>
           {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
             {({ match }) => (
@@ -32,7 +43,7 @@ class App extends Component {
                 classNames="page"
                 unmountOnExit
               >
-                <div className="page">
+                <div className={cx("page", this.state.blur && "blurred-bg")}>
                   <Component />
                 </div>
               </CSSTransition>

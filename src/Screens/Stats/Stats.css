@@ -65,6 +65,7 @@
 	animation-name: iconMove;
 	animation-fill-mode: forwards;
 	animation-duration: 0.2s;
+	cursor: default;
 }
 
 @keyframes iconMove {
