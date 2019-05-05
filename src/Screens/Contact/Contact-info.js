@@ -1,14 +1,15 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
 import { Icon } from '@iconify/react';
-import locationIcon from '@iconify/react/dashicons/location';
-import phoneIcon from '@iconify/react/fe/phone';
+import ContactSocial from './Contact-social';
+import locationIcon from '@iconify/react/icomoon-free/location';
+import phoneIcon from '@iconify/react/entypo/phone';
 import baselineMail from '@iconify/react/ic/baseline-mail';
 
 const ContactInfo = () => (
     <Col md={{span:5, offset:1}} sm={12} className="form-info">
         <div className="form-title">
-            <h1>Contact me</h1>
+            <h1>CONTACT ME</h1>
         </div>
         <div className="form-map">
             <iframe 
@@ -22,18 +23,19 @@ const ContactInfo = () => (
         </div>
         <div className="address-section">
             <div>
-                <Icon icon={locationIcon} />
+                <Icon icon={locationIcon} color="rgb(182, 52, 199)"/>
                 <span>Hinjawadi, Phase 1, Pune 411057, India</span>
             </div>
             <div>
-                <Icon icon={phoneIcon} />
+                <Icon icon={phoneIcon} color="rgb(182, 52, 199)"/>
                 <span>+91 7044080165/ +91 8084508679</span>
             </div>
             <div>
-                <Icon icon={baselineMail} />
+                <Icon icon={baselineMail} color="rgb(182, 52, 199)"/>
                 <span>sunny.prakashgm@gmail.com</span>
             </div>
         </div>
+        <ContactSocial/>
     </Col>
 );
 

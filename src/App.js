@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Navigation from './Screens/Navigation';
-import Welcome from './Screens/Welcome';
+import Navigation from './Screens/Navigation/Navigation';
+import Welcome from './Screens/Welcome/Welcome';
 import {HashRouter, Route} from 'react-router-dom';
 import Contact from './Screens/Contact/Contact';
 import Stats from './Screens/Stats/Stats';
@@ -16,7 +16,6 @@ class App extends Component {
   }
 
   handlebur = (expanded) => {
-    console.log(expanded);
     this.setState({blur: expanded});
   }
 

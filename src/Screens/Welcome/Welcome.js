@@ -7,6 +7,7 @@ import sunsetIcon from '@iconify/react/noto-v1/sunset';
 import sunriseovermountainsIcon from '@iconify/react/fxemoji/sunriseovermountains';
 import sunIcon from '@iconify/react/twemoji/sun';
 import nightWithStars from '@iconify/react/twemoji/night-with-stars';
+import './Welcome.css';
 
 
   const getTime = () => {
@@ -16,7 +17,7 @@ import nightWithStars from '@iconify/react/twemoji/night-with-stars';
         return {"greeting":"Good Morning!!", "bgIcon": sunriseovermountainsIcon, "bgStyle":"morning"}
       case (hrs >= 12 && hrs < 16):
         return {"greeting":"Good Afternoon!!", "bgIcon": sunIcon, "bgStyle":"noon"}
-      case (hrs >= 16 && hrs < 19):
+      case (hrs >= 16 && hrs < 20):
         return {"greeting":"Good Evening!!", "bgIcon": sunsetIcon, "bgStyle":"evening"}
       default:
         return {"greeting":"Good Evening!!", "bgIcon": nightWithStars, "bgStyle":"night"}

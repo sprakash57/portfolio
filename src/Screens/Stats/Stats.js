@@ -8,29 +8,6 @@ import StatsAndroid from './Stats-android';
 import StatsChrome from './Stats-chrome';
 import StatsBriefcase from './Stats-briefcase';
 
-// const StatsApi = [
-//     {
-//         "icon": <FaClock/>,
-//         "value": "4+",
-//         "title": "Years of Experience"
-//     },
-//     {
-//         "icon": <FaAndroid/>,
-//         "value": "32",
-//         "title": "App Downloads"
-//     },
-//     {
-//         "icon": <FaBriefcase/>,
-//         "value": "6",
-//         "title": "Projects worked on"
-//     },
-//     {
-//         "icon": <FaChrome/>,
-//         "value": "5",
-//         "title": "Webapps made"
-//     }
-// ]
-
 const Stats = () => {
     return (
         <Container className="statsContainer">

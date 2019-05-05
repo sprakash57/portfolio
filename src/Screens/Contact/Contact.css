@@ -16,52 +16,53 @@
     margin-bottom: 10px;
     font-family: 'Jua', sans-serif;
     font-weight: 600;
-    font-size: 0.8em;
+    font-size: 0.6rem;
 }
 
 .form-map {
     height: 50%;
     max-height: 50%;
-    padding: 5px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    background-color: #81d26c;
-    box-shadow: 2px 4px 10px #0d1c05; 
+    margin-bottom: 10px;
+    border-left: 8px solid rgb(3, 41, 255);
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 .address-section {
-    color: white;
-    font-weight: 600;
-    text-shadow: 1px 8px 4px rgba(0, 0, 0, 0.2);
+    border-left: 8px solid rgb(182, 52, 199);
+    border-top: 0px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 0px solid transparent;
+    background-color: rgb(253, 248, 255);
+    padding-top: 8px;
+    color: rgb(182, 52, 199);
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
 .address-section div svg {
-    background-color: #81d26c;
-    color: white;
-    border-radius: 50%;
-    font-size: 2rem;
-    padding: 4px;
-    margin-bottom: 8px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
 }
 
 .address-section div span{
-    font-size: 1.1rem;
+    font-size: 1rem;
     position: relative;
-    left: 15px;
-    bottom: 19px;
+    left: 10px;
+    bottom: 12px;
 }
 
 .form-social {
-    position: relative;
-    top: 30px;
-    width: 30%;
-    max-width: 60%;
+    border-left: 8px solid tomato;
+    border-top: 0px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 0px solid transparent;
     text-align: center;
     margin: 0 auto;
-    border: 1px ridge transparent;
-    background-color: white;
+    background-color: rgb(255, 245, 248);
     box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.4);
+    
 }
 
 .form-social svg {

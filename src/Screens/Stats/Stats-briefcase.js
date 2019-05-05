@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { Col } from 'react-bootstrap';
-import {IconContext} from 'react-icons';
-import { FaBriefcase } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
+import briefcaseIcon from '@iconify/react/entypo/briefcase';
 import cx from 'classnames';
 
 const StatsBriefcase = () => {
-    const [briefcase, handleClick] = useState(false);
+    const [briefcase, setIcon] = useState(false);
     return (
         <Col md={3} sm={6}>
             <div className="statsCard">
                 <div className="squareInnerContainer">
-                    <IconContext.Provider value={{color: "white", className: cx("squareIcon", briefcase && "animateIcon")}}>
-                        <FaBriefcase onClick={() => handleClick(true)}/>       
-                    </IconContext.Provider>
+                    <Icon 
+                        icon={briefcaseIcon} 
+                        onClick={() => setIcon(true)}
+                        className={cx("squareIcon", briefcase && "animateIcon")}
+                    />
                     <div>
                         <h2 className={cx(briefcase && "animateValue")}>6</h2>
                         <h3>Projects worked on</h3>

@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import AboutAvatar from './AboutAvatar';
-import AboutIntroduction from './AboutIntroduction';
-import AboutSkills from './AboutSkills';
-import AboutAcademics from './AboutAcademics';
-import AboutCert from './AboutCert';
+import AboutAvatar from './About-avatar';
+import AboutIntroduction from './About-introduction';
+import AboutSkills from './About-skills';
+import AboutAcademics from './About-academics';
+import AboutCert from './About-certification';
 import { CSSTransition } from 'react-transition-group';
+import './About.css';
 
 const Components = [<AboutIntroduction/>, <AboutSkills/>, <AboutAcademics/>, <AboutCert/>];
 

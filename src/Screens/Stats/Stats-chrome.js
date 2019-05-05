@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { Col } from 'react-bootstrap';
-import {IconContext} from 'react-icons';
-import { FaChrome } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
+import chromeFill from '@iconify/react/ant-design/chrome-fill';
 import cx from 'classnames';
 
 const StatsChrome = () => {
-    const [chrome, handleClick] = useState(false);
+    const [chrome, setIcon] = useState(false);
     return (
         <Col md={3} sm={6}>
             <div className="statsCard">
                 <div className="squareInnerContainer">
-                    <IconContext.Provider value={{color: "white", className: cx("squareIcon", chrome && "animateIcon")}}>
-                        <FaChrome onClick={() => handleClick(true)}/>       
-                    </IconContext.Provider>
+                    <Icon 
+                        icon={chromeFill} 
+                        onClick={() => setIcon(true)}
+                        className={cx("squareIcon", chrome && "animateIcon")}
+                    />
                     <div>
                         <h2 className={cx(chrome && "animateValue")}>5</h2>
                         <h3>web apps made</h3>

@@ -2,6 +2,7 @@ import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import cx from 'classnames';
+import './Navigation.css';
 
 class Navigation extends React.Component {
 
@@ -10,7 +11,7 @@ class Navigation extends React.Component {
     }
     
     handleToggleClick = () => {
-        this.props.onToggleClick(!this.state.expanded);
+        window.innerWidth <= 768 && this.props.onToggleClick(!this.state.expanded);
     }
 
     handleLink = (event) => {
@@ -19,7 +20,7 @@ class Navigation extends React.Component {
         navLinks.forEach(child => 
             child.innerHTML === activeLink.innerHTML ? activeLink.className = "active-nav-item" : child.className = ""
             )
-        this.props.onToggleClick(!this.state.expanded);
+        this.handleToggleClick();
         this.setState({expanded: false});
     }
 

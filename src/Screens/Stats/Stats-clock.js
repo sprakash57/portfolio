@@ -5,14 +5,14 @@ import { Icon } from '@iconify/react';
 import clockIcon from '@iconify/react/mdi/clock';
 
 const StatsClock = () => {
-    const [clock, handleClock] = useState(false);
+    const [clock, setIcon] = useState(false);
     return (
         <Col md={3} sm={6}>
             <div className="statsCard">
                 <div className="squareInnerContainer">
                     <Icon 
                         icon={clockIcon} 
-                        onClick={() => handleClock(true)}
+                        onClick={() => setIcon(true)}
                         className={cx("squareIcon", clock && "animateIcon")}
                     />
                     <div>

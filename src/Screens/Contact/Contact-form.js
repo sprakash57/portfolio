@@ -93,7 +93,7 @@ class ContactForm extends React.Component{
         return (
                 <Col md={6}>
                     <div className="form-title">
-                        <h1>Get in touch</h1>
+                        <h1>GET IN TOUCH</h1>
                     </div>
                     <Form onSubmit={this.handleSubmit}>
                         <Form.Group controlId="formBasicEmail">
