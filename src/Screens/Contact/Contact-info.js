@@ -23,15 +23,15 @@ const ContactInfo = () => (
         </div>
         <div className="address-section">
             <div>
-                <Icon icon={locationIcon} color="rgb(182, 52, 199)"/>
+                <Icon icon={locationIcon} color="rgb(223, 67, 40)"/>
                 <span>Hinjawadi, Phase 1, Pune 411057, India</span>
             </div>
             <div>
-                <Icon icon={phoneIcon} color="rgb(182, 52, 199)"/>
+                <Icon icon={phoneIcon} color="rgb(223, 67, 40)"/>
                 <span>+91 7044080165/ +91 8084508679</span>
             </div>
             <div>
-                <Icon icon={baselineMail} color="rgb(182, 52, 199)"/>
+                <Icon icon={baselineMail} color="rgb(223, 67, 40)"/>
                 <span>sunny.prakashgm@gmail.com</span>
             </div>
         </div>

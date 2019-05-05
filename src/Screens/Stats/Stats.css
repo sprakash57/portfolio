@@ -1,5 +1,16 @@
 .statsContainer {
-	padding-top: 70px;
+	margin-top: 30px;
+}
+
+.section-title {
+	color: white;
+	border-left: 5px solid tomato;
+	font-family: 'Jua', sans-serif;
+	font-size: 1.5rem;
+	margin: 20px 5px;
+	padding: 2px 0px 0px 6px;
+	text-shadow: 2px 5px 8px rgba(0, 0, 0, 1);
+	box-shadow: 5px 10px 18px 1px #0d1c05;
 }
 
 .statsCard {
@@ -9,6 +20,7 @@
 	background:linear-gradient(135deg, #98db63 0%,#6fca74 100%);
 	border-radius: 15px;
 	border-color: transparent;
+	margin: 5px;
 }
 
 .squareItem {
@@ -43,10 +55,10 @@
 
 .squareInnerContainer h3 {
 	font-size: 1.2rem;
-	font-weight: 700;
-	text-shadow: 1px 8px 4px rgba(0, 0, 0, 0.2);
+	font-weight: 600;
+	text-shadow: 1px 5px 5px rgba(0, 0, 0, 0.2);
     margin: 0;
-	color: #eb3548;
+	color: rebeccapurple;
 }
 
 .squareIcon {
@@ -71,30 +83,30 @@
 @keyframes iconMove {
 	from{ transform: translate(0px, 0px); }
 	to{ 
-		transform: translate(-150%, -90%) scale(0.55);
+		transform: translate(-110%, -85%) scale(0.55);
 	}
 }
 
-.employerSection {
-	position: relative;
-	top: 120px;
-	text-align: center;
-	padding-bottom: 15px;
-	background-color: white;
-	box-shadow: 5px -10px 18px 1px #0d1c05;
-	border-radius: 15px 15px 0 0;
+.employers {
+	display: flex;
 }
 
-.employerSection h2 {
-	line-height: 105px;
-	font-weight: 600;
-	font-size: 2.5rem;
-	text-shadow: 1px 8px 4px rgba(0, 0, 0, 0.2);
-	color: #eb3548;
-	font-family: 'Jua', sans-serif;
-	letter-spacing: 5px;
+.employers img {
+	border-radius: 10px;
+	margin: 5px 30px 5px 5px;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
 }
 
-.employerSection img {
-	line-height: 105px;
+@media screen and (max-width: 428px) {
+	.employers img {
+		max-width: 47%;
+		margin: 5px;
+	}
+
+	@keyframes iconMove {
+		from{ transform: translate(0px, 0px); }
+		to{ 
+			transform: translate(-200%, -80%) scale(0.55);
+		}
+	}
 }

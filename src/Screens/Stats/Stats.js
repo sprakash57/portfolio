@@ -11,23 +11,18 @@ import StatsBriefcase from './Stats-briefcase';
 const Stats = () => {
     return (
         <Container className="statsContainer">
+            <h2 className="section-title">STATS</h2>
             <Row>
                 <StatsClock />
                 <StatsAndroid />
                 <StatsBriefcase />
                 <StatsChrome />
             </Row>
-            <Row className="employerSection">
-                <Col md={4} sm={12}>
-                    <h2>EMPLOYERS</h2>
-                </Col>
-                <Col md={{span:4}} sm={12}>
-                    <img src={cognizant} alt="cognizant"/>
-                </Col>
-                <Col md={{span:4}} sm={12}>
-                    <img src={gslab} alt="gslab"/>
-                </Col>
-            </Row>       
+            <h2 className="section-title">EMPLOYERS</h2>
+            <div className="employers">
+                <img src={cognizant} alt="cognizant"/>
+                <img src={gslab} alt="gslab"/>
+            </div>       
         </Container>
     );
 }

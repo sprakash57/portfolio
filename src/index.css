@@ -8,29 +8,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  background-color: rebeccapurple;
 }
 
 @media screen and (max-width: 768px) {
   body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-size: 15px;
-    letter-spacing: 1px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    background-color: rebeccapurple;
     overflow: scroll;
   }
-}
-
-html {
-  height: 100%;
-}
-
-#root {
-  height: 100%;
-  background-color: #08AEEA;
-  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
 }
 
 .page {

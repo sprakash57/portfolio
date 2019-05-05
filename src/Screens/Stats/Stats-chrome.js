@@ -17,7 +17,7 @@ const StatsChrome = () => {
                     />
                     <div>
                         <h2 className={cx(chrome && "animateValue")}>5</h2>
-                        <h3>web apps made</h3>
+                        <h3>Web apps made</h3>
                     </div>
                 </div>
             </div>

@@ -2,13 +2,9 @@
     width: 100%;
     font-family: 'Jua', sans-serif;
     font-size: 1.4rem;
-    background-image: linear-gradient(180deg, #24eaa4 0%, #24eaa4 100%);
+    background: rebeccapurple;
   }
-  
-  .navigation-expand-bg {
-    background-image: linear-gradient(180deg, #19d1c0 0%, #19d1c0 100%);
-  }
-  
+
   .navigation button:focus {
     outline: none;
   }

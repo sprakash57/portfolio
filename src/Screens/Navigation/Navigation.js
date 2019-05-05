@@ -32,7 +32,7 @@ class Navigation extends React.Component {
         const {expanded} = this.state;
         return (
             <Navbar 
-                className={cx("navigation", expanded && "navigation-expand-bg")} 
+                className="navigation"
                 expand="lg" fixed="top" 
                 expanded={expanded} 
                 onToggle={this.handleNavbarExpand}>
