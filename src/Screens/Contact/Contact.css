@@ -70,3 +70,43 @@
     position: relative;
     top: 3px;
 }
+
+.send-btn {
+    position: relative;
+    left: 50%;
+    margin-left: -33px;
+    box-shadow: 0px 5px 8px 3px #2a2b2a;
+    background-color:#e4685d;
+    border-radius:15px;
+    border: none;
+    outline: none;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:'Jua', sans-serif;
+    font-size:1.4rem;
+    padding:5px 10px;
+    margin-bottom: 10px;
+}
+
+.send-btn:hover {
+    cursor: pointer;
+    text-decoration:none;
+    color:#ffffff;
+    background-color:#e4685d;
+    border: none;
+    outline: none;
+}
+
+.send-btn:focus {
+    border: none;
+    outline: none;
+}
+
+.send-btn:active {
+    position:relative;
+    top:2px;
+    background-color:#e4685d;
+    border: none;
+    outline: none;
+}

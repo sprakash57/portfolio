@@ -3,12 +3,14 @@ import { Container, Col, Row } from 'react-bootstrap';
 import AboutAvatar from './About-avatar';
 import AboutIntroduction from './About-introduction';
 import AboutSkills from './About-skills';
-import AboutAcademics from './About-academics';
-import AboutCert from './About-certification';
 import { CSSTransition } from 'react-transition-group';
+import { Icon } from '@iconify/react';
+import roundArrowForwardIos from '@iconify/react/ic/round-arrow-forward-ios';
+import roundArrowBackIos from '@iconify/react/ic/round-arrow-back-ios';
+
 import './About.css';
 
-const Components = [<AboutIntroduction/>, <AboutSkills/>, <AboutAcademics/>, <AboutCert/>];
+const Components = [<AboutIntroduction/>, <AboutSkills/>];
 
 export default class About extends React.Component {
     constructor(props){
@@ -66,11 +68,10 @@ export default class About extends React.Component {
                                 {Components[this.state.componentIndex]}
                             </div>
                         </CSSTransition>
-                        <div className="toggleChildBtn">
-                            <button className="prevBtn" onClick={this.handlePrev}>Prev</button>
-                            <button className="nextBtn" onClick={this.handleNext}>Next</button>
-                        </div>  
-                    </Col>    
+                        <Icon icon={roundArrowBackIos} className="prevBtn" onClick={this.handlePrev}>Prev</Icon>
+                        <Icon icon={roundArrowForwardIos} className="nextBtn" onClick={this.handleNext}>Next</Icon>
+                    </Col>
+                    
                 </Row>  
             </Container>
         );

@@ -113,12 +113,12 @@ class ContactForm extends React.Component{
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                             <Form.Control 
                                 as="textarea"
-                                rows="5"
+                                rows="7"
                                 placeholder="Feedback/message"
                                 onChange={this.handleFeedback} 
                                 value={this.state.feedback}/>
                         </Form.Group>
-                        <Button variant="primary" type="submit">Send</Button>
+                        <button className="send-btn" type="submit">Send</button>
                     </Form>
                 </Col>
             );

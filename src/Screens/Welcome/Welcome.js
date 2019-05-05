@@ -14,13 +14,13 @@ import './Welcome.css';
     const hrs = new Date().getHours();
     switch(true) {
       case (hrs < 12):
-        return {"greeting":"Good Morning!!", "bgIcon": sunriseovermountainsIcon, "bgStyle":"morning"}
+        return {"greeting":"Good Morning!", "bgIcon": sunriseovermountainsIcon, "bgStyle":"morning"}
       case (hrs >= 12 && hrs < 16):
-        return {"greeting":"Good Afternoon!!", "bgIcon": sunraysIcon, "bgStyle":"noon"}
+        return {"greeting":"Good Afternoon!", "bgIcon": sunraysIcon, "bgStyle":"noon"}
       case (hrs >= 16 && hrs < 20):
-        return {"greeting":"Good Evening!!", "bgIcon": sunsetIcon, "bgStyle":"evening"}
+        return {"greeting":"Good Evening!", "bgIcon": sunsetIcon, "bgStyle":"evening"}
       default:
-        return {"greeting":"Good Evening!!", "bgIcon": nightWithStars, "bgStyle":"night"}
+        return {"greeting":"Good Evening!", "bgIcon": nightWithStars, "bgStyle":"night"}
     }
   }
    
@@ -38,7 +38,7 @@ import './Welcome.css';
                 className="usp"
                 strings={['Android Dev','Web developer','Anime freak','Learning everyday']} 
                 typeSpeed={65}
-                backSpeed={65}
+                backSpeed={40}
                 loop
               />
               <div style={{paddingTop: 60}}>

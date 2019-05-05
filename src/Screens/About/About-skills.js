@@ -11,7 +11,7 @@ const skills = [
     },
     {
         "title":"Web Technologies: ",
-        "value": "React.js, Redux.js, CSS3, HTML5, LESS, GraphQL, jQuery, JSP"
+        "value": "React.js, Redux.js, CSS3, HTML5, LESS, GraphQL, JSP"
     },
     {
         "title":"Databases and Server: ",
