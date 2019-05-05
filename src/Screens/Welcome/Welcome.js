@@ -5,7 +5,7 @@ import cx from 'classnames';
 import { Icon } from '@iconify/react';
 import sunsetIcon from '@iconify/react/noto-v1/sunset';
 import sunriseovermountainsIcon from '@iconify/react/fxemoji/sunriseovermountains';
-import sunIcon from '@iconify/react/twemoji/sun';
+import sunraysIcon from '@iconify/react/fxemoji/sunrays';
 import nightWithStars from '@iconify/react/twemoji/night-with-stars';
 import './Welcome.css';
 
@@ -16,7 +16,7 @@ import './Welcome.css';
       case (hrs < 12):
         return {"greeting":"Good Morning!!", "bgIcon": sunriseovermountainsIcon, "bgStyle":"morning"}
       case (hrs >= 12 && hrs < 16):
-        return {"greeting":"Good Afternoon!!", "bgIcon": sunIcon, "bgStyle":"noon"}
+        return {"greeting":"Good Afternoon!!", "bgIcon": sunraysIcon, "bgStyle":"noon"}
       case (hrs >= 16 && hrs < 20):
         return {"greeting":"Good Evening!!", "bgIcon": sunsetIcon, "bgStyle":"evening"}
       default:
