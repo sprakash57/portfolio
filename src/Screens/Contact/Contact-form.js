@@ -47,24 +47,24 @@ class ContactForm extends React.Component{
     handleSubmit = (event) => {
         event.preventDefault();
     
-        const {
-            REACT_APP_EMAILJS_RECEIVER: receiverEmail,
-            REACT_APP_EMAILJS_TEMPLATEID: template
-        } = this.props.env;
+        // const {
+        //     REACT_APP_EMAILJS_RECEIVER: receiverEmail,
+        //     REACT_APP_EMAILJS_TEMPLATEID: template
+        // } = this.props.env;
     
-        this.sendFeedback(
-            template,
-        //   this.sender,
-            receiverEmail,
-            this.state.name,
-            this.state.email,
-            this.state.phone,
-            this.state.feedback
-        );
+        // this.sendFeedback(
+        //     template,
+        // //   this.sender,
+        //     receiverEmail,
+        //     this.state.name,
+        //     this.state.email,
+        //     this.state.phone,
+        //     this.state.feedback
+        // );
     
-        this.setState({
-          formSubmitted: true
-        });
+        // this.setState({
+        //   formSubmitted: true
+        // });
     }
 
     sendFeedback = (templateId, receiverEmail, name, phone, email, feedback) => {
