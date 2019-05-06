@@ -110,3 +110,23 @@
     border: none;
     outline: none;
 }
+
+.shake-btn {
+    animation: btnShake 0.2s 3;
+}
+
+@keyframes btnShake {
+    from {transform: translateX(-4px);}
+    50% {transform: translateX(0px);}
+    to {transform: translateX(4px);}
+}
+
+input.error {
+    border: 1px solid red;
+}
+  
+.errorMsg {
+    color: red;
+    font-size: 0.75em;
+    display: relative;
+  }
