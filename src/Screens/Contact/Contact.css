@@ -76,7 +76,7 @@
     left: 50%;
     margin-left: -33px;
     box-shadow: 0px 5px 8px 3px #2a2b2a;
-    background-color:#e4685d;
+    background-color:#ff5f50;
     border-radius:15px;
     border: none;
     outline: none;
@@ -86,14 +86,14 @@
     font-family:'Jua', sans-serif;
     font-size:1.4rem;
     padding:5px 10px;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .send-btn:hover {
     cursor: pointer;
     text-decoration:none;
     color:#ffffff;
-    background-color:#e4685d;
+    background-color:#ff5f50;
     border: none;
     outline: none;
 }
@@ -106,12 +106,12 @@
 .send-btn:active {
     position:relative;
     top:2px;
-    background-color:#e4685d;
+    background-color:#ff5f50;
     border: none;
     outline: none;
 }
 
-.shake-btn {
+/* .shake-btn {
     animation: btnShake 0.2s 3;
 }
 
@@ -119,14 +119,15 @@
     from {transform: translateX(-4px);}
     50% {transform: translateX(0px);}
     to {transform: translateX(4px);}
-}
+} */
 
 input.error {
     border: 1px solid red;
 }
   
 .errorMsg {
-    color: red;
-    font-size: 0.75em;
-    display: relative;
-  }
+    color: #ff796c;
+    position: relative;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    padding-left: 5px;
+}
