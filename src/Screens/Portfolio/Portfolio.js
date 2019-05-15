@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
 import PortfolioSticky from './Portfolio-sticky';
 import './Portfolio.css';
-import PortfolioModal from './Portfolio-modal';
+import PortfolioModal from '../App-modal';
 import workDone from './Portfolio-api';
 
 class Portfolio extends React.Component{ 

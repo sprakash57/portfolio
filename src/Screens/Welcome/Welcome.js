@@ -7,8 +7,22 @@ import sunsetIcon from '@iconify/react/noto-v1/sunset';
 import sunriseovermountainsIcon from '@iconify/react/fxemoji/sunriseovermountains';
 import sunraysIcon from '@iconify/react/fxemoji/sunrays';
 import nightWithStars from '@iconify/react/twemoji/night-with-stars';
+import WeatherModal from '../App-modal';
 import './Welcome.css';
 
+   
+function Welcome() {
+  const [showModal, setShowModal] = React.useState(false);
+  const [weatherData, setWeather] = React.useState({
+                                      city: "",
+                                      icon: "",
+                                      country: "",
+                                      weather: "",
+                                      sunset: "",
+                                      sunrise: "",
+                                      temp: ""
+                                    }  
+                                  );
 
   const getTime = () => {
     const hrs = new Date().getHours();
@@ -23,14 +37,52 @@ import './Welcome.css';
         return {"greeting":"Good Evening!", "bgIcon": nightWithStars, "bgStyle":"night"}
     }
   }
-   
-  const Welcome = () => (
+
+  const formatTime = (time) => {
+    let date = new Date(time * 1000);
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+
+    if(hh<10) hh = `0${hh}`;
+    if(mm<10) mm = `0${mm}`; 
+    if(hh>12) {
+      hh = hh - 12;
+      return hh !== 11 ?`0${hh}:${mm} PM`:`${hh}:${mm} PM`
+    }
+    return `${hh}:${mm} AM`;
+  }
+
+  const getLocation = () => {
+    let countryName, city;
+    fetch("https://geoip-db.com/json/")
+        .then(resp => resp.json())
+        .then(loc => {
+                countryName = loc.country_name;
+                city = loc.city;
+                return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=b16f2ce13b743124891d61551c569230`)
+            })
+              .then(resp => resp.json())
+              .then(data => setWeather({
+                    city: data.name,
+                    icon: data.weather[0].icon,
+                    country: countryName,
+                    weather: data.weather[0].description,
+                    temp: (data.main.temp - 273.15).toFixed(2),
+                    sunset: formatTime(data.sys.sunset),
+                    sunrise: formatTime(data.sys.sunrise)
+                  })
+                )
+    setShowModal(true);
+  }
+
+  return (
+    <React.Fragment>
       <Container>
         <Row>
           <Col xs={12}>
             <div>
               <h2 className={cx(getTime().bgStyle, "greetings")}>{getTime().greeting}</h2>
-              <Icon icon={getTime().bgIcon} className="greetings-icon"/>
+              <Icon icon={getTime().bgIcon} className="greetings-icon" onClick={getLocation}/>
             </div>
             <div className="content">
               <h1>SUNNY PRAKASH</h1>
@@ -51,6 +103,9 @@ import './Welcome.css';
           </Col>           
         </Row>  
       </Container>
-    );
+      <WeatherModal show={showModal} onHide={() => setShowModal(false)} content={weatherData}/>
+    </React.Fragment>
+    )
+};
 
 export default Welcome;
