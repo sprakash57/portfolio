@@ -70,9 +70,9 @@ function Welcome() {
                   .then(data => setWeather({
                       city: data.name,
                       icon: data.weather[0].icon,
-                      country: res[0].country,
-                      weather: data.weather[0].description,
-                      temp: (data.main.temp - 273.15).toFixed(2),
+                      country: data.sys.country,
+                      weather: data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1),
+                      temp: Math.ceil(data.main.temp - 273.15),
                       sunset: formatTime(data.sys.sunset),
                       sunrise: formatTime(data.sys.sunrise)
                   }))

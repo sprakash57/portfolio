@@ -55,5 +55,45 @@ body {
   margin-bottom: 10px;
 }
 
+.modal-body {
+  padding-bottom: 0px;
+  font-family: 'Jua', sans-serif;
+}
+
+.modal-title {
+  font-family: 'Jua', sans-serif;
+}
+
+.modal-header {
+  padding: 0.5rem 0.5rem 0px 1rem;
+}
+
+.modal-header span {
+  color: red;
+}
+
+.modal-header button:focus {
+  outline: none;
+}
+
+.weather-text {
+  font-size: 1.9rem;
+}
+
+.weather-temp {
+  font-size: 3.6rem;
+  line-height: normal;
+  text-align: center;
+  padding-right: 0px;
+}
+
+.weather-sun svg {
+  margin-bottom: 0px;
+}
+
+.weather-sun small {
+  vertical-align: text-top;
+}
+
 
 
