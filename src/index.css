@@ -47,6 +47,13 @@ body {
   transition: opacity 600ms, transform 600ms;
 }
 
+/*App-Modal styling ---------------------------------------->*/
+
+.modal-body svg {
+  font-size: 1.4rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
 
 
 
