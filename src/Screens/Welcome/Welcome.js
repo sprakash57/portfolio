@@ -8,8 +8,15 @@ import sunriseovermountainsIcon from '@iconify/react/fxemoji/sunriseovermountain
 import sunraysIcon from '@iconify/react/fxemoji/sunrays';
 import nightWithStars from '@iconify/react/twemoji/night-with-stars';
 import WeatherModal from '../App-modal';
+import NodeGeocoder from 'node-geocoder';
 import './Welcome.css';
 
+const options = {
+  provider: 'google',
+  httpAdapter: 'https', // Default
+  apiKey: 'AIzaSyCpnOUeoAn9tuAIE6nmf3teA9oLuPpR2eE', // for Mapquest, OpenCage, Google Premier
+  formatter: 'json' // 'gpx', 'string', ...
+};
    
 function Welcome() {
   const [showModal, setShowModal] = React.useState(false);
@@ -53,25 +60,30 @@ function Welcome() {
   }
 
   const getLocation = () => {
-    let countryName, city;
-    fetch("https://geoip-db.com/json/")
-        .then(resp => resp.json())
-        .then(loc => {
-                countryName = loc.country_name;
-                city = loc.city;
-                return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=b16f2ce13b743124891d61551c569230`)
-            })
-              .then(resp => resp.json())
-              .then(data => setWeather({
-                    city: data.name,
-                    icon: data.weather[0].icon,
-                    country: countryName,
-                    weather: data.weather[0].description,
-                    temp: (data.main.temp - 273.15).toFixed(2),
-                    sunset: formatTime(data.sys.sunset),
-                    sunrise: formatTime(data.sys.sunrise)
-                  })
-                )
+    let geoCoder = NodeGeocoder(options);
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        geoCoder.reverse({lat: position.coords.latitude, lon: position.coords.longitude}, (err, res) => {
+          if(!err) {
+              fetch(`http://api.openweathermap.org/data/2.5/weather?q=${res[0].city}&APPID=b16f2ce13b743124891d61551c569230`)
+                  .then(response => response.json())
+                  .then(data => setWeather({
+                      city: data.name,
+                      icon: data.weather[0].icon,
+                      country: data.sys.country,
+                      weather: data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1),
+                      temp: Math.ceil(data.main.temp - 273.15),
+                      sunset: formatTime(data.sys.sunset),
+                      sunrise: formatTime(data.sys.sunrise)
+                  }))
+          } else {
+            console.log("location not found");
+          }
+        })
+      })
+    } else {
+      console.log("Geolocaiton is not supported in this browser");
+    }
     setShowModal(true);
   }
 
