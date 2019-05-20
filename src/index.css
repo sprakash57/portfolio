@@ -77,7 +77,12 @@ body {
 }
 
 .weather-text {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
+}
+
+.weather-text img {
+  position: relative;
+  top: -6px;
 }
 
 .weather-temp {
@@ -89,10 +94,7 @@ body {
 
 .weather-sun svg {
   margin-bottom: 0px;
-}
-
-.weather-sun small {
-  vertical-align: text-top;
+  color: red;
 }
 
 

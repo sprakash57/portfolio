@@ -13,13 +13,10 @@ import './About.css';
 const Components = [<AboutIntroduction/>, <AboutSkills/>];
 
 export default class About extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
+    state = {
             componentIndex: 0,
             btnClick: false
         }
-    }
 
     handleNext = () => {
         let toggleNext = !this.state.btnClick;

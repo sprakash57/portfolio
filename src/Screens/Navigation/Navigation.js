@@ -16,7 +16,7 @@ class Navigation extends React.Component {
 
     handleLink = (event) => {
         const navLinks = event.target.parentNode.childNodes;
-        let activeLink = event.target;
+        const activeLink = event.target;
         navLinks.forEach(child => 
             child.innerHTML === activeLink.innerHTML ? activeLink.className = "active-nav-item" : child.className = ""
             )
@@ -25,6 +25,7 @@ class Navigation extends React.Component {
     }
 
     handleNavbarExpand = () => {
+        this.handleToggleClick();
         this.setState({expanded: !this.state.expanded});
     }
 
@@ -36,7 +37,7 @@ class Navigation extends React.Component {
                 expand="lg" fixed="top" 
                 expanded={expanded} 
                 onToggle={this.handleNavbarExpand}>
-                <Link to="/" style={{fontSize: 30}}>SU:PR</Link>
+                <Link to="/" style={{fontSize: 30}} onClick={this.handleNavbarExpand}>SU:PR</Link>
                 <Navbar.Toggle 
                     aria-controls="responsive-navbar-nav"
                     onClick={this.handleToggleClick} 

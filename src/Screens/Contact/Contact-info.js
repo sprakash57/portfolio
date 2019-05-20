@@ -5,22 +5,14 @@ import ContactSocial from './Contact-social';
 import locationIcon from '@iconify/react/icomoon-free/location';
 import phoneIcon from '@iconify/react/entypo/phone';
 import baselineMail from '@iconify/react/ic/baseline-mail';
+import ContactMap from './Contact-map';
 
-const ContactInfo = () => (
+const ContactInfo = (props) => (
     <Col md={{span:5, offset:1}} sm={12} className="form-info">
         <div className="form-title">
             <h1>CONTACT ME</h1>
         </div>
-        <div className="form-map">
-            <iframe 
-                title="map"
-                width="100%"
-                height="100%" 
-                src="https://maps.google.com/maps?q=18.60372692298375, 73.73677968978883&z=8&output=embed"
-                frameBorder="0" 
-                scrolling="no">
-            </iframe>
-        </div>
+        <ContactMap loc={props.loc}/>
         <div className="address-section">
             <div>
                 <Icon icon={locationIcon} color="rgb(223, 67, 40)"/>

@@ -15,11 +15,11 @@ const skills = [
     },
     {
         "title":"Databases and Server: ",
-        "value": "MySQL, Sqlite, Apache Tomcat"
+        "value": "MySQL, Apache Tomcat"
     },
     {
         "title":"Miscellanious: ",
-        "value": "git, Jira, Android Studio, VS Code, Eclipse, TestCafe, Maven"
+        "value": "git, Jira, Android Studio, VS Code, Eclipse, You track, Maven"
     },
 ]
 

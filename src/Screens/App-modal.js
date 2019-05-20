@@ -7,7 +7,7 @@ import sunriseIcon from '@iconify/react/whh/sunrise';
 class PortfolioModal extends React.Component {
     
     weatherBody = () => {
-        const weatherIcon = `http://openweathermap.org/img/w/${this.props.content.icon}.png`;
+        const weatherIcon = `https://openweathermap.org/img/w/${this.props.content.icon}.png`;
         return (
             <Container>
                 <Row>
@@ -31,7 +31,6 @@ class PortfolioModal extends React.Component {
 
     render(){
         const { city, country, title, stack, body } = this.props.content;
-        console.log(this.props.content);
         return (
             <Modal
                 {...this.props}

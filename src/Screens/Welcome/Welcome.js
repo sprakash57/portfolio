@@ -9,14 +9,8 @@ import sunraysIcon from '@iconify/react/fxemoji/sunrays';
 import nightWithStars from '@iconify/react/twemoji/night-with-stars';
 import WeatherModal from '../App-modal';
 import NodeGeocoder from 'node-geocoder';
+import {googleMapAPI, weatherAPI, formatTime, myResume, placeConfig} from '../../utils';
 import './Welcome.css';
-
-const options = {
-  provider: 'google',
-  httpAdapter: 'https', // Default
-  apiKey: 'AIzaSyCpnOUeoAn9tuAIE6nmf3teA9oLuPpR2eE', // for Mapquest, OpenCage, Google Premier
-  formatter: 'json' // 'gpx', 'string', ...
-};
    
 function Welcome() {
   const [showModal, setShowModal] = React.useState(false);
@@ -45,27 +39,13 @@ function Welcome() {
     }
   }
 
-  const formatTime = (time) => {
-    let date = new Date(time * 1000);
-    let hh = date.getHours();
-    let mm = date.getMinutes();
-
-    if(hh<10) hh = `0${hh}`;
-    if(mm<10) mm = `0${mm}`; 
-    if(hh>12) {
-      hh = hh - 12;
-      return hh !== 11 ?`0${hh}:${mm} PM`:`${hh}:${mm} PM`
-    }
-    return `${hh}:${mm} AM`;
-  }
-
   const getLocation = () => {
-    let geoCoder = NodeGeocoder(options);
+    let geoCoder = NodeGeocoder(placeConfig);
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         geoCoder.reverse({lat: position.coords.latitude, lon: position.coords.longitude}, (err, res) => {
           if(!err) {
-              fetch(`http://api.openweathermap.org/data/2.5/weather?q=${res[0].city}&APPID=b16f2ce13b743124891d61551c569230`)
+              fetch(`https://api.openweathermap.org/data/2.5/weather?q=${res[0].city || res[0].extra.neighborhood}&APPID=${weatherAPI}`)
                   .then(response => response.json())
                   .then(data => setWeather({
                       city: data.name,
@@ -108,7 +88,7 @@ function Welcome() {
               <div style={{paddingTop: 60}}>
                 <a 
                   className="resumeBtn" 
-                  href="https://drive.google.com/open?id=1nfWrLujpIlUHXG2bi3nxOB7q_lIdCPt0"
+                  href={myResume}
                   target="_blank">My Resume</a>
               </div>
             </div>            
