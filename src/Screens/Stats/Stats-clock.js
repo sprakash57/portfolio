@@ -10,13 +10,13 @@ const StatsClock = () => {
         <Col md={3} sm={6}>
             <div className="statsCard">
                 <div className="squareInnerContainer">
-                    <Icon 
-                        icon={clockIcon} 
+                    <Icon
+                        icon={clockIcon}
                         onClick={() => setIcon(true)}
                         className={cx("squareIcon", clock && "animateIcon")}
                     />
                     <div>
-                        <h2 className={cx(clock && "animateValue")}>4+</h2>
+                        <h2 className={cx(clock && "animateValue")}>4.5+</h2>
                         <h3>Years of Experience</h3>
                     </div>
                 </div>

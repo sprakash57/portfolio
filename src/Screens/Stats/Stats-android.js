@@ -10,13 +10,13 @@ const StatsAndroid = () => {
         <Col md={3} sm={6}>
             <div className="statsCard">
                 <div className="squareInnerContainer">
-                    <Icon 
-                        icon={socialAndroid} 
+                    <Icon
+                        icon={socialAndroid}
                         onClick={() => setIcon(true)}
                         className={cx("squareIcon", android && "animateIcon")}
                     />
                     <div>
-                        <h2 className={cx(android && "animateValue")}>32</h2>
+                        <h2 className={cx(android && "animateValue")}>67</h2>
                         <h3>App downloads</h3>
                     </div>
                 </div>

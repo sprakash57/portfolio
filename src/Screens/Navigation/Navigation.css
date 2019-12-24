@@ -42,4 +42,9 @@
   .active-nav-item {
     font-size: 1.8rem;
   }
+
+  .dev-logo{
+    background-color: #fffc50;
+    border-radius: 5px;
+  }
   

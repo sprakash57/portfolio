@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row } from 'react-bootstrap';
 import ContactForm from './Contact-form';
 import ContactInfo from './Contact-info';
-import {staticMap} from '../../utils';
+import { staticMap } from '../../utils';
 import './Contact.css';
 
 const Contact = (props) => {
@@ -20,12 +20,11 @@ const Contact = (props) => {
     //     this.updateSize();
     //     window.addEventListener("resize", this.updateSize);
     // }
-        
-    return  (
+
+    return (
         <Container className="form-section">
             <Row>
-                <ContactForm env={props.env}/>
-                <ContactInfo loc={staticMap}/>
+                <ContactInfo loc={staticMap} />
             </Row>
         </Container>
     );

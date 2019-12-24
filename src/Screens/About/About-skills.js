@@ -2,33 +2,34 @@ import React from 'react';
 
 const skills = [
     {
-        "title":"Languages: ",
-        "value": "Java, JavaScript(ES5 & ES6)"
+        "title": "Programming, Query and Markup languages:",
+        "value": "JavaScript, ES6, SQL, GraphQL, HTML5, SCSS"
     },
     {
-        "title":"Frameworks: ",
-        "value": "Spring, JPA/Hibernate, Bootstrap, Android"
+        "title": "Web frameworks and libraries:",
+        "value": "React.js, Redux-saga, Node.js, Express, React Native, Bootstrap"
     },
     {
-        "title":"Web Technologies: ",
-        "value": "React.js, Redux.js, CSS3, HTML5, LESS, GraphQL, JSP"
+        "title": "Databases and server:",
+        "value": "MySQL, MongoDB, ApsaraDB, NGINX"
     },
     {
-        "title":"Databases and Server: ",
-        "value": "MySQL, Apache Tomcat"
-    },
-    {
-        "title":"Miscellanious: ",
-        "value": "git, Jira, Android Studio, VS Code, Eclipse, You track, Maven"
+        "title": "Platforms and tools:",
+        "value": "Linux, Android, git, Alibaba Cloud, VS Code"
     },
 ]
 
 const AboutSkills = () => (
     <React.Fragment>
         <h3 className="intro">&nbsp;Skillset</h3>
-        <ul className="textColor">
-            {skills.map((item, index) => <li key={index}><strong>{item.title}</strong>{item.value}</li>)}
-        </ul>
+        {skills.map((tag, index) => (
+            <>
+                <h5 className="textColor">{tag.title}</h5>
+                <ul className="textColor">
+                    <li>{tag.value}</li>
+                </ul>
+            </>
+        ))}
     </React.Fragment>
 
 );
