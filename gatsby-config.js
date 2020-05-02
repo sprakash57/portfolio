@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
-
+require('dotenv').config({ path: './.env.development' });
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -11,6 +11,13 @@ module.exports = {
     author: 'Sunny Prakash'
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    },
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
@@ -35,5 +42,5 @@ module.exports = {
         ]
       }
     }
-  ],
+  ]
 }
