@@ -32,7 +32,7 @@ const Blog = () => {
   }
 
   return (
-    <Layout>
+    <Layout title="Blogs">
       <h1>Blogs</h1>
       <ol className={styles.posts}>{posts()}</ol>
     </Layout>

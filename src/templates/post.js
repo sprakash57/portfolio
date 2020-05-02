@@ -29,7 +29,7 @@ const Post = (props) => {
   }
   const { title, publishedDate, body } = props.data.contentfulPortfolioBlog;
   return (
-    <Layout>
+    <Layout title={title}>
       <h1>{title}</h1>
       <p>{publishedDate}</p>
       {documentToReactComponents(body.json, options)}

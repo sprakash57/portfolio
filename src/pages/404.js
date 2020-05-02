@@ -1,9 +1,14 @@
 import React from 'react';
+import Layout from '../components/layout';
+import { Link } from 'gatsby';
 
-const Page404 = () => {
+const NotFound = () => {
     return (
-        <h3>Page not found</h3>
+        <Layout title='404'>
+            <h2>Page Not Found</h2>
+            <p><Link to='/'>Go to Home</Link></p>
+        </Layout>
     )
 }
 
-export default Page404;
+export default NotFound;
