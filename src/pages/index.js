@@ -3,12 +3,12 @@ import Layout from "../components/layout";
 import dp from '../images/photo.jpg';
 import styles from './index.module.scss';
 import blogStyle from './blog.module.scss';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faLinkedinIn, faGooglePlay, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Pop from '../components/pop';
 import BlogItem from "../components/blogItem";
 import { BlogQuery } from "../libs/queryLib";
 import { twitter, github, linkedin, playStore } from '../libs/dataLib';
+import SocialIcon from "../components/socialIcon";
 
 const IndexPage = () => {
 
@@ -27,18 +27,10 @@ const IndexPage = () => {
                             <p>Web Develoer | React | JavaScript</p>
                         </div>
                         <div className={styles.social}>
-                            <a href={twitter} target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faTwitter} color='grey' />
-                            </a>
-                            <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faLinkedinIn} color='grey' />
-                            </a>
-                            <a href={playStore} target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faGooglePlay} color='grey' size="sm" />
-                            </a>
-                            <a href={github} target="_blank" rel="noopener noreferrer">
-                                <FontAwesomeIcon icon={faGithub} color='grey' />
-                            </a>
+                            <SocialIcon icon={faTwitter} to={twitter} />
+                            <SocialIcon icon={faLinkedinIn} to={linkedin} />
+                            <SocialIcon icon={faGooglePlay} to={playStore} size='sm' />
+                            <SocialIcon icon={faGithub} to={github} />
                         </div>
                     </div>
                     <div className="col-sm-12 col-md-8 margin-tp">

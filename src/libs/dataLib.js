@@ -1,7 +1,11 @@
+export const address = 'Pune, India 411057';
+export const phone = '+91 7044080165';
 export const twitter = "https://twitter.com/sunny_pr_";
 export const linkedin = "https://www.linkedin.com/in/sunny-prakash-3780ba49";
 export const playStore = "https://play.google.com/store/apps/developer?id=Sunny+Prakash";
 export const github = "https://github.com/sprakash57";
+export const dev = "https://dev.to/sprakash57";
+export const starckoverflow = "https://stackoverflow.com/users/9585068/sunny-prakash";
 const addEatRepeat = 'https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat';
 const coonect3 = 'https://play.google.com/store/apps/details?id=com.droidvista.sunny.tictactoe';
 const cricketWorldCup = 'https://play.google.com/store/apps/details?id=com.insu.sunny.cricketworldcup';

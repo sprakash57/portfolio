@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/layout';
 import styles from './contact.module.scss';
+import SocialIcon from '../components/socialIcon';
+import { faTwitter, faLinkedinIn, faDev, faStackOverflow, faGithub, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
+import { twitter, linkedin, address, phone, dev, starckoverflow, github, playStore } from '../libs/dataLib';
 
 const Contact = () => {
-    const [respMessage, setRespMessage] = useState(false);
+    const [formSubmitted, setFormSubmitted] = useState("");
+    const [loading, setLoading] = useState(false);
     const submitForm = data => {
         const xhr = new XMLHttpRequest();
         xhr.open("POST", process.env.GATSBY_AWS_API, true);
@@ -11,19 +15,24 @@ const Contact = () => {
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         // Send the collected data as JSON
         xhr.send(JSON.stringify(data));
-        // Callback function
+        // Load events
+        xhr.onloadstart = e => {
+            setLoading(true);
+        };
         xhr.onloadend = response => {
             if (response.target.status === 200) {
-                // The form submission was successful
-                setRespMessage('Thanks for the message. I’ll be in touch shortly.');
-                document.getElementById('reqFrm').reset();
+                setFormSubmitted("has");
+                if (typeof window.localStorage !== undefined) {
+                    localStorage.setItem("submissionStatus", "has");
+                }
             } else {
-                // The form submission failed
-                setRespMessage('Something went wrong');
                 alert(JSON.parse(response.target.response).message);
             }
+            setLoading(false);
         };
     }
+
+    const formValidation = ({ name, replyTo, phone, message }) => [name, replyTo, phone, message].join('') !== '';
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -37,37 +46,99 @@ const Contact = () => {
             message: formData.xc_messagemnj.value,
             honeyPot: ""
         }
-        const isHoney = [formData.name.value, formData.replyTo.value, formData.phone.value, formData.message.value].join('') !== '';
-        if (isHoney) data.honeyPot = "has";
-        else submitForm(data);
+        const isDirty = [formData.name.value, formData.replyTo.value, formData.phone.value, formData.message.value].join('') !== '';
+        if (!isDirty) {
+            if (!formValidation(data)) {
+                alert('All fields are mandatory');
+            } else {
+                submitForm(data);
+            }
+        }
     }
+
+    useEffect(() => {
+        if (typeof window.localStorage !== undefined) {
+            setFormSubmitted(localStorage.getItem("submissionStatus"));
+        }
+    }, [])
 
     return (
         <Layout title='Contact'>
-            <h1>Contact</h1>
-            <p>The best way to contact me is via <a target="_" href="https://www.linkedin.com/in/sunny-prakash-3780ba49/">Linkedin</a></p>
-            <p>Or</p>
-            <form onSubmit={handleSubmit} autoComplete='off' id='reqFrm'>
-                <label htmlFor='ghynamenjb'>Name</label>
-                <input type="text" name="ghynamenjb" />
-                <label htmlFor='qwdreplyTo786'>Email</label>
-                <input type="email" name="qwdreplyTo786" />
-                <label htmlFor='sdaphonepoi'>Phone</label>
-                <input type="tel" name="sdaphonepoi" />
-                <label htmlFor='xc_messagemnj'>Message:</label>
-                <textarea name="xc_messagemnj"></textarea>
-                {/*<---- W i n n i e  t h e  P o o h ---->*/}
-                <label className={styles.binnypoo} htmlFor='name'>Name</label>
-                <input className={styles.binnypoo} type="text" name="name" />
-                <label className={styles.binnypoo} htmlFor='replyTo'>Email</label>
-                <input className={styles.binnypoo} type="email" name="replyTo" />
-                <label className={styles.binnypoo} htmlFor='phone'>Phone</label>
-                <input className={styles.binnypoo} type="tel" name="phone" />
-                <label className={styles.binnypoo} htmlFor='message'>Message:</label>
-                <textarea className={styles.binnypoo} name="message"></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-            <p>{respMessage}</p>
+            <div className='container mt-4'>
+                <div className="row hr-line">
+                    <div className="col">
+                        <h3>Contact info</h3>
+                    </div>
+                </div>
+                <div className='row mt-5'>
+                    <section className='col-4 text-center'>
+                        <h6 className='text-muted'>Address</h6>
+                        <small>{address}</small>
+                    </section>
+                    <section className='col-4 text-center'>
+                        <h6 className='text-muted'>Phone</h6>
+                        <small>{phone}</small>
+                    </section>
+                    <section className='col-4 text-center'>
+                        <h6 className='text-muted'>Skype ID</h6>
+                        <small>{'sunnypr12'}</small>
+                    </section>
+                </div>
+                <section className="row hr-line mb-4 mt-4">
+                    <div className="col">
+                        <h3>Social</h3>
+                    </div>
+                </section>
+                <section className='row w-75 text-center m-auto'>
+                    <div className="col-2"><SocialIcon icon={faTwitter} to={twitter} size='lg' /></div>
+                    <div className="col-2"><SocialIcon icon={faLinkedinIn} to={linkedin} size='lg' /></div>
+                    <div className="col-2"><SocialIcon icon={faDev} to={dev} size='lg' /></div>
+                    <div className="col-2"><SocialIcon icon={faStackOverflow} to={starckoverflow} size='lg' /></div>
+                    <div className="col-2"><SocialIcon icon={faGithub} to={github} size='lg' /></div>
+                    <div className="col-2"><SocialIcon icon={faGooglePlay} to={playStore} size='lg' /></div>
+                </section>
+                <section className="row hr-line mb-4 mt-5">
+                    <div className="col">
+                        <h3>Shoot a mail</h3>
+                    </div>
+                </section>
+                {formSubmitted !== 'has'
+                    ? <section className="row w-75 m-auto">
+                        <div className="col">
+                            <form onSubmit={handleSubmit} autoComplete='off' id='reqFrm'>
+                                <div className="form-group">
+                                    <label htmlFor="ghynamenjb">Name*</label>
+                                    <input type="text" className="form-control" id="ghynamenjb" name="ghynamenjb" required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor='qwdreplyTo786'>Email*</label>
+                                    <input type="email" className="form-control" name="qwdreplyTo786" id="qwdreplyTo786" required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor='sdaphonepoi'>Phone*</label>
+                                    <input type="tel" className="form-control" name="sdaphonepoi" id="sdaphonepoi" required />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor='xc_messagemnj'>Message*</label>
+                                    <textarea className="form-control" name="xc_messagemnj" id="xc_messagemnj" rows="5" required />
+                                </div>
+                                {/*<---- W i n n i e  t h e  P o o h ---->*/}
+                                <label className={styles.binnypoo} htmlFor='name'>Name</label>
+                                <input className={styles.binnypoo} type="text" name="name" id="name" />
+                                <label className={styles.binnypoo} htmlFor='replyTo'>Email</label>
+                                <input className={styles.binnypoo} type="email" name="replyTo" id="replyTo" />
+                                <label className={styles.binnypoo} htmlFor='phone'>Phone</label>
+                                <input className={styles.binnypoo} type="tel" name="phone" id="phone" />
+                                <label className={styles.binnypoo} htmlFor='message'>Message:</label>
+                                <textarea className={styles.binnypoo} name="message" id="message"></textarea>
+                                {loading
+                                    ? <div className={styles.loader}></div>
+                                    : <button className="btn btn-secondary" type="submit">Send Message</button>}
+                            </form>
+                        </div>
+                    </section>
+                    : <div className="alert alert-success w-50 m-auto text-center">Thank you for your message. I'll be in touch shortly!!</div>}
+            </div>
         </Layout>
     )
 }
