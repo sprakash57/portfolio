@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styles from './header.module.scss';
 
-const Header = () => {
 
+const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className={styles.title} to='/'>S<span style={{ color: 'tomato' }}>:_:</span>PR</Link>

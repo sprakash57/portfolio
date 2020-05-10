@@ -1,0 +1,41 @@
+.ques{
+    list-style: none;
+    padding: 0;
+    > li{
+        padding: 5px;
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+}
+
+.ans{
+    list-style: none;
+    padding: 0;
+    > li{
+        padding: 5px;
+        > span{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.custom-scroll{
+    overflow: auto;
+    overflow-x: hidden;
+    height: 280px;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+article a, header a{
+    color: #000;
+    text-decoration: underline;
+    font-family: monospace;
+    letter-spacing: 0;
+    font-size: 1.5rem;
+    &:hover{
+        color:rgb(80, 78, 78);
+        text-decoration: underline;
+    }
+}

@@ -2,23 +2,27 @@ import React from "react";
 import Layout from "../components/layout";
 import dp from '../images/photo.jpg';
 import styles from './index.module.scss';
+import blogStyle from './blog.module.scss';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faLinkedinIn, faGooglePlay, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Pop from '../components/pop';
-
-const twitter = "https://twitter.com/sunny_pr_";
-const linkedin = "https://www.linkedin.com/in/sunny-prakash-3780ba49";
-const playStore = "https://play.google.com/store/apps/developer?id=Sunny+Prakash";
-const github = "https://github.com/sprakash57";
+import BlogItem from "../components/blogItem";
+import { BlogQuery } from "../libs/queryLib";
+import { twitter, github, linkedin, playStore } from '../libs/dataLib';
 
 const IndexPage = () => {
 
+    const posts = () => BlogQuery().map(({ node }, index) => {
+        if (index > 2) return <></>;
+        return <BlogItem key={index} node={node} styles={blogStyle} />
+    })
+
     return (
         <Layout title='Home'>
-            <div className='container fluid'>
-                <div className="row pt-5">
+            <div className='container'>
+                <div className="row pt-5 hr-line">
                     <div className="col-sm-12 col-md-4 text-center">
-                        <img className={styles.photo} src={dp} alt="Photo" />
+                        <img className={styles.photo} src={dp} alt="me" />
                         <div className='mt-3'>
                             <p>Web Develoer | React | JavaScript</p>
                         </div>
@@ -37,7 +41,7 @@ const IndexPage = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-md-8">
+                    <div className="col-sm-12 col-md-8 margin-tp">
                         <h2>Hi<Pop text="," /></h2>
                         <p>Welcome to my blog page! I am Sunny Prakash, a Full stack developer from Pune.Lorem ipsum dolor
                         sit amet consectetur, adipisicing elit. Molestias et facere officiis nihil. Ex modi reiciendis quam.
@@ -51,7 +55,21 @@ const IndexPage = () => {
                          fuga ad dicta quasi magni saepe, facere ipsam obcaecati aspernatur.</p>
                     </div>
                 </div>
-                <hr />
+                <div className="row mt-4">
+                    <div className="col-sm-12">
+                        <h3>Recent Blogs</h3>
+                    </div>
+                </div>
+                <div className="row hr-line">
+                    <div className="col">
+                        <ol className={styles.posts}>{posts()}</ol>
+                    </div>
+                </div>
+                <div className="row mt-4">
+                    <div className="col-sm-12">
+                        <h3>Recent Work</h3>
+                    </div>
+                </div>
             </div>
         </Layout>
     )

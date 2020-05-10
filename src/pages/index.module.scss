@@ -10,3 +10,16 @@
     justify-content: space-evenly;
     margin-top: 1rem;
 }
+
+.posts{
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+@media screen and (max-width: 768px){
+    .posts {
+        display: block;
+        padding: 0;
+    }
+}

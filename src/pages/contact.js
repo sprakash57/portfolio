@@ -39,7 +39,7 @@ const Contact = () => {
         }
         const isHoney = [formData.name.value, formData.replyTo.value, formData.phone.value, formData.message.value].join('') !== '';
         if (isHoney) data.honeyPot = "has";
-        submitForm(data);
+        else submitForm(data);
     }
 
     return (
