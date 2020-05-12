@@ -13,7 +13,7 @@ const About = () => {
                         <h3>Portfolio</h3>
                     </div>
                 </div>
-                <div className="row mt-2 pb-3 hr-line">
+                <div className="row mt-2 pb-3">
                     <div className="col-sm-4 col-md-3">
                         <ul className={styles.ques}>
                             <li>Programming Languages </li>
@@ -31,7 +31,7 @@ const About = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="row mt-4">
+                <div className="row mt-4 hr-line">
                     <div className="col">
                         <h3>Showcase</h3>
                     </div>

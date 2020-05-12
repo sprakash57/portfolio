@@ -9,8 +9,18 @@ const Blog = () => {
 
   return (
     <Layout title="Blogs">
-      <h1>Blogs</h1>
-      <ol className={styles.posts}>{posts()}</ol>
+      <div className="container mt-4">
+        <div className="row hr-line">
+          <section className="col">
+            <h3>Blogs</h3>
+          </section>
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <ol className={styles.posts}>{posts()}</ol>
+          </div>
+        </div>
+      </div>
     </Layout>
   )
 }

@@ -1,32 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import dp from '../images/photo.jpg';
 import styles from './index.module.scss';
 import blogStyle from './blog.module.scss';
-import { faTwitter, faLinkedinIn, faGooglePlay, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedinIn, faGooglePlay, faGithub, faStackOverflow, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Pop from '../components/pop';
 import BlogItem from "../components/blogItem";
 import { BlogQuery } from "../libs/queryLib";
-import { twitter, github, linkedin, playStore } from '../libs/dataLib';
+import { github, linkedin, playStore, gitRepo, starckoverflow, twitter } from '../libs/dataLib';
 import SocialIcon from "../components/socialIcon";
 
 const IndexPage = () => {
 
+    const [loading, setLoading] = useState(false);
+    const [repos, setRepos] = useState([]);
+
     const posts = () => BlogQuery().map(({ node }, index) => {
         if (index > 2) return <></>;
-        return <BlogItem key={index} node={node} styles={blogStyle} />
+        return <BlogItem key={index} node={node} styles={blogStyle} hideSummary={true} />
+    });
+
+    const renderRepos = () => repos.map((repo, i) => {
+        if (i < 5) return (
+            <li key={i} className={blogStyle.post}>
+                <section className="row">
+                    <article className="col">
+                        <a href={repo.svn_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
+                    </article>
+                </section>
+            </li>
+        )
+        return <></>
     })
+
+    const loadGitRepos = async () => {
+        try {
+            const response = await fetch(gitRepo);
+            const data = await response.json();
+            setRepos(data)
+        } catch (error) {
+            console.log(error);
+        }
+        setLoading(false);
+    }
+
+    useEffect(() => {
+        setLoading(true);
+        loadGitRepos();
+    }, [])
 
     return (
         <Layout title='Home'>
             <div className='container'>
-                <div className="row pt-5 hr-line">
+                <div className="row pt-5">
                     <div className="col-sm-12 col-md-4 text-center">
                         <img className={styles.photo} src={dp} alt="me" />
                         <div className='mt-3'>
                             <p>Web Develoer | React | JavaScript</p>
                         </div>
                         <div className={styles.social}>
+                            <SocialIcon icon={faStackOverflow} to={starckoverflow} />
                             <SocialIcon icon={faTwitter} to={twitter} />
                             <SocialIcon icon={faLinkedinIn} to={linkedin} />
                             <SocialIcon icon={faGooglePlay} to={playStore} size='sm' />
@@ -47,19 +80,26 @@ const IndexPage = () => {
                          fuga ad dicta quasi magni saepe, facere ipsam obcaecati aspernatur.</p>
                     </div>
                 </div>
-                <div className="row mt-4">
+                <div className="row mt-4 hr-line">
                     <div className="col-sm-12">
                         <h3>Recent Blogs</h3>
                     </div>
                 </div>
-                <div className="row hr-line">
+                <div className="row">
                     <div className="col">
                         <ol className={styles.posts}>{posts()}</ol>
                     </div>
                 </div>
-                <div className="row mt-4">
+                <div className="row mt-4 hr-line">
                     <div className="col-sm-12">
-                        <h3>Recent Work</h3>
+                        <h3>Recent GitHub Push</h3>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-12">
+                        {loading
+                            ? <div className='row loader m-auto'></div>
+                            : <ol className={styles.posts}>{renderRepos()}</ol>}
                     </div>
                 </div>
             </div>

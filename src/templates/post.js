@@ -3,6 +3,7 @@ import Layout from '../components/layout';
 import { graphql } from 'gatsby';
 import styles from './post.module.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import Badge from '../components/badge';
 
 export const query = graphql`
 query($slug: String!){
@@ -45,7 +46,7 @@ const Post = (props) => {
         </section>
         <section className="row mb-4 pb-3 hr-line text-center">
           <div className="col">
-            {tags && tags.map((tag, i) => <span className={styles.badge} key={i}>{tag}</span>)}<span>| {publishedDate}</span><span className="text-muted"> | {timeToRead} min Read</span>
+            {tags && tags.map((tag, i) => <Badge key={i} tag={tag} />)}<span className="text-muted">| {publishedDate}</span><span className="text-muted"> | {timeToRead} min Read</span>
           </div>
         </section>
         <section className="row">

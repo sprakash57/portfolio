@@ -84,18 +84,15 @@ const Contact = () => {
                         <small>{'sunnypr12'}</small>
                     </section>
                 </div>
-                <section className="row hr-line mb-4 mt-4">
-                    <div className="col">
-                        <h3>Social</h3>
-                    </div>
-                </section>
-                <section className='row w-75 text-center m-auto'>
-                    <div className="col-2"><SocialIcon icon={faTwitter} to={twitter} size='lg' /></div>
-                    <div className="col-2"><SocialIcon icon={faLinkedinIn} to={linkedin} size='lg' /></div>
-                    <div className="col-2"><SocialIcon icon={faDev} to={dev} size='lg' /></div>
-                    <div className="col-2"><SocialIcon icon={faStackOverflow} to={starckoverflow} size='lg' /></div>
-                    <div className="col-2"><SocialIcon icon={faGithub} to={github} size='lg' /></div>
-                    <div className="col-2"><SocialIcon icon={faGooglePlay} to={playStore} size='lg' /></div>
+                <section className="row text-center mt-5 mb-4">
+                    <article className='row w-75 m-auto'>
+                        <div className="col-2"><SocialIcon icon={faTwitter} to={twitter} size='lg' /></div>
+                        <div className="col-2"><SocialIcon icon={faLinkedinIn} to={linkedin} size='lg' /></div>
+                        <div className="col-2"><SocialIcon icon={faDev} to={dev} size='lg' /></div>
+                        <div className="col-2"><SocialIcon icon={faStackOverflow} to={starckoverflow} size='lg' /></div>
+                        <div className="col-2"><SocialIcon icon={faGithub} to={github} size='lg' /></div>
+                        <div className="col-2"><SocialIcon icon={faGooglePlay} to={playStore} size='lg' /></div>
+                    </article>
                 </section>
                 <section className="row hr-line mb-4 mt-5">
                     <div className="col">
@@ -132,7 +129,7 @@ const Contact = () => {
                                 <label className={styles.binnypoo} htmlFor='message'>Message:</label>
                                 <textarea className={styles.binnypoo} name="message" id="message"></textarea>
                                 {loading
-                                    ? <div className={styles.loader}></div>
+                                    ? <div className='loader'></div>
                                     : <button className="btn btn-secondary" type="submit">Send Message</button>}
                             </form>
                         </div>

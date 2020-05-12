@@ -9,6 +9,16 @@ export const BlogQuery = () => {
                         title
                         slug
                         publishedDate(formatString: "MMMM Do, YYYY")
+                        timeToRead
+                        tags
+                        images{
+                            file{
+                                url
+                            }
+                        }
+                        summaryText{
+                            summaryText
+                        }
                     }
                 }
             }

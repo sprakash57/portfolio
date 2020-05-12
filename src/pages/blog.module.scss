@@ -12,7 +12,7 @@
         display: block;
         padding: 1rem;
         text-decoration: none;
-        border-radius: 10px;
+        border-radius: 5px;
 
         &:hover{
             background: #e4e4e4;
@@ -27,4 +27,8 @@
         color: #777;
         font-style: italic;
     }
+}
+
+ol{
+    padding-inline-start: 0;
 }

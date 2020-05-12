@@ -3,22 +3,14 @@
     height: auto;
 }
 
-h1, span{
+h1 {
     font-family: monospace;
     font-size: 4rem;
 }
 
 span{
-    font-size: 1.5rem;
-}
-
-.badge {
-    background: tomato;
-    color: white;
-    padding: 0.2rem;
-    font-size: 1.1rem;
-    border-radius: 0.3rem;
-    margin-right: 0.6rem;
+    font-family: monospace;
+    font-size: 1.2rem;
 }
 
 article>p{
