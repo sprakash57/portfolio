@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import dp from '../images/photo.jpg';
+import vsk from '../images/vcl.png';
+import hack from '../images/hacktoberfest.png';
 import styles from './index.module.scss';
 import blogStyle from './blog.module.scss';
 import { faLinkedinIn, faGooglePlay, faGithub, faStackOverflow, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Pop from '../components/pop';
 import BlogItem from "../components/blogItem";
 import { BlogQuery } from "../libs/queryLib";
-import { github, linkedin, playStore, gitRepo, starckoverflow, twitter } from '../libs/dataLib';
+import { github, linkedin, playStore, gitRepo, starckoverflow, twitter, vskills, hacktoberfest } from '../libs/dataLib';
 import SocialIcon from "../components/socialIcon";
+import { Link } from "gatsby";
 
 const IndexPage = () => {
 
@@ -68,19 +71,26 @@ const IndexPage = () => {
                     </div>
                     <div className="col-sm-12 col-md-8 margin-tp">
                         <h2>Hi<Pop text="," /></h2>
-                        <p>Welcome to my blog page! I am Sunny Prakash, a Full stack developer from Pune.Lorem ipsum dolor
-                        sit amet consectetur, adipisicing elit. Molestias et facere officiis nihil. Ex modi reiciendis quam.
-                        Molestiae explicabo, possimus doloremque quaerat laudantium ad id in tenetur velit aliquid nesciunt.
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus sint magnam, officia quis
-                        doloremque sit qui consectetur fugiat, at incidunt earum corporis facilis eum ab? Praesentium odit
-                        qui atque molestias! Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, tempora
-                        beatae fuga suscipit error voluptate neque tenetur cupiditate, culpa inventore rem odit officiis in
-                        modi quod porro reiciendis molestiae vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Id perspiciatis veritatis impedit exercitationem hic ratione asperiores libero recusandae vel fugiat
-                         fuga ad dicta quasi magni saepe, facere ipsam obcaecati aspernatur.</p>
+                        <p className='text-justify'>Welcome to my blog page! I am Sunny Prakash, a Software Engineer. Two reasons why
+                        i have created this site. <em>First</em> and foremost, I always wanted to share my learning through blogs. Whatever issues i face during my day to day development
+                        and all the digging which i do on stackoverflow, github issues or reading to solve them, to be placed somewhere. More like a respository to me
+                        to look back what i have learned and also help others with their issue. <em>Second</em>, I wanted to showcase my creations, what i do and what i
+                        develop somewhere over the internet. Well what could be the best place than your own blogfolio site. Feel free to look around, if you need any help or
+                        if you have any suggestions for me, you can find me <Link to='/contact'> here</Link>.
+                        </p>
+                        <section className='row'>
+                            <article className="col-md-2 offset-md-10 col-sm-3 offset-sm-9">
+                                <a href={vskills} target="_blank" rel="noopener noreferrer">
+                                    <img src={vsk} alt="vskills" title='Vskills' className={styles.imageIcon} />
+                                </a>
+                                <a href={hacktoberfest} target="_blank" rel="noopener noreferrer">
+                                    <img src={hack} alt="hacktoberFest" title='HacktoberFest' className={styles.imageIcon} />
+                                </a>
+                            </article>
+                        </section>
                     </div>
                 </div>
-                <div className="row mt-4 hr-line">
+                <div className="row mt-5 hr-line">
                     <div className="col-sm-12">
                         <h3>Recent Blogs</h3>
                     </div>

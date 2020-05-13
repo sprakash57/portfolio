@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styles from './header.module.scss';
 
-
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -13,10 +12,13 @@ const Header = () => {
       <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
+            <Link className='nav-link' activeClassName='active' to='/'>/</Link>
+          </li>
+          <li className="nav-item">
             <Link className='nav-link' activeClassName='active' to='/blog'>Blog</Link>
           </li>
           <li className="nav-item ml-2">
-            <Link className='nav-link' activeClassName='active' to='/about'>About</Link>
+            <Link className='nav-link' activeClassName='active' to='/about'>Portfolio</Link>
           </li>
           <li className="nav-item ml-2">
             <Link className='nav-link' activeClassName='active' to='/contact'>Contact</Link>
