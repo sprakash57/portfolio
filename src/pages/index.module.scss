@@ -25,6 +25,12 @@
     
 }
 
+.active-link:hover{
+    background: tomato;
+    border-radius: 5px;
+    padding: 5px;
+}
+
 @media screen and (max-width: 768px){
     .posts {
         display: block;

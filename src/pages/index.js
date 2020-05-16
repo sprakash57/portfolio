@@ -72,11 +72,11 @@ const IndexPage = () => {
                     <div className="col-sm-12 col-md-8 margin-tp">
                         <h2>Hi<Pop text="," /></h2>
                         <p className='text-justify'>Welcome to my blog page! I am Sunny Prakash, a Software Engineer. Two reasons why
-                        i have created this site. <em>First</em> and foremost, I always wanted to share my learning through blogs. Whatever issues i face during my day to day development
-                        and all the digging which i do on stackoverflow, github issues or reading to solve them, to be placed somewhere. More like a respository to me
-                        to look back what i have learned and also help others with their issue. <em>Second</em>, I wanted to showcase my creations, what i do and what i
-                        develop somewhere over the internet. Well what could be the best place than your own blogfolio site. Feel free to look around, if you need any help or
-                        if you have any suggestions for me, you can find me <Link to='/contact'> here</Link>.
+                        i have created this site. <em>First</em> and foremost, I always wanted to share my learning with others. Whatever issues i face during my day to day development
+                        and all the reading and research i do to solve them, has to be accessible around the globe. More like a respository to me where others developers like you can
+                        spend their time to learn useful stuffs<em>Second</em>, I wanted to showcase my creations, what i did till now and what i
+                        develop, somewhere over the internet. Well what could be the better place than your own blogfolio site. Feel free to look around, if you need any help or
+                        if you have any suggestions for me, click <Link className={styles.activeLink} to='/contact'> here</Link>.
                         </p>
                         <section className='row'>
                             <article className="col-md-2 offset-md-10 col-sm-3 offset-sm-9">

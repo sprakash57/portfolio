@@ -2,7 +2,7 @@
   "name": "blogfolio",
   "private": true,
   "description": "A portfolio site on steroids with gatsby blogs",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -22,6 +22,7 @@
     "bootstrap": "^4.4.1",
     "disqus-react": "^1.0.8",
     "gatsby": "^2.21.0",
+    "gatsby-plugin-manifest": "^2.4.3",
     "gatsby-plugin-react-helmet": "^3.3.0",
     "gatsby-plugin-sass": "^2.3.0",
     "gatsby-plugin-sharp": "^2.6.0",
@@ -44,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+    "url": "https://github.com/sprakash57/portfolio"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/sprakash57/portfolio/issues"
   }
 }

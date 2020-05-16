@@ -21,6 +21,10 @@
     transition: all 0.2s linear 0s;
 }
 
+.resume:focus{
+    outline: none;
+}
+
 .custom-scroll{
     overflow: auto;
     overflow-x: hidden;
