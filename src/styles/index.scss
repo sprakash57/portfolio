@@ -1,6 +1,10 @@
 // /* Reset provided by https://github.com/gatsbyjs/gatsby-starter-blog via MIT license */
 #gatsby-focus-wrapper{
-    background: tomato;
+    background: #343a40;
+}
+
+button:focus{
+  outline: 1px solid tomato !important;
 }
 
 .hr-line {
@@ -51,6 +55,11 @@ background: #ee4d4d;
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+#disqus_thread{
+  width: 82%;
+  margin: 0 auto;
+}
 // html {
 //     font-family: sans-serif;
 //     -ms-text-size-adjust: 100%;

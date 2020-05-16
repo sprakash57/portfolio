@@ -19,8 +19,8 @@ const IndexPage = () => {
     const [repos, setRepos] = useState([]);
 
     const posts = () => BlogQuery().map(({ node }, index) => {
-        if (index > 2) return <></>;
-        return <BlogItem key={index} node={node} styles={blogStyle} hideSummary={true} />
+        if (index < 3) return <BlogItem key={index} node={node} styles={blogStyle} hideSummary={true} />
+        return null;
     });
 
     const renderRepos = () => repos.map((repo, i) => {
@@ -33,7 +33,7 @@ const IndexPage = () => {
                 </section>
             </li>
         )
-        return <></>
+        return null;
     })
 
     const loadGitRepos = async () => {
@@ -42,7 +42,7 @@ const IndexPage = () => {
             const data = await response.json();
             setRepos(data)
         } catch (error) {
-            console.log(error);
+            alert('Gihub repos are not available right now :(');
         }
         setLoading(false);
     }

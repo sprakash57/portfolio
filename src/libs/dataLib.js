@@ -9,6 +9,7 @@ export const starckoverflow = "https://stackoverflow.com/users/story/9585068";
 export const gitRepo = 'https://api.github.com/users/sprakash57/repos?sort=pushed';
 export const vskills = 'https://www.vskills.in/certification/41210-certified-android-apps-developer-sunny-prakash';
 export const hacktoberfest = 'https://dev.to/badge/hacktoberfest-2019';
+export const resume = 'https://1drv.ms/b/s!Av6QXw9NuDHdoS7AH2cQwYElaCpO?e=LCMZCS';
 const addEatRepeat = 'https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat';
 const coonect3 = 'https://play.google.com/store/apps/details?id=com.droidvista.sunny.tictactoe';
 const cricketWorldCup = 'https://play.google.com/store/apps/details?id=com.insu.sunny.cricketworldcup';

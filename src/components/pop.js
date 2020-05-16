@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Pop = ({ text }) => <span style={{ color: 'tomato' }}>{text}</span>;
+const Pop = ({ text, size }) => <span style={{ color: 'tomato', fontSize: size }}>{text}</span>;
 
 export default Pop;

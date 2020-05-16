@@ -4,6 +4,8 @@ import styles from './contact.module.scss';
 import SocialIcon from '../components/socialIcon';
 import { faTwitter, faLinkedinIn, faDev, faStackOverflow, faGithub, faGooglePlay } from "@fortawesome/free-brands-svg-icons";
 import { twitter, linkedin, address, phone, dev, starckoverflow, github, playStore } from '../libs/dataLib';
+import Pop from '../components/pop';
+import btnStyle from './about.module.scss';
 
 const Contact = () => {
     const [formSubmitted, setFormSubmitted] = useState("");
@@ -72,16 +74,16 @@ const Contact = () => {
                 </div>
                 <div className='row mt-5'>
                     <section className='col-4 text-center'>
-                        <h6 className='text-muted'>Address</h6>
-                        <small>{address}</small>
+                        <h5 className='text-muted'>Address</h5>
+                        <p className='text-muted'>{address}</p>
                     </section>
                     <section className='col-4 text-center'>
-                        <h6 className='text-muted'>Phone</h6>
-                        <small>{phone}</small>
+                        <h5 className='text-muted'>Phone</h5>
+                        <p className='text-muted'>{phone}</p>
                     </section>
                     <section className='col-4 text-center'>
-                        <h6 className='text-muted'>Skype ID</h6>
-                        <small>{'sunnypr12'}</small>
+                        <h5 className='text-muted'>Skype ID</h5>
+                        <p className='text-muted'>{'sunnypr12'}</p>
                     </section>
                 </div>
                 <section className="row text-center mt-5 mb-4">
@@ -96,7 +98,7 @@ const Contact = () => {
                 </section>
                 <section className="row hr-line mb-4 mt-5">
                     <div className="col">
-                        <h3>Shoot a mail</h3>
+                        <h3>Shoot a <Pop text='mail' size='2.3rem' /></h3>
                     </div>
                 </section>
                 {formSubmitted !== 'has'
@@ -130,7 +132,7 @@ const Contact = () => {
                                 <textarea className={styles.binnypoo} name="message" id="message"></textarea>
                                 {loading
                                     ? <div className='loader'></div>
-                                    : <button className="btn btn-secondary" type="submit">Send Message</button>}
+                                    : <button className={btnStyle.resume} type="submit">Send Message</button>}
                             </form>
                         </div>
                     </section>

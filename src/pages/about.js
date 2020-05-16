@@ -3,40 +3,70 @@ import Layout from '../components/layout';
 import styles from './about.module.scss';
 import { workDone, github } from '../libs/dataLib';
 import Pop from '../components/pop';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
+    const handleDownload = async () => {
+        const response = await fetch(process.env.GATSBY_AWS_API_DOWNLOAD, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then(resp => resp.json()).catch(err => alert('something went wrong on server side. Check back later'));
+        window.open(response);
+    }
     return (
         <Layout title='About'>
             <div className="container mt-4">
                 <div className="row hr-line">
                     <div className="col">
-                        <h3>Portfolio</h3>
+                        <h3>Portfolio{' '}
+                            <button onClick={handleDownload} className={styles.resume}>
+                                Resume {' '}<FontAwesomeIcon icon={faCloudDownloadAlt} />
+                            </button>
+                        </h3>
                     </div>
                 </div>
-                <div className="row mt-2 pb-3">
-                    <div className="col-sm-4 col-md-3">
-                        <ul className={styles.ques}>
-                            <li>Programming Languages </li>
-                            <li>Frameworks and Libraries </li>
-                            <li>Database and Servers </li>
-                            <li>Platform and Tools </li>
-                        </ul>
-                    </div>
-                    <div className="col-sm-8 col-md-9">
-                        <ul className={styles.ans}>
-                            <li><span>JavaScript</span>, TypeScript, HTML, SQL, GraphQL</li>
-                            <li>Redux-Saga, Express, Bootstrap, React.js, React Native, <Pop text='Gatsby.js,' /> AG-grid, Sass</li>
-                            <li>MongoDB, <span>Node.js</span>, GraphQL-Yoga, NGINX</li>
-                            <li><span>AWS Lambda</span>, SES, API Gateway, Android, git, VS Code</li>
-                        </ul>
-                    </div>
-                </div>
+                <section className="row mt-2">
+                    <article className="col-xs-12 col-sm-4">
+                        <p className={styles.pHead}>Programming Languages</p>
+                    </article>
+                    <article className="col-xs-12 col-sm-8">
+                        <p className={styles.pBody}>JavaScript, TypeScript, HTML, SQL, GraphQL</p>
+                    </article>
+                </section>
+                <section className="row">
+                    <article className="col-xs-12 col-sm-4">
+                        <p className={styles.pHead}>Frameworks and Libraries</p>
+                    </article>
+                    <article className="col-xs-12 col-sm-8">
+                        <p className={styles.pBody}>Redux-Saga, Express, Bootstrap, React.js, React Native, <Pop text='Gatsby.js,' /> AG-grid, Sass</p>
+                    </article>
+                </section>
+                <section className="row">
+                    <article className="col-xs-12 col-sm-4">
+                        <p className={styles.pHead}>Database and Servers</p>
+                    </article>
+                    <article className="col-xs-12 col-sm-8">
+                        <p className={styles.pBody}>MongoDB, Node.js, GraphQL-Yoga, NGINX</p>
+                    </article>
+                </section>
+                <section className="row">
+                    <article className="col-xs-12 col-sm-4">
+                        <p className={styles.pHead}>Platform and Tools</p>
+                    </article>
+                    <article className="col-xs-12 col-sm-8">
+                        <p className={styles.pBody}>AWS Lambda, SES, API Gateway, Android, git, VS Code</p>
+                    </article>
+                </section>
                 <div className="row mt-4 hr-line">
                     <div className="col">
                         <h3>Showcase</h3>
                     </div>
                 </div>
-                <header className='mb-2'>Some of my personal work and <Pop text='open source' /> contributions.
+                <header className='mb-2 mt-2'>Some of my personal work and <Pop text='open source' /> contributions.
                 For more, visit my <a href={github} target="_blank" rel="noopener noreferrer">github</a> page</header>
                 <section>
                     <div className={styles.customScroll}>

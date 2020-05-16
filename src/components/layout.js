@@ -6,6 +6,12 @@ import styles from './layout.module.scss';
 import Head from './head';
 
 const Layout = (props) => {
+    const renderFooter = () => {
+        if (['Home', 'Blogs', 'About', 'Contact'].includes(props.title)) {
+            return <Footer />
+        }
+        return <></>
+    }
     return (
         <div className={styles.container}>
             <div className={styles.content}>
@@ -13,7 +19,7 @@ const Layout = (props) => {
                 <Head title={props.title} />
                 {props.children}
             </div>
-            <Footer />
+            {renderFooter()}
         </div>
     );
 }

@@ -17,16 +17,21 @@
     padding: 0;
 }
 
-@media screen and (max-width: 768px){
-    .posts {
-        display: block;
-        padding: 0;
-    }
-}
-
 .image-icon{
     height: auto;
     max-width: 50%;
     min-width: 50%;
     opacity: 0.8;
+    
+}
+
+@media screen and (max-width: 768px){
+    .posts {
+        display: block;
+        padding: 0;
+    }
+    .image-icon{
+        max-width: 20%;
+        min-width: 20%;
+    }
 }
