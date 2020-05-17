@@ -14,7 +14,7 @@ const Footer = (props) => {
     `)
     return (
         <div className={styles.footer}>
-            <p style={{ color: props.color }}>Created by {author}, © 2020</p>
+            <p style={{ color: props.color, marginBottom: 0, paddingBottom: '1rem' }}>Created by {author}, © 2020</p>
         </div>
     )
 }

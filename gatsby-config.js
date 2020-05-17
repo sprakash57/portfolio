@@ -15,7 +15,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: "src/images/icon.png"
+        icon: "src/images/icon.png",
+        name: 'SuprDev',
+        shortname: 'suprdev'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: process.env.DISQUS_NAME
       }
     },
     {

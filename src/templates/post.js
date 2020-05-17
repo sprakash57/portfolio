@@ -1,11 +1,12 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import styles from './post.module.scss';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Badge from '../components/badge';
-import { DiscussionEmbed } from "disqus-react"
 import Footer from '../components/footer';
+import { Disqus } from 'gatsby-plugin-disqus'
+import { articlyzer } from '../libs/dataLib';
 
 export const query = graphql`
 query($slug: String!){
@@ -38,10 +39,13 @@ const Post = (props) => {
       }
     }
   }
-  const { title, publishedDate, body, timeToRead, tags, slug } = props.data.contentfulPortfolioBlog;
+  const { id, title, publishedDate, body, timeToRead, tags, slug } = props.data.contentfulPortfolioBlog;
+  let siteUrl = 'https://suprdev.netlify.app/blog/';
+  if (window.location.origin.includes('localhost')) siteUrl = 'http://localhost:8000/blog/';
   const disqusConfig = {
-    shortname: process.env.GATSBY_DISQUS_NAME,
-    config: { identifier: slug, title },
+    url: `${siteUrl + slug}`,
+    identifier: id,
+    title,
   }
   return (
     <>
@@ -54,7 +58,9 @@ const Post = (props) => {
           </section>
           <section className="row mb-4 pb-3 hr-line text-center">
             <div className="col">
-              {tags && tags.map((tag, i) => <Badge key={i} tag={tag} />)}<span className="text-muted">| {publishedDate}</span><span className="text-muted"> | {timeToRead} min Read</span>
+              {tags && tags.map((tag, i) => <Badge key={i} tag={tag} />)}
+              <span className="text-muted">| {publishedDate}</span>
+              <span className="text-muted"> | <a title='Calculation done by Articlyzer' className={styles.activeLink} href={articlyzer} target="_blank" rel="noopener noreferrer">{timeToRead} min Read</a></span>
             </div>
           </section>
           <section className="row">
@@ -62,9 +68,14 @@ const Post = (props) => {
               {documentToReactComponents(body.json, options)}
             </article>
           </section>
+          <section className="row mt-5 mb-5">
+            <article className="col-xs-12">
+              <h5 className='text-muted'><em>I hope you have liked the article! let me know in the comments below or shoot me a </em><Link className={styles.footerLink} to='/contact'>mail</Link></h5>
+            </article>
+          </section>
         </main>
       </Layout>
-      <DiscussionEmbed {...disqusConfig} />
+      <Disqus config={disqusConfig} />
       <Footer color='white' />
     </>
   )
