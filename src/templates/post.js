@@ -41,7 +41,7 @@ const Post = (props) => {
   }
   const { id, title, publishedDate, body, timeToRead, tags, slug } = props.data.contentfulPortfolioBlog;
   let siteUrl = 'https://suprdev.netlify.app/blog/';
-  if (window.location.origin.includes('localhost')) siteUrl = 'http://localhost:8000/blog/';
+  if (window && window.location.origin.includes('localhost')) siteUrl = 'http://localhost:8000/blog/';
   const disqusConfig = {
     url: `${siteUrl + slug}`,
     identifier: id,
