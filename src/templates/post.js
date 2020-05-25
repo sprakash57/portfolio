@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../components/layout';
 import { graphql, Link } from 'gatsby';
 import styles from './post.module.scss';
@@ -13,6 +13,7 @@ query($slug: String!){
 	contentfulPortfolioBlog(
     slug:{eq:$slug}
   ){
+    id
     title
     slug
     publishedDate(formatString: "Do MMM")
@@ -26,6 +27,9 @@ query($slug: String!){
 `
 
 const Post = (props) => {
+  const [loading, setLoading] = useState(false);
+  const [views, setViews] = useState('');
+
   const options = {
     renderNode: {
       "embedded-asset-block": (node) => {
@@ -40,6 +44,24 @@ const Post = (props) => {
     }
   }
   const { id, title, publishedDate, body, timeToRead, tags, slug } = props.data.contentfulPortfolioBlog;
+
+  const loadTotalViews = async () => {
+    const response = await fetch(`${process.env.GATSBY_AWS_API_COUNT}${id}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(data => data.json()).catch(e => alert('Views are not available currently'))
+    setViews(response);
+    setLoading(false);
+  }
+
+  useEffect(() => {
+    setLoading(true);
+    loadTotalViews();
+  }, [props.data.contentfulPortfolioBlog])
+
   let siteUrl = 'https://suprdev.netlify.app/blog/';
   //siteUrl = 'http://localhost:8000/blog/';
   const disqusConfig = {
@@ -61,6 +83,7 @@ const Post = (props) => {
               {tags && tags.map((tag, i) => <Badge key={i} tag={tag} />)}
               <span className="text-muted">| {publishedDate}</span>
               <span className="text-muted"> | <a title='Calculation done by Articlyzer' className={styles.activeLink} href={articlyzer} target="_blank" rel="noopener noreferrer">{timeToRead} min Read</a></span>
+              <span className="text-muted"> | Views: {loading ? '' : views}</span>
             </div>
           </section>
           <section className="row">
@@ -68,9 +91,14 @@ const Post = (props) => {
               {documentToReactComponents(body.json, options)}
             </article>
           </section>
-          <section className="row mt-5 mb-5">
-            <article className="col-xs-12">
+          <section className="row mt-5">
+            <article className="col-xs-12 pl-1 pr-1">
               <h5 className='text-muted'><em>I hope you have liked the article! let me know in the comments below or shoot me a </em><Link className={styles.footerLink} to='/contact'>mail</Link></h5>
+            </article>
+          </section>
+          <section className="row">
+            <article className='col-xs-12 pl-1 pr-1'>
+              <h5 className='text-muted'>Total views: </h5>
             </article>
           </section>
         </main>
