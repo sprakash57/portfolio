@@ -3,13 +3,14 @@ import Layout from "../components/layout";
 import dp from '../images/photo.jpg';
 import vsk from '../images/vcl.png';
 import hack from '../images/hacktoberfest.png';
+import aliba from '../images/alibaba.png';
 import styles from './index.module.scss';
 import blogStyle from './blog.module.scss';
 import { faLinkedinIn, faGooglePlay, faGithub, faStackOverflow, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import Pop from '../components/pop';
 import BlogItem from "../components/blogItem";
 import { BlogQuery } from "../libs/queryLib";
-import { github, linkedin, playStore, gitRepo, starckoverflow, twitter, vskills, hacktoberfest } from '../libs/dataLib';
+import { github, linkedin, playStore, gitRepo, starckoverflow, twitter, vskills, hacktoberfest, alibaba } from '../libs/dataLib';
 import SocialIcon from "../components/socialIcon";
 import { Link } from "gatsby";
 
@@ -71,22 +72,25 @@ const IndexPage = () => {
                     </div>
                     <div className="col-sm-12 col-md-8 margin-tp">
                         <h2>Hi<Pop text="," /></h2>
-                        <p className='text-justify'>Welcome to my blog page! I am Sunny Prakash, a Software Engineer. Two reasons why
-                        i have created this site. <em>First</em> and foremost, I always wanted to share my learning with others. Whatever issues i face during my day to day development
-                        and all the reading and research i do to solve them, has to be accessible around the globe. More like a respository to me where others developers like you can
-                        spend their time to learn useful stuffs<em>Second</em>, I wanted to showcase my creations, what i did till now and what i
-                        develop, somewhere over the internet. Well what could be the better place than your own blogfolio site. Feel free to look around, if you need any help or
-                        if you have any suggestions for me, click <Link className={styles.activeLink} to='/contact'> here</Link>.
+                        <p className='text-justify'>Welcome to my blog page! I am Sunny Prakash, a Web Developer, and a Self-Taught Android Apps Developer living in Pune, India. I
+                        have been programming for over a half-decade. I have started developing apps in front-end but the possibility and end to end web ecosystem attracted to me grasp full-
+                        stack knowledge. Recently I have started exploring other non-web-only languages and technologies like Cloud computing, Machine Learning and System programming that is
+                        helping me to broaden my vision and keeping me fueled to learn more.<br />
+                        This Blogfolio is one of those learning examples that I have created to serve as a repository of all the open-source contributions, publications, and development I have done.
+                        Whatever issues I face during my day to day development and all the reading and research I do to solve them, has to be accessible around the globe. Such that others can also
+                        leverage learnings and information. I have pinned down some of my achievements just after this para.
+                        Feel free to look around, if you need any help or if you have any suggestions for me, click <Link className={styles.activeLink} to='/contact'> here.</Link>
                         </p>
-                        <section className='row'>
-                            <article className="col-md-2 offset-md-10 col-sm-3 offset-sm-9">
-                                <a href={vskills} target="_blank" rel="noopener noreferrer">
-                                    <img src={vsk} alt="vskills" title='Vskills' className={styles.imageIcon} />
-                                </a>
-                                <a href={hacktoberfest} target="_blank" rel="noopener noreferrer">
-                                    <img src={hack} alt="hacktoberFest" title='HacktoberFest' className={styles.imageIcon} />
-                                </a>
-                            </article>
+                        <section style={{ float: 'right' }}>
+                            <a href={vskills} target="_blank" rel="noopener noreferrer">
+                                <img src={vsk} alt="vskills" title='Vskills' />
+                            </a>
+                            <a href={hacktoberfest} target="_blank" rel="noopener noreferrer">
+                                <img src={hack} alt="hacktoberFest" title='HacktoberFest' className='ml-3' />
+                            </a>
+                            <a href={alibaba} target="_blank" rel="noopener noreferrer" >
+                                <img src={aliba} alt="alibaba" title='Alibaba' className='ml-3' />
+                            </a>
                         </section>
                     </div>
                 </div>

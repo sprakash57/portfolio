@@ -8,7 +8,7 @@ import { faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
     const handleDownload = async () => {
-        const response = await fetch(process.env.GATSBY_AWS_API_DOWNLOAD, {
+        const response = await fetch(process.env.GATSBY_LAMBDA_DOWNLOAD, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -42,7 +42,7 @@ const About = () => {
                         <p className={styles.pHead}>Frameworks and Libraries</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>Redux-Saga, Express, Bootstrap, React.js, React Native, <Pop text='Gatsby.js,' /> AG-grid, Sass</p>
+                        <p className={styles.pBody}>React.js, React Native, Express, Redux-Saga, Thunk, Preact, React Navigation, <Pop text='Gatsby.js,' /> AG-grid, Sass, Bootstrap</p>
                     </article>
                 </section>
                 <section className="row">
@@ -58,7 +58,7 @@ const About = () => {
                         <p className={styles.pHead}>Platform and Tools</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>AWS Lambda, SES, API Gateway, Android, git, VS Code</p>
+                        <p className={styles.pBody}>AWS Lambda, Serverless, Android, git, VS Code, Alibaba ECS, Netlify, Docker</p>
                     </article>
                 </section>
                 <div className="row mt-4 hr-line">

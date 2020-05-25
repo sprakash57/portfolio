@@ -46,7 +46,7 @@ const Post = (props) => {
   const { id, title, publishedDate, body, timeToRead, tags, slug } = props.data.contentfulPortfolioBlog;
 
   const loadTotalViews = async () => {
-    const response = await fetch(`${process.env.GATSBY_AWS_API_COUNT}${id}`, {
+    const response = await fetch(`${process.env.GATSBY_LAMBDA_COUNT}${id}`, {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -62,7 +62,7 @@ const Post = (props) => {
     loadTotalViews();
   }, [props.data.contentfulPortfolioBlog])
 
-  let siteUrl = 'https://suprdev.netlify.app/blog/';
+  const siteUrl = 'https://suprdev.netlify.app/blog/';
   //siteUrl = 'http://localhost:8000/blog/';
   const disqusConfig = {
     url: `${siteUrl + slug}`,
@@ -91,14 +91,9 @@ const Post = (props) => {
               {documentToReactComponents(body.json, options)}
             </article>
           </section>
-          <section className="row mt-5">
+          <section className="row mt-5 mb-4">
             <article className="col-xs-12 pl-1 pr-1">
               <h5 className='text-muted'><em>I hope you have liked the article! let me know in the comments below or shoot me a </em><Link className={styles.footerLink} to='/contact'>mail</Link></h5>
-            </article>
-          </section>
-          <section className="row">
-            <article className='col-xs-12 pl-1 pr-1'>
-              <h5 className='text-muted'>Total views: </h5>
             </article>
           </section>
         </main>

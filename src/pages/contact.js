@@ -12,7 +12,7 @@ const Contact = () => {
     const [loading, setLoading] = useState(false);
     const submitForm = data => {
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", process.env.GATSBY_AWS_API, true);
+        xhr.open("POST", process.env.GATSBY_LAMBDA_CONTACT, true);
         xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         // Send the collected data as JSON
