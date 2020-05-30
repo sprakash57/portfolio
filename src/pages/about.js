@@ -18,7 +18,7 @@ const About = () => {
         window.open(response);
     }
     return (
-        <Layout title='About'>
+        <Layout title='Portfolio'>
             <div className="container mt-4">
                 <div className="row hr-line">
                     <div className="col">
@@ -34,7 +34,7 @@ const About = () => {
                         <p className={styles.pHead}>Programming Languages</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>JavaScript, TypeScript, HTML, SQL, GraphQL</p>
+                        <p className={styles.pBody}>JavaScript, TypeScript, HTML, GraphQL</p>
                     </article>
                 </section>
                 <section className="row">
@@ -42,7 +42,7 @@ const About = () => {
                         <p className={styles.pHead}>Frameworks and Libraries</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>React.js, React Native, Express, Redux-Saga, Thunk, Preact, React Navigation, <Pop text='Gatsby.js,' /> AG-grid, Sass, Bootstrap</p>
+                        <p className={styles.pBody}>React.js, React Native, Express, Redux, Preact, <Pop text='Gatsby.js,' /> AG-grid, Sass, Bootstrap</p>
                     </article>
                 </section>
                 <section className="row">
@@ -58,7 +58,7 @@ const About = () => {
                         <p className={styles.pHead}>Platform and Tools</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>AWS Lambda, Serverless, Android, git, VS Code, Alibaba ECS, Netlify, Docker</p>
+                        <p className={styles.pBody}>AWS Lambda, Serverless, Android, git, VS Code, Alibaba ECS, Docker</p>
                     </article>
                 </section>
                 <div className="row mt-4 hr-line">
