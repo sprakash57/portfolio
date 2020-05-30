@@ -42,7 +42,17 @@ background: #ee4d4d;
     height: 40px;
     -webkit-animation: spin 3s linear infinite; /* Safari */
     animation: spin 3s linear infinite;
-  }
+}
+
+code {
+  font-size: 1rem;
+  display: block;
+  white-space: pre-wrap;
+  font-family: monospace;
+  background-color: #212529;
+  color: #96dfdf;
+  border-radius: 10px;
+}
   
   /* Safari */
   @-webkit-keyframes spin {

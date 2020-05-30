@@ -6,13 +6,11 @@ import hack from '../images/hacktoberfest.png';
 import aliba from '../images/alibaba.png';
 import styles from './index.module.scss';
 import blogStyle from './blog.module.scss';
-import { faLinkedinIn, faGooglePlay, faGithub, faStackOverflow, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import Pop from '../components/pop';
+import { faLinkedinIn, faGooglePlay, faGithub, faStackOverflow, faDev } from "@fortawesome/free-brands-svg-icons";
 import BlogItem from "../components/blogItem";
 import { BlogQuery } from "../libs/queryLib";
-import { github, linkedin, playStore, gitRepo, starckoverflow, twitter, vskills, hacktoberfest, alibaba } from '../libs/dataLib';
+import { github, linkedin, playStore, gitRepo, starckoverflow, vskills, hacktoberfest, alibaba, dev } from '../libs/dataLib';
 import SocialIcon from "../components/socialIcon";
-import { Link } from "gatsby";
 
 const IndexPage = () => {
 
@@ -64,24 +62,12 @@ const IndexPage = () => {
                         </div>
                         <div className={styles.social}>
                             <SocialIcon icon={faStackOverflow} to={starckoverflow} />
-                            <SocialIcon icon={faTwitter} to={twitter} />
+                            <SocialIcon icon={faDev} to={dev} />
                             <SocialIcon icon={faLinkedinIn} to={linkedin} />
                             <SocialIcon icon={faGooglePlay} to={playStore} size='sm' />
                             <SocialIcon icon={faGithub} to={github} />
                         </div>
-                    </div>
-                    <div className="col-sm-12 col-md-8 margin-tp">
-                        <h2>Hi<Pop text="," /></h2>
-                        <p className='text-justify'>Welcome to my blog page! I am Sunny Prakash, a Web Developer, and a Self-Taught Android Apps Developer living in Pune, India. I
-                        have been programming for over a half-decade. I have started developing apps in front-end but the possibility and end to end web ecosystem attracted to me grasp full-
-                        stack knowledge. Recently I have started exploring other non-web-only languages and technologies like Cloud computing, Machine Learning and System programming that is
-                        helping me to broaden my vision and keeping me fueled to learn more.<br />
-                        This Blogfolio is one of those learning examples that I have created to serve as a repository of all the open-source contributions, publications, and development I have done.
-                        Whatever issues I face during my day to day development and all the reading and research I do to solve them, has to be accessible around the globe. Such that others can also
-                        leverage learnings and information. I have pinned down some of my achievements just after this para.
-                        Feel free to look around, if you need any help or if you have any suggestions for me, click <Link className={styles.activeLink} to='/contact'> here.</Link>
-                        </p>
-                        <section style={{ float: 'right' }}>
+                        <section className={styles.badges}>
                             <a href={vskills} target="_blank" rel="noopener noreferrer">
                                 <img src={vsk} alt="vskills" title='Vskills' />
                             </a>
@@ -92,6 +78,34 @@ const IndexPage = () => {
                                 <img src={aliba} alt="alibaba" title='Alibaba' className='ml-3' />
                             </a>
                         </section>
+                    </div>
+                    <div className="col-sm-12 col-md-8 margin-tp">
+                        <code>
+                            {`
+    // Hi,
+    // Welcome to my blogfolio. Lets start with the intorduction.
+
+    class Sunny extends WebDeveloper{
+        constructor(){
+            super('UI', 'Full stack', 'RESTful API');
+            this.fullName = 'Sunny Prakash';
+            this.livesIn = 'Pune, India';
+        }
+        
+        get Academics(){
+            return 'Graduated from Birla Institute of Technology, Mesra'
+        }
+        
+        createdBlogFolioFor(){
+            return 'Sharing knowledge, creations and learning of mine.'
+        }
+        
+        hasStartedExploring(){
+            return 'Cloud Computing, Machine Learning and System Programming'
+        }
+    }
+                            `}
+                        </code>
                     </div>
                 </div>
                 <div className="row mt-5 hr-line">

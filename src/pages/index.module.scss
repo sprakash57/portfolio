@@ -5,10 +5,21 @@
     text-align: center;
 }
 
-.social{
+@mixin horizontal-list {
     display: flex;
     justify-content: space-evenly;
+}
+
+.social{
+    @include horizontal-list;
     margin-top: 1rem;
+}
+
+.badges{
+    @include horizontal-list;
+    align-items: center;
+    margin-top: 3rem;
+    opacity: 0.8;
 }
 
 .posts{
