@@ -88,8 +88,8 @@ const IndexPage = () => {
     class Sunny extends WebDeveloper{
         constructor(){
             super('UI', 'Full stack', 'RESTful API');
-            this.fullName = 'Sunny Prakash';
-            this.livesIn = 'Pune, India';
+            this.full_name = 'Sunny Prakash';
+            this.lives_in = 'Pune, India';
         }
         
         get Academics(){
