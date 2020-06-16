@@ -58,7 +58,7 @@ const IndexPage = () => {
                     <div className="col-sm-12 col-md-4 text-center">
                         <img className={styles.photo} src={dp} alt="me" />
                         <div className='mt-3'>
-                            <p>Web Develoer | React | JavaScript</p>
+                            <p>Web Developer | React | JavaScript</p>
                         </div>
                         <div className={styles.social}>
                             <SocialIcon icon={faStackOverflow} to={starckoverflow} />
