@@ -83,7 +83,7 @@ const IndexPage = () => {
                         <code>
                             {`
     // Hi,
-    // Welcome to my blogfolio. Lets start with the intorduction.
+    // Welcome to my blogfolio. lets start writing some introduction code.
 
     class Sunny extends WebDeveloper{
         constructor(){
@@ -101,7 +101,7 @@ const IndexPage = () => {
         }
         
         hasStartedExploring(){
-            return 'Cloud Computing, Machine Learning and System Programming'
+            return 'Cloud Computing, Modern web development, and ML'
         }
     }
                             `}
