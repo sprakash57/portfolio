@@ -18,7 +18,7 @@ const IndexPage = () => {
     const [repos, setRepos] = useState([]);
 
     const posts = () => BlogQuery().map(({ node }, index) => {
-        if (index < 3) return <BlogItem key={index} node={node} styles={blogStyle} hideSummary={true} />
+        if (index < 2) return <BlogItem key={index} node={node} styles={blogStyle} hideSummary={true} />
         return null;
     });
 
