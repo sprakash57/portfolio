@@ -87,7 +87,7 @@ const Post = (props) => {
             </div>
           </section>
           <section className="row">
-            <article className="col-xs-12 text-justify ml-5 mr-5">
+            <article className="col-xs-12 ml-2 mr-2">
               {documentToReactComponents(body.json, options)}
             </article>
           </section>
