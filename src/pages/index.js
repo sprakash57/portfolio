@@ -83,7 +83,7 @@ const IndexPage = () => {
                         <code>
                             {`
     // Hi,
-    // Welcome to my blogfolio. lets start writing some introduction code.
+    // Welcome to my blogfolio. lets execute the introduction code.
 
     class Sunny extends WebDeveloper{
         constructor(){
@@ -92,16 +92,16 @@ const IndexPage = () => {
             this.lives_in = 'Pune, India';
         }
         
-        get Academics(){
+        getAcademics(){
             return 'Graduated from Birla Institute of Technology, Mesra'
         }
         
-        createdBlogFolioFor(){
+        createdBlogFor(){
             return 'Sharing knowledge, creations and learning of mine.'
         }
         
         hasStartedExploring(){
-            return 'Cloud Computing, Modern web development, and ML'
+            return 'Cloud Computing, Modern web development with AI'
         }
     }
                             `}
