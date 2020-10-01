@@ -63,7 +63,6 @@ const Post = (props) => {
   }, [props.data.contentfulPortfolioBlog])
 
   const siteUrl = 'https://suprdev.netlify.app/blog/';
-  //siteUrl = 'http://localhost:8000/blog/';
   const disqusConfig = {
     url: `${siteUrl + slug}`,
     identifier: id,

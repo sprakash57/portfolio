@@ -15,11 +15,41 @@
     margin-top: 1rem;
 }
 
+@-webkit-keyframes bubble {
+    from {transform: scale(0,0);}
+    to {transform: scale(1,1);}
+}
+
+@keyframes bubble {
+    from {transform: scale(0,0);}
+    to {transform: scale(1,1);}
+}
+
 .badges{
     @include horizontal-list;
     align-items: center;
-    margin-top: 3rem;
-    opacity: 0.8;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    > a {
+        margin: 0.5rem 1rem 0.5rem 1rem;
+    }
+    img {
+        animation-name: bubble;
+        animation-duration: 0.4s;
+        animation-timing-function: ease-out;
+    }
+}
+
+.intro-code {
+    font-size: 0.92rem;
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
+    font-family: monospace;
+    background-color: #212529;
+    color: #96dfdf;
+    border-radius: 10px;
 }
 
 .posts{
@@ -33,7 +63,6 @@
     max-width: 50%;
     min-width: 50%;
     opacity: 0.8;
-    
 }
 
 .active-link:hover{

@@ -1,4 +1,3 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://suprdev.netlify.app" rel='noopener noreferer' target='_blank'>
     <img alt="logo" src="./src/images/icon.png" width="60" />
@@ -24,7 +23,7 @@ SUPRDEV is bootstrapped with Gatsby's hello-world boilerplate. This starter ship
 
 ## 🧐 What's inside?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+A quick look at the top-level files and directories you'll see in any Gatsby project.
 
     .
     ├── node_modules
