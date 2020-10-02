@@ -11,7 +11,6 @@ import BlogItem from "../components/blogItem";
 import { BlogQuery } from "../libs/queryLib";
 import { github, linkedin, playStore, gitRepo, starckoverflow, vskills, hacktoberfest, alibaba, dev } from '../libs/dataLib';
 import SocialIcon from "../components/socialIcon";
-import SuspenseImg from "../components/suspenseImg";
 
 const IndexPage = () => {
 
@@ -57,9 +56,7 @@ const IndexPage = () => {
             <div className='container'>
                 <div className="row pt-5">
                     <div className="col-sm-12 col-md-4 text-center">
-                        <Suspense fallback={<div className='row loader m-auto' />}>
-                            <SuspenseImg alt="me" src={dp} styleClass={styles.photo} />
-                        </Suspense>
+                        <img src={dp} className={styles.photo} alt="me" />
                         <div className='mt-3'>
                             <p>Web Developer | React | JavaScript</p>
                         </div>
