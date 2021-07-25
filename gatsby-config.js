@@ -5,7 +5,6 @@
  */
 require('dotenv').config({ path: './.env.development' });
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
     title: "S:_:PR",
     author: 'Sunny Prakash'
@@ -37,8 +36,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "src",
-        path: `${__dirname}/src/`
+        name: "images",
+        path: `${__dirname}/src/images/`
       }
     },
     `gatsby-plugin-sharp`,

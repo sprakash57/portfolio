@@ -1,8 +1,8 @@
 .photo{
-    border: 5px solid tomato;
     width: 55%;
     border-radius: 50%;
     text-align: center;
+    transition: all 0.3s ease-in;
 }
 
 @mixin horizontal-list {
@@ -31,6 +31,7 @@
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
+    transition: all 0.3s ease-in;
     > a {
         margin: 0.5rem 1rem 0.5rem 1rem;
     }

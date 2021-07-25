@@ -56,7 +56,11 @@ const IndexPage = () => {
             <div className='container'>
                 <div className="row pt-5">
                     <div className="col-sm-12 col-md-4 text-center">
-                        <img src={dp} className={styles.photo} alt="me" />
+                        <img
+                            src={dp}
+                            alt="Me"
+                            className={styles.photo}
+                        />
                         <div className='mt-3'>
                             <p>Web Developer | React | JavaScript</p>
                         </div>

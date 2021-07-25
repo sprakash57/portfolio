@@ -56,10 +56,11 @@ const Post = (props) => {
     setViews(response);
     setLoading(false);
   }
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setLoading(true);
     loadTotalViews();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.data.contentfulPortfolioBlog])
 
   const siteUrl = 'https://suprdev.netlify.app/blog/';
