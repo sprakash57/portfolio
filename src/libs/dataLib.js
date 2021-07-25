@@ -33,6 +33,15 @@ export const workDone = [
         add your meals and it will generate daily and weekly plans but with a twist.😁`
     },
     {
+        "id": "reactWcra",
+        "url": reactWcra,
+        "title": "create-react-saga",
+        "stack": "React 17, Redux-saga, Webpack 5",
+        "body": `You must have heard of CRA(Create React App). Its a scaffolding tool which gives you pre-configured react development 
+        boilerplate code out of the box. Well create-react-saga does the same but without CRA by giving you flexibility to configure your app with 
+        webpack and babel. Currently its in development and comes only with redux-saga variant.`
+    },
+    {
         "id": "suprEcomm",
         "url": suprEcomm,
         "title": "SUPR eComm",
@@ -95,14 +104,5 @@ export const workDone = [
         "stack": "Node.Js, Express, React Hooks, Gravatar, Passport",
         "body": `Its a social platform built for code geeks, professional and students who wants to join software industry someday. Its 
         currently in development.`
-    },
-    {
-        "id": "reactWcra",
-        "url": reactWcra,
-        "title": "react-wcra",
-        "stack": "React, Redux-saga, Webpack, SCSS",
-        "body": `You must have heard of CRA(Create React App). Its a scaffolding tool which gives you pre-configured react development 
-        boilerplate code out of the box. Well react-wcra do the same but without CRA by giving you flexibility to configure your app with 
-        webpack and babel. Currently its in development and comes only with redux-saga variant. Plan is to create parcel and non saga variant as well.`
     },
 ];

@@ -34,7 +34,7 @@ const About = () => {
                         <p className={styles.pHead}>Programming Languages</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>JavaScript, TypeScript, HTML, GraphQL</p>
+                        <p className={styles.pBody}>JavaScript, ES6+, TypeScript, HTML, SQL, Python</p>
                     </article>
                 </section>
                 <section className="row">
@@ -42,7 +42,7 @@ const About = () => {
                         <p className={styles.pHead}>Frameworks and Libraries</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>React.js, React Native, Express, Redux, Preact, <Pop text='Gatsby.js,' /> AG-grid, Sass, Bootstrap</p>
+                        <p className={styles.pBody}>React, React Native, Express, Redux, Vue, Next.js, Sass, Highcharts.js</p>
                     </article>
                 </section>
                 <section className="row">
@@ -50,7 +50,7 @@ const About = () => {
                         <p className={styles.pHead}>Database and Servers</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>MongoDB, Node.js, GraphQL-Yoga, NGINX</p>
+                        <p className={styles.pBody}>PostgreSQL, MongoDB, Node.js</p>
                     </article>
                 </section>
                 <section className="row">
@@ -58,7 +58,7 @@ const About = () => {
                         <p className={styles.pHead}>Platform and Tools</p>
                     </article>
                     <article className="col-xs-12 col-sm-8">
-                        <p className={styles.pBody}>AWS Lambda, Serverless, Android, git, VS Code, Alibaba ECS, Docker</p>
+                        <p className={styles.pBody}>AWS, Docker, Ubuntu, Jest, Zeplin, GitHub, JIRA</p>
                     </article>
                 </section>
                 <div className="row mt-4 hr-line">
@@ -67,7 +67,7 @@ const About = () => {
                     </div>
                 </div>
                 <header className='mb-2 mt-2'>Some of my personal work and <Pop text='open source' /> contributions.
-                For more, visit my <a href={github} target="_blank" rel="noopener noreferrer">github</a> page</header>
+                    For more, visit my <a href={github} target="_blank" rel="noopener noreferrer">github</a> page</header>
                 <section>
                     <div className={styles.customScroll}>
                         {workDone.map(work => (
