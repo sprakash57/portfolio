@@ -1,3 +1,9 @@
+:root {
+  --dark-gray: hsl(210, 13%, 24%);
+  --red: hsl(10, 91%, 62%);
+  --red-hover: hsl(15, 100%, 98%);
+  --red-shadow: hsl(0, 13%, 72%, 30%);
+}
 html,
 body {
   padding: 0;
