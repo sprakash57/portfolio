@@ -10,7 +10,6 @@
         background: #f4f4f4;
         color: #000;
         display: block;
-        padding: 1rem;
         text-decoration: none;
         border-radius: 5px;
 
@@ -31,4 +30,16 @@
 
 ol{
     padding-inline-start: 0;
+}
+.repo {
+    margin: 2rem 0 0 0.4rem;
+    a {
+        text-decoration: none;
+        padding: 1rem;
+        background-color: #f4f4f4;
+        &:hover {
+            background-color: #e4e4e4;
+            text-decoration: none;
+        }
+    }
 }

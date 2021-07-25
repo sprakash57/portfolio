@@ -2,7 +2,7 @@
     width: 55%;
     border-radius: 50%;
     text-align: center;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in-out;
 }
 
 @mixin horizontal-list {
@@ -15,30 +15,15 @@
     margin-top: 1rem;
 }
 
-@-webkit-keyframes bubble {
-    from {transform: scale(0,0);}
-    to {transform: scale(1,1);}
-}
-
-@keyframes bubble {
-    from {transform: scale(0,0);}
-    to {transform: scale(1,1);}
-}
-
 .badges{
     @include horizontal-list;
     align-items: center;
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in-out;
     > a {
         margin: 0.5rem 1rem 0.5rem 1rem;
-    }
-    img {
-        animation-name: bubble;
-        animation-duration: 0.4s;
-        animation-timing-function: ease-out;
     }
 }
 

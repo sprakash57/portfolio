@@ -24,7 +24,7 @@ const IndexPage = () => {
 
     const renderRepos = () => repos.map((repo, i) => {
         if (i < 5) return (
-            <li key={i} className={blogStyle.post}>
+            <li key={i} className={blogStyle.repo}>
                 <section className="row">
                     <article className="col">
                         <a href={repo.svn_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
@@ -62,7 +62,7 @@ const IndexPage = () => {
                             className={styles.photo}
                         />
                         <div className='mt-3'>
-                            <p>Web Developer | React | JavaScript</p>
+                            <p>React | JavaScript | Node.js</p>
                         </div>
                         <div className={styles.social}>
                             <SocialIcon icon={faStackOverflow} to={starckoverflow} />
@@ -89,12 +89,9 @@ const IndexPage = () => {
                     <div className="col-sm-12 col-md-8 margin-tp">
                         <p className={styles.introCode}>
                             {`
-    // Hi,
-    // Welcome to my blogfolio. lets execute the introduction code.
-
     class Sunny extends WebDeveloper{
         constructor(){
-            super('UI', 'Full stack', 'RESTful API');
+            super('React', 'Full Stack JavaScript');
             this.full_name = 'Sunny Prakash';
             this.lives_in = 'Pune, India';
         }
@@ -104,11 +101,11 @@ const IndexPage = () => {
         }
         
         writeBlogs(){
-            return 'To share knowledge, creations and learning of mine.'
+            return 'To share knowledge, creations and learnings of mine.'
         }
         
         exploring(){
-            return 'Cloud Computing, Modern web development with AI'
+            return 'Modern Web Developement best practices and System Designs'
         }
     }
                             `}

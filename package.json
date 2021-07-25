@@ -2,7 +2,7 @@
   "name": "blogfolio",
   "private": true,
   "description": "A portfolio site on steroids with gatsby blogs",
-  "version": "2.0.2",
+  "version": "2.0.4",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
