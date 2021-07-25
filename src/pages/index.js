@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Suspense } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import dp from '../images/photo.jpg';
 import vsk from '../images/vcl.png';
@@ -67,23 +67,20 @@ const IndexPage = () => {
                             <SocialIcon icon={faGooglePlay} to={playStore} size='sm' />
                             <SocialIcon icon={faGithub} to={github} />
                         </div>
-                        {loading
-                            ? <div className='row loader m-auto' />
-                            : <section className={styles.badges}>
-                                <a href="https://www.codewars.com/users/sprakash57" target="_blank" rel="noopener noreferrer">
-                                    <img src="https://www.codewars.com/users/sprakash57/badges/micro" title="codewars" alt="codewars" />
-                                </a>
-                                <a href={vskills} target="_blank" rel="noopener noreferrer">
-                                    <img src={vsk} alt="vskills" title='Vskills' />
-                                </a>
-                                <a href={hacktoberfest} target="_blank" rel="noopener noreferrer">
-                                    <img src={hack} alt="hacktoberFest" title='HacktoberFest' className='ml-3' />
-                                </a>
-                                <a href={alibaba} target="_blank" rel="noopener noreferrer" >
-                                    <img src={aliba} alt="alibaba" title='Alibaba' className='ml-3' />
-                                </a>
-                            </section>
-                        }
+                        <section className={styles.badges}>
+                            <a href="https://www.codewars.com/users/sprakash57" target="_blank" rel="noopener noreferrer">
+                                <img src="https://www.codewars.com/users/sprakash57/badges/micro" title="codewars" alt="codewars" />
+                            </a>
+                            <a href={vskills} target="_blank" rel="noopener noreferrer">
+                                <img src={vsk} alt="vskills" title='Vskills' />
+                            </a>
+                            <a href={hacktoberfest} target="_blank" rel="noopener noreferrer">
+                                <img src={hack} alt="hacktoberFest" title='HacktoberFest' className='ml-3' />
+                            </a>
+                            <a href={alibaba} target="_blank" rel="noopener noreferrer" >
+                                <img src={aliba} alt="alibaba" title='Alibaba' className='ml-3' />
+                            </a>
+                        </section>
                     </div>
                     <div className="col-sm-12 col-md-8 margin-tp">
                         <p className={styles.introCode}>
@@ -133,7 +130,7 @@ const IndexPage = () => {
                     <div className="col-sm-12">
                         {loading
                             ? <div className='row loader m-auto' />
-                            : <ol className={styles.posts}>{renderRepos()}</ol>}
+                            : <ol className={styles.repos}>{renderRepos()}</ol>}
                     </div>
                 </div>
             </div>

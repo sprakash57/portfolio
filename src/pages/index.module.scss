@@ -55,6 +55,12 @@
 .posts{
     list-style-type: none;
     display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.repos {
+    list-style-type: none;
+    display: flex;
     padding: 0;
 }
 
