@@ -1,0 +1,43 @@
+@mixin navMenuChildren {
+    font-size: small;
+    padding: 0 1rem;
+    color: var(--gray);
+    font-weight: var(--bold-font);
+}
+.nav {
+	height: 80px;
+	display: flex;
+	padding: 0.5rem 1rem 0.5rem 0;
+	justify-content: space-between;
+}
+.navMenu {
+	display: flex;
+	align-items: center;
+	margin-right: -24px;
+	* {
+		@include navMenuChildren;
+		&:hover {
+			color: var(--black);
+		}
+	}
+}
+.navAuth {
+	* {
+		@include navMenuChildren;
+	}
+	a {
+		&:hover {
+			color: var(--black);
+		}
+	}
+}
+.navBrand {
+	display: flex;
+	align-items: center;
+	width: 170px;
+}
+@media screen and (max-width: 625px) {
+	.navMenu {
+		display: none;
+	}
+}
