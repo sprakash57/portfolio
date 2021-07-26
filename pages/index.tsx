@@ -1,23 +1,30 @@
 import { useMemo } from "react";
-import BlogCard from "../components/Blog/BlogCard";
 import { getAllFilesFrontMatter } from "../helpers/mdx";
-import { Post } from "../types";
+import { CardItem } from "../types";
 import styles from "../styles/Home.module.scss";
 import RouteLink from "../components/Common/RouteLink";
+import { getTopThree } from "../helpers/utils";
+import Card from "../components/Common/Card";
 
-const Home = ({ posts }: { posts: Post[] }) => {
-    console.log(posts)
-    const recentPosts = useMemo(() => {
-        return posts
-            .sort((prevPost, nextPost) => new Date(nextPost.publishedAt).getTime() - new Date(prevPost.publishedAt).getTime())
-            .slice(0, 3)
-    }, [posts])
+type Props = {
+    posts: CardItem[];
+    projects: CardItem[];
+}
+
+const Home = ({ posts, projects }: Props) => {
+
+    const recentPosts = useMemo(() => getTopThree(posts), [posts]);
+    const recentProjects = useMemo(() => getTopThree(projects), [projects]);
 
     return (
         <section>
             <article className={styles.agenda}>
                 <h1>Recent Blogs</h1>
-                {recentPosts.map(post => <BlogCard key={post.title} post={post} />)}
+                {recentPosts.map(post => (
+                    <RouteLink key={post.title} href={`/blogs/${post.slug}`} passHref>
+                        <Card content={post} />
+                    </RouteLink>
+                ))}
                 <RouteLink
                     href="/blogs"
                     classForContainer={styles.viewMore}
@@ -27,6 +34,13 @@ const Home = ({ posts }: { posts: Post[] }) => {
             </article>
             <article className={styles.agenda}>
                 <h1>Featured Projects</h1>
+                {recentProjects.map(project => <Card key={project.title} content={project} />)}
+                <RouteLink
+                    href="/projects"
+                    classForContainer={styles.viewMore}
+                >
+                    View more
+                </RouteLink>
             </article>
             <article className={styles.agenda}>
                 <h1>What&apos;s cooking</h1>
@@ -38,6 +52,7 @@ const Home = ({ posts }: { posts: Post[] }) => {
 export default Home;
 
 export async function getStaticProps() {
-    const posts = await getAllFilesFrontMatter('posts')
-    return { props: { posts } }
+    const posts = await getAllFilesFrontMatter("posts");
+    const projects = await getAllFilesFrontMatter("projects");
+    return { props: { posts, projects } }
 }

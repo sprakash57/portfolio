@@ -1,4 +1,4 @@
-export interface Post {
+export interface CardItem {
     title: string;
     summary: string;
     publishedAt: string;
