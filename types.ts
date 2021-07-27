@@ -4,4 +4,5 @@ export interface CardItem {
     publishedAt: string;
     slug: string;
     image: string;
+    details: string;
 }

@@ -2,9 +2,9 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import readingTime from 'reading-time'
-import { serialize } from 'next-mdx-remote//serialize'
+import { serialize } from 'next-mdx-remote/serialize'
 
-const root = process.cwd()
+const root = process.cwd();
 
 export async function getFiles(type: string) {
     return fs.readdirSync(path.join(root, 'data', type));
@@ -30,7 +30,7 @@ export async function getFileBySlug(type: string, slug: string) {
 }
 
 export async function getAllFilesFrontMatter(type: string) {
-    const files = fs.readdirSync(path.join(root, 'data', type))
+    const files = fs.readdirSync(path.join(root, 'data', type));
 
     return files.reduce((allPosts: any[], postSlug) => {
         const source = fs.readFileSync(
@@ -40,10 +40,7 @@ export async function getAllFilesFrontMatter(type: string) {
         const { data } = matter(source)
 
         return [
-            {
-                ...data,
-                slug: postSlug.replace('.mdx', '')
-            },
+            { ...data, slug: postSlug.replace('.mdx', '') },
             ...allPosts
         ]
     }, [])

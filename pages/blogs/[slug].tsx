@@ -5,7 +5,6 @@ import { getFileBySlug, getFiles } from '../../helpers/mdx';
 
 const Blog = ({ mdxSource, frontMatter }: Record<string, any>) => {
     console.log(mdxSource);
-    console.log(frontMatter);
     return (
         <BlogLayout frontMatter={frontMatter}>
             <MDXRemote {...mdxSource} components={MDXComponents} />

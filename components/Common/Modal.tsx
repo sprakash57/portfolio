@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import styles from '../../styles/components/Common/Modal.module.scss';
 
-const Modal = ({ children }: { children: React.ReactNode }) => {
+type Props = {
+    isOpen: boolean
+    children: React.ReactNode;
+    onClose: () => void;
+}
+
+const Modal = ({ children, isOpen, onClose }: Props) => {
     const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
@@ -9,11 +16,18 @@ const Modal = ({ children }: { children: React.ReactNode }) => {
         return () => setIsMounted(false);
     }, []);
 
-    const portal = document.querySelector("#portal");
+    if (!isMounted || !isOpen) return null;
 
-    if (!isMounted || !portal) return null;
-
-    return createPortal(children, portal);
+    return createPortal(
+        <>
+            <div className={styles.overlay} />
+            <div className={styles.modalContainer}>
+                <button onClick={onClose}>close</button>
+                {children}
+            </div>
+        </>,
+        document.querySelector("#portal")!
+    );
 }
 
 export default Modal;
