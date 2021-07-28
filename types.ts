@@ -1,8 +1,10 @@
 export interface CardItem {
     title: string;
     summary: string;
-    publishedAt: string;
     slug: string;
-    image: string;
-    details: string;
+    publishedAt?: string;
+    technology?: string[];
+    platform?: string;
+    url?: string;
+    image?: string;
 }

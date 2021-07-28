@@ -2,9 +2,13 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: 'translate(-50%, -50%)';
+    transform: translate(-50%, -50%);
     background-color: white;
-    padding: 3.5rem;
+    padding: 3rem;
+    z-index: 999;
+    box-shadow: 1px 3px 3px 1px rgba(0,0,0,0.2);
+    border-radius: 2px;
+    border-top: 4px solid var(--red);
 }
 .overlay {
     position: fixed;
@@ -12,5 +16,5 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: hsla(0, 0%, 0%, 0.6);
+    background-color: hsla(0, 0%, 0%, 0.4);
 }
