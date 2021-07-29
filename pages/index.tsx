@@ -1,10 +1,10 @@
 import React, { useMemo } from "react";
-import { getAllFilesFrontMatter } from "../helpers/mdx";
+import { getAllFilesFrontMatter } from "@/helpers/mdx";
 import { CardItem } from "../types";
-import styles from "../styles/Home.module.scss";
-import RouteLink from "../components/Common/RouteLink";
-import { getTopThree } from "../helpers/utils";
-import Card from "../components/Common/Card";
+import styles from "@/styles/Home.module.scss";
+import { getTopThree } from "@/helpers/utils";
+import Card from "@/common/Card";
+import RouteLink from "@/components/Common/RouteLink";
 
 type Props = {
     posts: CardItem[];

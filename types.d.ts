@@ -1,4 +1,4 @@
-export interface CardItem {
+interface CardItem {
     title: string;
     summary: string;
     slug: string;
