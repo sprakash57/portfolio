@@ -1,7 +1,6 @@
-import { CardItem } from '../../types';
 import Image from 'next/image';
-import ExtLink from '../../public/external.svg';
-import styles from '../../styles/components/Common/Card.module.scss';
+import ExtLink from '@/public/external.svg';
+import styles from '@/styles/components/Common/Card.module.scss';
 
 type Props = {
     content: CardItem;
@@ -30,7 +29,7 @@ const Card = ({ content }: Props) => {
                 <summary>{summary}</summary>
                 {publishedAt && <small>{publishedAt}</small>}
                 <section className={styles.tagGroup}>
-                    {technology && technology.map(tech => <span key={tech} className={styles.tag}>{tech}</span>)}
+                    {technology && technology.map((tech: string) => <span key={tech} className={styles.tag}>{tech}</span>)}
                 </section>
             </section>
         </section>

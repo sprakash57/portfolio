@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import { getAllFilesFrontMatter } from "@/helpers/mdx";
-import { CardItem } from "../types";
 import styles from "@/styles/Home.module.scss";
 import { getTopThree } from "@/helpers/utils";
 import Card from "@/common/Card";
