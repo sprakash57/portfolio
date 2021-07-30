@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
 import { getAllFilesFrontMatter } from "@/helpers/mdx";
 import styles from "@/styles/Home.module.scss";
 import { getTopThree } from "@/helpers/utils";
@@ -8,10 +9,11 @@ import RouteLink from "@/components/Common/RouteLink";
 type Props = {
     posts: CardItem[];
     projects: CardItem[];
+    githubRepos: any;
 }
 
-const Home = ({ posts, projects }: Props) => {
-
+const Home = ({ posts, projects, githubRepos }: Props) => {
+    console.log(githubRepos)
     const recentPosts = useMemo(() => getTopThree(posts), [posts]);
     const recentProjects = useMemo(() => getTopThree(projects), [projects]);
 
@@ -65,5 +67,35 @@ export default Home;
 export async function getStaticProps() {
     const posts = await getAllFilesFrontMatter("posts");
     const projects = await getAllFilesFrontMatter("projects");
-    return { props: { posts, projects } }
+    const client = new ApolloClient({
+        uri: "https://api.github.com/graphql",
+        cache: new InMemoryCache(),
+        headers: {
+            "Authorization": `Basic ${process.env.GH_TOKEN}`
+        }
+    })
+
+    const { data } = await client.query({
+        query: gql`
+        {
+            user(login: "sprakash57") {
+                repositories(first: 10, privacy: PUBLIC, orderBy: {field: PUSHED_AT, direction: DESC}) {
+                    nodes {
+                        parent {
+                            name
+                            url
+                            stargazerCount
+                            forkCount
+                        }
+                        name
+                        url
+                        stargazerCount
+                        forkCount
+                    }
+                }
+            }
+        }
+        `
+    })
+    return { props: { posts, projects, githubRepos: data } }
 }
