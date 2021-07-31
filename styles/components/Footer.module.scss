@@ -1,0 +1,21 @@
+.footer {
+	display: flex;
+	justify-content: space-evenly;
+    align-items: baseline;
+    box-shadow: 0px 1px 5px 1px black;
+	background: var(--dark-gray);
+	margin-top: 2rem;
+}
+.socialIcon {
+    margin: 0.6rem;
+    padding: 0.3rem;
+    display: flex;
+    align-items: flex-end;
+    border-top: 3px solid var(--dark-gray);
+    border-right: 1px solid var(--dark-gray);
+    transition: border 0.2s ease-out;
+    &:hover {
+        border-top: 3px solid var(--red);
+        border-right: 1px solid var(--red);
+    }
+}

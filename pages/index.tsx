@@ -58,7 +58,11 @@ const Home = ({ posts, projects, activities }: Props) => {
                     <h1>Latest Github contributions</h1>
                 </header>
                 <section className={styles.githubRepos}>
-                    {activities.map(activity => <GithubCard key={activity.name} activityDetail={activity} />)}
+                    {activities.map(activity => (
+                        <RouteLink key={activity.name} href={activity.parent ? activity.parent.url : activity.url} isExternal>
+                            <GithubCard key={activity.name} activityDetail={activity} />
+                        </RouteLink>
+                    ))}
                 </section>
             </article>
         </section>

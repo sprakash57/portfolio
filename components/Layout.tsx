@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import styles from '../styles/components/Layout.module.scss';
+import Footer from './Footer';
 import NavMenu from './NavMenu';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -14,6 +15,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <section className={styles.content}>
                 <NavMenu />
                 {children}
+                <Footer />
             </section>
         </main>
     )
