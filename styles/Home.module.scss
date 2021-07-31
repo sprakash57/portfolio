@@ -21,3 +21,9 @@
         background-color: var(--red-hover);
     }
 }
+.githubRepos {
+    display: grid;
+    row-gap: 2rem;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}

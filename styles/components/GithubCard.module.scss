@@ -1,0 +1,62 @@
+.githubCard {
+    padding: 0.5rem;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 2px 4px 1px var(--red-shadow);
+    border-top: 3px solid var(--red);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    width: 300px;
+    max-height: 300px;
+    height: 300px;
+    header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+    }
+    h3 { 
+        margin: 0 0 0.5rem 0;
+    }
+    h5 {
+        margin: 0.5rem;
+        font-weight: var(--normal);
+        color: var(--gray);
+        margin-left: 0;
+    }
+    summary {
+        font-size: 0.9rem;
+        text-align: justify;
+        color: var(--gray);
+    }
+    small {
+        font-size: 0.7rem;
+    }
+    &:hover {
+        background-color: var(--red-hover);
+        .extLink {
+            display: block !important;
+        }
+    }
+}
+.extLink {
+    display: none !important;
+}
+.ml1 {
+    margin-left: 0.4rem;
+}
+.forkStar {
+    display: flex;
+    align-items: flex-end;
+    figure {
+        margin: 0.5rem;
+        margin-left: 0;
+        display: flex;
+    }
+}
+.languages {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+}
