@@ -15,8 +15,8 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
             <section className={styles.content}>
                 <NavMenu />
                 {children}
-                <Footer />
             </section>
+            <Footer />
         </main>
     )
 }
