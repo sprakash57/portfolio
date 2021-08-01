@@ -3,3 +3,5 @@ export const getTopThree = (list: CardItem[]) => {
         .sort((prev, next) => new Date(next.publishedAt!).getTime() - new Date(prev.publishedAt!).getTime())
         .slice(0, 3)
 }
+
+export const classnames = (...args: any[]) => args.filter(arg => !!arg).join(" ");

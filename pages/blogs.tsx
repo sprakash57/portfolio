@@ -1,12 +1,12 @@
+import BlogsList from '@/components/Blog/BlogsList';
 import React from 'react'
-import { getAllFilesFrontMatter } from '../helpers/mdx';
+import { getAllFilesFrontMatter } from '@/helpers/mdx';
 
-const Blogs = (props: any) => {
-    console.log("Blogs pages", props);
+const Blogs = ({ posts }: { posts: CardItem[] }) => {
     return (
-        <div>
-            Blog
-        </div>
+        <section>
+            <BlogsList posts={posts} header="Blogs" />
+        </section>
     )
 }
 
@@ -14,6 +14,5 @@ export default Blogs;
 
 export async function getStaticProps() {
     const posts = await getAllFilesFrontMatter('posts')
-    console.log(posts)
     return { props: { posts } }
 }

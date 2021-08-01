@@ -15,12 +15,6 @@
     small {
         font-size: 0.7rem;
     }
-    &:hover {
-        background-color: var(--red-hover);
-        .extLink {
-            display: block !important;
-        }
-    }
 }
 .cardBody {
     display: flex;
@@ -49,18 +43,4 @@
     margin: 0 1rem 0 0;
     display: flex;
     align-items: center;
-}
-.extLink {
-    display: none !important;
-}
-.tag {
-    font-size: 0.6rem;
-    font-family: monospace;
-    color: white;
-    background-color: var(--red);
-    padding: 0.3rem;
-    margin-right: 0.25rem;
-}
-.tagGroup {
-    padding-bottom: 0.5rem;
 }

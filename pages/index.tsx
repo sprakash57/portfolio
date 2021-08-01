@@ -1,10 +1,14 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { getAllFilesFrontMatter, getGithubActivity } from "@/helpers/mdx";
 import styles from "@/styles/Home.module.scss";
 import { getTopThree } from "@/helpers/utils";
-import Card from "@/common/Card";
-import RouteLink from "@/components/Common/RouteLink";
-import GithubCard from "@/components/GithubCard";
+import RouteLink from "@/components/common/RouteLink";
+import GithubCard from "@/components/Project/GithubCard";
+import BlogsList from "@/components/Blog/BlogsList";
+import ProjectsList from "@/components/Project/ProjectsList";
+import Button from "@/components/common/Button";
+import RepoList from "@/components/Project/RepoList";
+import List from "@/components/common/List";
 
 type Props = {
     posts: CardItem[];
@@ -13,57 +17,21 @@ type Props = {
 }
 
 const Home = ({ posts, projects, activities }: Props) => {
-    console.log(activities)
     const recentPosts = useMemo(() => getTopThree(posts), [posts]);
     const recentProjects = useMemo(() => getTopThree(projects), [projects]);
 
     return (
         <section>
-            <article>
-                <header className={styles.header}>
-                    <h1>Recent Blogs</h1>
-                </header>
-                {recentPosts.map(post => (
-                    <RouteLink key={post.title} href={`/blogs/${post.slug}`} passHref>
-                        <Card content={post} />
-                    </RouteLink>
-                ))}
-                <RouteLink
-                    href="/blogs"
-                    classForContainer={styles.viewMore}
-                >
-                    View more
-                </RouteLink>
+            <article className={styles.articles}>
+                <BlogsList posts={recentPosts} header="Recent Blogs" />
+                <Button as="link" href="/blogs" label="View more" />
             </article>
-            <article>
-                <header className={styles.header}>
-                    <h1>Featured Projects</h1>
-                </header>
-                <section>
-                    {recentProjects.map(project => (
-                        <RouteLink key={project.title} href={project.url!} childProps={{ rel: "noreferrer noopener", target: "_blank" }}>
-                            <Card key={project.title} content={project} />
-                        </RouteLink>
-                    ))}
-                </section>
-                <RouteLink
-                    href="/projects"
-                    classForContainer={styles.viewMore}
-                >
-                    View more
-                </RouteLink>
+            <article className={styles.articles}>
+                <ProjectsList projects={recentProjects} header="Featured Projects" />
+                <Button as="link" href="/projects" label="View more" />
             </article>
-            <article>
-                <header className={styles.header}>
-                    <h1>Latest Github contributions</h1>
-                </header>
-                <section className={styles.githubRepos}>
-                    {activities.map(activity => (
-                        <RouteLink key={activity.name} href={activity.parent ? activity.parent.url : activity.url} isExternal>
-                            <GithubCard key={activity.name} activityDetail={activity} />
-                        </RouteLink>
-                    ))}
-                </section>
+            <article className={styles.articles}>
+                <RepoList listStyle={styles.githubRepos} repos={activities} header="What's cooking" />
             </article>
         </section>
     )

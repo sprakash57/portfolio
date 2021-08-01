@@ -1,7 +1,7 @@
-import RouteLink from "./Common/RouteLink";
+import { RouteLink } from "@/common/index";
 import styles from '../styles/components/NavMenu.module.scss';
 import Image from "next/dist/client/image";
-import Brand from '../public/brand.svg';
+import Brand from '@/public/brand.svg';
 
 const NavMenu = () => {
     return (
@@ -12,7 +12,7 @@ const NavMenu = () => {
             <section className={styles.navMenu}>
                 <RouteLink href="/">/</RouteLink>
                 <RouteLink href="/blogs">Blogs</RouteLink>
-                <RouteLink href="/projects">Project</RouteLink>
+                <RouteLink href="/projects">Projects</RouteLink>
                 <RouteLink href="/about">About</RouteLink>
             </section>
         </nav>

@@ -1,39 +1,51 @@
-import Image from 'next/image';
-import ExtLink from '@/public/external.svg';
+import NextImage from 'next/image';
 import styles from '@/styles/components/Common/Card.module.scss';
+import Header from './Header';
+import React from 'react';
+import { classnames } from '@/helpers/utils';
 
-type Props = {
-    content: CardItem;
+type CommonProps = {
+    className?: string;
+    children: React.ReactNode;
 }
 
-const Card = ({ content }: Props) => {
-    const { title, summary, publishedAt, platform, url, image, technology } = content;
+const Image = ({ image, alt }: { image: string | undefined, alt: string }) => {
+    if (!image) return null;
     return (
-        <section className={styles.card}>
-            {image && (
-                <figure className={styles.cardImage}>
-                    <Image
-                        src={require(`../../public/${image}`)}
-                        alt="Cover"
-                    />
-                </figure>
-            )}
-            <section className={styles.cardBody}>
-                <header className={styles.cardTitle}>
-                    <div>
-                        <h3>{title}</h3>
-                        {platform && <Image src={require(`../../public/${platform}`)} alt="Platform" width={20} height={20} />}
-                    </div>
-                    {url && <Image className={styles.extLink} src={ExtLink} alt="External Link" />}
-                </header>
-                <summary>{summary}</summary>
-                {publishedAt && <small>{publishedAt}</small>}
-                <section className={styles.tagGroup}>
-                    {technology && technology.map((tech: string) => <span key={tech} className={styles.tag}>{tech}</span>)}
-                </section>
-            </section>
+        <figure className={styles.cardImage}>
+            <NextImage
+                src={require(`../../public/${image}`)}
+                alt={alt}
+            />
+        </figure>
+    )
+}
+
+const Title = ({ className = "", children }: { className?: string, children: React.ReactNode }) => {
+    return (
+        <header className={classnames(styles.cardTitle, className)}>
+            {children}
+        </header>
+    )
+}
+
+const Body = ({ className, children }: CommonProps) => {
+    return (
+        <section className={classnames(styles.cardBody, className)}>
+            {children}
         </section>
     )
 }
+
+const Card = ({ className, children, addStyles }: { children: React.ReactNode, className?: string, addStyles?: string }) => {
+    const classes = className ? className : classnames(styles.card, addStyles);
+    return (
+        <section className={classnames(classes)}>{children}</section>
+    )
+}
+
+Card.Body = Body;
+Card.Title = Title;
+Card.Image = Image;
 
 export default Card;

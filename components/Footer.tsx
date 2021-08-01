@@ -1,6 +1,6 @@
 import styles from '@/styles/components/Footer.module.scss';
 import Image from 'next/image';
-import RouteLink from './Common/RouteLink';
+import RouteLink from './common/RouteLink';
 
 const Footer = () => {
     return (

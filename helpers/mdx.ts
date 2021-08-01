@@ -3,7 +3,7 @@ import matter from 'gray-matter'
 import path from 'path'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
-import { ApolloClient, gql, InMemoryCache } from '@apollo/client'
+import { apolloInstance, GET_GITHUB_ACTIVITY, GET_GITHUB_REPOS } from "./apollo";
 
 const root = process.cwd();
 
@@ -49,54 +49,16 @@ export async function getAllFilesFrontMatter(type: string) {
 
 export async function getGithubActivity() {
   try {
-    const client = new ApolloClient({
-      uri: "https://api.github.com/graphql",
-      cache: new InMemoryCache(),
-      headers: {
-        "Authorization": `Basic ${process.env.GH_TOKEN}`
-      }
-    })
+    const { data } = await apolloInstance(GET_GITHUB_ACTIVITY);
+    return data.user.repositories.nodes;
+  } catch (error) {
+    return { message: error.message }
+  }
+}
 
-    const { data } = await client.query({
-      query: gql`
-          {
-            user(login: "sprakash57") {
-              repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 6) {
-                nodes {
-                  forkCount
-                  url
-                  stargazerCount
-                  isPrivate
-                  description
-                  languages(first: 3) {
-                    nodes {
-                      name
-                    }
-                  }
-                  name
-                  owner {
-                    avatarUrl(size: 60)
-                    url
-                    login
-                  }
-                  parent {
-                    stargazerCount
-                    url
-                    forkCount
-                    description
-                    owner {
-                      avatarUrl(size: 60)
-                      url
-                      login
-                    }
-                    isPrivate
-                  }
-                }
-              }
-            }
-          }
-          `
-    })
+export async function getGithubRepos() {
+  try {
+    const { data } = await apolloInstance(GET_GITHUB_REPOS);
     return data.user.repositories.nodes;
   } catch (error) {
     return { message: error.message }
