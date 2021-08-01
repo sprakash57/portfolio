@@ -16,6 +16,7 @@ const Image = ({ image, alt }: { image: string | undefined, alt: string }) => {
             <NextImage
                 src={require(`../../public/${image}`)}
                 alt={alt}
+                placeholder="blur"
             />
         </figure>
     )

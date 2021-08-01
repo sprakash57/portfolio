@@ -2,13 +2,10 @@ import { useMemo } from "react";
 import { getAllFilesFrontMatter, getGithubActivity } from "@/helpers/mdx";
 import styles from "@/styles/Home.module.scss";
 import { getTopThree } from "@/helpers/utils";
-import RouteLink from "@/components/common/RouteLink";
-import GithubCard from "@/components/Project/GithubCard";
 import BlogsList from "@/components/Blog/BlogsList";
 import ProjectsList from "@/components/Project/ProjectsList";
 import Button from "@/components/common/Button";
 import RepoList from "@/components/Project/RepoList";
-import List from "@/components/common/List";
 
 type Props = {
     posts: CardItem[];
@@ -22,17 +19,9 @@ const Home = ({ posts, projects, activities }: Props) => {
 
     return (
         <section>
-            <article className={styles.articles}>
-                <BlogsList posts={recentPosts} header="Recent Blogs" />
-                <Button as="link" href="/blogs" label="View more" />
-            </article>
-            <article className={styles.articles}>
-                <ProjectsList projects={recentProjects} header="Featured Projects" />
-                <Button as="link" href="/projects" label="View more" />
-            </article>
-            <article className={styles.articles}>
-                <RepoList listStyle={styles.githubRepos} repos={activities} header="What's cooking" />
-            </article>
+            <BlogsList posts={recentPosts} header="Recent Blogs" viewMoreBtn />
+            <ProjectsList projects={recentProjects} header="Featured Projects" viewMoreBtn />
+            <RepoList repos={activities} header="Latest contributions" />
         </section>
     )
 }

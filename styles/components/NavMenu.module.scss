@@ -42,6 +42,10 @@
 	width: 170px;
 }
 @media screen and (max-width: 625px) {
+	.nav {
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
+	}
 	.navMenu {
 		display: none;
 	}

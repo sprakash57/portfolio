@@ -1,11 +1,12 @@
 import { getAllFilesFrontMatter, getGithubRepos } from '@/helpers/mdx';
 import ProjectsList from '@/components/Project/ProjectsList';
+import RepoList from '@/components/Project/RepoList';
 
 const Projects = ({ projects, allProjects }: { projects: CardItem[], allProjects: CardItem[] }) => {
     return (
         <section>
             <ProjectsList projects={projects} header="Featured" />
-            <ProjectsList projects={allProjects} header="All Projects" />
+            <RepoList repos={allProjects} header="All Projects" viewMoreBtn />
         </section>
     )
 }

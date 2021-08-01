@@ -8,17 +8,20 @@ import { Card, Header, Tag } from '@/common/index';
 const GithubCard = ({ activityDetail }: { activityDetail: ActivityDetail }) => {
     const { name, description, languages, parent } = activityDetail;
     const profile = parent ?? activityDetail;
-    const { forkCount, stargazerCount, owner, isPrivate } = profile;
-    const { login } = owner;
+    const { forkCount, stargazerCount, owner, isPrivate, isFork } = profile;
 
     return (
         <Card className={styles.githubCard}>
             <header>
-                <h5 title="Author">{login} {isPrivate && <Tag label="private" variant="outline" classname={styles.ml1} />}</h5>
+                <h5 title="Author">
+                    {!!owner ? `${owner.login} ` : ""}
+                    {isPrivate && <Tag label="private" variant="outline" classname={styles.ml1} />}
+                    {isFork && <Tag label="forked" variant="outline" classname={styles.ml1} />}
+                </h5>
                 <Image className={styles.extLink} src={ExtLink} alt="External Link" />
             </header>
-            <Header as="h2" label="name" />
-            <Card.Body>
+            <Header as="h3" label={name} />
+            <Card.Body className={styles.githubCardBody}>
                 <article>
                     <summary>{description || "--"}</summary>
                 </article>

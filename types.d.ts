@@ -9,19 +9,15 @@ interface CardItem {
     image?: string;
 }
 
-interface Profile {
-    avatarUrl: string;
-    url: string;
-    login: string;
-}
 interface ActivityDetail {
     forkCount: number;
     name: string;
     url: string;
     stargazerCount: number;
     isPrivate: boolean;
+    isFork: boolean;
     description: string | null;
     languages: { nodes: { name: string }[] };
-    owner: Profile;
+    owner: { login: string };
     parent: ActivityDetail | null;
 }

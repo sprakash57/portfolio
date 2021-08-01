@@ -5,45 +5,35 @@ export const apolloInstance = async (query: DocumentNode) => {
     uri: "https://api.github.com/graphql",
     cache: new InMemoryCache(),
     headers: {
-      "Authorization": `Basic ${process.env.GH_TOKEN}`
+      "Authorization": `Bearer ${process.env.GH_TOKEN}`
     }
   });
   return await client.query({ query });
 }
 
 export const GET_GITHUB_ACTIVITY = gql`
-{
+query {
   user(login: "sprakash57") {
-    repositories(orderBy: {field: PUSHED_AT, direction: DESC}, first: 6) {
+    repositories(orderBy: {field: UPDATED_AT, direction: DESC}, first: 6) {
       nodes {
-        forkCount
-        url
         stargazerCount
-        isPrivate
+        url
+        forkCount
         description
-        languages(first: 3) {
-          nodes {
-            name
-          }
-        }
-        name
-        owner {
-          avatarUrl(size: 60)
-          url
-          login
-        }
+        isPrivate
+        owner { login }
         parent {
           stargazerCount
           url
           forkCount
           description
-          owner {
-            avatarUrl(size: 60)
-            url
-            login
-          }
           isPrivate
+          owner { login }
         }
+        languages(first: 3) {
+          nodes { name }
+        }
+        name
       }
     }
   }
@@ -51,24 +41,22 @@ export const GET_GITHUB_ACTIVITY = gql`
 `;
 
 export const GET_GITHUB_REPOS = gql`
-{
+query {
   user(login: "sprakash57") {
-    repositories(orderBy: {field: STARGAZERS, direction: DESC}, first: 12) {
+    repositories(first: 12, orderBy: {field: STARGAZERS, direction: DESC}) {
       nodes {
-        forkCount
-        url
-        stargazerCount
-        isPrivate
-        description
-        languages(first: 10) {
+        name
+        languages(first: 5, orderBy: {field: SIZE, direction: DESC}) {
           nodes {
             name
           }
         }
-        name
-        watchers {
-          totalCount
-        }
+        url
+        stargazerCount
+        forkCount
+        isPrivate
+        isFork
+        description
       }
     }
   }

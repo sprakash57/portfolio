@@ -5,9 +5,9 @@ import RouteLink from './common/RouteLink';
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <RouteLink href="http://www.linkedin.com/in/sunny-prakash-3780ba49" isExternal>
+            <RouteLink href="https://www.npmjs.com/~sprakash57" isExternal>
                 <figure className={styles.socialIcon}>
-                    <Image src={require("@/public/icons/linkedin.svg")} alt="Linkedin" title="LinkedIn" width={20} height={20} />
+                    <Image src={require("@/public/icons/nodepackage.svg")} alt="NPM" title="NPM" width={20} height={20} />
                 </figure>
             </RouteLink>
             <RouteLink href="https://play.google.com/store/apps/developer?id=Sunny+Prakash" isExternal>
@@ -35,9 +35,9 @@ const Footer = () => {
                     <Image src={require("@/public/icons/dev.svg")} alt="Dev.to" title="Dev.to" width={20} height={20} />
                 </figure>
             </RouteLink>
-            <RouteLink href="https://www.npmjs.com/~sprakash57" isExternal>
+            <RouteLink href="http://www.linkedin.com/in/sunny-prakash-3780ba49" isExternal>
                 <figure className={styles.socialIcon}>
-                    <Image src={require("@/public/icons/nodepackage.svg")} alt="NPM" title="NPM" width={20} height={20} />
+                    <Image src={require("@/public/icons/linkedin.svg")} alt="Linkedin" title="LinkedIn" width={20} height={20} />
                 </figure>
             </RouteLink>
             <RouteLink href="https://stackoverflow.com/users/9585068/sunny-prakash" isExternal>
