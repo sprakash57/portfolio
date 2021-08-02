@@ -1,10 +1,8 @@
 import { useMemo } from "react";
 import { getAllFilesFrontMatter, getGithubActivity } from "@/helpers/mdx";
-import styles from "@/styles/Home.module.scss";
 import { getTopThree } from "@/helpers/utils";
 import BlogsList from "@/components/Blog/BlogsList";
 import ProjectsList from "@/components/Project/ProjectsList";
-import Button from "@/components/common/Button";
 import RepoList from "@/components/Project/RepoList";
 
 type Props = {

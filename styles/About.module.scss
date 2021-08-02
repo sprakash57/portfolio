@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.intro {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    figure {
+        border-radius: 50%;
+        display: flex;
+        width: 200px;
+        height: 200px;
+    }
+    article {
+        width: fit-content;
+        flex: 2;
+        p {
+            font-style: italic;
+            text-align: justify;
+            font-weight: 500;
+            color: var(--dark-gray);
+        }
+    }
+}
+.img {
+    border-radius: 50%;
+}
