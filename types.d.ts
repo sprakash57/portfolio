@@ -21,3 +21,9 @@ interface ActivityDetail {
     owner: { login: string };
     parent: ActivityDetail | null;
 }
+
+interface Skill {
+    area: string;
+    learning: number;
+    techStack: string[];
+}

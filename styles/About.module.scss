@@ -27,3 +27,18 @@
 .img {
     border-radius: 50%;
 }
+.skillTag {
+    font-size: 0.8rem;
+    margin: 0.2rem;
+    min-width: 50px;
+    text-align: center;
+}
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.contactMe {
+    font-size: 0.9rem;
+    text-align: justify;
+    opacity: 0.8;
+}
