@@ -1,12 +1,15 @@
-import { getAllFilesFrontMatter, getGithubRepos } from '@/helpers/mdx';
+import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import ProjectsList from '@/components/Project/ProjectsList';
 import RepoList from '@/components/Project/RepoList';
+import useSWR from 'swr';
+import fetcher from '@/helpers/fetcher';
 
-const Projects = ({ projects, allProjects }: { projects: CardItem[], allProjects: CardItem[] }) => {
+const Projects = ({ projects }: { projects: CardItem[] }) => {
+    const { data } = useSWR('/api/projects', fetcher);
     return (
         <section>
             <ProjectsList projects={projects} header="Featured" />
-            <RepoList repos={allProjects} header="All Projects" viewMoreBtn />
+            <RepoList repos={data?.projects} header="All Projects" viewMoreBtn />
         </section>
     )
 }
@@ -15,6 +18,5 @@ export default Projects;
 
 export async function getStaticProps() {
     const projects = await getAllFilesFrontMatter('projects');
-    const allProjects = await getGithubRepos();
-    return { props: { projects, allProjects } }
+    return { props: { projects } }
 }

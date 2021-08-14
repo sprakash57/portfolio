@@ -46,21 +46,3 @@ export async function getAllFilesFrontMatter(type: string) {
     ]
   }, [])
 }
-
-export async function getGithubActivity() {
-  try {
-    const { data } = await apolloInstance(GET_GITHUB_ACTIVITY);
-    return data.user.repositories.nodes;
-  } catch (error) {
-    return { message: error.message }
-  }
-}
-
-export async function getGithubRepos() {
-  try {
-    const { data } = await apolloInstance(GET_GITHUB_REPOS);
-    return data.user.repositories.nodes;
-  } catch (error) {
-    return { message: error.message }
-  }
-}
