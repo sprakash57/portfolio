@@ -6,6 +6,7 @@ import ProjectsList from "@/components/Project/ProjectsList";
 import RepoList from "@/components/Project/RepoList";
 import useSWR from "swr";
 import fetcher from "@/helpers/fetcher";
+import Intro from "@/components/Intro";
 
 type Props = {
     posts: CardItem[];
@@ -20,6 +21,7 @@ const Home = ({ posts, projects }: Props) => {
 
     return (
         <section>
+            <Intro />
             <BlogsList posts={recentPosts} header="Recent Blogs" viewMoreBtn />
             <ProjectsList projects={recentProjects} header="Featured Projects" viewMoreBtn />
             <RepoList repos={data?.activities} header="Latest contributions" />

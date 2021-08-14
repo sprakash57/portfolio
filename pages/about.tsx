@@ -51,13 +51,6 @@ const About = () => {
                     </Card>
                 ))}
             </section>
-            <Header as="h2" label="Contact me" />
-            <article className={styles.contactMe}>
-                I use my spare time in open source project contribution, writing blogs, helping folks on telegram
-                channels and Stackoverflow. If you think I can be of any help with your venture or maybe you want to utilize my skills, I am just an email
-                away. You can send me your queries/suggestions/feedback to <em><u><strong>sunny.prakashgm@gmail.com</strong></u></em>. Find me on telegram
-                (username: <strong>@sprakash57</strong>) or the social platforms present in the footer.
-            </article>
         </section>
     )
 }

@@ -1,14 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote';
-import BlogLayout from '../../components/Blog/BlogLayout';
 import MDXComponents from '../../components/MDXComponents';
 import { getFileBySlug, getFiles } from '../../helpers/mdx';
+import styles from '../../styles/blogs.module.scss';
 
 const Blog = ({ mdxSource, frontMatter }: Record<string, any>) => {
-    console.log(mdxSource);
     return (
-        <BlogLayout frontMatter={frontMatter}>
+        <article>
+            <h1 className={styles.header}>{frontMatter.title}</h1>
+            <summary className={styles.summary}>{frontMatter.publishedAt} <div className={styles.separator} /> {frontMatter.readingTime.text}</summary>
             <MDXRemote {...mdxSource} components={MDXComponents} />
-        </BlogLayout>
+        </article>
     )
 }
 

@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
 :root {
   --dark-gray: hsl(210, 13%, 24%);
   --gray: hsl(212, 6%, 42%);
+  --light-gray: hsl(0, 0%, 53%);
   --red: hsl(10, 91%, 62%);
   --red-hover: hsl(15, 100%, 98%);
   --red-shadow: hsl(0, 13%, 72%, 30%);
-  --light: 200;
-  --normal: 500;
-  --bold: 700;
+  --light: 300;
+  --normal: 400;
+  --bold: 500;
 }
 html,
 body {
