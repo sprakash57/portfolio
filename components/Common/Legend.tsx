@@ -1,5 +1,5 @@
 import { classnames } from '@/helpers/utils';
-import styles from '@/styles/components/common/Legend.module.scss';
+import styles from '@/styles/components/Common/Legend.module.scss';
 const legend = [
     { label: "Expert", type: "solid" },
     { label: "Learning", type: "outline" }
