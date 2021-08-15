@@ -12,7 +12,7 @@ const BlogCard = ({ content }: { content: CardItem }) => {
                 <Card.Title>
                     <div>
                         <h3>{title}</h3>
-                        {platform && <NextImage src={require(`../../public/${platform}`)} alt="Platform" width={20} height={20} />}
+                        {platform && <NextImage src={require(`../../public/icons/${platform}`)} alt="Platform" width={20} height={20} />}
                     </div>
                     {url && <NextImage className={styles.extLink} src={ExtLink} alt="External Link" />}
                 </Card.Title>

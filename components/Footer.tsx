@@ -9,7 +9,7 @@ const Footer = () => {
             <footer className={styles.footer}>
                 <RouteLink href="https://www.npmjs.com/~sprakash57" isExternal>
                     <figure className={styles.socialIcon}>
-                        <Image src={require("@/public/icons/nodepackage.svg")} alt="NPM" title="NPM" width={20} height={20} />
+                        <Image src={require("@/public/icons/npm.svg")} alt="NPM" title="NPM" width={20} height={20} />
                     </figure>
                 </RouteLink>
                 <RouteLink href="https://play.google.com/store/apps/developer?id=Sunny+Prakash" isExternal>

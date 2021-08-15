@@ -3,7 +3,6 @@ import matter from 'gray-matter'
 import path from 'path'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
-import { apolloInstance, GET_GITHUB_ACTIVITY, GET_GITHUB_REPOS } from "./apollo";
 
 const root = process.cwd();
 

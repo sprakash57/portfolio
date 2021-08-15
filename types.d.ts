@@ -1,4 +1,5 @@
 interface CardItem {
+    id: number;
     title: string;
     summary: string;
     slug: string;
@@ -7,6 +8,7 @@ interface CardItem {
     platform?: string;
     url?: string;
     image?: string;
+    pinned?: boolean;
 }
 
 interface ActivityDetail {
