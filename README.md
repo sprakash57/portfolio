@@ -1,68 +1,36 @@
-<p align="center">
-  <a href="https://suprdev.netlify.app" rel='noopener noreferer' target='_blank'>
-    <img alt="logo" src="./src/images/icon.png" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Welcome to SUPRDEV repo
-</h1>
-
-SUPRDEV is bootstrapped with Gatsby's hello-world boilerplate. This starter ships with the main Gatsby configuration files that is needed to get up and running super quick with the blazing fast app generator for React.
-
-## 💻 Technology Stack
-
- - Gatsby 2.21.0
- - Gatsby Plugins
- - React 16.12.0
- - AWS Lambda
- - Contentful
- - Netlify
- - Bootstrap 4.x
- - FontAwesome 5.x
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 
-## 🧐 What's inside?
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6b2a730d-ab92-4877-a2c2-4a2e316c0987/deploy-status)](https://app.netlify.com/sites/suprdev/deploys)
+## Getting Started
 
-A quick look at the top-level files and directories you'll see in any Gatsby project.
+First, run the development server:
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+```bash
+npm run dev
+# or
+yarn dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1.  **`/src`**: Here lies all the sweet code related to this project such as site header or a page template.
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-2.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history on Github
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
 
-3.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent. Comes with the starter code.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-4.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser. Basically all the imports related to bootstrap or any external fonts like google Fonts.
+## Learn More
 
-5.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you will find the metadata of the site like the title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+To learn more about Next.js, take a look at the following resources:
 
-6.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-7.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-8.  **`LICENSE`**: Gatsby is licensed under the MIT license.
+## Deploy on Vercel
 
-9. **`README.md`**: A text file containing useful reference information about your project.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 🎓 Learning Gatsby
-
-Looking for building your own. For guidance check the full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

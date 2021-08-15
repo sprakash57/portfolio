@@ -1,0 +1,16 @@
+.header {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+.separator {
+    display: inline-block;
+    width: 8px;
+    background: var(--red);
+    height: 8px;
+    margin: 0 4px;
+    border-radius: 50%;
+}
+.summary {
+    font-size: 0.7rem;
+    font-weight: 200;
+}

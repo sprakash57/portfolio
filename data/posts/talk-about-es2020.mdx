@@ -1,0 +1,121 @@
+---
+id: 4
+title: "Let's talk about ES2020"
+publishedAt: '25 Oct 2020'
+summary: "New release of Ecmascript with lots of newbies to explore and learn."
+---
+
+As 2020 is about to complete its tenure, most of us do not want to remember this year at all. But good things happened as well. One of them is ES2020, which we will discuss in this post. 
+
+ES2020 A.K.A ES11 is the latest set of standards included in EcmaScript. A little background of EcmaScript, they are those who decide the standard way of writing JavaScript code, such that the interoperability of Web pages across different Web browsers must remain intact.
+
+### Why are we going through this?
+Day by day different projects are opting for ES6+ standards globally. To keep up with the pace, the sooner you will start adopting new features, the better. New features tending more towards TypeScript like features (but without types). Also, it is less confusing, more straight-forward, and feels like other Object-oriented Programming languages.
+
+> P.S:- Since this post is quite long. I don't want you to sleep or get rid of it. You can access this GitHub gist [here](https://gist.github.com/sprakash57/124ee72f2c8a3a38b7bf65ba68918860) and have a quick look around.
+
+Let's proceed, shall we?
+
+## 1. BigInt
+If I ask, what is the largest number in JavaScript? The Answer should be 2<sup>53</sup> - 1. What if you want to represent numbers more than that figure? You have `BigInt`. A BigInt is a number appended by suffix `n`. For example `223n` is a BigInt. What is this? Looks like a string. But it's not. You see, when you will try to execute `typeof 223n` it will give you `bigint`. Boom!!! A new type in JavaScript. So in your next interview, If someone asks what are the types in JS, you know what to tell them first. You welcome!!
+
+Since we are talking about JavaScript, strange things are eminent.
+- `"1" + 10n` will give "11". But `1 + 10n` will throw an error stating "you can not mix bigint and other types". However, you can compare Number and BigInt with the breeze. More examples are [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt).
+- BigInts are loosely equal to Number.
+- It can not be used with methods built in Math Object.
+- You can use toString() method, that will return string representation of bigint minus `n` suffix. So `112n.toString()` will result in "112".
+
+One use case, I can think of is in Problem Solving, where you will be given a long integer and you will be told to do some operation on it. the most tempting way would be to convert it to string and proceed. But now you know the other way as well.
+
+## 2. Promise.allSettled()
+
+You have used Promise.all and you must have thought, why there isn't a way to get the result irrespective of promise status. Well my friend, you are in luck. Because Promise has this new API that will give you all settled(resolved/rejected) every single time. It will return an array of resolved or rejected objects `{status: "fulfilled", value: "Just arrived"}` or `{status: "rejected", reason: "Some popular error"}`. Let's look at the example -
+```
+Promise.allSettled([
+    new Promise(res => setTimeout(() => res(1), 3000)),
+    new Promise((res, rej) => setTimeout(() => rej(new Error("Oops")), 5000)),
+    new Promise(res => setTimeout(() => resolve(3), 1000))
+]).then(data => console.log(data));
+```
+Output -
+
+```
+[
+  { status: 'fulfilled', value: 1 },
+  { status: 'rejected', reason: Error: oops...},
+  { status: 'fulfilled', value: 3 }
+]
+```
+```
+Promise.all([
+    new Promise(res => setTimeout(() => res(1), 3000)),
+    new Promise((res, rej) => setTimeout(() => rej(new Error("Oops")), 5000)),
+    new Promise(res => setTimeout(() => resolve(3), 1000))
+]).then(data => console.log(data)); 
+```
+Output -
+```
+UnhandledPromiseRejectionWarning: Error: Oops
+```
+## 3. Nullish Coalescing (??)
+
+If you have ever used TypeScript, you must have come across this operator. It's more like an inbuilt undefined safety feature. Previously we had `||` to fallback if the first operand results in falsy. `??` is different. It will strictly check whether the first operand is `undefined` or not. For example -
+
+console.log(undefined || "1"); // "1"
+console.log(undefined ?? "1"); // "1"
+console.log(0 || "1"); // "1"
+console.log(0 ?? "1"); // 0
+
+Just remember this - undefined is always falsy, but not all falsies are undefined.
+
+## 4. Optional chaining (?)
+
+This again hails from the world of TypeScript. If you are fetching some multi-level nested JSON object, and want to access any deep properties inside that JSON, two things might happen. Either you will get it or not. That might break your application due to the infamous "Reference Error". Let's take an example -
+```
+const response = {
+	first: {
+		second: { 
+			fourth: "this you want to access"
+		}
+	}
+}
+```
+What will happen if I access "third", which is not there?
+```
+console.log(first.third.fourth); //Reference error for third
+console.log(first?.third?.fourth); //undefined
+```
+
+## 5. globalThis
+`this` was a nightmare for all JS veterans already, what's up with globalThis. Well, it has nothing to do with `this`, not directly. You see, the global object in javaScript was not standardized. You have `window` in browsers, `global` in node.js, and `self` in web workers. Imagine your production code has all of these components, how could you count on your global "this" without writing messy checks in all places. With ES2020, there are less confusion and more standards. You can use `globalThis`, that's all!! No need to worry about the environment.
+
+## 6. Dynamic Imports
+In the new ES2020 you can use dynamic imports. How? imports are no longer bound to be imported first and use later. Now you can import your methods, object, etc dynamically. It will return a promise that you need to handle.
+
+print.js
+```
+const print = (value) => `Hi ${value}`
+
+export { print };
+```
+
+greet.js
+```
+const greet = value => import('./print.js).then(func => func(value));
+greet("sunny"); //Hi sunny
+```
+
+## 7. String.prototype.matchAll()
+Unlike `match()` it will return an iterator. The results can also be achieved with `regexp.exec()` however below example will show you how the number of lines can reduce drastically.
+
+```
+const regexp = RegExp('[a-z]*ame','g');
+const str = 'rame suot name vjaoi game';
+let match;
+while ((match = regexp.exec(str)) !== null) {
+  console.log(match)
+}
+// Same as
+console.log(...str.matchAll(regexp));
+```
+ 
