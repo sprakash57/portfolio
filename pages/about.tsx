@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Photo from '@/public/photo.jpg';
 import { aboutMe, milestones, skills } from '@/data/about';
-import styles from '@/styles/about.module.scss';
+import styles from '../styles/about.module.scss';
 import { Card, Header, Tag, Legend } from '@/components/Common';
 import Check from '@/public/icons/check.svg';
 
