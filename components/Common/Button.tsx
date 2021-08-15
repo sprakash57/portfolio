@@ -1,5 +1,5 @@
 import RouteLink from "./RouteLink";
-import styles from "@/styles/components/common/Button.module.scss";
+import styles from "@/styles/components/Common/Button.module.scss";
 import { classnames } from "@/helpers/utils";
 
 type Props = {
