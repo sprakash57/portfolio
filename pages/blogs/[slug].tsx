@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote';
-import MDXComponents from '../../components/MDXComponents';
-import { getFileBySlug, getFiles } from '../../helpers/mdx';
-import styles from '../../styles/blogs.module.scss';
+import MDXComponents from '@/components/MDXComponents';
+import { getFileBySlug, getFiles } from '@/helpers/mdx';
+import styles from '@/styles/blogs.module.scss';
 
 const Blog = ({ mdxSource, frontMatter }: Record<string, any>) => {
     return (
