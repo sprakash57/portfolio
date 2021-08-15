@@ -1,11 +1,11 @@
+import useSWR from "swr";
 import { getAllFilesFrontMatter } from "@/helpers/mdx";
 import { getLatest, getPinned } from "@/helpers/utils";
 import BlogsList from "@/components/Blog/BlogsList";
 import ProjectsList from "@/components/Project/ProjectsList";
 import RepoList from "@/components/Project/RepoList";
-import useSWR from "swr";
-import fetcher from "@/helpers/fetcher";
 import Intro from "@/components/Intro";
+import fetcher from "@/helpers/fetcher";
 
 type Props = {
     posts: CardItem[];
