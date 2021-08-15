@@ -1,32 +1,28 @@
 import Image from 'next/image';
 import Photo from '@/public/photo.jpg';
-import { achievements, skills } from '@/data/about';
+import { aboutMe, milestones, skills } from '@/data/about';
 import styles from '@/styles/About.module.scss';
-import { Card, Header, Tag } from '@/components/common';
+import { Card, Header, RouteLink, Tag } from '@/components/common';
 import Legend from '@/components/common/Legend';
+import Check from '@/public/icons/check.svg';
 
 const About = () => {
     return (
         <section className={styles.container}>
-            <Header as="h2" label="Who am I ?" />
             <section className={styles.intro}>
                 <figure>
                     <Image src={Photo} alt="Profile" placeholder="blur" className={styles.img} />
                 </figure>
-                <article>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                    </p>
-                </article>
+                <article dangerouslySetInnerHTML={{ __html: aboutMe }} />
             </section>
             <Header as="h2" label="My Skillset" />
             <Legend />
             <section className={styles.skillSection}>
                 {skills.map(skill => (
-                    <Card key={skill.area} className={styles.skillCard}>
+                    <Card key={skill.area}>
                         <Card.Body>
                             <Card.Title>
-                                <h3>{skill.area}</h3>
+                                <h3 className={styles.header3}>{skill.area}</h3>
                             </Card.Title>
                             <section className={styles.tagsContainer}>
                                 {skill.techStack.map((tech, i) => (
@@ -42,13 +38,18 @@ const About = () => {
                     </Card>
                 ))}
                 <Header as="h2" label="Achievements" />
-                <p>Few milestones that I have achieved in past couple of years.</p>
-                {achievements.map(achievement => (
-                    <Card key={achievement}>
-                        <Card.Body>
-                            <article className={styles.contactMe}>{achievement}</article>
-                        </Card.Body>
-                    </Card>
+                {milestones.map(milestone => (
+                    <article key={milestone.year} className={styles.milestone}>
+                        <h4>{milestone.year}</h4>
+                        <ul>
+                            {milestone.achievements.map((achievement, i) => (
+                                <li key={i}>
+                                    <Image src={Check} alt="Check" width={12} height={12} />
+                                    <span dangerouslySetInnerHTML={{ __html: achievement }} />
+                                </li>
+                            ))}
+                        </ul>
+                    </article>
                 ))}
             </section>
         </section>

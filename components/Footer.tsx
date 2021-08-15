@@ -4,8 +4,8 @@ import RouteLink from './common/RouteLink';
 
 const Footer = () => {
     return (
-        <section>
-            <p className={styles.contact}>Great!! You have made it to the last. Well if you like anything here or want to discuss something, shoot me a mail at <span className={styles.copylink} title="Copy Email">sunny.prakashgm@gmail.com</span>. You can find me at telegram <span className={styles.copylink} title="Telegram">(username: @sprakash57)</span> and social platforms mentioned in the footer.</p>
+        <section className={styles.footerContainer}>
+            <p className={styles.contact}>Great!! You have made it to the last. Liked something?! send me a mail at <span className={styles.copylink} title="Copy Email">sunny.prakashgm@gmail.com</span>. Find me on telegram <span className={styles.copylink} title="Telegram">@sprakash57</span> and social platforms mentioned in the footer.</p>
             <footer className={styles.footer}>
                 <RouteLink href="https://www.npmjs.com/~sprakash57" isExternal>
                     <figure className={styles.socialIcon}>
@@ -15,11 +15,6 @@ const Footer = () => {
                 <RouteLink href="https://play.google.com/store/apps/developer?id=Sunny+Prakash" isExternal>
                     <figure className={styles.socialIcon}>
                         <Image src={require("@/public/icons/playstore.svg")} alt="Play Store" title="Play store" width={20} height={20} />
-                    </figure>
-                </RouteLink>
-                <RouteLink href="https://www.buymeacoffee.com/sunnyprakash" isExternal>
-                    <figure className={styles.socialIcon}>
-                        <Image src={require("@/public/icons/coffee.svg")} alt="BuyMeCoffee" title="BuyMeCoffee" width={20} height={20} />
                     </figure>
                 </RouteLink>
                 <RouteLink href="https://twitter.com/sunny_pr_" isExternal>

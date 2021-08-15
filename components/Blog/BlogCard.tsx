@@ -18,9 +18,11 @@ const BlogCard = ({ content }: { content: CardItem }) => {
                 </Card.Title>
                 <summary>{summary}</summary>
                 {publishedAt && <small>{publishedAt}</small>}
-                <section className={styles.tagGroup}>
-                    {technology && technology.map((tech: string) => <span key={tech} className={styles.tag}>{tech}</span>)}
-                </section>
+                {technology && (
+                    <section className={styles.tagGroup}>
+                        {technology.map((tech: string) => <span key={tech} className={styles.tag}>{tech}</span>)}
+                    </section>
+                )}
             </Card.Body>
         </Card>
     )

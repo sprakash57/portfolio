@@ -1,4 +1,6 @@
+import { classnames } from "@/helpers/utils";
 import Link from "next/link";
+import styles from '@/styles/components/common/RouteLink.module.scss';
 
 type Props = {
     href: string;
@@ -9,14 +11,14 @@ type Props = {
     [x: string]: any;
 }
 
-const RouteLink = ({ href, children, childProps, classForContainer, isExternal = false, ...rest }: Props) => {
+const RouteLink = ({ href, children, childProps, classForContainer, isExternal = false, isInline = false, ...rest }: Props) => {
     const anchorProps = !!childProps && { ...childProps };
     return (
         <Link href={href} passHref {...rest}>
             <a
                 target={isExternal ? "_blank" : "_self"}
                 rel={isExternal ? "noopener noreferrer" : ""}
-                className={!!classForContainer ? classForContainer : ""}
+                className={classnames(classForContainer, isInline && styles.copylink)}
                 {...anchorProps}
             >
                 {children}

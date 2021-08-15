@@ -2,7 +2,6 @@
     display: grid;
     row-gap: 2rem;
     column-gap: 2rem;
-    justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     margin-bottom: 1rem;
 }
