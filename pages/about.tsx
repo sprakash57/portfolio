@@ -2,8 +2,7 @@ import Image from 'next/image';
 import Photo from '@/public/photo.jpg';
 import { aboutMe, milestones, skills } from '@/data/about';
 import styles from '@/styles/About.module.scss';
-import { Card, Header, RouteLink, Tag } from '@/components/common';
-import Legend from '@/components/common/Legend';
+import { Card, Header, Tag, Legend } from '@/components/common';
 import Check from '@/public/icons/check.svg';
 
 const About = () => {

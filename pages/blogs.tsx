@@ -1,5 +1,4 @@
 import BlogsList from '@/components/Blog/BlogsList';
-import React from 'react'
 import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import { getLatest } from '@/helpers/utils';
 
