@@ -1,6 +1,10 @@
 .header {
-    font-size: 2rem;
-    margin-bottom: 0;
+    border-bottom: 1px solid #b9b9b96e;
+    padding-bottom: 0.5rem;
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
 }
 .separator {
     display: inline-block;
@@ -11,6 +15,6 @@
     border-radius: 50%;
 }
 .summary {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 200;
 }

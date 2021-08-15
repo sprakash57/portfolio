@@ -63,3 +63,8 @@
 .githubCardBody {
     height: 100%;
 }
+@media screen and (max-width: 600px) {
+    .githubCard {
+        width: 100%;
+    }
+}

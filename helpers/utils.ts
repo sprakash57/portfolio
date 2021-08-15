@@ -9,3 +9,5 @@ export const getLatest = (list: CardItem[], limit?: number) => {
 }
 
 export const classnames = (...args: any[]) => args.filter(arg => !!arg).join(" ");
+
+export const inlineLink = (url: string, label: string) => `<a href=${url} target="_blank" rel="noopener noreferrer">${label}</a>`;

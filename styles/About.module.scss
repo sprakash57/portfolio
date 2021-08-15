@@ -74,6 +74,8 @@
                 margin-left: 1rem;
                 font-size: 0.9rem;
                 font-weight: 300;
+                vertical-align: top;
+                a {@include inline__link;}
             }
         }
     }
@@ -87,4 +89,9 @@
     margin: 0;
     display: flex;
     align-items: center;
+}
+@media screen and (max-width: 768px) {
+    .intro {
+        justify-content: center;
+    }
 }
