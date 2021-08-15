@@ -1,5 +1,5 @@
 import styles from '../styles/components/MDXComponents.module.scss';
-import { RouteLink } from './common';
+import { RouteLink } from "@/components/Common";
 
 /* eslint-disable react/display-name */
 const MDXComponents = {

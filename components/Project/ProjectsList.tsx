@@ -1,4 +1,4 @@
-import { Header, RouteLink, Button } from '@/common/index';
+import { Header, RouteLink, Button } from '@/components/Common';
 import BlogCard from '../Blog/BlogCard';
 
 const ProjectsList = ({ projects, header, viewMoreBtn = false }: { projects: CardItem[], header: string, viewMoreBtn?: boolean }) => {

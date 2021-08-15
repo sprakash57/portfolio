@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ExtLink from '@/public/icons/external.svg';
 import Fork from '@/public/icons/fork.svg';
 import Star from '@/public/icons/star.svg';
-import { Card, Header, Tag } from '@/common/index';
+import { Card, Header, Tag } from '@/components/Common';
 
 const GithubCard = ({ activityDetail }: { activityDetail: ActivityDetail }) => {
     const { name, description, languages, parent } = activityDetail;

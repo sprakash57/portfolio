@@ -1,4 +1,4 @@
-import { Card } from "@/components/common";
+import { Card } from "@/components/Common";
 import NextImage from "next/image";
 import styles from "@/styles/components/BlogCard.module.scss";
 import ExtLink from "@/public/icons/external.svg";

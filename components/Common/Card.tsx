@@ -1,6 +1,5 @@
 import NextImage from 'next/image';
 import styles from '@/styles/components/Common/Card.module.scss';
-import Header from './Header';
 import React from 'react';
 import { classnames } from '@/helpers/utils';
 

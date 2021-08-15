@@ -1,6 +1,5 @@
-import RouteLink from '@/components/common/RouteLink';
 import BlogCard from './BlogCard';
-import { Header, Button } from '@/common/index';
+import { Header, Button, RouteLink } from '@/components/Common';
 
 const BlogsList = ({ posts, header, viewMoreBtn = false }: { posts: CardItem[], header: string, viewMoreBtn?: boolean }) => {
     return (

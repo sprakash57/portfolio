@@ -1,7 +1,6 @@
-import { Header, RouteLink } from '../common';
+import { Header, RouteLink, Button } from '@/components/Common';
 import GithubCard from './GithubCard';
 import styles from '@/styles/components/Project/RepoList.module.scss';
-import Button from '../common/Button';
 
 const RepoList = ({ header, viewMoreBtn = false, repos }: { header: string, viewMoreBtn?: boolean, repos: any[] }) => {
     if (!repos?.length) return null;
