@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Photo from '@/public/photo.jpg';
 import { aboutMe, milestones, skills } from '@/data/about';
-import styles from '@/styles/About.module.scss';
+import styles from '@/styles/about.module.scss';
 import { Card, Header, Tag, Legend } from '@/components/Common';
 import Check from '@/public/icons/check.svg';
 
@@ -43,7 +43,7 @@ const About = () => {
                         <ul>
                             {milestone.achievements.map((achievement, i) => (
                                 <li key={i}>
-                                    <Image src={Check} alt="Check" width={12} height={12} />
+                                    <Image src={Check} alt="Check" width={13} height={13} />
                                     <span dangerouslySetInnerHTML={{ __html: achievement }} />
                                 </li>
                             ))}

@@ -6,8 +6,10 @@ import styles from '../../styles/blogs.module.scss';
 const Blog = ({ mdxSource, frontMatter }: Record<string, any>) => {
     return (
         <article>
-            <h1 className={styles.header}>{frontMatter.title}</h1>
-            <summary className={styles.summary}>{frontMatter.publishedAt} <div className={styles.separator} /> {frontMatter.readingTime.text}</summary>
+            <header className={styles.header}>
+                <h1>{frontMatter.title}</h1>
+                <summary className={styles.summary}>{frontMatter.publishedAt} <div className={styles.separator} /> {frontMatter.readingTime.text}</summary>
+            </header>
             <MDXRemote {...mdxSource} components={MDXComponents} />
         </article>
     )

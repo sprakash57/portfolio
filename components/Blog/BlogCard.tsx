@@ -1,6 +1,6 @@
 import { Card } from "@/components/Common";
 import NextImage from "next/image";
-import styles from "@/styles/components/BlogCard.module.scss";
+import styles from "@/styles/components/Blog/BlogCard.module.scss";
 import ExtLink from "@/public/icons/external.svg";
 
 const BlogCard = ({ content }: { content: CardItem }) => {
