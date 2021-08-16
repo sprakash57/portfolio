@@ -37,14 +37,14 @@ export const milestones = [
         year: "2020",
         achievements: [
             "Released first npm library i.e. Create React Saga. It has been downloaded over 1.4k+ times and counting.",
-            `Wrote my first blog and published it to my own webiste and over ${inlineLink(DEV, "Dev.to")}.`,
-            `Received Insta Award from ${inlineLink(INFOSYS, "Infosys limited")} for performing extra-ordinary in Q1 2020.`
+            `Wrote my first blog and published it on my own webiste as well as ${inlineLink(DEV, "Dev.to")}.`,
+            `Received Insta Award from ${inlineLink(INFOSYS, "Infosys limited")} for performing extraordinary in Q1 2020.`
         ]
     },
     {
         year: "2019",
         achievements: [
-            `Received Insta Award from Infosys limited for performing extra-ordinary in Q4 2019.`,
+            `Received Insta Award from Infosys limited for performing extraordinary in Q4 2019.`,
             `Certified as Android Apps Developer from ${inlineLink(VSKILLS, "Vskills")}.`
         ]
     },
@@ -62,10 +62,12 @@ Hello there! I am Sunny. I am a developer, newbie blogger and technical content 
 ${inlineLink(CRS, "Create React Saga")} and android app ${inlineLink(ADDEATREP, "Add Eat Repeat")}. I contribute to open source projects on GitHub.
 </p>
 <p>
-I born and brought up in India, completed my Bachelor of Engineering in 2014 from ${inlineLink(COLLEGE, "Birla Institute of Technology")}.
-Being a food lover, I find myself travelling and tasting delicacies in my locality. That tells why I am a Google 6-star local guide 🤩.
+I was born and brought up in India, completed my Bachelor of Engineering in 2014 from ${inlineLink(COLLEGE, "Birla Institute of Technology")}.
+Being a food lover, I find myself travelling and trying delicacies. That tells why I am a Google 6-star local guide 🤩.
 </p>
 <p>
-Not enough?! find my career profile on ${inlineLink(LINKEDIN, "LinkedIn")} or see my Developer story on ${inlineLink(STORY, "Stackoverflow")}
+Not enough? Find my career profile on ${inlineLink(LINKEDIN, "LinkedIn")} or see my Developer story on ${inlineLink(STORY, "Stackoverflow")}
 </p>
-`
+`;
+
+export const FOOTER_INTRO = `Great!! You have made it to the last. Liked something?! send me a mail at <span title="Click to copy">sunny.prakashgm@gmail.com</span>. Find me on telegram <span title="Click to copy">@sprakash57</span> and social platforms mentioned in the footer.`;

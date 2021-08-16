@@ -1,11 +1,17 @@
 import styles from '@/styles/components/Footer.module.scss';
 import Image from 'next/image';
 import { RouteLink } from '@/components/Common';
+import { FOOTER_INTRO } from '@/data/about';
+import React from 'react';
 
 const Footer = () => {
+    const clickToCopy = async (e: React.SyntheticEvent<HTMLParagraphElement>) => {
+        const target = e.target as HTMLParagraphElement;
+        await navigator.clipboard.writeText(String(target.textContent));
+    }
     return (
         <section className={styles.footerContainer}>
-            <p className={styles.contact}>Great!! You have made it to the last. Liked something?! send me a mail at <span className={styles.copylink} title="Copy Email">sunny.prakashgm@gmail.com</span>. Find me on telegram <span className={styles.copylink} title="Telegram">@sprakash57</span> and social platforms mentioned in the footer.</p>
+            <p className={styles.contact} dangerouslySetInnerHTML={{ __html: FOOTER_INTRO }} role="button" onClick={clickToCopy} />
             <footer className={styles.footer}>
                 <RouteLink href="https://www.npmjs.com/~sprakash57" isExternal>
                     <figure className={styles.socialIcon}>
