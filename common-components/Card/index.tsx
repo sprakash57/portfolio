@@ -1,6 +1,5 @@
 import React from 'react';
 import NextImage from 'next/image';
-import ExtLink from "@/public/icons/external.svg";
 import { classnames } from '@/helpers/utils';
 import styles from './index.module.scss';
 

@@ -9,10 +9,10 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f1e467d9-a62b-44a0-ac8d-f2fcd566c238/deploy-status)](https://app.netlify.com/sites/suprdev/deploys)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-## Getting Started
+welcome to SUPRDEV, space where I publish all my technical content, creations and blogs. This project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Want to create yours?
 
-First, run the development server:
+Clone/fork this repo and run the development server:
 
 ```bash
 npm run dev
@@ -25,6 +25,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Technology Stack
 
 - Next.js
-- React
-- Scss
+- Typescript
 - GraphQL
+- Sass modules

@@ -10,6 +10,7 @@ const CRS = "https://sprakash57.github.io/create-react-saga";
 const COLLEGE = "https://www.bitmesra.ac.in/";
 const LINKEDIN = "https://www.linkedin.com/in/sunny-prakash-3780ba49/";
 const STORY = "https://stackoverflow.com/story/suprak";
+const DISCOGS = "http://discogspedia.netlify.app"
 
 export const skills: Skill[] = [
     {
@@ -59,7 +60,7 @@ export const milestones = [
 export const aboutMe = `
 <p>
 Hello there! I am Sunny. I am a developer, newbie blogger and technical content creator. I mostly do web and mobile development. Few of my creations are
-${inlineLink(CRS, "Create React Saga")} and android app ${inlineLink(ADDEATREP, "Add Eat Repeat")}. I contribute to open source projects on GitHub.
+${inlineLink(CRS, "Create React Saga")} ${inlineLink(DISCOGS, "Discogspedia")} and android app ${inlineLink(ADDEATREP, "Add Eat Repeat")}. I also contribute to open source projects on GitHub.
 </p>
 <p>
 I was born and brought up in India, completed my Bachelor of Engineering in 2014 from ${inlineLink(COLLEGE, "Birla Institute of Technology")}.
