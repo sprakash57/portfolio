@@ -1,7 +1,7 @@
 import { RouteLink } from "@/common-components";
-import styles from '../styles/components/NavMenu.module.scss';
-import Image from "next/dist/client/image";
+import Image from "next/image";
 import Brand from '@/public/brand.svg';
+import styles from './index.module.scss';
 
 const NavMenu = () => {
     return (

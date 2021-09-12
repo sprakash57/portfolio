@@ -1,15 +1,12 @@
 import { getAllFilesFrontMatter } from '@/helpers/mdx';
-import ProjectsList from '@/components/Project/ProjectsList';
-import RepoList from '@/components/Project/RepoList';
-import useSWR from 'swr';
-import fetcher from '@/helpers/fetcher';
+import ProjectsList from '@/components/Project';
+import RepoList from '@/components/Repo';
 
 const Projects = ({ projects }: { projects: CardItem[] }) => {
-    const { data } = useSWR('/api/repos', fetcher);
     return (
         <section>
             <ProjectsList projects={projects} header="Featured" />
-            <RepoList repos={data?.repos} header="All Projects" viewMoreBtn />
+            <RepoList header="All Projects" viewMoreBtn />
         </section>
     )
 }

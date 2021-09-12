@@ -15,7 +15,7 @@ export const apolloInstance = async (query: DocumentNode) => {
 export const GET_GITHUB_REPOS = gql`
 query {
   user(login: "sprakash57") {
-    repositories(first: 3, orderBy: {field: STARGAZERS, direction: DESC}) {
+    repositories(first: 9, orderBy: {field: STARGAZERS, direction: DESC}) {
       nodes {
         name
         languages(first: 5, orderBy: {field: SIZE, direction: DESC}) {
@@ -40,7 +40,7 @@ const projects = async (_: NextApiRequest, res: NextApiResponse) => {
     const { data } = await apolloInstance(GET_GITHUB_REPOS);
     res.status(200).json({ repos: data.user.repositories.nodes });
   } catch (error) {
-    res.status(500).json({ error: error.message, repos: [] });
+    res.status(500).json({ error: error, repos: [] });
   }
 }
 

@@ -1,4 +1,4 @@
-import BlogsList from '@/components/Blog/BlogsList';
+import BlogsList from '@/components/Blog';
 import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import { getLatest } from '@/helpers/utils';
 

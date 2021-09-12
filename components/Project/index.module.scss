@@ -1,0 +1,22 @@
+.project {
+    &:hover {
+        background-color: var(--red-hover);
+        .extLink {
+            display: block !important;
+        }
+    }
+}
+.tag {
+    font-size: 0.6rem;
+    font-family: monospace;
+    color: white;
+    background-color: var(--red);
+    padding: 0.3rem;
+    margin-right: 0.25rem;
+}
+.tagGroup {
+    padding-bottom: 0.5rem;
+}
+.extLink {
+    display: none !important;
+}

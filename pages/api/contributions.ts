@@ -20,12 +20,13 @@ query {
           parent {
             forkCount
             stargazerCount
-            owner {
-              avatarUrl(size: 10)
-              login
-            }
             name
             url
+            description
+            owner {
+              avatarUrl(size: 50)
+              login
+            }
             languages(orderBy: {field: SIZE, direction: DESC}, first: 1) {
               nodes {
                 name
@@ -43,7 +44,7 @@ const openSrcProjects = async (_: NextApiRequest, res: NextApiResponse) => {
     const { data } = await apolloInstance(GET_OPEN_SOURCE_PROJECTS);
     return res.status(200).json({ contributions: data.user.repositories.nodes.map((node: { parent: Contribution }) => node.parent) });
   } catch (error) {
-    return res.status(500).json({ error: error.message, contributions: [] });
+    return res.status(500).json({ error, contributions: [] });
   }
 }
 

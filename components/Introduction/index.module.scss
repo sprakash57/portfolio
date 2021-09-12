@@ -1,12 +1,8 @@
-.text {
+.intro {
     margin: 2rem 0;
     color: var(--light-gray);
     font-family: 'Poppins', cursive;
 }
-.name {
+.intro__name {
     color: black;
-}
-.route {
-    color: var(--red);
-    text-decoration: underline;
 }

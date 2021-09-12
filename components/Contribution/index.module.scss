@@ -1,8 +1,16 @@
-.githubCard {
+.container {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    margin-bottom: 1rem;
+}
+.container__card {
     padding: 0.5rem;
     transition: all 0.2s ease-in-out;
     box-shadow: 0px 2px 4px 1px var(--red-shadow);
     border-top: 3px solid var(--red);
+    border-left: none;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -12,18 +20,12 @@
     height: 300px;
     header {
         display: flex;
-        align-items: baseline;
+        align-items: center;
         justify-content: space-between;
         width: 100%;
     }
     h3 { 
         margin: 0 0 0.5rem 0;
-    }
-    h5 {
-        margin: 0.5rem;
-        font-weight: var(--normal);
-        color: var(--gray);
-        margin-left: 0;
     }
     summary {
         font-size: 0.9rem;
@@ -40,13 +42,28 @@
         }
     }
 }
-.extLink {
+.container__card__author {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-weight: var(--normal);
+    color: var(--gray);
+    margin-left: 0;
+    span {
+        margin-left: 0.5rem;
+        font-weight: 600;
+    }
+}
+.container__card__avatar {
+    border-radius: 50%;
+}
+.container__card__extLink {
     display: none !important;
 }
-.ml1 {
-    margin-left: 0.4rem;
+.container__card__body {
+    height: 100%;
 }
-.forkStar {
+.container__card__body__forkStar {
     display: flex;
     align-items: flex-end;
     figure {
@@ -55,16 +72,13 @@
         display: flex;
     }
 }
-.languages {
+.container__card__body__languages {
     display: flex;
     height: 100%;
     align-items: flex-end;
 }
-.githubCardBody {
-    height: 100%;
-}
 @media screen and (max-width: 600px) {
-    .githubCard {
+    .container__card {
         width: 100%;
     }
 }

@@ -1,8 +1,8 @@
-import Head from 'next/head';
 import React from 'react';
-import styles from '../styles/components/Layout.module.scss';
-import Footer from './Footer';
-import NavMenu from './NavMenu';
+import Head from 'next/head';
+import Footer from '@/components/Footer';
+import NavMenu from '@/components/NavMenu';
+import styles from './index.module.scss';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
     return (

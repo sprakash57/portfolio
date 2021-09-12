@@ -1,11 +1,9 @@
 import { getAllFilesFrontMatter } from "@/helpers/mdx";
 import { getLatest, getPinned } from "@/helpers/utils";
-import BlogsList from "@/components/Blog/BlogsList";
-import ProjectsList from "@/components/Project/ProjectsList";
-import RepoList from "@/components/Project/RepoList";
-import Intro from "@/components/Intro";
-import useSWR from "swr";
-import fetcher from "@/helpers/fetcher";
+import Blogs from '@/components/Blog';
+import Projects from "@/components/Project";
+import Contributions from "@/components/Contribution";
+import Introduction from "@/components/Introduction";
 
 type Props = {
     posts: CardItem[];
@@ -14,15 +12,14 @@ type Props = {
 }
 
 const Home = ({ posts, projects }: Props) => {
-    const { data } = useSWR('/api/activity', fetcher);
     const recentPosts = getLatest(posts, 3);
     const recentProjects = getPinned(projects);
     return (
         <section>
-            <Intro />
-            <BlogsList posts={recentPosts} header="Recent Blogs" viewMoreBtn />
-            <ProjectsList projects={recentProjects} header="Featured Projects" viewMoreBtn />
-            <RepoList repos={data?.activities} header="Latest contributions" />
+            <Introduction />
+            <Blogs posts={recentPosts} header="Recent Blogs" viewMoreBtn />
+            <Projects projects={recentProjects} header="Featured Projects" viewMoreBtn />
+            <Contributions header="Latest Contributions" viewMoreBtn />
         </section>
     )
 }

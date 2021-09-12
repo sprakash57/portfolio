@@ -1,5 +1,6 @@
-import NextImage from 'next/image';
 import React from 'react';
+import NextImage from 'next/image';
+import ExtLink from "@/public/icons/external.svg";
 import { classnames } from '@/helpers/utils';
 import styles from './index.module.scss';
 
@@ -32,9 +33,21 @@ const Body = ({ className, children }: { className?: string, children: React.Rea
     )
 }
 
-const Card = ({ className, children, overrideStyles }: { children: React.ReactNode, className?: string, overrideStyles?: string }) => {
+const Card = ({
+    className,
+    children,
+    overrideStyles
+}: {
+    children: React.ReactNode,
+    className?: string,
+    overrideStyles?: string
+}) => {
     return (
-        <section className={overrideStyles ? overrideStyles : classnames(styles.card, className)}>{children}</section>
+        <section
+            className={overrideStyles ? overrideStyles : classnames(styles.card, className)}
+        >
+            {children}
+        </section>
     )
 }
 
