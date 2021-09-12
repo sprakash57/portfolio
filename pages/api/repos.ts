@@ -36,12 +36,8 @@ query {
 `;
 
 const projects = async (_: NextApiRequest, res: NextApiResponse) => {
-  try {
-    const { data } = await apolloInstance(GET_GITHUB_REPOS);
-    res.status(200).json({ repos: data.user.repositories.nodes });
-  } catch (error) {
-    res.status(500).json({ error: error, repos: [] });
-  }
+  const { data } = await apolloInstance(GET_GITHUB_REPOS);
+  res.status(200).json({ repos: data.user.repositories.nodes });
 }
 
 export default projects;

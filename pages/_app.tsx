@@ -6,8 +6,7 @@ import '@/styles/globals.scss';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SWRConfig value={{
-      revalidateOnFocus: false,
-      revalidateOnMount: false
+      revalidateOnFocus: false
     }}>
       <Layout>
         <Component {...pageProps} />

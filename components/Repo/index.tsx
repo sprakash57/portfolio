@@ -1,4 +1,4 @@
-import { RouteLink, Button, Card, Tag } from '@/common-components';
+import { RouteLink, Button, Card, Tag, Loader } from '@/common-components';
 import Image from 'next/image';
 import ExtLink from "@/public/icons/external.svg";
 import Fork from '@/public/icons/fork.svg';
@@ -10,9 +10,9 @@ import styles from './index.module.scss';
 const RepoList = ({ header, viewMoreBtn = false }: { header: string, viewMoreBtn?: boolean }) => {
     const { data, error } = useSWR('/api/repos', fetcher);
 
-    if (error) return <div>Something went wrong!!</div>;
+    if (error) return <div className={styles.alert}>Failed to fetch Github Data!!</div>;
 
-    if (!data?.repos) return <div>Loading...</div>;
+    if (!data?.repos) return <Loader />
 
     return (
         <section className="mb2">
