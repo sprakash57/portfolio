@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 const Contributions = ({ header, viewMoreBtn = false }: { header: string, viewMoreBtn?: boolean }) => {
     const { data, error } = useSWR('/api/contributions', fetcher);
 
-    if (error) return <div className={styles.alert}>Failed to fetch Github Data!!</div>;
+    if (error) return <div className={styles.alert}>Failed to fetch GitHub Data!!</div>;
 
     if (!data?.contributions) return <Loader />
 
@@ -20,7 +20,7 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string, viewMo
                 <h2>{header}</h2>
             </header>
             <section className={styles.container}>
-                {data.contributions.map((repo: any) => {
+                {data.contributions.map((repo: Contribution) => {
                     const { owner, name, description, languages, forkCount, stargazerCount, url } = repo;
                     return (
                         <RouteLink key={name} href={url} isExternal>
@@ -36,7 +36,13 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string, viewMo
                                         />
                                         <span>{owner.login}</span>
                                     </h5>
-                                    <Image className={styles.container__card__extLink} src={ExtLink} alt="External Link" />
+                                    <Image
+                                        className={styles.container__card__extLink}
+                                        src={ExtLink}
+                                        alt="External Link"
+                                        height={15}
+                                        width={15}
+                                    />
                                 </header>
                                 <header>
                                     <h3>{name}</h3>
@@ -50,11 +56,11 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string, viewMo
                                     </section>
                                     <section className={styles.container__card__body__forkStar}>
                                         <figure>
-                                            <Image src={Fork} alt="Fork" />
+                                            <Image src={Fork} alt="Fork" width={16} height={16} />
                                             <span>{forkCount}</span>
                                         </figure>
                                         <figure>
-                                            <Image src={Star} alt="Star" />
+                                            <Image src={Star} alt="Star" width={16} height={16} />
                                             <span>{stargazerCount}</span>
                                         </figure>
                                     </section>

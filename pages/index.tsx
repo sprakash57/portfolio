@@ -8,7 +8,6 @@ import Introduction from "@/components/Introduction";
 type Props = {
     posts: CardItem[];
     projects: CardItem[];
-    activities: ActivityDetail[];
 }
 
 const Home = ({ posts, projects }: Props) => {

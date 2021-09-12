@@ -12,11 +12,15 @@
 welcome to SUPRDEV, space where I publish all my technical content, creations and blogs. This project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 ## Want to create yours?
 
-Clone/fork this repo and run the development server:
+Clone/fork this repo and go to the directory and run below commands -
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+This will install all the dependencies needed to run this application.
+
+```bash
 yarn dev
 ```
 

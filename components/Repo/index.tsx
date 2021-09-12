@@ -10,7 +10,7 @@ import styles from './index.module.scss';
 const RepoList = ({ header, viewMoreBtn = false }: { header: string, viewMoreBtn?: boolean }) => {
     const { data, error } = useSWR('/api/repos', fetcher);
 
-    if (error) return <div className={styles.alert}>Failed to fetch Github Data!!</div>;
+    if (error) return <div className={styles.alert}>Failed to fetch GitHub Data!!</div>;
 
     if (!data?.repos) return <Loader />
 
@@ -20,17 +20,23 @@ const RepoList = ({ header, viewMoreBtn = false }: { header: string, viewMoreBtn
                 <h2>{header}</h2>
             </header>
             <section className={styles.container}>
-                {data.repos.map((repo: any) => {
-                    const { isPrivate, isFork, name, description, languages, forkCount, stargazerCount } = repo;
+                {data.repos.map((repo: Repo) => {
+                    const { isPrivate, isFork, name, description, languages, forkCount, stargazerCount, url } = repo;
                     return (
-                        <RouteLink key={repo.name} href={repo.parent ? repo.parent.url : repo.url} isExternal>
+                        <RouteLink key={name} href={url} isExternal>
                             <Card className={styles.container__card}>
                                 <header>
                                     <h3 className={styles.container__card__title}>
                                         <span>{name}</span>
                                         {isPrivate && <Tag label="private" variant="outline" />}
                                         {isFork && <Tag label="forked" variant="outline" />}
-                                        <Image className={styles.container__card__extLink} src={ExtLink} alt="External Link" />
+                                        <Image
+                                            className={styles.container__card__extLink}
+                                            src={ExtLink}
+                                            alt="External Link"
+                                            height={15}
+                                            width={15}
+                                        />
                                     </h3>
                                 </header>
                                 <Card.Body className={styles.container__card__body}>
@@ -42,11 +48,11 @@ const RepoList = ({ header, viewMoreBtn = false }: { header: string, viewMoreBtn
                                     </section>
                                     <section className={styles.container__card__body__forkStar}>
                                         <figure>
-                                            <Image src={Fork} alt="Fork" />
+                                            <Image src={Fork} alt="Fork" width={16} height={16} />
                                             <span>{forkCount}</span>
                                         </figure>
                                         <figure>
-                                            <Image src={Star} alt="Star" />
+                                            <Image src={Star} alt="Star" width={16} height={16} />
                                             <span>{stargazerCount}</span>
                                         </figure>
                                     </section>

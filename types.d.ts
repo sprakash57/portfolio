@@ -16,17 +16,15 @@ interface CardItem {
     pinned?: boolean;
 }
 
-interface ActivityDetail {
+interface Repo {
     forkCount: number;
     name: string;
     url: string;
     stargazerCount: number;
     isPrivate: boolean;
     isFork: boolean;
-    description: string | null;
+    description: string;
     languages: { nodes: Language[] };
-    owner: { login: string };
-    parent: ActivityDetail | null;
 }
 
 interface Skill {
@@ -40,6 +38,7 @@ interface Contribution {
     stargazerCount: number;
     name: string;
     url: string;
+    description: string;
     languages: { nodes: Language[] };
     owner: {
         avatarUrl: string;
