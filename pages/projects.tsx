@@ -5,11 +5,11 @@ import useSWR from 'swr';
 import fetcher from '@/helpers/fetcher';
 
 const Projects = ({ projects }: { projects: CardItem[] }) => {
-    const { data } = useSWR('/api/projects', fetcher);
+    const { data } = useSWR('/api/repos', fetcher);
     return (
         <section>
             <ProjectsList projects={projects} header="Featured" />
-            <RepoList repos={data?.projects} header="All Projects" viewMoreBtn />
+            <RepoList repos={data?.repos} header="All Projects" viewMoreBtn />
         </section>
     )
 }

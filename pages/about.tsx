@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Photo from '@/public/photo.jpg';
 import { aboutMe, milestones, skills } from '@/data/about';
-import { Card, Header, Tag, Legend } from '@/components/Common';
+import { Card, Tag, Legend } from '@/common-components';
 import Check from '@/public/icons/check.svg';
 import styles from '@/styles/About.module.scss';
 
@@ -14,7 +14,9 @@ const About = () => {
                 </figure>
                 <article dangerouslySetInnerHTML={{ __html: aboutMe }} />
             </section>
-            <Header as="h2" label="My Skillset" />
+            <header>
+                <h2>My Skillset</h2>
+            </header>
             <Legend />
             <section className={styles.skillSection}>
                 {skills.map(skill => (
@@ -36,7 +38,9 @@ const About = () => {
                         </Card.Body>
                     </Card>
                 ))}
-                <Header as="h2" label="Achievements" />
+                <header>
+                    <h2>Achievements</h2>
+                </header>
                 {milestones.map(milestone => (
                     <article key={milestone.year} className={styles.milestone}>
                         <h4>{milestone.year}</h4>

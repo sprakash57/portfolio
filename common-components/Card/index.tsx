@@ -1,12 +1,7 @@
 import NextImage from 'next/image';
-import styles from '@/styles/components/Common/Card.module.scss';
 import React from 'react';
 import { classnames } from '@/helpers/utils';
-
-type CommonProps = {
-    className?: string;
-    children: React.ReactNode;
-}
+import styles from './index.module.scss';
 
 const Image = ({ image, alt }: { image: string | undefined, alt: string }) => {
     if (!image) return null;
@@ -29,7 +24,7 @@ const Title = ({ className = "", children }: { className?: string, children: Rea
     )
 }
 
-const Body = ({ className, children }: CommonProps) => {
+const Body = ({ className, children }: { className?: string, children: React.ReactNode }) => {
     return (
         <section className={classnames(styles.cardBody, className)}>
             {children}
@@ -37,10 +32,9 @@ const Body = ({ className, children }: CommonProps) => {
     )
 }
 
-const Card = ({ className, children, addStyles }: { children: React.ReactNode, className?: string, addStyles?: string }) => {
-    const classes = className ? className : classnames(styles.card, addStyles);
+const Card = ({ className, children, overrideStyles }: { children: React.ReactNode, className?: string, overrideStyles?: string }) => {
     return (
-        <section className={classnames(classes)}>{children}</section>
+        <section className={overrideStyles ? overrideStyles : classnames(styles.card, className)}>{children}</section>
     )
 }
 

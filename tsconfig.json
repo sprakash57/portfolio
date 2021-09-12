@@ -23,6 +23,9 @@
             "@/components/*": [
                 "components/*"
             ],
+            "@/common-components": [
+                "common-components/index"
+            ],
             "@/data/*": [
                 "data/*"
             ],

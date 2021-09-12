@@ -4,8 +4,8 @@ import BlogsList from "@/components/Blog/BlogsList";
 import ProjectsList from "@/components/Project/ProjectsList";
 import RepoList from "@/components/Project/RepoList";
 import Intro from "@/components/Intro";
-import fetcher from "@/helpers/fetcher";
 import useSWR from "swr";
+import fetcher from "@/helpers/fetcher";
 
 type Props = {
     posts: CardItem[];

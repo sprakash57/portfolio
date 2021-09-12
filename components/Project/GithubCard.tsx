@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ExtLink from '@/public/icons/external.svg';
 import Fork from '@/public/icons/fork.svg';
 import Star from '@/public/icons/star.svg';
-import { Card, Header, Tag } from '@/components/Common';
+import { Card, Tag } from '@/common-components';
 
 const GithubCard = ({ activityDetail }: { activityDetail: ActivityDetail }) => {
     const { name, description, languages, parent } = activityDetail;
@@ -20,7 +20,9 @@ const GithubCard = ({ activityDetail }: { activityDetail: ActivityDetail }) => {
                 </h5>
                 <Image className={styles.extLink} src={ExtLink} alt="External Link" />
             </header>
-            <Header as="h3" label={name} />
+            <header>
+                <h3>{name}</h3>
+            </header>
             <Card.Body className={styles.githubCardBody}>
                 <article>
                     <summary>{description || "--"}</summary>

@@ -1,4 +1,4 @@
-import { Card } from "@/components/Common";
+import { Card } from "@/common-components";
 import NextImage from "next/image";
 import styles from "@/styles/components/Blog/BlogCard.module.scss";
 import ExtLink from "@/public/icons/external.svg";
@@ -6,7 +6,7 @@ import ExtLink from "@/public/icons/external.svg";
 const BlogCard = ({ content }: { content: CardItem }) => {
     const { title, summary, publishedAt, platform, url, image, technology } = content;
     return (
-        <Card addStyles={styles.blogCard}>
+        <Card className={styles.blogCard}>
             <Card.Image image={image} alt="Cover" />
             <Card.Body>
                 <Card.Title>

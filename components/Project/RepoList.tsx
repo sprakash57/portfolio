@@ -1,4 +1,4 @@
-import { Header, RouteLink, Button } from '@/components/Common';
+import { RouteLink, Button } from '@/common-components';
 import GithubCard from './GithubCard';
 import styles from '@/styles/components/Project/RepoList.module.scss';
 
@@ -6,7 +6,9 @@ const RepoList = ({ header, viewMoreBtn = false, repos }: { header: string, view
     if (!repos?.length) return null;
     return (
         <section className="mb2">
-            <Header as="h2" label={header} />
+            <header>
+                <h2>{header}</h2>
+            </header>
             <section className={styles.githubRepos}>
                 {repos.map(repo => (
                     <RouteLink key={repo.name} href={repo.parent ? repo.parent.url : repo.url} isExternal>

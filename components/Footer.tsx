@@ -1,8 +1,8 @@
-import styles from '@/styles/components/Footer.module.scss';
-import Image from 'next/image';
-import { RouteLink } from '@/components/Common';
-import { FOOTER_INTRO } from '@/data/about';
 import React from 'react';
+import Image from 'next/image';
+import { RouteLink } from '@/common-components';
+import { FOOTER_INTRO } from '@/data/about';
+import styles from '@/styles/components/Footer.module.scss';
 
 const Footer = () => {
     const clickToCopy = async (e: React.SyntheticEvent<HTMLParagraphElement>) => {

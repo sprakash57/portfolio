@@ -1,6 +1,6 @@
-import RouteLink from "./RouteLink";
-import styles from "@/styles/components/Common/Button.module.scss";
+import { RouteLink } from "@/common-components";
 import { classnames } from "@/helpers/utils";
+import styles from "./index.module.scss";
 
 type Props = {
     label: string;

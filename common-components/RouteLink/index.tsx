@@ -1,6 +1,6 @@
 import { classnames } from "@/helpers/utils";
 import Link from "next/link";
-import styles from '@/styles/components/Common/RouteLink.module.scss';
+import styles from './index.module.scss';
 
 type Props = {
     href: string;

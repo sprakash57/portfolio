@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.1",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
     "fs": "^0.0.1-security",
     "graphql": "^15.5.1",
     "gray-matter": "^4.0.3",

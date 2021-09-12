@@ -1,5 +1,5 @@
 import styles from '../styles/components/Intro.module.scss';
-import { RouteLink } from "@/components/Common";
+import { RouteLink } from "@/common-components";
 
 const Intro = () => {
     return (

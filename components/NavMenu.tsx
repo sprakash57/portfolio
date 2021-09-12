@@ -1,4 +1,4 @@
-import { RouteLink } from "@/components/Common";
+import { RouteLink } from "@/common-components";
 import styles from '../styles/components/NavMenu.module.scss';
 import Image from "next/dist/client/image";
 import Brand from '@/public/brand.svg';
