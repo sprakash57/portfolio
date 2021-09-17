@@ -1,7 +1,7 @@
 import { Button } from '@/common-components';
 import BlogPost from './BlogPost';
 
-const Blog = ({ posts, header, viewMoreBtn = false }: { posts: CardItem[], header: string, viewMoreBtn?: boolean }) => {
+const Blog = ({ posts, header, viewMoreBtn = false }: { posts: Post[], header: string, viewMoreBtn?: boolean }) => {
     return (
         <section className="mb2">
             <header>

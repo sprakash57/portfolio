@@ -6,8 +6,8 @@ import Contributions from "@/components/Contribution";
 import Introduction from "@/components/Introduction";
 
 type Props = {
-    posts: CardItem[];
-    projects: CardItem[];
+    posts: Post[];
+    projects: Project[];
 }
 
 const Home = ({ posts, projects }: Props) => {

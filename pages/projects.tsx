@@ -2,7 +2,7 @@ import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import ProjectsList from '@/components/Project';
 import RepoList from '@/components/Repo';
 
-const Projects = ({ projects }: { projects: CardItem[] }) => {
+const Projects = ({ projects }: { projects: Project[] }) => {
     return (
         <section>
             <ProjectsList projects={projects} header="Featured" />

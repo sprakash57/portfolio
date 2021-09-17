@@ -2,13 +2,17 @@ import { MDXRemote } from 'next-mdx-remote';
 import MDXComponents from '@/components/MDXComponents';
 import { getFileBySlug, getFiles } from '@/helpers/mdx';
 import styles from '@/styles/blogs.module.scss';
+import BlogStats from '@/components/Blog/BlogStats';
+
 
 const Blog = ({ mdxSource, frontMatter }: Record<string, any>) => {
+    const { title, publishedAt, readTime, slug } = frontMatter as FrontMatter;
+
     return (
         <article>
             <header className={styles.header}>
-                <h1>{frontMatter.title}</h1>
-                <summary className={styles.summary}>{frontMatter.publishedAt} <div className={styles.separator} /> {frontMatter.readingTime.text}</summary>
+                <h1>{title}</h1>
+                <BlogStats stats={{ publishedAt, readTime, slug }} queryType="update" />
             </header>
             <MDXRemote {...mdxSource} components={MDXComponents} />
         </article>

@@ -20,3 +20,20 @@
 .extLink {
     display: none !important;
 }
+.summary {
+    font-size: 0.8rem;
+    font-weight: 200;
+    span:not(:last-child)::after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        background: var(--red);
+        height: 8px;
+        margin: 0 0.5rem;
+        border-radius: 50%;
+    }   
+}
+.statsText {
+    font-size: 0.7rem;
+    margin-top: 0.25rem;
+}

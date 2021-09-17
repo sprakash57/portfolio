@@ -1,8 +1,9 @@
 import { Card, RouteLink } from 'common-components';
+import BlogStats from './BlogStats';
 import styles from './index.module.scss';
 
-const BlogPost = ({ post }: { post: CardItem }) => {
-    const { title, summary, publishedAt, slug } = post;
+const BlogPost = ({ post }: { post: Post }) => {
+    const { title, summary, publishedAt, slug, readTime } = post;
     return (
         <RouteLink key={title} href={`/blogs/${slug}`}>
             <Card className={styles.blogCard}>
@@ -11,7 +12,7 @@ const BlogPost = ({ post }: { post: CardItem }) => {
                         <h3>{title}</h3>
                     </Card.Title>
                     <summary>{summary}</summary>
-                    <small>{publishedAt}</small>
+                    <BlogStats stats={{ publishedAt, readTime, slug }} className={styles.statsText} />
                 </Card.Body>
             </Card>
         </RouteLink>

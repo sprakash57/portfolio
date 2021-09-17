@@ -3,19 +3,6 @@ interface Language {
     id: string;
 }
 
-interface CardItem {
-    id: number;
-    title: string;
-    summary: string;
-    slug: string;
-    publishedAt?: string;
-    technology?: string[];
-    platform?: string;
-    url?: string;
-    image?: string;
-    pinned?: boolean;
-}
-
 interface Repo {
     forkCount: number;
     name: string;
@@ -44,4 +31,33 @@ interface Contribution {
         avatarUrl: string;
         login: string;
     }
+}
+
+interface FrontMatter {
+    id: number;
+    publishedAt: string;
+    slug: string;
+    readTime: string;
+    summary: string;
+    title: string;
+}
+
+interface Project {
+    id: number;
+    title: string;
+    platform: string;
+    url: string;
+    summary: string;
+    image: string;
+    technology: string[];
+    pinned: boolean;
+}
+
+interface Post {
+    id: number;
+    title: string;
+    publishedAt: string;
+    summary: string;
+    slug: string;
+    readTime: string;
 }
