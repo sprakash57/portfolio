@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import fetcher from '@/helpers/fetcher';
 import styles from './index.module.scss';
-import { classnames } from '@/helpers/utils';
+import { classnames, numberOfViews } from '@/helpers/utils';
 
 type Props = {
     stats: {
@@ -20,7 +20,7 @@ const BlogStats = ({ stats, queryType = "read", className }: Props) => {
         <div className={classnames(styles.summary, className)}>
             <span>{publishedAt}</span>
             <span>{readTime}</span>
-            <span>{data ? `${data.views} views` : ""}</span>
+            <span>{data ? `${numberOfViews(data.views)} views` : ""}</span>
         </div>
     )
 }

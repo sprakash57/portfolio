@@ -11,3 +11,13 @@ export const getLatest = (list: Post[], limit?: number) => {
 export const classnames = (...args: any[]) => args.filter(arg => !!arg).join(" ");
 
 export const inlineLink = (url: string, label: string) => `<a href=${url} target="_blank" rel="noopener noreferrer">${label}</a>`;
+
+export const numberOfViews = (views: number) => {
+    const commaSeparated = String(views).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    if (views < 10000) return commaSeparated;
+    const units = commaSeparated.split(",");
+    const unitsWithComma = `${units[0]}.${units[1][0]}`;
+    if (units.length < 3) return `${unitsWithComma}K`;
+    if (units.length < 4) return `${unitsWithComma}M`;
+    return `${unitsWithComma}B`;
+}
