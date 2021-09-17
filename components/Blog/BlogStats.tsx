@@ -2,6 +2,7 @@ import useSWR from 'swr';
 import fetcher from '@/helpers/fetcher';
 import styles from './index.module.scss';
 import { classnames, numberOfViews } from '@/helpers/utils';
+import Loader from 'common-components/Loader';
 
 type Props = {
     stats: {
@@ -15,12 +16,15 @@ type Props = {
 
 const BlogStats = ({ stats, queryType = "read", className }: Props) => {
     const { publishedAt, slug, readTime } = stats;
-    const { data } = useSWR(`/api/views?${queryType}=${slug}`, fetcher);
+    const { data, error } = useSWR(`/api/views?${queryType}=${slug}`, fetcher);
     return (
         <div className={classnames(styles.summary, className)}>
             <span>{publishedAt}</span>
             <span>{readTime}</span>
-            <span>{data ? `${numberOfViews(data.views)} views` : ""}</span>
+            {!data
+                ? (!error ? <Loader size={15} className={styles.statsLoader} /> : "")
+                : <span>{numberOfViews(data.views)} views</span>
+            }
         </div>
     )
 }

@@ -23,7 +23,7 @@
 .summary {
     font-size: 0.8rem;
     font-weight: 200;
-    span:not(:last-child)::after {
+    span:not(:first-child)::before {
         content: "";
         display: inline-block;
         width: 8px;
@@ -36,4 +36,13 @@
 .statsText {
     font-size: 0.7rem;
     margin-top: 0.25rem;
+}
+.statsLoader {
+    display: inline;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    div {
+        border-radius: 6px;
+        display: inline-block;
+    }
 }
