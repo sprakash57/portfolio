@@ -21,8 +21,7 @@ export async function getFileBySlug(type: string, slug: string) {
   return {
     mdxSource,
     frontMatter: {
-      wordCount: content.split(/\s+/gu).length,
-      readingTime: readingTime(content),
+      readTime: readingTime(content).text,
       slug: slug || null,
       ...data
     }
@@ -37,10 +36,9 @@ export async function getAllFilesFrontMatter(type: string) {
       path.join(root, 'data', type, postSlug),
       'utf8'
     )
-    const { data } = matter(source)
-
+    const { data, content } = matter(source)
     return [
-      { ...data, slug: postSlug.replace('.mdx', '') },
+      { ...data, slug: postSlug.replace('.mdx', ''), readTime: readingTime(content).text },
       ...allPosts
     ]
   }, [])

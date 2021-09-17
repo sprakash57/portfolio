@@ -2,7 +2,7 @@ import BlogsList from '@/components/Blog';
 import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import { getLatest } from '@/helpers/utils';
 
-const Blogs = ({ posts }: { posts: CardItem[] }) => {
+const Blogs = ({ posts }: { posts: Post[] }) => {
     const latest = getLatest(posts);
     return (
         <section>
