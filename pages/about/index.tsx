@@ -3,7 +3,7 @@ import Photo from '@/public/photo.jpg';
 import { aboutMe, milestones, skills } from '@/data/about';
 import { Card, Tag, Legend } from '@/common-components';
 import Check from '@/public/icons/check.svg';
-import styles from '@/styles/About.module.scss';
+import styles from './index.module.scss';
 
 const About = () => {
     return (

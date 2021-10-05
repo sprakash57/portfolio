@@ -46,3 +46,24 @@
         display: inline-block;
     }
 }
+/* For future usage */
+// .blog__header {
+//     color: white;
+//     background-color: var(--red);
+//     border-radius: 20px;
+//     width: fit-content;
+//     padding-right: 0.5rem;
+//     font-size: 1.2rem;
+//     text-shadow: -1px -1px 2px hsl(10, 58%, 30%);
+//     &::before {
+//         content: "";
+//         width: 10px;
+//         height: 10px;
+//         border-radius: 50%;
+//         margin: 0.5rem;
+//         background-color: white;
+//         display: inline-block;
+//         vertical-align: middle;
+
+//     }
+// }

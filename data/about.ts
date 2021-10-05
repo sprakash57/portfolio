@@ -14,14 +14,14 @@ const DISCOGS = "http://discogspedia.netlify.app"
 
 export const skills: Skill[] = [
     {
-        area: "Fabulous Frontend",
-        learning: 9,
-        techStack: ["React", "TypeScript", "JavaScript", "ES6+", "Redux", "React Native", "SCSS", "HTML", "Webpack", "Vue", "Highcharts", "GraphQL", "Storybook"]
+        area: "Frontend",
+        learning: 6,
+        techStack: ["TypeScript", "JavaScript(ES6+)", "React", "Redux", "Sass", "Storybook", "React Native", "Webpack", "Vue", "Highcharts", "Recoil"]
     },
     {
-        area: "Blazzing Backend",
+        area: "Backend",
         learning: 4,
-        techStack: ["Node.js", "AWS", "Express", "PostgreSQL", "Cube.js", "Python", "MongoDB", "Docker", "Ubuntu"]
+        techStack: ["Node.js", "AWS", "Express", "PostgreSQL", "Cube.js", "Python", "MongoDB", "Docker", "GraphQL"]
     }
 ]
 

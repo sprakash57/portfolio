@@ -25,7 +25,7 @@ interface Contribution {
     stargazerCount: number;
     name: string;
     url: string;
-    description: string;
+    descriptionHTML: string;
     languages: { nodes: Language[] };
     owner: {
         avatarUrl: string;

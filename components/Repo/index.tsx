@@ -15,7 +15,7 @@ const RepoList = ({ header, viewMoreBtn = false }: { header: string, viewMoreBtn
     if (!data?.repos) return <Loader />
 
     return (
-        <section className="mb2">
+        <section className="mb4">
             <header>
                 <h2>{header}</h2>
             </header>

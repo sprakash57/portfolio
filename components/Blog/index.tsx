@@ -1,9 +1,10 @@
 import { Button } from '@/common-components';
 import BlogPost from './BlogPost';
+import styles from './index.module.scss';
 
 const Blog = ({ posts, header, viewMoreBtn = false }: { posts: Post[], header: string, viewMoreBtn?: boolean }) => {
     return (
-        <section className="mb2">
+        <section className="mb4">
             <header>
                 <h2>{header}</h2>
             </header>
