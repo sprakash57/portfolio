@@ -9,7 +9,7 @@ const ADDEATREP = "https://play.google.com/store/apps/details?id=com.insu.sunny.
 const CRS = "https://sprakash57.github.io/create-react-saga";
 const COLLEGE = "https://www.bitmesra.ac.in/";
 const LINKEDIN = "https://www.linkedin.com/in/sunny-prakash-3780ba49/";
-const STORY = "https://stackoverflow.com/story/suprak";
+const STORY = "https://stackoverflow.com/cv/suprak";
 const DISCOGS = "http://discogspedia.netlify.app"
 
 export const skills: Skill[] = [
@@ -29,6 +29,7 @@ export const milestones = [
     {
         year: "2021",
         achievements: [
+            "Received <strong>&quot;Being Inclusive Award&quot;</strong> during my tenure at Mastercard.",
             "Gained 500 reputation points on Stackoverflow.",
             `Ranked in top 10% for HTML/CSS, JavaScript and React coding challenge on ${inlineLink(TEST_DOME, "TestDome")}.`,
             `Certification in Vue.js from ${inlineLink(CUTSHROT, "Cutshort.io")} after successfull evaluation of gitHub repo Shortify.`,
@@ -38,14 +39,13 @@ export const milestones = [
         year: "2020",
         achievements: [
             "Released first npm library i.e. Create React Saga. It has been downloaded over 1.4k+ times and counting.",
-            `Wrote my first blog and published it on my own webiste as well as ${inlineLink(DEV, "Dev.to")}.`,
-            `Received Insta Award from ${inlineLink(INFOSYS, "Infosys limited")} for performing extraordinary in Q1 2020.`
+            `Wrote my first blog and published it on my own webiste and over ${inlineLink(DEV, "Dev.to")}.`,
         ]
     },
     {
         year: "2019",
         achievements: [
-            `Received Insta Award from Infosys limited for performing extraordinary in Q4 2019.`,
+            `Received <strong>&quot;Insta Award&quot;</strong> at ${inlineLink(INFOSYS, "Infosys limited")} for performing extraordinary in Q4 2019.`,
             `Certified as Android Apps Developer from ${inlineLink(VSKILLS, "Vskills")}.`
         ]
     },
@@ -60,14 +60,15 @@ export const milestones = [
 export const aboutMe = `
 <p>
 Hello there! I am Sunny. I am a developer, newbie blogger and technical content creator. I mostly do web and mobile development. Few of my creations are
-${inlineLink(CRS, "Create React Saga")} ${inlineLink(DISCOGS, "Discogspedia")} and android app ${inlineLink(ADDEATREP, "Add Eat Repeat")}. I also contribute to open source projects on GitHub.
+${inlineLink(CRS, "Create React Saga")} ${inlineLink(DISCOGS, "Discogspedia")} and android app ${inlineLink(ADDEATREP, "Add Eat Repeat")}. Time to Time 
+I contribute to open source projects on GitHub.
 </p>
 <p>
 I was born and brought up in India, completed my Bachelor of Engineering in 2014 from ${inlineLink(COLLEGE, "Birla Institute of Technology")}.
 Being a food lover, I find myself travelling and trying delicacies. That tells why I am a Google 6-star local guide 🤩.
 </p>
 <p>
-Not enough? Find my career profile on ${inlineLink(LINKEDIN, "LinkedIn")} or see my Developer story on ${inlineLink(STORY, "Stackoverflow")}
+Not enough? Find my career profile on ${inlineLink(LINKEDIN, "LinkedIn")} or see my Developer story on ${inlineLink(STORY, "Stackoverflow")}.
 </p>
 `;
 

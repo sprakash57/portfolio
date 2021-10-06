@@ -50,7 +50,9 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string, viewMo
                                 </header>
                                 <Card.Body className={styles.container__card__body}>
                                     <article>
-                                        <summary dangerouslySetInnerHTML={{__html: dompurify.sanitize(descriptionHTML) || "--"}}/>
+                                        <summary dangerouslySetInnerHTML={{
+                                            __html: dompurify.sanitize(descriptionHTML !== "<div></div>" ? descriptionHTML : "--")
+                                        }} />
                                     </article>
                                     <section className={styles.container__card__body__languages}>
                                         {languages.nodes.map(({ name }: { name: string }) => <Tag key={name} label={name} />) || "--"}

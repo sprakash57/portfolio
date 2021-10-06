@@ -17,7 +17,7 @@ query {
   user(login: "sprakash57") {
     repositoriesContributedTo(
       first: 12,
-      contributionTypes: [COMMIT, ISSUE, PULL_REQUEST, REPOSITORY],
+      contributionTypes: [COMMIT, ISSUE, PULL_REQUEST],
       orderBy: {field: PUSHED_AT, direction: DESC}
     ) {
       nodes {
