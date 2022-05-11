@@ -15,16 +15,11 @@
     align-items: flex-end;
     border-top: 3px solid var(--dark-gray);
     border-right: 1px solid var(--dark-gray);
-    transition: border 0.2s ease-out;
     &:hover {
-        border-top: 3px solid var(--red);
-        border-right: 1px solid var(--red);
+        @include active_link;
     }
 }
-.active {
-    border-top: 3px solid var(--red);
-        border-right: 1px solid var(--red);
-}
+
 .contact {
     padding: 1rem 2rem;
     font-size: 0.9rem;

@@ -1,33 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import "./common.scss";
+@import "./mixins.scss";
 
-:root {
-  --dark-gray: hsl(210, 13%, 24%);
-  --gray: hsl(212, 6%, 42%);
-  --light-gray: hsl(0, 0%, 53%);
-  --red: hsl(10, 91%, 62%);
-  --red-hover: hsl(15, 100%, 98%);
-  --red-shadow: hsl(0, 13%, 72%, 30%);
-  --light: 300;
-  --normal: 400;
-  --bold: 500;
-}
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-h2, h3 {
-  color: var(--dark-gray);
-}
-* {
-  box-sizing: border-box;
-}
-.mb0 {margin-bottom: 0;}
-.mb4 {margin-bottom: 4rem;}
-.mt2 {margin-top: 2rem;}
+// components
+@import "../components/NavMenu/index.scss";
+@import "../components/Footer/index.scss";
