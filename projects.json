@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Bookplorer",
+        "description": "Find & explore books around the globe. Time to become Bibliophile 🤓.",
+        "thumbnail": "bookplorer.png",
+        "platform": "web",
+        "url": ""
+    },
+    {
+        "title": "Mealander",
+        "description": "Because your meal plans deserve a calendar.",
+        "thumbnail": "Mealander.png",
+        "platform": "android",
+        "url": ""
+    },
+    {
+        "title": "Discogspedia",
+        "description": "Find & explore books around the globe. Time to become Bibliophile 🤓.",
+        "thumbnail": "bookplorer.png",
+        "platform": "web",
+        "url": ""
+    },
+    {
+        "title": "Connect 3",
+        "description": "Find & explore books around the globe. Time to become Bibliophile 🤓.",
+        "thumbnail": "bookplorer.png",
+        "platform": "android",
+        "url": ""
+    },
+    {
+        "title": "create-react-saga",
+        "description": "Because your meal plans deserve a calendar.",
+        "thumbnail": "Mealander.png",
+        "platform": "npm",
+        "url": ""
+    },
+    {
+        "title": "Ecslate",
+        "description": "Because your meal plans deserve a calendar.",
+        "thumbnail": "Mealander.png",
+        "platform": "windows",
+        "url": ""
+    }
+]

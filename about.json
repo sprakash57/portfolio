@@ -1,0 +1,30 @@
+{
+    "bio": "lorem ipsum",
+    "picture": "me.png",
+    "title": "Frontend Engineer",
+    "technology": ["react", "typescript", "express", "postgresql"],
+    "skills": [
+        "Can groom stories on JIRA",
+        "Develop, test, refactor and deploy frontend code",
+        "Can contribute to relevant backend and system architecture",
+        "Mentor juniors in the team",
+        "Take lead for new features"
+    ],
+    "achievements": [
+        "Received 'Being Inclusive Award' during my tenure at Mastercard.",
+        "Gained 500 reputation points on Stackoverflow.",
+        "Ranked in top 10% for HTML/CSS, JavaScript and React coding challenge on TestDome.",
+        "Certification in Vue.js from Cutshort.io after successfull evaluation of gitHub repo Shortify.",
+        "Released first npm library i.e. Create React Saga.",
+        "Wrote my first blog and published it on my own webiste",
+        "Received 'Insta Award' at Infosys limited twice for performing extraordinary.",
+        "Certified as Android Apps Developer from Vskills.",
+        "Published my first Android app i.e. Connect 3 on Google Play store."
+    ],
+    "hobbies": [
+        "Play The elder scrolls online. Username is @suprdev",
+        "Photo and video editing",
+        "Writring scripts and directing Instagram reels",
+        "Adding missing places on Google maps as Google local guide 6-star"
+    ]
+}
