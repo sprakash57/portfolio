@@ -5,7 +5,8 @@ module.exports = {
     domains: [
       'dev-to-uploads.s3.amazonaws.com',
       'www.codewars.com',
-      'avatars.githubusercontent.com'
+      'avatars.githubusercontent.com',
+      'i.ibb.co'
     ],
   }
 }

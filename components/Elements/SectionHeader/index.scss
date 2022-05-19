@@ -1,0 +1,30 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    transition: 0.5s;
+    margin-bottom: 1rem;
+    &:hover {
+        box-shadow: inset 0 -3rem 0 0 var(--dark-gray);
+        cursor: pointer;
+        > h2 {
+            color: white;
+            padding-left: 0;
+        }
+    }
+    > h2 {
+        margin: 0;
+        letter-spacing: 3px;
+        font-size: 16px;
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--dark-gray);
+        transition: 0.5s;
+    }
+}
+.icon {
+    padding: 0.42rem;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--dark-gray);
+}
