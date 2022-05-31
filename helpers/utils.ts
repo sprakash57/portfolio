@@ -1,8 +1,4 @@
-export const getPinned = (list: Project[]) => {
-    return list.filter(item => item.pinned);
-}
-
-export const getLatest = (list: Post[], limit?: number) => {
+export const getLatest = <T>(list: any[], limit?: number): T[] => {
     const sorted = list.sort((prev, next) => next.id - prev.id);
     if (limit) return sorted.slice(0, limit);
     return sorted;
@@ -28,3 +24,5 @@ export const capitalize = (str: string) => {
     if (result === 'Chrome') return 'Browser';
     return result;
 };
+
+export const concatEllipsis = (str: string) => str.length >= 160 ? str.substring(0, 160) + '...' : str;

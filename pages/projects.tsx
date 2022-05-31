@@ -1,12 +1,11 @@
-import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import ProjectsList from '@/components/Project';
 import RepoList from '@/components/Repo';
 
 const Projects = ({ projects }: { projects: Project[] }) => {
   return (
     <section>
-      <ProjectsList projects={projects} header="Projects" />
-      <RepoList header="All Projects" viewMoreBtn />
+      <ProjectsList projects={projects} header="Live projects" />
+      <RepoList header="Noteworthy repos" viewMoreBtn />
     </section>
   );
 };
@@ -14,6 +13,10 @@ const Projects = ({ projects }: { projects: Project[] }) => {
 export default Projects;
 
 export async function getStaticProps() {
-  const projects = await getAllFilesFrontMatter('projects');
-  return { props: { projects } };
+  const tryProjects = await fetch(`${process.env.METADATA_BASE_URL}/projects.json`);
+  return {
+    props: {
+      projects: tryProjects.ok ? await tryProjects.json() : [],
+    },
+  };
 }

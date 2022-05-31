@@ -16,7 +16,7 @@ const GET_OPEN_SOURCE_PROJECTS = gql`
 query { 
   user(login: "sprakash57") {
     repositoriesContributedTo(
-      first: 12,
+      first: 6,
       contributionTypes: [COMMIT, ISSUE, PULL_REQUEST],
       orderBy: {field: PUSHED_AT, direction: DESC}
     ) {

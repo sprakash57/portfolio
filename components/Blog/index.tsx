@@ -1,12 +1,19 @@
 import { Button } from '@/common-components';
+import { useDebounce } from '@/helpers/hooks';
+import React from 'react';
 import SectionHeader from '../Elements/SectionHeader';
 import BlogPost from './BlogPost';
-import styles from './index.module.scss';
 
-const Blog = ({ posts, header, viewMoreBtn = false }: { posts: Post[]; header: string; viewMoreBtn?: boolean }) => {
+interface Props {
+  posts: Post[];
+  header: string;
+  viewMoreBtn?: boolean;
+}
+
+const Blog = ({ posts, header, viewMoreBtn = false }: Props) => {
   return (
     <section className="mv2">
-      <SectionHeader title="Recent Blogs" icon="blog" />
+      <SectionHeader title={header} icon="blog" />
       {posts.map((post) => (
         <BlogPost key={post.slug} post={post} />
       ))}

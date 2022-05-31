@@ -45,19 +45,20 @@ interface FrontMatter {
 interface Project {
     id: number;
     title: string;
-    platform: string;
+    platforms: string[];
     url: string;
     summary: string;
     image: string;
-    technology: string[];
-    pinned: boolean;
+    thumbnail: string;
 }
 
 interface Post {
     id: number;
     title: string;
     publishedAt: string;
+    timestamp: number;
     summary: string;
     slug: string;
     readTime: string;
+    tags: string[];
 }

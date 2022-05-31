@@ -1,0 +1,45 @@
+.container {
+    width: fit-content;
+    position: relative;
+    &__header {
+        font-size: 14px;
+        opacity: 0.6;
+        font-weight: 400;
+    }
+    &__title {
+        padding: 0.4rem 1rem 0.4rem 0.4rem;
+        // box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+        font-weight: 500;
+        cursor: pointer;
+        border: 2px solid var(--dark-gray);
+    }
+    &__list {
+        background: #ffffff;
+        border: 2px solid var(--dark-gray);
+        padding: 0;
+        margin: 0;
+    }
+    &__item {
+        list-style: none;
+        padding: 0.2rem 0 0 0.2rem;
+        font-size: 0.8rem;
+        &:hover {
+            background-color: var(--red-hover);
+            cursor: pointer;
+        }
+        &:first-child {
+            padding: 0;
+        }
+    }
+    &__caret {
+        font-family: system-ui;
+        padding: 0 0 0.2rem 0.4rem;
+        font-weight: 700;
+        color: var(--red);
+    }
+    &__options {
+        position: absolute;
+        top: 3rem;
+        width: 100%;
+    }
+}

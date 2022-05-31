@@ -1,6 +1,7 @@
 :root {
     --dark-gray: hsl(210, 13%, 24%);
     --gray: hsl(212, 6%, 42%);
+    --gray20: hsl(212, 6%, 42%, 20%);
     --black30: hsla(0,0%,0%,0.3);
     --light-gray: hsl(0, 0%, 53%);
     --red: hsl(10, 91%, 62%);
@@ -27,7 +28,15 @@
   * {
     box-sizing: border-box;
   }
+  .alert {
+    border-left: 3px solid var(--red);
+    background-color: var(--red-hover);
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+    display: block;
+}
   .mb0 {margin-bottom: 0;}
   .mb4 {margin-bottom: 4rem;}
   .mt2 {margin-top: 2rem;}
   .mv2 {margin: 2rem 0;}
+  .mv4 {margin: 4rem 0;}

@@ -9,7 +9,7 @@
     padding: 0.5rem 0.5rem 0 0.5rem;
     transition: all 0.2s ease-in-out;
     box-shadow: 0px 2px 4px 1px var(--red-shadow);
-    border-top: 3px solid var(--red);
+    border-bottom: 2px solid var(--red);
     border-left: none;
     cursor: pointer;
     display: flex;
@@ -54,41 +54,94 @@
         font-weight: 600;
     }
 }
-.container__card__avatar {
-    border-radius: 50%;
-}
 .container__card__extLink {
     display: none !important;
 }
 .container__card__body {
     height: 100%;
 }
-.container__card__body__forkStar {
-    display: flex;
-    align-items: flex-end;
-    font-size: 0.8rem;
-    figure {
-        margin: 0.5rem;
-        margin-left: 0;
-        display: flex;
-        align-items: center;
-        span {
-            margin-left: 0.2rem;
-        }
-    }
-}
-.container__card__body__languages {
-    display: flex;
-    height: 100%;
-    align-items: flex-end;
-}
 .alert {
     display: flex;
     justify-content: center;
     margin: 2rem auto;
 }
+.contributions {
+    display: grid;
+    row-gap: 2rem;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    margin: 1rem 0;
+    &__content {
+        position: relative;
+        box-shadow: 3px 3px 4px rgba(157, 157, 157, 0.3), -3px -3px 4px rgba(236, 236, 236, 0.7);
+        padding: 1rem 1rem 0 1rem;
+        max-width: 320px;
+        height: 250px;
+        max-height: 300px;
+        border-bottom: 2px solid var(--dark-gray);
+        > header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            figure {
+                margin: 0;
+                display: flex;
+            }
+            h3 {
+                margin: 0 0 0 0.5rem;
+            }
+        }
+        > summary {
+            font-family: 'Avenir Book6';
+            font-size: 0.9rem;
+            text-align: justify;
+            line-height: 1.5rem;
+        }
+        &:hover {
+            background-color: var(--red-hover);
+            .contributions__extlinkIcon {
+                display: block !important;
+            }
+        }
+    }
+    &__avatar {
+        border-radius: 50%;
+    }
+    &__link {
+        margin: 0;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+    }
+    &__extlinkIcon {
+        display: none !important;
+    }
+    &__footer {
+        position: absolute;
+        bottom: 0;
+    }
+    &__languages {
+        display: flex;
+        height: 100%;
+        align-items: flex-end;
+    }
+    &__forkStar {
+        display: flex;
+        align-items: flex-end;
+        font-size: 0.8rem;
+        figure {
+            margin: 0.5rem;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            span {
+                margin-left: 0.2rem;
+            }
+        }
+    }
+}
 @media screen and (max-width: 600px) {
-    .container__card {
+    .contributions__content {
         width: 100%;
     }
 }

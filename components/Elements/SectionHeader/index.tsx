@@ -12,24 +12,22 @@ interface Props {
   height?: number;
 }
 
-const SectionHeader = ({ title, icon, imageAlt, headerStyle, figureStyle, width = 30, height = 30 }: Props) => {
+const SectionHeader = ({ title, icon, imageAlt, headerStyle, figureStyle, width = 25, height = 25 }: Props) => {
   return (
-    <RouteLink href="">
-      <header className={classnames('header', headerStyle)}>
-        {icon && (
-          <figure className={classnames('icon', figureStyle)}>
-            <Image
-              src={require(`@/public/icons/${icon}.svg`)}
-              alt={imageAlt}
-              title={imageAlt}
-              width={width}
-              height={height}
-            />
-          </figure>
-        )}
-        <h2>{title}</h2>
-      </header>
-    </RouteLink>
+    <header className={classnames('header', headerStyle)}>
+      {icon && (
+        <figure className={classnames('icon', figureStyle)}>
+          <Image
+            src={require(`@/public/icons/${icon}.svg`)}
+            alt={imageAlt}
+            title={imageAlt}
+            width={width}
+            height={height}
+          />
+        </figure>
+      )}
+      <h2>{title}</h2>
+    </header>
   );
 };
 

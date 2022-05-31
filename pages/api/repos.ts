@@ -15,7 +15,7 @@ export const apolloInstance = async (query: DocumentNode) => {
 export const GET_GITHUB_REPOS = gql`
 query {
   user(login: "sprakash57") {
-    repositories(first: 9, orderBy: {field: STARGAZERS, direction: DESC}) {
+    repositories(first: 6, orderBy: {field: STARGAZERS, direction: DESC}) {
       nodes {
         name
         languages(first: 5, orderBy: {field: SIZE, direction: DESC}) {
