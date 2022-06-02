@@ -1,50 +1,80 @@
-[
+{
+  "projects": [
     {
-        "id": 5,
-        "title": "Mealander",
-        "summary": "Calendar that is specially made for your meal plans. It also generate plans for you in one click.",
-        "image": "https://i.ibb.co/1RB3gM8/Mealander-800.png",
-        "thumbnail": "https://i.ibb.co/p4Ng7QJ/Mealander-800.png",
-        "platforms": ["android", "windows"],
-        "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
-      },
-      {
-        "id": 4,
-        "title": "Create React Saga",
-        "summary": "A CLI tool to quickly setup your next Redux-Saga in React ecosystem backed by Webpack.",
-        "image": "https://i.ibb.co/FK5Z23f/wrs.png",
-        "thumbnail": "https://i.ibb.co/zrX9pxL/wrs.png",
-        "platforms": ["npm-color"],
-        "url": "https://sprakash57.github.io/create-react-saga"
-      },
-      {
-        "id": 3,
-        "title": "Ecslate",
-        "summary":
-          "Why open web browser and confiscate all your data online, when you can execute code snippets, compare files and format them offline on your PC.",
-        "image": "https://i.ibb.co/zQPPtRc/ecslate.png",
-        "thumbnail": "https://i.ibb.co/PF11Vhp/ecslate.png",
-        "platforms": ["windows"],
-        "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
-      },
-      {
-        "id": 2,
-        "title": "Discogspedia",
-        "summary":
-          "Modern search tool to find music releases published over Discogs website. Oh! Did I tell you it has clutter-free and clean UI. 🧹",
-        "image": "https://i.ibb.co/Jc9CQN9/discogspedia.png",
-        "thumbnail": "https://i.ibb.co/VLs3mds/discogspedia.png",
-        "platforms": ["chrome"],
-        "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
-      },
-      {
-        "id": 1,
-        "title": "Connect 3",
-        "summary":
-          "Good old classic tic tac toe on your android. Play against your friend or challange your smartphone 😉 in duel.",
-        "image": "https://i.ibb.co/8jJ53rd/logo.png",
-        "thumbnail": "https://i.ibb.co/gDGT1SP/logo.png",
-        "platforms": ["android"],
-        "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
-      }
-]
+      "id": 5,
+      "title": "Mealander",
+      "summary": "Calendar that is specially made for your meal plans. It also generate plans for you in one click.",
+      "image": "https://i.ibb.co/1RB3gM8/Mealander-800.png",
+      "thumbnail": "https://i.ibb.co/p4Ng7QJ/Mealander-800.png",
+      "platforms": [
+        "android",
+        "windows"
+      ],
+      "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
+    },
+    {
+      "id": 4,
+      "title": "Create React Saga",
+      "summary": "A CLI tool to quickly setup your next Redux-Saga in React ecosystem backed by Webpack.",
+      "image": "https://i.ibb.co/FK5Z23f/wrs.png",
+      "thumbnail": "https://i.ibb.co/zrX9pxL/wrs.png",
+      "platforms": [
+        "npm-color"
+      ],
+      "url": "https://sprakash57.github.io/create-react-saga"
+    },
+    {
+      "id": 3,
+      "title": "Ecslate",
+      "summary": "Why open web browser and confiscate all your data online, when you can execute code snippets, compare files and format them offline on your PC.",
+      "image": "https://i.ibb.co/zQPPtRc/ecslate.png",
+      "thumbnail": "https://i.ibb.co/PF11Vhp/ecslate.png",
+      "platforms": [
+        "windows"
+      ],
+      "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
+    },
+    {
+      "id": 2,
+      "title": "Discogspedia",
+      "summary": "Modern search tool to find music releases published over Discogs website. Oh! Did I tell you it has clutter-free and clean UI. 🧹",
+      "image": "https://i.ibb.co/Jc9CQN9/discogspedia.png",
+      "thumbnail": "https://i.ibb.co/VLs3mds/discogspedia.png",
+      "platforms": [
+        "chrome"
+      ],
+      "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
+    },
+    {
+      "id": 1,
+      "title": "Connect 3",
+      "summary": "Good old classic tic tac toe on your android. Play against your friend or challange your smartphone 😉 in duel.",
+      "image": "https://i.ibb.co/8jJ53rd/logo.png",
+      "thumbnail": "https://i.ibb.co/gDGT1SP/logo.png",
+      "platforms": [
+        "android"
+      ],
+      "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
+    }
+  ],
+  "videos": [
+    {
+      "id": 3,
+      "url": "https://youtu.be/EVjJnv3vhBY",
+      "title": "Pearl Before Traitors",
+      "runtime": "12:01"
+    },
+    {
+      "id": 2,
+      "url": "https://youtu.be/SOz3W3HU608",
+      "title": "Old Wounds",
+      "runtime": "28:43"
+    },
+    {
+      "id": 1,
+      "url": "https://youtu.be/VCsH8aHLyrc",
+      "title": "Lauriel's Lament",
+      "runtime": "17:31"
+    }
+  ]
+}
