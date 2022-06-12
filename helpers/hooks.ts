@@ -31,3 +31,20 @@ export const useDebounce = <T>(value: T, delay: number): [T, T, any] => {
 
     return [inputValue, debouncedValue, setInputValue];
 };
+
+export const useLatestData = <T>(list: any[], options: { limit?: number, orderType?: string } = { limit: 3, orderType: 'desc' }): T[] => {
+    const data = useMemo(() => {
+        const { limit = 3, orderType = 'desc' } = options;
+        let sorted = [] as T[];
+        if (Array.isArray(list)) {
+            if (orderType === 'asc') {
+                sorted = list.sort((prev, next) => prev.id - next.id).slice(0, limit);
+            } else {
+                sorted = list.sort((prev, next) => next.id - prev.id).slice(0, limit);
+            }
+        }
+        return sorted;
+    }, [list, options]);
+
+    return data;
+};

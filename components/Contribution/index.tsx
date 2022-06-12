@@ -1,4 +1,4 @@
-import { RouteLink, Button, Tag, Loader } from '@/common-components';
+import { RouteLink, Button, Loader } from '@/common-components';
 import Image from 'next/image';
 import useSWR from 'swr';
 import dompurify from 'dompurify';
@@ -8,7 +8,6 @@ import Star from '@/public/icons/star.svg';
 import fetcher from '@/helpers/fetcher';
 import styles from './index.module.scss';
 import SectionHeader from '../Elements/SectionHeader';
-import { concatEllipsis } from '@/helpers/utils';
 
 const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMoreBtn?: boolean }) => {
   const { data, error } = useSWR('/api/contributions', fetcher);
@@ -49,14 +48,20 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMo
                 </header>
                 <summary
                   dangerouslySetInnerHTML={{
-                    __html: dompurify.sanitize(
-                      descriptionHTML !== '<div></div>' ? concatEllipsis(descriptionHTML) : '--'
-                    ),
+                    __html: dompurify.sanitize(descriptionHTML !== '<div></div>' ? descriptionHTML : '--'),
                   }}
                 />
                 <footer className={styles.contributions__footer}>
                   <div className={styles.contributions__languages}>
-                    {languages.nodes.map(({ name }: { name: string }) => <Tag key={name} label={name} />) || '--'}
+                    {languages.nodes.map(({ name, color }: Language) => (
+                      <span
+                        key={name}
+                        className={styles.contributions__tag}
+                        style={{ borderLeft: `12px solid ${color}` }}
+                      >
+                        {name}
+                      </span>
+                    )) || '--'}
                   </div>
                   <div className={styles.contributions__forkStar}>
                     <figure>

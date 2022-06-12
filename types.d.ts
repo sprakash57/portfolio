@@ -1,6 +1,7 @@
 interface Language {
     name: string;
     id: string;
+    color: string;
 }
 
 interface Repo {
@@ -26,6 +27,8 @@ interface Contribution {
     name: string;
     url: string;
     descriptionHTML: string;
+    isArchived: boolean;
+    isPrivate: boolean;
     languages: { nodes: Language[] };
     owner: {
         avatarUrl: string;
@@ -50,6 +53,13 @@ interface Project {
     summary: string;
     image: string;
     thumbnail: string;
+}
+
+interface Video {
+    id: number;
+    title: string;
+    url: string;
+    runtime: string;
 }
 
 interface Post {

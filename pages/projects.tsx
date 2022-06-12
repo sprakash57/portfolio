@@ -1,11 +1,11 @@
 import ProjectsList from '@/components/Project';
-import RepoList from '@/components/Repo';
+import Videos from '@/components/Video';
 
-const Projects = ({ projects }: { projects: Project[] }) => {
+const Projects = ({ projects, videos }: { projects: Project[]; videos: Video[] }) => {
   return (
     <section>
       <ProjectsList projects={projects} header="Live projects" />
-      <RepoList header="Noteworthy repos" viewMoreBtn />
+      <Videos videos={videos} />
     </section>
   );
 };
@@ -14,9 +14,11 @@ export default Projects;
 
 export async function getStaticProps() {
   const tryProjects = await fetch(`${process.env.METADATA_BASE_URL}/projects.json`);
+  const response = await tryProjects.json();
   return {
     props: {
-      projects: tryProjects.ok ? await tryProjects.json() : [],
+      projects: tryProjects.ok ? response['projects'] : [],
+      videos: tryProjects.ok ? response['videos'] : [],
     },
   };
 }

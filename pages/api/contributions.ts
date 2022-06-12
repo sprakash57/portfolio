@@ -13,26 +13,33 @@ const apolloInstance = async (query: DocumentNode) => {
 }
 
 const GET_OPEN_SOURCE_PROJECTS = gql`
-query { 
+query {
   user(login: "sprakash57") {
-    repositoriesContributedTo(
-      first: 6,
-      contributionTypes: [COMMIT, ISSUE, PULL_REQUEST],
-      orderBy: {field: PUSHED_AT, direction: DESC}
+    repositories(
+      first: 50
+      privacy: PUBLIC
+      isFork: true
+      orderBy: {field: UPDATED_AT, direction: DESC}
+      affiliations: COLLABORATOR
     ) {
       nodes {
-        forkCount
-        stargazerCount
-        name
-        url
-        descriptionHTML
-        owner {
-          avatarUrl(size: 50)
-          login
-        }
-        languages(orderBy: {field: SIZE, direction: DESC}, first: 1) {
-          nodes {
-            name
+        parent {
+          name
+          isArchived
+          forkCount
+          descriptionHTML
+          isPrivate
+          url
+          stargazerCount
+          owner {
+            avatarUrl(size: 50)
+            login
+          }
+          languages(first: 3) {
+            nodes {
+              name
+              color
+            }
           }
         }
       }
@@ -43,7 +50,9 @@ query {
 
 const contributions = async (_: NextApiRequest, res: NextApiResponse) => {
   const { data } = await apolloInstance(GET_OPEN_SOURCE_PROJECTS);
-  return res.status(200).json({ contributions: [...data.user.repositoriesContributedTo.nodes] });
+  const requestedRepos = data.user.repositories.nodes.map((node: { parent: Contribution }) => node.parent) as Contribution[];
+  const activeRepos = requestedRepos.filter(repo => !repo.isArchived && !repo.isPrivate).slice(0, 6);
+  return res.status(200).json({ contributions: activeRepos });
 }
 
 export default contributions;
