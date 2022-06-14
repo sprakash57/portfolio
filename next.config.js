@@ -8,5 +8,9 @@ module.exports = {
       'avatars.githubusercontent.com',
       'i.ibb.co'
     ],
+  },
+  compiler: {
+    // ssr and displayName are configured by default
+    styledComponents: true,
   }
 }

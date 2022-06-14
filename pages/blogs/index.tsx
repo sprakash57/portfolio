@@ -12,7 +12,9 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
   const options = React.useMemo(
     () => [
       { label: 'NA', value: '' },
-      ...Object.keys(tagsFilter).map((key) => ({ label: `${key}(${tagsFilter[key]})`, value: key })),
+      ...Object.keys(tagsFilter)
+        .sort()
+        .map((key) => ({ label: `${key}(${tagsFilter[key]})`, value: key })),
     ],
     [posts]
   );
@@ -67,5 +69,5 @@ export async function getStaticProps() {
     });
     return memo;
   }, {} as Record<string, number>);
-  return { props: { posts, tagsFilter } };
+  return { props: { posts: posts.sort((prev, next) => next.id - prev.id), tagsFilter } };
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState, Dispatch, SetStateAction, useMemo } from "react";
+import { useEffect, useState, Dispatch, SetStateAction, useMemo, useRef } from "react";
 
 const debounce = (cb: any, delay: number) => {
     let timeout: NodeJS.Timeout;
@@ -48,3 +48,21 @@ export const useLatestData = <T>(list: any[], options: { limit?: number, orderTy
 
     return data;
 };
+
+export const useHandleClickOutside = (callback: () => void) => {
+    const nodeRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handler = (e: Event) => {
+            if (nodeRef?.current && !nodeRef.current.contains(e.target as HTMLDivElement)) {
+                callback();
+            }
+        }
+        document.addEventListener("mousedown", handler);
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        }
+    }, [callback]);
+
+    return nodeRef;
+}

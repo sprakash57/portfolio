@@ -1,4 +1,6 @@
 import React from 'react';
+import { useHandleClickOutside } from '@/helpers/hooks';
+import Image from 'next/image';
 
 interface Props {
   options: { label: string; value: string }[];
@@ -9,6 +11,7 @@ interface Props {
 const Dropdown = ({ options, selected, onChange }: Props) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedOption, setSelectedOption] = React.useState(selected);
+  const selectRef = useHandleClickOutside(() => setIsOpen(false));
 
   const handleOptionClick = (value: string) => {
     setIsOpen(false);
@@ -16,13 +19,17 @@ const Dropdown = ({ options, selected, onChange }: Props) => {
     onChange(value);
   };
 
+  const handleSelect = () => {
+    setIsOpen((isOpen) => !isOpen);
+  };
+
   return (
-    <div className="container">
-      <div className="container__title" onClick={() => setIsOpen(!isOpen)}>
+    <div className="container" ref={selectRef}>
+      <div className="container__title" onClick={handleSelect}>
         <span className="container__header">{selectedOption || 'Select a tag'}</span>{' '}
-        <span className="container__caret">v</span>
+        <Image src={require('@/public/icons/caret-down.svg')} />
       </div>
-      <div hidden={!isOpen} className="container__options">
+      {isOpen && (
         <ul className="container__list">
           {options.map((option) => (
             <li
@@ -35,7 +42,7 @@ const Dropdown = ({ options, selected, onChange }: Props) => {
             </li>
           ))}
         </ul>
-      </div>
+      )}
     </div>
   );
 };

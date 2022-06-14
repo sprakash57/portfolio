@@ -1,5 +1,5 @@
 .container {
-    width: fit-content;
+    min-width: 120px;
     position: relative;
     &__header {
         font-size: 14px;
@@ -7,13 +7,17 @@
         font-weight: 400;
     }
     &__title {
-        padding: 0.4rem 1rem 0.4rem 0.4rem;
-        // box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: space-between;
+        padding: 0.4rem;
         font-weight: 500;
         cursor: pointer;
         border: 2px solid var(--dark-gray);
+        margin-bottom: 2px;
     }
     &__list {
+        position: absolute;
+        width: 100%;
         background: #ffffff;
         border: 2px solid var(--dark-gray);
         padding: 0;
@@ -36,10 +40,5 @@
         padding: 0 0 0.2rem 0.4rem;
         font-weight: 700;
         color: var(--red);
-    }
-    &__options {
-        position: absolute;
-        top: 3rem;
-        width: 100%;
     }
 }
