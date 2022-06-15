@@ -4,3 +4,12 @@ export enum SocialLinks {
     Twitter = 'https://twitter.com/sunny_pr_',
     YouTube = 'https://www.youtube.com/c/sunnyprakash5712'
 }
+
+export enum SocialShare {
+    FACEBOOK = 'facebook',
+    LINKEDIN = 'linkedin',
+    WHATSAPP = 'whatsapp',
+    TWITTER = 'twitter',
+    REDDIT = 'reddit',
+    EMAIL = 'email'
+}

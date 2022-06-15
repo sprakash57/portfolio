@@ -20,3 +20,5 @@ export const capitalize = (str: string) => {
 };
 
 export const concatEllipsis = (str: string) => str.length >= 160 ? str.substring(0, 160) + '...' : str;
+
+export const encodeURI = (str: string) => str ? encodeURIComponent(str) : '';
