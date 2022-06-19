@@ -5,6 +5,7 @@ import { useDebounce } from '@/helpers/hooks';
 import { getAllFilesFrontMatter } from '@/helpers/mdx';
 import Dropdown from '@/components/Elements/Dropdown';
 import styles from './index.module.scss';
+import ScrollTopButton from '@/components/Elements/ScrollTopButton';
 
 const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string, number> }) => {
   const [category, setCategory] = React.useState('');
@@ -55,6 +56,7 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
       {blogs.map((post) => (
         <BlogPost key={post.slug} post={post} />
       ))}
+      <ScrollTopButton />
     </section>
   );
 };

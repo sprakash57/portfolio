@@ -4,3 +4,4 @@ export { default as Twitter } from './Twitter';
 export { default as Reddit } from './Reddit';
 export { default as Whatsapp } from './Whatsapp';
 export { default as LinkedIn } from './LinkedIn';
+export { default as GitHub } from './GitHub';

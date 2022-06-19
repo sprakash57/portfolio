@@ -23,10 +23,11 @@
     padding-left: 0.5rem;
 }
 .inlineCode {
-    background-color: hsl(0, 0%, 90%);
+    background-color: var(--dark-gray);
     padding: 0.1rem 0.25rem;
     font-weight: 400;
     border-radius: 5px;
+    color: white;
 }
 .link {
     color: var(--red);

@@ -16,7 +16,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <NavMenu />
         {children}
       </section>
-      <Footer />
     </main>
   );
 };

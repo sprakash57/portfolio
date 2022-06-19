@@ -2,7 +2,7 @@ import React from 'react';
 
 /* eslint-disable max-len */
 
-export default (props: any) => (
+const Facebook = (props: any) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -20,3 +20,5 @@ export default (props: any) => (
     </g>
   </svg>
 );
+
+export default Facebook;

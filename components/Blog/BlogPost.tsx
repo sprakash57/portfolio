@@ -1,4 +1,5 @@
 import { RouteLink } from 'common-components';
+import Hashtags from '../Hashtags';
 import BlogStats from './BlogStats';
 import styles from './index.module.scss';
 
@@ -14,11 +15,7 @@ const BlogPost = ({ post }: Props) => {
       <article className={styles.post}>
         <header className={styles.post__header}>
           <h3>{title}</h3>
-          {tags.map((tag) => (
-            <span key={tag} className={styles.post__tags}>
-              #{tag}
-            </span>
-          ))}
+          <Hashtags tags={tags} />
         </header>
         <summary>{summary}</summary>
         <footer>

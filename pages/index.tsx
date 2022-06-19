@@ -15,7 +15,7 @@ type Props = {
 const Home = ({ posts, projects }: Props) => {
   const recentPosts = useLatestData<Post>(posts);
   const recentProjects = useLatestData<Project>(projects);
-  console.log(recentProjects);
+
   return (
     <section>
       <Introduction />

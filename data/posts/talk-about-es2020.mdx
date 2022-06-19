@@ -72,12 +72,14 @@ UnhandledPromiseRejectionWarning: Error: Oops
 
 If you have ever used TypeScript, you must have come across this operator. It's more like an inbuilt undefined safety feature. Previously we had `||` to fallback if the first operand results in falsy. `??` is different. It will strictly check whether the first operand is `undefined` or not. For example -
 
+```
 console.log(undefined || "1"); // "1"
 console.log(undefined ?? "1"); // "1"
 console.log(0 || "1"); // "1"
 console.log(0 ?? "1"); // 0
+```
 
-Just remember this - undefined is always falsy, but not all falsies are undefined.
+> Just remember this - undefined is always falsy, but not all falsies are undefined.
 
 ## 4. Optional chaining (?)
 

@@ -1,17 +1,20 @@
 .sharebtn {
   color: #fff;
-  margin: 0.5em;
-  padding: 0.5em 0.75em;
-  line-height: 1.2em;
+  margin: 0.5rem;
+  padding: 0.5rem 0.75rem;
   transition: 0.3s all linear;
 
   &__icon {
     fill: #fff;
     stroke-width: 0;
-    width: 1.2em;
-    height: 1.2em;
-    line-height: 1.2em;
-    vertical-align: bottom;
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: middle;
+  }
+
+  &__label {
+    vertical-align: middle;
+    margin-left: 0.5rem;
   }
 
   &--facebook {
@@ -35,7 +38,7 @@
     }
   }
 
-  &--twitter {
+  &--twitter, &--discuss {
     background-color: #55acee;
     &:hover {
       background-color: #2795e9;
@@ -53,6 +56,13 @@
     background-color: #25d366;
     &:hover {
       background-color: #1da851;
+    }
+  }
+
+  &--github {
+    background-color: #35465c;
+    &:hover {
+      background-color: #222d3c;
     }
   }
 }

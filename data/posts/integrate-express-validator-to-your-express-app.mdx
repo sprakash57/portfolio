@@ -41,15 +41,15 @@ Here I am taking an example of user registration with 3 fields namely name, emai
 const { check } = require('express-validator');
 
 exports.signupValidation = [
-    check('name', 'Name is requied').not().isEmpty(),
-    check('email', 'Please include a valid email').isEmail().normalizeEmail({ gmail_remove_dots: true }),
-    check('password', 'Password must be 6 or more characters').isLength({ min: 6 })
-]
+  check('name', 'Name is requied').not().isEmpty(),
+  check('email', 'Please include a valid email').isEmail().normalizeEmail({ gmail_remove_dots: true }),
+  check('password', 'Password must be 6 or more characters').isLength({ min: 6 }),
+];
 ```
 
 You need to import `check` first. It takes two parameters. The first one is the field and the second is the error message that you want to send in the response.
 
-You can chain methods on the `check` to carry out the validations like isEmail or isEmpty. Want some sanitization, you can append sanitization methods as well. A Useful list can be found over here. My favorite is normalizeEmail({ gmail_remove_dots: true }). It will treat sunnyprakash@gmail.com and sunny.prakash@gmail.com as equal.
+You can chain methods on the `check` to carry out the validations like isEmail or isEmpty. Want some sanitization, you can append sanitization methods as well. A Useful list can be found over here. My favorite is `normalizeEmail({ gmail_remove_dots: true })`. It will treat sunnyprakash@gmail.com and sunny.prakash@gmail.com as equal.
 
 ```
 const { signupValidation } = require('../../middleware/validation');

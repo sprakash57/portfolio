@@ -43,6 +43,7 @@ interface FrontMatter {
     readTime: string;
     summary: string;
     title: string;
+    tags: string[];
 }
 
 interface Project {

@@ -1,8 +1,6 @@
 import React from 'react';
 
-/* eslint-disable max-len */
-
-export default (props: any) => (
+const Whatsapp = (props: any) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
     <path
       strokeWidth="2px"
@@ -10,3 +8,5 @@ export default (props: any) => (
     />
   </svg>
 );
+
+export default Whatsapp;
