@@ -6,18 +6,23 @@
         "platforms": [
             {
                 "name": "FACEBOOK_PAGE",
+                "label": "Facebook",
                 "url": "https://www.facebook.com/suprdev"
             },
             {
                 "name": "TWITTER_PAGE",
+                "label": "Twitter",
                 "url": "https://twitter.com/sunny_pr_"
             },
             {
-                "name": "EMAIL"
+                "name": "LINKEDIN_PAGE",
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/sunnyprakash12"
             },
             {
-                "name": "LINKEDIN_PAGE",
-                "url": "https://www.linkedin.com/in/sunnyprakash12"
+                "name": "EMAIL",
+                "label": "Email",
+                "url": "mailto:sunny.prakashgm@gmail.com"
             }
         ]
     },
@@ -37,14 +42,17 @@
         "platforms": [
             {
                 "name": "GITHUB_SPONSER",
+                "label": "GitHub",
                 "url": "https://github.com/sponsors/sprakash57"
             },
             {
                 "name": "BUYMECOFFEE",
+                "label": "Buy me Coffee",
                 "url": "https://www.buymeacoffee.com/sunnyprakash"
             },
             {
                 "name": "PAYPAL",
+                "label": "Paypal",
                 "url": "https://paypal.me/sunnyprakash57"
             }
         ]
