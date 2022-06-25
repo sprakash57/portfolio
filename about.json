@@ -3,11 +3,22 @@
     "thumbnail": "https://i.ibb.co/9pxsfLS/IMG-5266.jpg",
     "intro": {
         "content": "Hello there, Thank you for stopping by. I am Sunny Prakash, a Web Developer and creator of Mealander and Create React Saga. I make web and mobile apps. Open source contribution is other thing that I do in my spare time. you can contact me through",
-        "options": [
-            "twitter",
-            "linkedin",
-            "facebook",
-            "mail"
+        "platforms": [
+            {
+                "name": "FACEBOOK_PAGE",
+                "url": "https://www.facebook.com/suprdev"
+            },
+            {
+                "name": "TWITTER_PAGE",
+                "url": "https://twitter.com/sunny_pr_"
+            },
+            {
+                "name": "EMAIL"
+            },
+            {
+                "name": "LINKEDIN_PAGE",
+                "url": "https://www.linkedin.com/in/sunnyprakash12"
+            }
         ]
     },
     "story": {
@@ -23,10 +34,19 @@
     "support": {
         "title": "Support",
         "content": "Currently the platform is not being monetised. Ads on the website help cover some server expenses, but it is nowhere near enough. All the content on this website will remain free, but it would be nice to get some financial support. If you can, please consider sponsoring SUPRDEV. Your support means a lot!",
-        "options": [
-            "buymecoffee",
-            "paypal",
-            "github"
+        "platforms": [
+            {
+                "name": "GITHUB_SPONSER",
+                "url": "https://github.com/sponsors/sprakash57"
+            },
+            {
+                "name": "BUYMECOFFEE",
+                "url": "https://www.buymeacoffee.com/sunnyprakash"
+            },
+            {
+                "name": "PAYPAL",
+                "url": "https://paypal.me/sunnyprakash57"
+            }
         ]
     }
 }
