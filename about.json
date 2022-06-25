@@ -1,24 +1,29 @@
 {
-    "about": {
-        "pic": "https://i.ibb.co/qgjqQFQ/IMG-5266.jpg",
-        "thumbnail": "https://i.ibb.co/94gK535/IMG-5266.jpg",
-        "bio": "Hello there, Thank you for stopping by. I am Sunny Prakash, a Web Developer and creator of Mealander and Create React Saga. I make web and mobile apps. Open source contribution is other thing that I do in my spare time. you can contact me through",
-        "contact": [
+    "pic": "https://i.ibb.co/qgjqQFQ/IMG-5266.jpg",
+    "thumbnail": "https://i.ibb.co/94gK535/IMG-5266.jpg",
+    "intro": {
+        "content": "Hello there, Thank you for stopping by. I am Sunny Prakash, a Web Developer and creator of Mealander and Create React Saga. I make web and mobile apps. Open source contribution is other thing that I do in my spare time. you can contact me through",
+        "options": [
             "twitter",
             "linkedin",
             "facebook",
             "mail"
-        ],
-        "aboutTitle": "Story of SUPRDEV",
-        "about1": "SUPRDEV was created as an portfolio website where I used to put my products and achievement. During pandemic and time after that I have noticed a new face of web development where you can work from anywhere by learing right tools. I have seen people want to learn the new strcuture of web devleopment apart from their current skills, but they are not sure where to start. So I revamped my website to provide support and guidance to whomever want to make a move in web development. Whether its full time or part time I am here to support you. At the moment SUPRDEV provides services like ",
-        "services": [
+        ]
+    },
+    "story": {
+        "title": "Story of SUPRDEV",
+        "content": "SUPRDEV was created as an portfolio website where I used to put my products and achievement. During pandemic and time after that I have noticed a new face of web development where you can work from anywhere by learing right tools. I have seen people want to learn the new strcuture of web devleopment apart from their current skills, but they are not sure where to start. So I revamped my website to provide support and guidance to whomever want to make a move in web development. Whether its full time or part time I am here to support you. At the moment SUPRDEV provides services like ",
+        "options": [
             "One-to-one counselling, Mentorship and training in web development around React and its ecosystem (Other tech coming soon...)",
             "Queries related to career and jobs in software development industry",
             "Want to make an app or website for your small business or mini project",
             "Access to apps, blogs and technical videos for free"
-        ],
-        "about2": "Currently the platform is not being monetised. Ads on the website help cover some server expenses, but it is nowhere near enough. All the content on this website will remain free, but it would be nice to get some financial support. If you can, please consider sponsoring SUPRDEV. Your support means a lot!",
-        "support": [
+        ]
+    },
+    "support": {
+        "title": "Support",
+        "content": "Currently the platform is not being monetised. Ads on the website help cover some server expenses, but it is nowhere near enough. All the content on this website will remain free, but it would be nice to get some financial support. If you can, please consider sponsoring SUPRDEV. Your support means a lot!",
+        "options": [
             "buymecoffee",
             "paypal",
             "github"
