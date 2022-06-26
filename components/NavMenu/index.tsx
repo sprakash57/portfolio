@@ -45,17 +45,17 @@ const NavMenu = () => {
         </section>
       </nav>
       <section className={styles.icons}>
-        <RouteLink href={SocialLinks.Twitter} isExternal>
+        <RouteLink href={SocialLinks.TWITTER} isExternal>
           <figure className={styles.socialIcon}>
             <Image src={require('@/public/icons/twitter.svg')} alt="Twitter" title="Twitter" width={15} height={15} />
           </figure>
         </RouteLink>
-        <RouteLink href={SocialLinks.GitHub} isExternal>
+        <RouteLink href={SocialLinks.GITHUB} isExternal>
           <figure className={styles.socialIcon}>
             <Image src={require('@/public/icons/github.svg')} alt="Github" title="Github" width={15} height={15} />
           </figure>
         </RouteLink>
-        <RouteLink href={SocialLinks.LinkedIn} isExternal>
+        <RouteLink href={SocialLinks.LINKEDIN} isExternal>
           <figure className={styles.socialIcon}>
             <Image
               src={require('@/public/icons/linkedin.svg')}
@@ -66,7 +66,7 @@ const NavMenu = () => {
             />
           </figure>
         </RouteLink>
-        <RouteLink href={SocialLinks.YouTube} isExternal>
+        <RouteLink href={SocialLinks.YOUTUBE} isExternal>
           <figure className={styles.socialIcon} style={{ padding: '0.1rem' }}>
             <Image src={require('@/public/icons/youtube.svg')} alt="Youtube" title="Youtube" width={20} height={20} />
           </figure>

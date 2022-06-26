@@ -1,12 +1,13 @@
+import React from 'react';
 import { SocialShare } from '@/helpers/constants';
 import { classnames, encodeURI } from '@/helpers/utils';
-import React, { SVGAttributes } from 'react';
+import Icon from '../Icons/Icon';
 import styles from './index.module.scss';
 
 interface Props {
   type: SocialShare;
   url: string;
-  icon: (props: SVGAttributes<SVGElement>) => React.ReactNode;
+  icon: string;
   text?: string;
   title?: string;
   iconStyle?: string;
@@ -15,7 +16,7 @@ interface Props {
   labelStyle?: string;
 }
 
-const SharingButton = ({
+const IconButton = ({
   type,
   url,
   text = '',
@@ -44,8 +45,10 @@ const SharingButton = ({
         return `https://github.com/sprakash57/portfolio/edit/master/data/posts/${url}.mdx`;
       case SocialShare.TWITTER_DISCUSS:
         return `https://mobile.twitter.com/search?q=${encodedUrl}`;
-      default:
+      case SocialShare.EMAIL:
         return `mailto:?subject=${text}&body=${url}`;
+      default:
+        return url;
     }
   }, [type, url]);
 
@@ -59,10 +62,10 @@ const SharingButton = ({
       title={title}
       aria-label={title}
     >
-      {icon({ className: classnames(styles.sharebtn__icon, iconStyle) })}
+      <Icon name={icon} styles={classnames(styles.sharebtn__icon, iconStyle)} />
       {label && <span className={classnames(styles.sharebtn__label, labelStyle)}>{label}</span>}
     </a>
   );
 };
 
-export default SharingButton;
+export default IconButton;

@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
-import Footer from '@/components/Footer';
 import NavMenu from '@/components/NavMenu';
 import styles from './index.module.scss';
+import Footer from '../Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -16,6 +16,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <NavMenu />
         {children}
       </section>
+      <Footer />
     </main>
   );
 };

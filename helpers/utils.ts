@@ -14,7 +14,7 @@ export const numberOfViews = (views: number) => {
 };
 
 export const capitalize = (str: string) => {
-  const result = str.length ? str.charAt(0).toUpperCase() + str.slice(1) : str;
+  const result = str.length ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : str;
   if (result === 'Npm-color') return 'Node library';
   if (result === 'Chrome') return 'Browser';
   return result;

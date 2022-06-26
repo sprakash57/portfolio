@@ -3,16 +3,14 @@ import Layout from '@/components/Layout';
 import { SWRConfig } from 'swr';
 import '@/styles/globals.scss';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <SWRConfig value={{
-      revalidateOnFocus: false
-    }}>
+    <SWRConfig value={{ revalidateOnFocus: false }}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
     </SWRConfig>
-  )
-}
+  );
+};
 
-export default MyApp;
+export default App;

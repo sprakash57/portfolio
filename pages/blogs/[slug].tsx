@@ -3,8 +3,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import MDXComponents from '@/components/MDXComponents';
 import { getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/helpers/mdx';
 import BlogStats from '@/components/Blog/BlogStats';
-import ShareButton from '@/components/Elements/ShareButton';
-import { Email, Facebook, GitHub, LinkedIn, Reddit, Twitter, Whatsapp } from '@/components/Elements/Icons';
+import IconButton from '@/components/Elements/IconButton';
 import { SocialShare } from '@/helpers/constants';
 import styles from './index.module.scss';
 import RouteLink from 'common-components/RouteLink';
@@ -37,28 +36,28 @@ const Blog = ({ post, extraPosts }: Props) => {
         <Hashtags tags={tags} />
         <BlogStats stats={{ publishedAt, readTime, slug }} queryType="update" />
         <section className={styles.blogpage__section}>
-          <ShareButton type={SocialShare.TWITTER} text={title} icon={Twitter} url={slug} title="Tweet" />
-          <ShareButton type={SocialShare.REDDIT} text={title} icon={Reddit} url={slug} title="Post" />
-          <ShareButton type={SocialShare.LINKEDIN} text={title} icon={LinkedIn} url={slug} title="Share" />
-          <ShareButton type={SocialShare.FACEBOOK} text={title} icon={Facebook} url={slug} title="Share" />
-          <ShareButton type={SocialShare.WHATSAPP} text={title} icon={Whatsapp} url={slug} title="Message" />
-          <ShareButton type={SocialShare.EMAIL} text={title} icon={Email} url={slug} title="Email" />
+          <IconButton type={SocialShare.TWITTER} text={title} icon={'Twitter'} url={slug} title="Tweet" />
+          <IconButton type={SocialShare.REDDIT} text={title} icon={'Reddit'} url={slug} title="Post" />
+          <IconButton type={SocialShare.LINKEDIN} text={title} icon={'LinkedIn'} url={slug} title="Share" />
+          <IconButton type={SocialShare.FACEBOOK} text={title} icon={'Facebook'} url={slug} title="Share" />
+          <IconButton type={SocialShare.WHATSAPP} text={title} icon={'Whatsapp'} url={slug} title="Message" />
+          <IconButton type={SocialShare.EMAIL} text={title} icon={'Email'} url={slug} title="Email" />
         </section>
       </header>
       <MDXRemote {...mdxSource} components={MDXComponents} />
       <section className={styles.blogpage__actions}>
-        <ShareButton
+        <IconButton
           type={SocialShare.GITHUB}
-          icon={GitHub}
+          icon={'GitHub'}
           url={slug}
           label="Edit on GitHub"
           labelStyle={styles.blogpage__label}
           iconStyle={styles.blogpage__icon}
           iconContainerStyle={styles.blogpage__iconBg}
         />
-        <ShareButton
+        <IconButton
           type={SocialShare.TWITTER_DISCUSS}
-          icon={Twitter}
+          icon={'Twitter'}
           url={slug}
           label="Discuss on Twitter"
           labelStyle={styles.blogpage__label}

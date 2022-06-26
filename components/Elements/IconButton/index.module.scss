@@ -17,14 +17,21 @@
     margin-left: 0.5rem;
   }
 
-  &--facebook {
-    background-color: #3b5998;
+  &--buymecoffee {
+    background-color: hsl(9, 100%, 64%);
     &:hover {
-      background-color: #2d4373;
+      background-color: hsl(9, 100%, 44%);
     }
   }
 
-  &--linkedin {
+  &--facebook, &--facebook_page {
+    background-color: hsl(221, 44%, 41%);
+    &:hover {
+      background-color: hsl(221, 44%, 31%);
+    }
+  }
+
+  &--linkedin, &--linkedin_page {
     background-color: #0077b5;
     &:hover {
       background-color: #046293;
@@ -38,7 +45,7 @@
     }
   }
 
-  &--twitter, &--discuss {
+  &--twitter, &--discuss, &--twitter_page, &--paypal {
     background-color: #55acee;
     &:hover {
       background-color: #2795e9;
@@ -59,7 +66,7 @@
     }
   }
 
-  &--github {
+  &--github, &--github_sponser {
     background-color: #35465c;
     &:hover {
       background-color: #222d3c;

@@ -1,62 +1,84 @@
+import IconButton from '@/components/Elements/IconButton';
+import { SocialShare } from '@/helpers/constants';
 import Image from 'next/image';
-import Photo from '@/public/photo.jpg';
-import { aboutMe, milestones, skills } from '@/data/about';
-import { Card, Tag, Legend } from '@/common-components';
-import Check from '@/public/icons/check.svg';
 import styles from './index.module.scss';
+import { classnames } from '@/helpers/utils';
+import Icon from '@/components/Elements/Icons/Icon';
 
-const About = () => {
-    return (
-        <section className={styles.container}>
-            <section className={styles.intro}>
-                <figure>
-                    <Image src={Photo} alt="Profile" placeholder="blur" className={styles.img} />
-                </figure>
-                <article dangerouslySetInnerHTML={{ __html: aboutMe }} />
-            </section>
-            <header>
-                <h2>My Skillset</h2>
-            </header>
-            <Legend />
-            <section className={styles.skillSection}>
-                {skills.map(skill => (
-                    <Card key={skill.area}>
-                        <Card.Body>
-                            <Card.Title>
-                                <h3 className={styles.header3}>{skill.area}</h3>
-                            </Card.Title>
-                            <section className={styles.tagsContainer}>
-                                {skill.techStack.map((tech, i) => (
-                                    <Tag
-                                        key={tech}
-                                        variant={i >= skill.learning ? "outline" : "solid"}
-                                        label={tech}
-                                        classname={styles.skillTag}
-                                    />
-                                ))}
-                            </section>
-                        </Card.Body>
-                    </Card>
-                ))}
-                <header>
-                    <h2>Achievements</h2>
-                </header>
-                {milestones.map(milestone => (
-                    <article key={milestone.year} className={styles.milestone}>
-                        <h4>{milestone.year}</h4>
-                        <ul>
-                            {milestone.achievements.map((achievement, i) => (
-                                <li key={i}>
-                                    <Image src={Check} alt="Check" width={13} height={13} />
-                                    <span dangerouslySetInnerHTML={{ __html: achievement }} />
-                                </li>
-                            ))}
-                        </ul>
-                    </article>
-                ))}
-            </section>
-        </section>
-    )
-}
+const About = ({ about }: { about: About }) => {
+  if (!about) return <small className="alert mv4">Projects are not available right now.</small>;
+  const { pic, thumbnail, intro, support, story } = about;
+  return (
+    <section className={styles.about}>
+      <figure>
+        <Image
+          src={pic}
+          alt="Photo"
+          placeholder="blur"
+          blurDataURL={thumbnail}
+          width={160}
+          height={160}
+          style={{ borderRadius: '50%' }}
+        />
+      </figure>
+      <summary>{intro.content} - </summary>
+      <section className={styles.about__icons}>
+        {intro?.platforms &&
+          intro.platforms.map(({ name, url, label }) => (
+            <IconButton
+              key={name}
+              text={label}
+              url={url}
+              type={name.toLowerCase() as SocialShare}
+              icon={label}
+              label={label}
+              iconContainerStyle={styles.about__container}
+              iconStyle={styles.about__icon}
+              labelStyle={styles.about__iconlabel}
+            />
+          ))}
+      </section>
+      <h2 className={styles.about__story}>{story.title}</h2>
+      <summary>{story.content}</summary>
+      <ul className={styles.about__services}>
+        {story?.options &&
+          story.options.map((option, i) => (
+            <li key={i}>
+              <Icon name="Check" styles={styles.about__check} />
+              <label>{option}</label>
+            </li>
+          ))}
+      </ul>
+      <h2 className={styles.about__story}>{support.title}</h2>
+      <summary>{support.content}</summary>
+      <section className={styles.about__support}>
+        {support?.platforms &&
+          support.platforms.map(({ name, url, label }) => (
+            <IconButton
+              key={name}
+              text={label}
+              url={url}
+              type={name.toLowerCase() as SocialShare}
+              icon={label}
+              label={label}
+              iconContainerStyle={styles.about__container}
+              iconStyle={classnames(styles.about__icon, styles['about__icon--red'])}
+              labelStyle={styles.about__iconlabel}
+            />
+          ))}
+      </section>
+    </section>
+  );
+};
 
 export default About;
+
+export async function getStaticProps() {
+  const tryProjects = await fetch(`${process.env.METADATA_BASE_URL}/about.json`);
+  const response = (await tryProjects.json()) as About;
+  return {
+    props: {
+      about: tryProjects.ok ? response : null,
+    },
+  };
+}
