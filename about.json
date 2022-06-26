@@ -43,7 +43,7 @@
         "platforms": [
             {
                 "name": "GITHUB_SPONSER",
-                "label": "GitHub",
+                "label": "Sponsor",
                 "url": "https://github.com/sponsors/sprakash57"
             },
             {
