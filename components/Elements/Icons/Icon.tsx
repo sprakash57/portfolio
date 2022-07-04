@@ -1,5 +1,18 @@
 import React from 'react';
-import { Buymecoffee, GitHub, LinkedIn, Email, Facebook, Twitter, Paypal, Sponsor, Check } from './index';
+import {
+  Buymecoffee,
+  GitHub,
+  LinkedIn,
+  Email,
+  Facebook,
+  Twitter,
+  Paypal,
+  Sponsor,
+  Check,
+  Read,
+  Explore,
+  Watch,
+} from './index';
 
 const Icon = ({ name, styles = '' }: { name: string; styles?: string }) => {
   switch (name) {
@@ -19,6 +32,12 @@ const Icon = ({ name, styles = '' }: { name: string; styles?: string }) => {
       return <Sponsor className={styles} />;
     case 'Check':
       return <Check className={styles} />;
+    case 'Read':
+      return <Read className={styles} />;
+    case 'Explore':
+      return <Explore className={styles} />;
+    case 'Watch':
+      return <Watch className={styles} />;
     default:
       return <Email className={styles} />;
   }

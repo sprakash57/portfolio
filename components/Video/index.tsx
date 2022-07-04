@@ -8,7 +8,7 @@ import Button from 'common-components/Button';
 
 const Videos = ({ videos }: { videos: Video[] }) => {
   return (
-    <section className="mv4">
+    <section className="mv4" id="videos">
       <SectionHeader title="Latest to watch" icon="youtube" />
       {videos.map((video) => {
         const { id, title, url, runtime } = video;

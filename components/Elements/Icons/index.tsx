@@ -9,3 +9,6 @@ export { default as Buymecoffee } from './Buymecoffee';
 export { default as Paypal } from './Paypal';
 export { default as Sponsor } from './Sponsor';
 export { default as Check } from './Check';
+export { default as Read } from './Read';
+export { default as Watch } from './Watch';
+export { default as Explore } from './Explore';
