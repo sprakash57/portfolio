@@ -60,21 +60,18 @@
   "videos": [
     {
       "id": 3,
-      "url": "https://youtu.be/EVjJnv3vhBY",
-      "title": "Pearl Before Traitors",
-      "runtime": "12:01"
+      "videoId": "EVjJnv3vhBY",
+      "title": "Pearl Before Traitors"
     },
     {
       "id": 2,
-      "url": "https://youtu.be/SOz3W3HU608",
-      "title": "Old Wounds",
-      "runtime": "28:43"
+      "videoId": "SOz3W3HU608",
+      "title": "Old Wounds"
     },
     {
       "id": 1,
-      "url": "https://youtu.be/VCsH8aHLyrc",
-      "title": "Lauriel's Lament",
-      "runtime": "17:31"
+      "videoId": "VCsH8aHLyrc",
+      "title": "Lauriel's Lament"
     }
   ]
 }
