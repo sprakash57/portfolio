@@ -59,8 +59,7 @@ interface Project {
 interface Video {
   id: number;
   title: string;
-  url: string;
-  runtime: string;
+  videoId: string;
 }
 
 interface Post {
