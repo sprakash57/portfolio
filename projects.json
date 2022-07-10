@@ -7,8 +7,7 @@
       "image": "https://i.ibb.co/1RB3gM8/Mealander-800.png",
       "thumbnail": "https://i.ibb.co/p4Ng7QJ/Mealander-800.png",
       "platforms": [
-        "android",
-        "windows"
+        "android"
       ],
       "url": "https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat"
     },
@@ -19,7 +18,7 @@
       "image": "https://i.ibb.co/FK5Z23f/wrs.png",
       "thumbnail": "https://i.ibb.co/zrX9pxL/wrs.png",
       "platforms": [
-        "npm-color"
+        "npm"
       ],
       "url": "https://sprakash57.github.io/create-react-saga"
     },
