@@ -1,15 +1,14 @@
-import IconButton from '@/components/Elements/IconButton';
-import { SocialShare } from '@/helpers/constants';
+import { IconButton, Icon } from '@/components/Elements';
+import { Icons } from '@/helpers/constants';
 import Image from 'next/image';
 import styles from './index.module.scss';
 import { classnames } from '@/helpers/utils';
-import Icon from '@/components/Elements/Icons/Icon';
 
 const About = ({ about }: { about: About }) => {
   if (!about) return <small className="alert mv4">Projects are not available right now.</small>;
   const { pic, thumbnail, intro, support, story } = about;
   return (
-    <section className={styles.about}>
+    <section className={`${styles.about} mv2`}>
       <figure>
         <Image
           src={pic}
@@ -29,7 +28,7 @@ const About = ({ about }: { about: About }) => {
               key={name}
               text={label}
               url={url}
-              type={name.toLowerCase() as SocialShare}
+              type={name.toLowerCase() as Icons}
               icon={label}
               label={label}
               iconContainerStyle={styles.about__container}
@@ -44,7 +43,7 @@ const About = ({ about }: { about: About }) => {
         {story?.options &&
           story.options.map((option, i) => (
             <li key={i}>
-              <Icon name="Check" styles={styles.about__check} />
+              <Icon name={Icons.CHECK} styles={styles.about__check} />
               <label>{option}</label>
             </li>
           ))}
@@ -58,11 +57,11 @@ const About = ({ about }: { about: About }) => {
               key={name}
               text={label}
               url={url}
-              type={name.toLowerCase() as SocialShare}
+              type={name.toLowerCase() as Icons}
               icon={label}
               label={label}
               iconContainerStyle={styles.about__container}
-              iconStyle={classnames(styles.about__icon, styles['about__icon--red'])}
+              iconStyle={classnames(styles.about__icon)}
               labelStyle={styles.about__iconlabel}
             />
           ))}

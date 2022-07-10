@@ -1,5 +1,5 @@
-import { RouteLink } from 'common-components';
-import Hashtags from '../Hashtags';
+import { RouteLink } from '@/components/Elements';
+import Hashtags from '@/components/Hashtags';
 import BlogStats from './BlogStats';
 import styles from './index.module.scss';
 

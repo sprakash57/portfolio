@@ -1,7 +1,6 @@
 import useSWR from 'swr';
-import fetcher from '@/helpers/fetcher';
-import { classnames, numberOfViews } from '@/helpers/utils';
-import Loader from 'common-components/Loader';
+import { classnames, numberOfViews, fetcher } from '@/helpers/utils';
+import { Loader } from '@/components/Elements';
 import styles from './index.module.scss';
 
 type Props = {

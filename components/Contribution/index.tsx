@@ -1,13 +1,10 @@
-import { RouteLink, Button, Loader } from '@/common-components';
 import Image from 'next/image';
 import useSWR from 'swr';
 import dompurify from 'dompurify';
-import ExtLink from '@/public/icons/external.svg';
-import Fork from '@/public/icons/fork.svg';
-import Star from '@/public/icons/star.svg';
-import fetcher from '@/helpers/fetcher';
+import { SectionHeader, RouteLink, Loader, Icon } from '@/components/Elements';
+import { fetcher } from '@/helpers/utils';
 import styles from './index.module.scss';
-import SectionHeader from '../Elements/SectionHeader';
+import { Icons } from '@/helpers/constants';
 
 const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMoreBtn?: boolean }) => {
   const { data, error } = useSWR('/api/contributions', fetcher);
@@ -36,14 +33,8 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMo
                     />
                   </figure>
                   <h3 title="Author">{owner.login}</h3>
-                  <figure className={styles.contributions__link}>
-                    <Image
-                      className={styles.contributions__extlinkIcon}
-                      src={ExtLink}
-                      alt="External Link"
-                      height={16}
-                      width={16}
-                    />
+                  <figure className={styles.contributions__link} title={Icons.EXTLINK}>
+                    <Icon name={Icons.EXTLINK} styles={styles.contributions__extlinkIcon} width="16" height="16" />
                   </figure>
                 </header>
                 <summary
@@ -64,12 +55,12 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMo
                     )) || '--'}
                   </div>
                   <div className={styles.contributions__forkStar}>
-                    <figure>
-                      <Image src={Fork} alt="Fork" width={16} height={16} />
+                    <figure title={Icons.FORK}>
+                      <Icon name={Icons.FORK} width="16" height="16" color="#626262" />
                       <span>{forkCount}</span>
                     </figure>
-                    <figure>
-                      <Image src={Star} alt="Star" width={16} height={16} />
+                    <figure title={Icons.STAR}>
+                      <Icon name={Icons.STAR} width="16" height="16" />
                       <span>{stargazerCount}</span>
                     </figure>
                   </div>
@@ -80,12 +71,13 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMo
         })}
       </section>
       {viewMoreBtn && (
-        <Button
-          as="link"
+        <RouteLink
           href="https://github.com/sprakash57?tab=repositories&q=&type=fork&language=&sort="
-          label="View more"
-          external
-        />
+          isExternal
+          classForContainer="btn__viewMore"
+        >
+          View more
+        </RouteLink>
       )}
     </section>
   );

@@ -1,7 +1,5 @@
 import React from 'react';
 
-/* eslint-disable max-len */
-
 const Reddit = (props: any) => (
   <svg
     {...props}

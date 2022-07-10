@@ -1,9 +1,7 @@
-import { RouteLink, Button } from '@/common-components';
 import Image from 'next/image';
-import ExtLink from '@/public/icons/external.svg';
-import SectionHeader from '../Elements/SectionHeader';
-import { capitalize } from '@/helpers/utils';
+import { SectionHeader, RouteLink, Icon } from '@/components/Elements';
 import styles from './index.module.scss';
+import { Icons } from '@/helpers/constants';
 
 interface Props {
   projects: Project[];
@@ -17,9 +15,8 @@ const ProjectsList = ({ projects, header, viewMoreBtn = false }: Props) => {
   if (!hasProjects && viewMoreBtn) return null;
 
   if (!hasProjects) return <small className="alert mv4">Projects are not available right now.</small>;
-
   return (
-    <section className="mv4">
+    <section className={viewMoreBtn ? 'mv4' : 'mv2'}>
       <SectionHeader title={header} icon="project" />
       <section className={styles.project}>
         {projects.map((project) => {
@@ -30,25 +27,13 @@ const ProjectsList = ({ projects, header, viewMoreBtn = false }: Props) => {
                 <div className={styles.project__header}>
                   <div className={styles.project__platforms}>
                     {platforms.map((platform, i) => (
-                      <figure key={`${platform}-${i}`}>
-                        <Image
-                          src={require(`../../public/icons/${platform}.svg`)}
-                          alt="icon"
-                          height={20}
-                          width={20}
-                          title={capitalize(platform)}
-                        />
+                      <figure key={`${platform}-${i}`} title={platform}>
+                        <Icon name={platform} width="20" height="20" />
                       </figure>
                     ))}
                   </div>
-                  <figure className={styles.project__link}>
-                    <Image
-                      className={styles.project__extlinkIcon}
-                      src={ExtLink}
-                      alt="External Link"
-                      width={16}
-                      height={16}
-                    />
+                  <figure className={styles.project__link} title={Icons.EXTLINK}>
+                    <Icon name={Icons.EXTLINK} styles={styles.project__extlinkIcon} width="16" height="16" />
                   </figure>
                 </div>
                 <div className={styles.project__body}>
@@ -71,7 +56,11 @@ const ProjectsList = ({ projects, header, viewMoreBtn = false }: Props) => {
           );
         })}
       </section>
-      {viewMoreBtn && <Button as="link" href="/projects" label="View more" />}
+      {viewMoreBtn && (
+        <RouteLink href="/projects" isExternal classForContainer="btn__viewMore">
+          View more
+        </RouteLink>
+      )}
     </section>
   );
 };

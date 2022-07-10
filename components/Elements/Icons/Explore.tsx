@@ -1,14 +1,15 @@
 import React, { SVGAttributes } from 'react';
 
-const Explore = (props: SVGAttributes<SVGElement>) => {
+const Explore = ({ className, width, height, fill }: SVGAttributes<SVGElement>) => {
   return (
     <svg
-      {...props}
+      className={className}
+      width={width}
+      height={height}
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       role="img"
-      width="1em"
-      height="1em"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
     >

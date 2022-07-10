@@ -87,3 +87,11 @@ interface About {
   story: Content;
   support: Content;
 }
+
+interface IconProps {
+  name: string;
+  styles?: string;
+  width?: string;
+  height?: string;
+  color?: string;
+}

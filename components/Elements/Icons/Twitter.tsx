@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { SVGAttributes } from 'react';
 
 /* eslint-disable max-len */
-
-const Twitter = (props: any) => (
-  <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+const Twitter = ({ width, height, fill, className }: SVGAttributes<SVGElement>) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    fill={fill}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+  >
     <path
       strokeWidth="2px"
       strokeLinejoin="round"

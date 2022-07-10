@@ -1,14 +1,15 @@
 import React, { SVGAttributes } from 'react';
 
-const Check = (props: SVGAttributes<SVGElement>) => {
+const Check = ({ className, width, height, fill }: SVGAttributes<SVGElement>) => {
   return (
     <svg
-      {...props}
+      className={className}
+      width={width}
+      height={height}
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
-      width="1em"
-      height="1em"
       x="0px"
       y="0px"
     >

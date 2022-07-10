@@ -1,4 +1,23 @@
 .footer {
+    position: relative;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 60px;
+        border-top: 2px solid var(--red);
+        top: 28px;
+        left: -80px;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 60px;
+        border-top: 2px solid var(--red);
+        top: 28px;
+        right: -80px;
+    }
 }

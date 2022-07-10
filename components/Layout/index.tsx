@@ -12,7 +12,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <meta name="description" content="Shorten your link here" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className={styles.content}>
+      <section className={styles.container__body}>
         <NavMenu />
         {children}
       </section>

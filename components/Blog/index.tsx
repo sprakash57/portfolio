@@ -1,7 +1,5 @@
-import { Button } from '@/common-components';
-import { useDebounce } from '@/helpers/hooks';
 import React from 'react';
-import SectionHeader from '../Elements/SectionHeader';
+import { RouteLink, SectionHeader } from '@/components/Elements';
 import BlogPost from './BlogPost';
 
 interface Props {
@@ -17,7 +15,11 @@ const Blog = ({ posts, header, viewMoreBtn = false }: Props) => {
       {posts.map((post) => (
         <BlogPost key={post.slug} post={post} />
       ))}
-      {viewMoreBtn && <Button as="link" href="/blogs" label="View more" />}
+      {viewMoreBtn && (
+        <RouteLink href="/blogs" classForContainer="btn__viewMore" isExternal>
+          View more
+        </RouteLink>
+      )}
     </section>
   );
 };

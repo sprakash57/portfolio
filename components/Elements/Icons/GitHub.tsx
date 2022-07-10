@@ -1,16 +1,17 @@
 import React, { SVGAttributes } from 'react';
 
-const GitHub = (props: SVGAttributes<SVGElement>) => {
+const GitHub = ({ className, width, height, fill }: SVGAttributes<SVGElement>) => {
   return (
     <svg
-      {...props}
+      className={className}
+      width={width}
+      height={height}
+      fill={fill}
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       version="1.1"
       x="0px"
       y="0px"
-      width="24px"
-      height="24px"
       viewBox="0 0 24 24"
       enableBackground="new 0 0 24 24"
       xmlSpace="preserve"

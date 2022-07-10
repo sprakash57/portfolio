@@ -32,3 +32,5 @@ export const randomizer = (list: any[]) => {
   }
   return list;
 };
+
+export const fetcher = (url: string) => fetch(url).then((r) => r.json());

@@ -1,45 +1,76 @@
 :root {
-    --dark-gray: hsl(210, 13%, 24%);
-    --gray: hsl(212, 6%, 42%);
-    --gray20: hsl(212, 6%, 42%, 20%);
-    --black30: hsla(0,0%,0%,0.3);
-    --light-gray: hsl(0, 0%, 53%);
-    --red: hsl(10, 91%, 62%);
-    --red-hover: hsl(15, 100%, 98%);
-    --red-shadow: hsl(0, 13%, 72%, 30%);
-    --blue: hsl(240, 40%, 52%);
-    --green: hsl(134, 40%, 52%);
-    --light: 300;
-    --normal: 400;
-    --bold: 500;
-  }
-  html,
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  h2, h3 {
-    color: var(--dark-gray);
-  }
-  * {
-    box-sizing: border-box;
-  }
-  .alert {
-    border-left: 3px solid var(--red);
-    background-color: var(--red-hover);
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    display: block;
+  // ----------------colors----------------------
+  --dark-gray: hsl(210, 13%, 24%);
+  --gray: hsl(210, 6%, 42%);
+  --gray20: hsla(210, 6%, 42%, 20%);
+  --gray50: hsla(210, 6%, 42%, 50%);
+  --loblolly50: hsla(210, 15%, 75%, 50%);
+  --black30: hsla(0, 0%, 0%, 30%);
+  --light-gray: hsl(0, 0%, 53%);
+  --red: hsl(10, 91%, 62%);
+  --red10: hsla(10, 91%, 62%, 10%);
+  --red50: hsla(10, 91%, 62%, 50%);
+  --blue: hsl(240, 40%, 52%);
+  --blue50: hsla(240, 40%, 52%, 50%);
+  --green: hsl(134, 40%, 52%);
+  --green50: hsla(134, 40%, 52%, 50%);
 }
-  .mb0 {margin-bottom: 0;}
-  .mb4 {margin-bottom: 4rem;}
-  .mt2 {margin-top: 2rem;}
-  .mv2 {margin: 2rem 0;}
-  .mv4 {margin: 4rem 0;}
+
+/* ---------------------Spacing----------------------- */
+.mb0 {margin-bottom: 0;}
+.mb4 {margin-bottom: 4rem;}
+.mt2 {margin-top: 2rem;}
+.mv2 {margin: 2rem 0;}
+.mv4 {margin: 4rem 0;}
+
+/*----------- Global styles ----------------------*/
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+h2, h3 {
+  color: var(--dark-gray);
+}
+* {
+  box-sizing: border-box;
+}
+
+/*------------ Common styles ------------------------------------*/
+.alert {
+  border-left: 3px solid var(--red);
+  background-color: var(--red10);
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  display: block;
+}
+.btn__viewMore {
+  padding: 0.4rem;
+  max-width: 100px;
+  font-size: 0.7rem;
+  color: var(--dark-gray);
+  font-weight: 600;
+  transition: 0.5s;
+  letter-spacing: 1px;
+  border: 2px solid var(--dark-gray);
+  &:hover {
+      box-shadow: inset 0 -3rem 0 0 var(--dark-gray);
+      color: white;
+  }
+}
+
+/* ---------------------Custom scrollbar------------- */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--dark-gray);
+  border-radius: 20px;
+}
   

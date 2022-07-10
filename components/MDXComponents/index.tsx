@@ -1,4 +1,4 @@
-import { RouteLink } from '@/common-components';
+import { RouteLink } from '@/components/Elements';
 import styles from './index.module.scss';
 
 /* eslint-disable react/display-name */

@@ -1,11 +1,11 @@
 import React from 'react';
-import { SocialShare } from '@/helpers/constants';
+import { Icons } from '@/helpers/constants';
 import { classnames, encodeURI } from '@/helpers/utils';
-import Icon from '../Icons/Icon';
+import { Icon } from '@/components/Elements';
 import styles from './index.module.scss';
 
 interface Props {
-  type: SocialShare;
+  type: Icons;
   url: string;
   icon: string;
   text?: string;
@@ -30,22 +30,22 @@ const IconButton = ({
   const encodedUrl = encodeURI(`${process.env.DOMAIN_URL}/${url}`);
   const fullUrl = React.useMemo(() => {
     switch (type) {
-      case SocialShare.FACEBOOK:
+      case Icons.FACEBOOK:
         return `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
-      case SocialShare.LINKEDIN:
+      case Icons.LINKEDIN:
         return `https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${text}&summary=${text}&source=${encodedUrl}`;
-      case SocialShare.REDDIT:
+      case Icons.REDDIT:
         return `https://reddit.com/submit/?url=${encodedUrl}&title=${encodeURI(text)}`;
-      case SocialShare.TWITTER:
+      case Icons.TWITTER:
         const message = `I read this blog 👉 ${text}. Give it a try`;
         return `https://twitter.com/intent/tweet/?text=${message}&url=${encodedUrl}&via=sunny_pr_`;
-      case SocialShare.WHATSAPP:
+      case Icons.WHATSAPP:
         return `whatsapp://send?text=${text}%20${encodedUrl}`;
-      case SocialShare.GITHUB:
+      case Icons.GITHUB:
         return `https://github.com/sprakash57/portfolio/edit/master/data/posts/${url}.mdx`;
-      case SocialShare.TWITTER_DISCUSS:
+      case Icons.TWITTER_DISCUSS:
         return `https://mobile.twitter.com/search?q=${encodedUrl}`;
-      case SocialShare.EMAIL:
+      case Icons.EMAIL:
         return `mailto:?subject=${text}&body=${url}`;
       default:
         return url;
@@ -62,7 +62,7 @@ const IconButton = ({
       title={title}
       aria-label={title}
     >
-      <Icon name={icon} styles={classnames(styles.sharebtn__icon, iconStyle)} />
+      <Icon name={icon.toLowerCase()} styles={classnames(styles.sharebtn__icon, iconStyle)} />
       {label && <span className={classnames(styles.sharebtn__label, labelStyle)}>{label}</span>}
     </a>
   );

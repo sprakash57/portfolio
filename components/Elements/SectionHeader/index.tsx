@@ -1,6 +1,6 @@
 import { classnames } from '@/helpers/utils';
-import RouteLink from 'common-components/RouteLink';
-import Image from 'next/image';
+import Icon from '@/components/Elements/Icons/Icon';
+import styles from './index.module.scss';
 
 interface Props {
   title: string;
@@ -12,18 +12,12 @@ interface Props {
   height?: number;
 }
 
-const SectionHeader = ({ title, icon, imageAlt, headerStyle, figureStyle, width = 25, height = 25 }: Props) => {
+const SectionHeader = ({ title, icon, imageAlt, headerStyle, figureStyle, width = 30, height = 30 }: Props) => {
   return (
-    <header className={classnames('header', headerStyle)}>
+    <header className={classnames(styles.header, headerStyle)}>
       {icon && (
-        <figure className={classnames('icon', figureStyle)}>
-          <Image
-            src={require(`@/public/icons/${icon}.svg`)}
-            alt={imageAlt}
-            title={imageAlt}
-            width={width}
-            height={height}
-          />
+        <figure className={classnames(styles.header__icon, figureStyle)} title={imageAlt}>
+          <Icon name={icon} width={String(width)} height={String(height)} />
         </figure>
       )}
       <h2>{title}</h2>

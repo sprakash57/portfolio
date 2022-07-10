@@ -1,8 +1,6 @@
 import React from 'react';
-import RouteLink from 'common-components/RouteLink';
-import SectionHeader from '../Elements/SectionHeader';
+import { RouteLink, SectionHeader } from '@/components/Elements';
 import styles from './index.module.scss';
-import Button from 'common-components/Button';
 import YoutubePlayer from '../YoutubePlayer';
 
 const Videos = ({ videos }: { videos: Video[] }) => {
@@ -18,7 +16,13 @@ const Videos = ({ videos }: { videos: Video[] }) => {
         })}
       </article>
       <footer className={styles.videos__footer}>
-        <Button as="link" href="https://www.youtube.com/c/sunnyprakash5712/videos" label="View more" external />
+        <RouteLink
+          href="https://www.youtube.com/c/sunnyprakash5712/videos"
+          isExternal
+          classForContainer="btn__viewMore"
+        >
+          View more
+        </RouteLink>
         <RouteLink
           href="https://www.youtube.com/c/sunnyprakash5712/video"
           classForContainer={styles.videos__games}

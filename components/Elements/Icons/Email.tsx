@@ -1,16 +1,15 @@
 import React, { SVGAttributes } from 'react';
 
-/* eslint-disable max-len */
-
-const Email = (props: SVGAttributes<SVGElement>) => (
+const Email = ({ className, width, height, fill }: SVGAttributes<SVGElement>) => (
   <svg
-    {...props}
+    className={className}
+    width={width}
+    height={height}
+    fill={fill}
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     x="0px"
     y="0px"
-    width="24px"
-    height="24px"
     viewBox="0 0 24 24"
     enableBackground="new 0 0 24 24"
     xmlSpace="preserve"

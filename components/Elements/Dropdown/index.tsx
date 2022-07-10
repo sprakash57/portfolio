@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHandleClickOutside } from '@/helpers/hooks';
-import Image from 'next/image';
+import styles from './index.module.scss';
+import Icon from '@/components/Elements/Icons/Icon';
 
 interface Props {
   options: { label: string; value: string }[];
@@ -24,17 +25,16 @@ const Dropdown = ({ options, selected, onChange }: Props) => {
   };
 
   return (
-    <div className="container" ref={selectRef}>
-      <div className="container__title" onClick={handleSelect}>
-        <span className="container__header">{selectedOption || 'Select a tag'}</span>{' '}
-        <Image src={require('@/public/icons/caret-down.svg')} />
+    <div className={styles.container} ref={selectRef}>
+      <div className={styles.container__title} onClick={handleSelect}>
+        <span className={styles.container__header}>{selectedOption || 'Select a tag'}</span> <Icon name="caret" />
       </div>
       {isOpen && (
-        <ul className="container__list">
+        <ul className={styles['container__list']}>
           {options.map((option) => (
             <li
               key={option.label}
-              className="container__item"
+              className={styles['container__item']}
               onClick={() => handleOptionClick(option.value)}
               style={{ opacity: option.value ? 1 : 0 }}
             >

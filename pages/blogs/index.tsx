@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react';
 import BlogPost from '@/components/Blog/BlogPost';
-import SectionHeader from '@/components/Elements/SectionHeader';
+import { SectionHeader, Dropdown, ScrollTopButton } from '@/components/Elements';
 import { useDebounce } from '@/helpers/hooks';
 import { getAllFilesFrontMatter } from '@/helpers/mdx';
-import Dropdown from '@/components/Elements/Dropdown';
 import styles from './index.module.scss';
-import ScrollTopButton from '@/components/Elements/ScrollTopButton';
 
 const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string, number> }) => {
   const [category, setCategory] = React.useState('');

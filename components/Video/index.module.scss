@@ -1,11 +1,12 @@
 .videos {
     &__list {
+        margin-top: 2rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
     &__video {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
     }
     &__footer {
         margin-top: 1rem;

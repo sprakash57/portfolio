@@ -3,7 +3,7 @@
     row-gap: 2rem;
     column-gap: 1.5rem;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     &__header {
         display: flex;
         justify-content: space-between;
@@ -16,8 +16,9 @@
         height: 320px;
         max-height: 320px;
         border-bottom: 2px solid var(--dark-gray);
+        transition: all 0.3s ease-in;
         &:hover {
-            background-color: var(--red-hover);
+            box-shadow: 2px 4px 16px 1px var(--loblolly50), -2px -4px 16px 1px var(--loblolly50);
             .project__extlinkIcon {
                 display: block !important;
             }
