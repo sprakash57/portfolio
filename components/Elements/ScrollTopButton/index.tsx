@@ -14,4 +14,4 @@ const ScrollTopButton = () => {
   );
 };
 
-export default ScrollTopButton;
+export default React.memo(ScrollTopButton);

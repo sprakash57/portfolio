@@ -13,13 +13,6 @@ export const numberOfViews = (views: number) => {
   return `${unitsWithComma}B`;
 };
 
-export const capitalize = (str: string) => {
-  const result = str.length ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : str;
-  if (result === 'Npm-color') return 'Node library';
-  if (result === 'Chrome') return 'Browser';
-  return result;
-};
-
 export const concatEllipsis = (str: string) => (str.length >= 160 ? str.substring(0, 160) + '...' : str);
 
 export const encodeURI = (str: string) => (str ? encodeURIComponent(str) : '');

@@ -1,3 +1,4 @@
+import React from 'react';
 import { classnames } from '@/helpers/utils';
 import Link from 'next/link';
 import styles from './index.module.scss';
@@ -35,4 +36,4 @@ const RouteLink = ({
   );
 };
 
-export default RouteLink;
+export default React.memo(RouteLink);

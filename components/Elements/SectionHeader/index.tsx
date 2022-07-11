@@ -1,6 +1,7 @@
 import { classnames } from '@/helpers/utils';
 import Icon from '@/components/Elements/Icons/Icon';
 import styles from './index.module.scss';
+import React from 'react';
 
 interface Props {
   title: string;
@@ -25,4 +26,4 @@ const SectionHeader = ({ title, icon, imageAlt, headerStyle, figureStyle, width 
   );
 };
 
-export default SectionHeader;
+export default React.memo(SectionHeader);

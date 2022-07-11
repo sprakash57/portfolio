@@ -47,4 +47,4 @@ const Dropdown = ({ options, selected, onChange }: Props) => {
   );
 };
 
-export default Dropdown;
+export default React.memo(Dropdown);

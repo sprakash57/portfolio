@@ -2,6 +2,7 @@ import useSWR from 'swr';
 import { classnames, numberOfViews, fetcher } from '@/helpers/utils';
 import { Loader } from '@/components/Elements';
 import styles from './index.module.scss';
+import React from 'react';
 
 type Props = {
   stats: {
@@ -33,4 +34,4 @@ const BlogStats = ({ stats, queryType = 'read', className }: Props) => {
   );
 };
 
-export default BlogStats;
+export default React.memo(BlogStats);

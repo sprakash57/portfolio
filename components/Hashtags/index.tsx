@@ -11,4 +11,4 @@ const Hashtags = ({ tags }: { tags: string[] }) => {
   );
 };
 
-export default Hashtags;
+export default React.memo(Hashtags);
