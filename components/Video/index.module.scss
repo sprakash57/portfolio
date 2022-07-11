@@ -1,0 +1,30 @@
+.videos {
+    &__list {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__video {
+        margin-bottom: 1rem;
+    }
+    &__footer {
+        margin-top: 1rem;
+    }
+    &__games {
+        margin-left: 0.5rem;
+        padding: 0.2rem;
+        > small {
+            color: var(--red);
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .videos__video {
+        width: 100%;
+    }
+}

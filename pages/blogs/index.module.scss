@@ -1,0 +1,103 @@
+.summary {
+    font-size: 0.8rem;
+    border-left: 2px solid var(--dark-gray);
+    padding: 0.4rem 0.5rem;
+    margin: 1.5rem 0;
+    background-color: hsla(0, 0, 71%, 0.2);
+    width: fit-content;
+}
+.filter {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    &__input {
+        padding: 0.4rem;
+        border-radius: 0;
+        min-width: 150px;
+        border: 2px solid var(--dark-gray);
+        width: 75%;
+        outline: none;
+        caret-color: var(--red);
+    }
+    &__select {
+        padding: 0.35rem 0.4rem 0.4rem 0.4rem;
+        border: 1px solid black;
+        border: 2px solid var(--dark-gray);
+        outline: 0;
+        caret-color: var(--red);
+    }
+}
+.blogpage {
+    &__back {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__header {
+        border-bottom: 1px solid var(--red);
+        padding-bottom: 0.5rem;
+        text-align: center;
+        > h1 {
+            font-size: 2rem;
+            margin: 0.5rem 0 0 0;
+        }
+    }
+    &__section {
+        display: flex;
+        justify-content: center;
+    }
+    &__top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: var(--dark-gray);
+        width: 66px;
+        height: 66px;
+        justify-content: center;
+        border-radius: 50%;
+        color: white;
+        position: fixed;
+        right: 18px;
+        bottom: 90px;
+        cursor: pointer;
+        box-shadow: rgb(0 0 0 / 40%) 0px 4px 8px;
+        span:first-child {
+            font-size: 1.5rem;
+        }
+    }
+    &__actions {
+        position: relative;
+        display: flex; 
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            border-top: 2px solid var(--red);
+            top: 28px;
+            left: -80px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            border-top: 2px solid var(--red);
+            top: 28px;
+            right: -80px;
+        }
+    }
+    &__icon { width: 1rem; }
+    &__label {font-size: 0.8rem; }
+    &__iconBg {background-color: var(--dark-gray);}
+}
+@media screen and (max-width: 600px) {
+    .filter__input {
+        max-width: 180px;
+    }
+    .blogpage__actions {
+        &::after, &::before {
+            width: 0;
+        }
+    } 
+}

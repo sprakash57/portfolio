@@ -1,0 +1,115 @@
+---
+id: 5
+title: 'Beyond console.log()'
+publishedAt: '2 Nov 2020'
+timestamp: 1604301169
+summary: 'Do you know console.log() has cousions and they have awesome superpowers?'
+tags: ['Technology', 'JavaScript']
+---
+
+When it comes to debugging JavaScript application, there could be multiple ways such as using browser's devtool or use of the debugger keyword in your code. But the most popular technique is to put console.log() inside your code. I know most of us will complain against the practice of using logs directly in your code. But honestly, everyone does that. You can not deny the fact 😁. What if I tell there are more ways of using **Conosle API** and its method that you probably wouldn't think of. It will definitely enhance your logging experience. So without further ado, let's do further
+
+## console.log()
+
+The most common method of all time. But I won't talk about the boring stuff that you might know already. There are some nifty features that will stand out in your logs in devtool. Like formatting the text with CSS styling and outputting c-like strings. Let's take an example -
+
+```
+const str = "'Sunny Prakash'"
+console.log("Hi! I am %s", str)
+// Hi! I am 'Sunny Prakash'
+```
+
+You can even go one step further and create your own styled logger function and use it instead of plain old console.log().
+
+![log](https://dev-to-uploads.s3.amazonaws.com/i/l88jvaoca0p6190yvvrv.png)
+
+If you are wondering what CSS property you can use, I have jotted them down for you.
+
+- background
+- border
+- border-radius
+- box-shadow
+- clear and float
+- color
+- cursor
+- display
+- font-related properties
+- line-height
+- margin
+- outline
+- padding
+- text-\* properties such as text-transform
+- white-space
+- word-spacing
+- word-break
+- writing-mode
+
+## console.dir()
+
+Have you ever used console.log() to print HTML elements as object just to verify properties like value, target, style, classes, and innerHTML, etc but you failed miserably? Because all it would print is -
+
+```
+<button>Simple button</button>
+```
+
+Not enough intel, right?! Well, console.dir() solves this problem and opens up that HTML element. It will log them as objects so you can explore every property of it without any hassle.
+
+## console.info(), .warn() and .error()
+
+If you are 100% sure that whatever you are logging is info/error/warn then instead of using console.log(), go for these options. Why? Because you can create your own warning/error messages in certain scenarios, that doesn't come with javaScript naturally. It might help a fellow developer to stick to guidelines while developing any story or fixing any bug. Messages will appear in a different format and color that makes them easy to detect.
+
+```
+console.info("Write clean code");
+console.warn("Warning!! you better don't think of doing it");
+console.error("You just did, and you got the error afterward");
+```
+
+Oh! and did I mention, that you can still apply text formatting and all other good stuff which we learned in console.log()
+
+## console.group([label]) and groupEnd()
+
+As the name suggests you can group together a certain number of consoles together. For example, let's say you put consoles inside a method at several places and you are repeating the same thing with another function as well. To make those logs visually distinctive what you can do is to put strings such as `console.log('func1', ...)` and `console.log('func2', ...)`. But why make logs more verbose when you actually group them together there, wouldn't that be great?
+
+![group](https://dev-to-uploads.s3.amazonaws.com/i/xhran277isbb3llqz1qh.png)
+
+console.group([label]) takes an optional parameter called label that acts as a group name. If you don't provide label the default value would the function name. You can nest a group inside a group as well. grouping will be closed if you call `groupEnd()` method at the last.
+
+```
+console.group("Group A")
+console.log('something')
+console.group("Nested inside A")
+console.log('something again')
+console.groupEnd()
+console.groupEnd()
+```
+
+## console.assert(assertion, [object, string] )
+
+If you have ever written unit test cases then you must be knowing what assertion is. If you don't, well let me brief. Assertion means testing a functionality against a certain scenario. You simply assert a condition and check the output whether it is expected or not. If that is the case then the test case passes otherwise it fails. Console API provides you a way to log errors only if some assertion fails. Eg:-
+
+```
+for (let i=0;i<=5;i++){
+	console.log("checking %d...", i);
+	console.assert(i%2===0, "%d is not divisible by 2", i)
+}
+```
+
+## console.table([object, array])
+
+`console.table()` takes either an object or an array and displays them in tabular format. You heard it right "in a table" without any extra line of code. You won't believe how easy it is to read them.
+
+![table](https://dev-to-uploads.s3.amazonaws.com/i/oq0f5ttuwrsgrv8c2uuc.png)
+
+If you want to display only a few columns, well you can do that as well -
+
+```
+console.table([fooBar, jhonDoe], ["name"])
+```
+
+## console.trace([...any, ...data])
+
+This method prints a stack trace to the Web console. It's a miniature version of the browser's call stack that will appear in the console tab on the fly. So now you can check the call stack without even using debug tools 😆.
+
+![trace](https://dev-to-uploads.s3.amazonaws.com/i/i7oh875b0l02knqhzjf9.png)
+
+And with this, we come to wrap this session. I hope you have found this article of some use. Let me know in case I have missed something in the comments or you can visit my [website](https://suprdev.netlify.app/contact) to provide your valuable feedback.

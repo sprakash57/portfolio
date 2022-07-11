@@ -1,0 +1,86 @@
+.about {
+    figure {
+        border-radius: 50%;
+        margin: 0.5rem auto;
+        height: 160px;
+        width: 160px;
+        box-shadow: 0 1px 10px 1px rgb(0 0 0 / 20%);
+    }
+    summary, ul {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+        margin: 1.5rem 0;
+        text-align: justify;
+    }
+    &__icons {
+        display: flex;
+        justify-content: center;
+    }
+    &__container {
+        padding: 0.2rem 0.4rem;
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        width: 0.8rem;
+        height: 0.8rem;
+        &--red {
+            fill: red;
+        }
+    }
+    &__iconlabel {
+        font-size: 0.7rem;
+    }
+    &__story {
+        position: relative;
+        width: fit-content;
+        margin: 2rem auto;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            border-top: 2px solid var(--red);
+            top: 18px;
+            left: -90px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            width: 80px;
+            border-top: 2px solid var(--red);
+            top: 18px;
+            right: -90px;
+        }
+    }
+    &__services {
+        list-style: none;
+        padding: 0;
+        li {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+        label {
+            margin-left: 0.5rem;
+        }
+    }
+    &__check {
+        width: 14px;
+        height: 14px;
+        stroke: tomato;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+        fill: none;
+    }
+    &__support {
+        display: flex;
+        justify-content: center;
+        margin: 2rem 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    .intro {
+        justify-content: center;
+    }
+}
