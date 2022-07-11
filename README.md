@@ -7,9 +7,8 @@
   SUPRDEV
 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f1e467d9-a62b-44a0-ac8d-f2fcd566c238/deploy-status)](https://app.netlify.com/sites/suprdev/deploys)
+Welcome to SUPRDEV. A place where you will find blogs, cool open source projects, free apps, tuturiol videos and engaing content.
 
-welcome to SUPRDEV, space where I publish all my technical content, creations and blogs. This project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 ## Want to create yours?
 
 Clone/fork this repo and go to the directory and run below commands -
