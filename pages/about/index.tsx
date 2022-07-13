@@ -58,7 +58,7 @@ const About = ({ about }: { about: About }) => {
               text={label}
               url={url}
               type={name.toLowerCase() as Icons}
-              icon={label}
+              icon={name.toLowerCase()}
               label={label}
               iconContainerStyle={styles.about__container}
               iconStyle={classnames(styles.about__icon)}
