@@ -42,7 +42,7 @@
         "content": "Currently the platform is not being monetised. Ads on the website help cover some server expenses, but it is nowhere near enough. All the content on this website will remain free, but it would be nice to get some financial support. If you can, please consider sponsoring SUPRDEV. Your support means a lot!",
         "platforms": [
             {
-                "name": "GITHUB_SPONSER",
+                "name": "SPONSER",
                 "label": "Sponsor",
                 "url": "https://github.com/sponsors/sprakash57"
             },
