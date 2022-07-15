@@ -36,3 +36,9 @@ export enum Icons {
   WINDOWS = 'windows',
   YOUTUBE = 'youtube',
 }
+
+export enum Alerts {
+  WARNING = 'yellow',
+  DANGER = 'red',
+  SUCCESS = 'green',
+}

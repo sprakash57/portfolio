@@ -57,7 +57,7 @@ const ProjectsList = ({ projects, header, viewMoreBtn = false }: Props) => {
         })}
       </section>
       {viewMoreBtn && (
-        <RouteLink href="/projects" isExternal classForContainer="btn__viewMore">
+        <RouteLink href="/projects" classForContainer="btn__viewMore">
           View more
         </RouteLink>
       )}

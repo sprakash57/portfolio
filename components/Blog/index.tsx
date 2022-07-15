@@ -16,7 +16,7 @@ const Blog = ({ posts, header, viewMoreBtn = false }: Props) => {
         <BlogPost key={post.slug} post={post} />
       ))}
       {viewMoreBtn && (
-        <RouteLink href="/blogs" classForContainer="btn__viewMore" isExternal>
+        <RouteLink href="/blogs" classForContainer="btn__viewMore">
           View more
         </RouteLink>
       )}

@@ -5,7 +5,7 @@ const Projects = ({ projects, videos }: { projects: Project[]; videos: Video[] }
   return (
     <section>
       <ProjectsList projects={projects} header="Live projects" />
-      <Videos videos={videos} />
+      <Videos videos={[]} />
     </section>
   );
 };
