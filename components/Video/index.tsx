@@ -1,8 +1,8 @@
 import React from 'react';
 import { RouteLink, SectionHeader } from '@/components/Elements';
 import styles from './index.module.scss';
-import YoutubePlayer from '../YoutubePlayer';
-import NoData from '../NoData';
+import YoutubePlayer from '@/components/YoutubePlayer';
+import NoData from '@/components/NoData';
 import { Alerts } from '@/helpers/constants';
 
 const Videos = ({ videos }: { videos: Video[] }) => {
@@ -10,7 +10,7 @@ const Videos = ({ videos }: { videos: Video[] }) => {
     <section className="mv4" id="videos">
       <SectionHeader title="Latest to watch" icon="youtube" />
       {!videos || !videos.length ? (
-        <NoData message="Watch out this space for upcoming videos." color={Alerts.WARNING} />
+        <NoData message="Watch out this space for upcoming videos." type={Alerts.WARNING} />
       ) : (
         <>
           <article className={styles.videos__list}>

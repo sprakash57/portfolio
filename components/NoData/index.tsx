@@ -4,12 +4,12 @@ import { Box } from './styled';
 
 interface Props {
   message: string;
-  color: Alerts;
+  type: Alerts;
 }
 
-const NoData = ({ message, color }: Props) => {
+const NoData = ({ message, type }: Props) => {
   return (
-    <Box borderColor={`var(--${color})`} bgColor={`var(--${color}10)`}>
+    <Box borderColor={`var(--${type})`} bgColor={`var(--${type}10)`} role="alert">
       {message}
     </Box>
   );
