@@ -6,8 +6,8 @@ import { Icons } from '@/helpers/constants';
 const Introduction = () => {
   return (
     <section className={styles.intro}>
-      <RouteLink href="/blogs" classForContainer={classnames(styles['intro__link'], styles['intro__link--red50'])}>
-        <article className={classnames(styles.intro__article, styles['intro__article--red'])}>
+      <RouteLink href="/blogs" classForContainer={classnames(styles['intro__link'], styles['intro__link--tomato50'])}>
+        <article className={classnames(styles.intro__article, styles['intro__article--tomato'])}>
           <span className={styles.intro__text}>Read</span>
           <Icon name={Icons.READ} styles={styles.intro__icon} />
         </article>

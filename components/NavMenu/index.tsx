@@ -13,11 +13,12 @@ const NavMenu = () => {
         <RouteLink href="/" classForContainer={styles.nav__brand}>
           <Image src={Brand} alt="Brand" />
         </RouteLink>
-        <section className={styles.nav__menu}>
+        <section className={styles.nav__menu} aria-label="breadcrumb">
           <RouteLink
             href="/"
             childProps={{ id: 'menu-home' }}
             classForContainer={router.asPath === '/' ? styles.active : ''}
+            aria-current="page"
           >
             Home
           </RouteLink>
@@ -25,6 +26,7 @@ const NavMenu = () => {
             href="/blogs"
             childProps={{ id: 'menu-blogs' }}
             classForContainer={router.asPath === '/blogs' ? styles.active : ''}
+            aria-current="page"
           >
             Blogs
           </RouteLink>
@@ -32,6 +34,7 @@ const NavMenu = () => {
             href="/projects"
             childProps={{ id: 'menu-projects' }}
             classForContainer={router.asPath === '/projects' ? styles.active : ''}
+            aria-current="page"
           >
             Projects
           </RouteLink>
@@ -39,6 +42,7 @@ const NavMenu = () => {
             href="/about"
             childProps={{ id: 'menu-about' }}
             classForContainer={router.asPath === '/about' ? styles.active : ''}
+            aria-current="page"
           >
             About
           </RouteLink>

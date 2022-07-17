@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
@@ -5,7 +7,6 @@ module.exports = {
   images: {
     domains: [
       'dev-to-uploads.s3.amazonaws.com',
-      'www.codewars.com',
       'avatars.githubusercontent.com',
       'i.ibb.co'
     ],
@@ -13,5 +14,9 @@ module.exports = {
   compiler: {
     // ssr and displayName are configured by default
     styledComponents: true,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'styles')],
+    prependData: `@import "mixins.scss";`
   }
 }

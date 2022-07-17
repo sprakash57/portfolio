@@ -4,12 +4,13 @@ import dompurify from 'dompurify';
 import { SectionHeader, RouteLink, Loader, Icon } from '@/components/Elements';
 import { fetcher } from '@/helpers/utils';
 import styles from './index.module.scss';
-import { Icons } from '@/helpers/constants';
+import { Alerts, Icons } from '@/helpers/constants';
+import NoData from '@/components/NoData';
 
 const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMoreBtn?: boolean }) => {
   const { data, error } = useSWR('/api/contributions', fetcher);
 
-  if (error) return <small className="alert mv4">Contributions are not available right now.</small>;
+  if (error) return <NoData type={Alerts.DANGER} message="Contributions are not available right now." />;
 
   if (!data?.contributions) return <Loader />;
 
@@ -75,6 +76,7 @@ const Contributions = ({ header, viewMoreBtn = false }: { header: string; viewMo
           href="https://github.com/sprakash57?tab=repositories&q=&type=fork&language=&sort="
           isExternal
           classForContainer="btn__viewMore"
+          role="button"
         >
           View more
         </RouteLink>

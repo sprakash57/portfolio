@@ -1,10 +1,10 @@
 .sharebtn {
-  color: #fff;
+  color: var(--white);
   margin: 0.5rem;
   padding: 0.5rem 0.75rem;
   transition: 0.3s all linear;
   &__icon {
-    fill: #fff;
+    fill: var(--white);
     stroke-width: 0;
     width: 1.2rem;
     height: 1.2rem;
@@ -15,51 +15,62 @@
     margin-left: 0.5rem;
   }
   &--buymecoffee {
-    background-color: hsl(9, 100%, 64%);
+    background-color: var(--tomato);
+    box-shadow: 3px 9px 15px 2px var(--tomato25), -1px -1px 15px 2px var(--tomato25);
     &:hover {
-      background-color: hsl(9, 100%, 44%);
+      background-color: var(--mahogany);
     }
   }
   &--facebook, &--facebook_page {
-    background-color: hsl(221, 44%, 41%);
+    background-color: var(--denim);
+    box-shadow: 3px 9px 15px 2px var(--denim25), -1px -1px 15px 2px var(--denim25);
+
     &:hover {
-      background-color: hsl(221, 44%, 31%);
+      background-color: var(--rhino);
     }
   }
   &--linkedin, &--linkedin_page {
-    background-color: #0077b5;
+    background-color: var(--frenchBlue);
+    box-shadow: 3px 9px 15px 2px var(--frenchBlue25), -1px -1px 15px 2px var(--frenchBlue25);
     &:hover {
-      background-color: #046293;
+      background-color: var(--seaBlue);
     }
   }
   &--email {
-    background-color: #777;
+    background-color: var(--sonicSilver);
+    box-shadow: 3px 9px 15px 2px var(--sonicSilver25), -1px -1px 15px 2px var(--sonicSilver25);
     &:hover {
-      background-color: #5e5e5e;
+      background-color: var(--carbonGrey);
     }
   }
   &--twitter, &--discuss, &--twitter_page, &--paypal {
-    background-color: #55acee;
+    background-color: var(--pictonBlue);
+    box-shadow: 3px 9px 15px 2px var(--pictonBlue25), -1px -1px 15px 2px var(--pictonBlue25);
     &:hover {
-      background-color: #2795e9;
+      background-color: var(--buttonBlue);
     }
   }
   &--reddit {
-    background-color: #5f99cf;
+    background-color: var(--blueGray);
+    box-shadow: 3px 9px 15px 2px var(--blueGray25), -1px -1px 15px 2px var(--blueGray25);
+
     &:hover {
-      background-color: #3a80c1;
+      background-color: var(--moonstone);
     }
   }
   &--whatsapp {
-    background-color: #25d366;
+    background-color: var(--ufoGreen);
+    box-shadow: 3px 9px 15px 2px var(--ufoGreen25), -1px -1px 15px 2px var(--ufoGreen25);
+
     &:hover {
-      background-color: #1da851;
+      background-color: var(--green);
     }
   }
-  &--github, &--github_sponser {
-    background-color: #35465c;
+  &--github, &--sponsor {
+    background-color: var(--charcoal);
+    box-shadow: 3px 9px 15px 2px var(--darkCharcoal25), -1px -1px 15px 2px var(--darkCharcoal25);
     &:hover {
-      background-color: #222d3c;
+      background-color: var(--darkCharcoal);
     }
   }
 }

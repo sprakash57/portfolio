@@ -4,7 +4,7 @@ export const BtnContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--dark-gray);
+  background: var(--arsenic);
   width: 66px;
   height: 66px;
   justify-content: center;

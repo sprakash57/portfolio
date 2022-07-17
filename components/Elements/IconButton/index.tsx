@@ -27,7 +27,7 @@ const IconButton = ({
   label = '',
   labelStyle = '',
 }: Props) => {
-  const encodedUrl = encodeURI(`${process.env.DOMAIN_URL}/${url}`);
+  const encodedUrl = encodeURI(`${process.env.BLOGS_URL}/${url}`);
   const fullUrl = React.useMemo(() => {
     switch (type) {
       case Icons.FACEBOOK:

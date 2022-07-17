@@ -1,9 +1,9 @@
 .copylink {
-    color: var(--dark-gray);
+    color: var(--arsenic);
     text-decoration: underline;
     transition: all 0.2s ease-in-out;
     &:hover {
-        background-color: var(--red);
+        background-color: var(--tomato);
         text-decoration: none;
         color: white;
         cursor: pointer;
