@@ -1,6 +1,6 @@
 .summary {
     font-size: 0.8rem;
-    border-left: 2px solid var(--dark-gray);
+    border-left: 2px solid var(--arsenic);
     padding: 0.4rem 0.5rem;
     margin: 1.5rem 0;
     background-color: hsla(0, 0, 71%, 0.2);
@@ -14,17 +14,17 @@
         padding: 0.4rem;
         border-radius: 0;
         min-width: 150px;
-        border: 2px solid var(--dark-gray);
+        border: 2px solid var(--arsenic);
         width: 75%;
         outline: none;
-        caret-color: var(--red);
+        caret-color: var(--tomato);
     }
     &__select {
         padding: 0.35rem 0.4rem 0.4rem 0.4rem;
         border: 1px solid black;
-        border: 2px solid var(--dark-gray);
+        border: 2px solid var(--arsenic);
         outline: 0;
-        caret-color: var(--red);
+        caret-color: var(--tomato);
     }
 }
 .blogpage {
@@ -33,7 +33,7 @@
         justify-content: flex-end;
     }
     &__header {
-        border-bottom: 1px solid var(--red);
+        border-bottom: 1px solid var(--tomato);
         padding-bottom: 0.5rem;
         text-align: center;
         > h1 {
@@ -44,12 +44,13 @@
     &__section {
         display: flex;
         justify-content: center;
+        margin-top: 0.5rem;
     }
     &__top {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: var(--dark-gray);
+        background: var(--arsenic);
         width: 66px;
         height: 66px;
         justify-content: center;
@@ -74,7 +75,7 @@
             content: "";
             position: absolute;
             width: 80px;
-            border-top: 2px solid var(--red);
+            border-top: 2px solid var(--tomato);
             top: 28px;
             left: -80px;
         }
@@ -82,14 +83,13 @@
             content: "";
             position: absolute;
             width: 80px;
-            border-top: 2px solid var(--red);
+            border-top: 2px solid var(--tomato);
             top: 28px;
             right: -80px;
         }
     }
     &__icon { width: 1rem; }
     &__label {font-size: 0.8rem; }
-    &__iconBg {background-color: var(--dark-gray);}
 }
 @media screen and (max-width: 600px) {
     .filter__input {

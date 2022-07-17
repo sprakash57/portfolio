@@ -81,7 +81,7 @@ const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white' 
     case Icons.CARET:
       return <Caret className={styles} width={width} height={height} fill={color} />;
     case Icons.REDDIT:
-      return <Reddit className={styles} width={width} height={height} fill={color} />;
+      return <Reddit className={styles} width={width} height={height} />;
     default:
       return <Email className={styles} width={width} height={height} fill={color} />;
   }

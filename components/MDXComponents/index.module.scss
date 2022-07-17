@@ -9,7 +9,7 @@
     font-family: monospace;
     padding: 1rem;
     color: white;
-    background: var(--dark-gray);
+    background: var(--arsenic);
     line-height: 1.5;
     border-radius: 5px;
 }
@@ -19,18 +19,18 @@
 }
 .blockquote {
     margin: 1rem 0;
-    border-left: 5px solid var(--red);
+    border-left: 5px solid var(--tomato);
     padding-left: 0.5rem;
 }
 .inlineCode {
-    background-color: var(--dark-gray);
+    background-color: var(--arsenic);
     padding: 0.1rem 0.25rem;
     font-weight: 400;
     border-radius: 5px;
     color: white;
 }
 .link {
-    color: var(--red);
+    color: var(--tomato);
     cursor: pointer;
     text-decoration: underline;
     overflow-wrap: break-word;

@@ -38,8 +38,8 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
     <section className="mv2">
       <SectionHeader title="Blogs" icon="blog" />
       <summary className={styles.summary}>
-        Total available blog posts are <strong style={{ color: 'var(--red)' }}>{posts.length}</strong>. Use search bar
-        or dropdown to filter them by title or tags.
+        Total available blog posts are <strong style={{ color: 'var(--tomato)' }}>{posts.length}</strong>. Use search
+        bar or dropdown to filter them by title or tags.
       </summary>
       <div className={styles.filter}>
         <input

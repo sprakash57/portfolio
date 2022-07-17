@@ -24,7 +24,7 @@
     &__icon {
         width: 0.8rem;
         height: 0.8rem;
-        &--red {
+        &--tomato {
             fill: red;
         }
     }
@@ -39,7 +39,7 @@
             content: "";
             position: absolute;
             width: 80px;
-            border-top: 2px solid var(--red);
+            border-top: 2px solid var(--tomato);
             top: 18px;
             left: -90px;
         }
@@ -47,7 +47,7 @@
             content: "";
             position: absolute;
             width: 80px;
-            border-top: 2px solid var(--red);
+            border-top: 2px solid var(--tomato);
             top: 18px;
             right: -90px;
         }

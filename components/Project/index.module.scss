@@ -15,7 +15,7 @@
         max-width: 320px;
         height: 300px;
         max-height: 300px;
-        border-bottom: 2px solid var(--dark-gray);
+        border-bottom: 2px solid var(--arsenic);
         transition: all 0.3s ease-in;
         &:hover {
             box-shadow: 2px 4px 16px 1px var(--loblolly50), -2px -4px 16px 1px var(--loblolly50);
@@ -42,7 +42,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--dark-gray);
+        background-color: var(--arsenic);
         box-shadow: 0px 1px 4px 1px rgb(0 0 0 / 20%);
         padding-left: 0.5rem;
         > figure {

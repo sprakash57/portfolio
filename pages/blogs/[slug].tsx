@@ -51,7 +51,6 @@ const Blog = ({ post, extraPosts }: Props) => {
           label="Edit on GitHub"
           labelStyle={styles.blogpage__label}
           iconStyle={styles.blogpage__icon}
-          iconContainerStyle={styles.blogpage__iconBg}
         />
         <IconButton
           type={Icons.TWITTER_DISCUSS}
@@ -60,7 +59,6 @@ const Blog = ({ post, extraPosts }: Props) => {
           label="Discuss on Twitter"
           labelStyle={styles.blogpage__label}
           iconStyle={styles.blogpage__icon}
-          iconContainerStyle={styles.blogpage__iconBg}
         />
       </section>
       <section>

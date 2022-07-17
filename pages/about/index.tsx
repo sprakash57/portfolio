@@ -1,11 +1,13 @@
 import { IconButton, Icon } from '@/components/Elements';
-import { Icons } from '@/helpers/constants';
+import { Icons, Alerts } from '@/helpers/constants';
 import Image from 'next/image';
 import styles from './index.module.scss';
 import { classnames } from '@/helpers/utils';
+import NoData from '@/components/NoData';
 
 const About = ({ about }: { about: About }) => {
-  if (!about) return <small className="alert mv4">Projects are not available right now.</small>;
+  if (!about) return <NoData type={Alerts.DANGER} message="About page is not available right now." />;
+
   const { pic, thumbnail, intro, support, story } = about;
   return (
     <section className={`${styles.about} mv2`}>
@@ -58,7 +60,7 @@ const About = ({ about }: { about: About }) => {
               text={label}
               url={url}
               type={name.toLowerCase() as Icons}
-              icon={name.toLowerCase()}
+              icon={name}
               label={label}
               iconContainerStyle={styles.about__container}
               iconStyle={classnames(styles.about__icon)}
