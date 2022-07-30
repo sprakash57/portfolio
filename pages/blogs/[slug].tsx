@@ -7,7 +7,7 @@ import { IconButton, RouteLink, ScrollTopButton } from '@/components/Elements';
 import { Icons } from '@/helpers/constants';
 import styles from './index.module.scss';
 import Hashtags from '@/components/Hashtags';
-import { randomizer } from '@/helpers/utils';
+import { classnames, randomizer } from '@/helpers/utils';
 import BlogPost from '@/components/Blog/BlogPost';
 
 interface Props {
@@ -23,11 +23,9 @@ const Blog = ({ post, extraPosts }: Props) => {
   const { id: postId, title, publishedAt, readTime, slug, tags } = frontMatter;
 
   return (
-    <article className={`${styles.blogpage} mv2`}>
-      <RouteLink href="/blogs">
-        <span role="button" className={styles.blogpage__back}>
-          &#10229; Back
-        </span>
+    <article className={classnames(styles.blogpage, 'mv2')}>
+      <RouteLink href="/blogs" classForContainer={styles.blogpage__back}>
+        <span role="button">&#10229; Back</span>
       </RouteLink>
       <header className={styles.blogpage__header}>
         <h1>{title}</h1>
