@@ -61,12 +61,12 @@ const NavMenu = () => {
         </RouteLink>
         <RouteLink href={SocialLinks.LINKEDIN} isExternal>
           <figure className={styles.weblinks__icons} title={Icons.LINKEDIN}>
-            <Icon name={Icons.LINKEDIN} width="16" height="16" />
+            <Icon name={Icons.LINKEDIN} width="18" height="18" />
           </figure>
         </RouteLink>
         <RouteLink href={SocialLinks.YOUTUBE} isExternal>
           <figure className={styles.weblinks__icons} style={{ padding: '0.1rem' }} title={Icons.YOUTUBE}>
-            <Icon name={Icons.YOUTUBE} width="16" height="16" />
+            <Icon name={Icons.YOUTUBE} width="18" height="18" />
           </figure>
         </RouteLink>
       </section>

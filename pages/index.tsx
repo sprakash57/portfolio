@@ -5,6 +5,7 @@ import Projects from '@/components/Project';
 import Contributions from '@/components/Contribution';
 import Introduction from '@/components/Introduction';
 import { useLatestData } from '@/helpers/hooks';
+import { ScrollTopButton } from '@/components/Elements';
 
 type Props = {
   posts: Post[];
@@ -22,6 +23,7 @@ const Home = ({ posts, projects }: Props) => {
       <Blogs posts={recentPosts} header="Recent Blogs" viewMoreBtn />
       <Projects projects={recentProjects} header="Featured Projects" viewMoreBtn />
       <Contributions header="Latest Contributions" viewMoreBtn />
+      <ScrollTopButton />
     </section>
   );
 };

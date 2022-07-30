@@ -15,7 +15,7 @@ const BlogPost = ({ post }: Props) => {
       <article className={styles.post}>
         <header className={styles.post__header}>
           <h3>{title}</h3>
-          <Hashtags tags={tags} />
+          <Hashtags tags={tags} inList />
         </header>
         <summary>{summary}</summary>
         <footer>

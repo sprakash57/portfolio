@@ -48,9 +48,6 @@
 		align-items: flex-end;
 		border-top: 3px solid var(--arsenic);
 		border-right: 1px solid var(--arsenic);
-		&:hover {
-			@include active_link;
-		}
 	}
 }
 @media screen and (max-width: 625px) {
