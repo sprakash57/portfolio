@@ -6,11 +6,14 @@ import styles from './index.module.scss';
 
 interface Props {
   type: Icons;
-  url: string;
   icon: string;
+  url?: string;
   text?: string;
   title?: string;
   iconStyle?: string;
+  iconColor?: string;
+  iconWidth?: string;
+  iconHeight?: string;
   iconContainerStyle?: string;
   label?: string;
   labelStyle?: string;
@@ -18,12 +21,15 @@ interface Props {
 
 const IconButton = ({
   type,
-  url,
+  url = '',
   text = '',
   icon,
   title = '',
   iconStyle = '',
   iconContainerStyle = '',
+  iconWidth = '',
+  iconHeight = '',
+  iconColor = '',
   label = '',
   labelStyle = '',
 }: Props) => {
@@ -55,14 +61,20 @@ const IconButton = ({
   return (
     //@ts-ignore
     <a
-      className={classnames(styles.sharebtn, iconContainerStyle, styles[`sharebtn--${type}`])}
+      className={classnames(styles.sharebtn, styles[`sharebtn--${type}`], iconContainerStyle)}
       href={fullUrl}
       target="_blank"
       rel="noopener noreferrer"
       title={title}
       aria-label={title}
     >
-      <Icon name={icon.toLowerCase()} styles={classnames(styles.sharebtn__icon, iconStyle)} />
+      <Icon
+        name={icon.toLowerCase()}
+        color={iconColor}
+        height={iconHeight}
+        width={iconWidth}
+        styles={classnames(styles.sharebtn__icon, iconStyle)}
+      />
       {label && <span className={classnames(styles.sharebtn__label, labelStyle)}>{label}</span>}
     </a>
   );

@@ -1,28 +1,85 @@
 .nav {
-	height: 80px;
-	display: flex;
-	padding: 0.5rem 1rem;
-	justify-content: space-between;
-    position: sticky;
-    top: 0;
-	background: var(--arsenic);
+	position: sticky;
+	top: 0;
 	z-index: 99;
+
+	&__social {
+		display: flex;
+		height: 30px;
+    	align-items: center;
+		justify-content: flex-end;
+		background: var(--white);
+		padding-right: 0.5rem;
+		&--container {
+			background-color: var(--arsenic);
+			box-shadow: none;
+			cursor: default;
+			pointer-events: none;
+			margin-right: 0;
+			&:hover {
+				box-shadow: none;
+				background-color: var(--arsenic);
+			}
+		}
+		&--label {
+			font-size: 0.8rem;
+			letter-spacing: 1px;
+		}
+	}
+
+	&__icons {
+		position: relative;
+		margin: 0.6rem;
+		padding: 0.3rem;
+		display: flex;
+		align-items: flex-end;
+		transition: 0.3s all ease-in;
+		&--email {
+			align-items: center;
+			margin-right: 0;
+			span {
+				font-size: 0.9rem;
+				letter-spacing: 1px;
+				margin-left: 0.5rem;
+				color: var(--arsenic);
+				font-weight: 600;
+			}
+		}
+		&:hover {
+			-webkit-filter: drop-shadow(1px 1px 8px rgba(0,0,0,0.4));
+            filter: drop-shadow(1px 1px 8px rgba(0,0,0,0.4));
+		}
+	}
+
+	&__navbar {
+		padding: 0.5rem 0.5rem 0.5rem 6rem;
+		background: var(--arsenic);
+		display: flex;
+		justify-content: space-between;
+	}
+
 	&__brand {
 		display: flex;
 		align-items: center;
-		width: 170px;
+		width: 110px;
 	}
+
 	&__menu {
 		display: flex;
 		align-items: center;
-		justify-content: space-around;
-		width: 300px;
+		justify-content: space-between;
+		width: 400px;
 		a {
 			color: white;
 			padding: 0.5rem;
 			font-size: 0.8rem;
+			transition: 0.2s all ease-in-out;
 			&:hover {
 				@include active_link;
+			}
+			span {
+				font-size: 0.9rem;
+				letter-spacing: 1px;
 			}
 		}
 	}
@@ -30,38 +87,20 @@
 .active {
 	@include active_link
 }
-.weblinks {
-	position: sticky;
-	top: 81px;
-	z-index: 2;
-	display: flex;
-	width: 220px;
-	height: 30px;
-    align-items: center;
-	box-shadow: 0px 4px 20px 9px hsla(0, 0%, 42%, 0.478);
-	background: var(--arsenic);
-	clip-path: polygon(0% 0%,100% 0%,86% 100%,0% 100%);
-	&__icons {
-		margin: 0.6rem;
-		padding: 0.3rem;
-		display: flex;
-		align-items: flex-end;
-		border-top: 3px solid var(--arsenic);
-		border-right: 1px solid var(--arsenic);
-	}
-}
-@media screen and (max-width: 625px) {
+@media screen and (max-width: 600px) {
 	.nav {
-		justify-content: space-evenly;
-		align-items: center;
-		margin-left: -1.5rem;
-		margin-right: -1.5rem;
-		flex-direction: column;
-		height: 100px;
-		padding-bottom: 1rem;
-	}
-	.weblinks {
-		margin-left: -2rem;
-		top: 101px;
+		&__navbar {
+			justify-content: space-evenly;
+			align-items: center;
+			flex-direction: column;
+			padding: 0;
+			height: 130px;
+		}
+		&__menu {
+			width: 300px;
+		}
+		&__brand {
+			width: 80px;
+		}
 	}
 }

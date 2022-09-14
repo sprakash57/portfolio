@@ -94,4 +94,14 @@ interface IconProps {
   width?: string;
   height?: string;
   color?: string;
+  withBg?: boolean;
+}
+
+interface SocialLinksInNav {
+  name: string;
+  url: string;
+  color?: string;
+  width?: string;
+  height?: string;
+  background?: boolean;
 }

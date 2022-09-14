@@ -9,23 +9,27 @@ export enum SocialLinks {
 
 export enum Icons {
   ANDROID = 'android',
+  ARROW = 'arrow',
   BLOG = 'blog',
   BUYMECOFFEE = 'buymecoffee',
   CARET = 'caret',
   CHECK = 'check',
   CHROME = 'chrome',
+  CONSULT = 'consult',
+  DEVELOP = 'develop',
   EMAIL = 'email',
   EXPLORE = 'explore',
   EXTLINK = 'extlink',
   FACEBOOK = 'facebook',
   FORK = 'fork',
   GITHUB = 'github',
+  INSTAGRAM = 'instagram',
   LINKEDIN = 'linkedin',
   NPM = 'npm',
   OPEN_SOURCE = 'opensource',
   PAYPAL = 'paypal',
   PROJECT = 'project',
-  READ = 'read',
+  LEARN = 'learn',
   REDDIT = 'reddit',
   SPONSOR = 'sponsor',
   STAR = 'star',
@@ -41,4 +45,10 @@ export enum Alerts {
   WARNING = 'yellow',
   DANGER = 'red',
   SUCCESS = 'green',
+}
+
+export enum ScreenSize {
+  MOBILE = 'S',
+  TABLET = 'M',
+  DESKTOP = 'L',
 }

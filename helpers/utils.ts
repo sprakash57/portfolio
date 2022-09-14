@@ -1,3 +1,5 @@
+import { ScreenSize } from './constants';
+
 export const classnames = (...args: any[]) => args.filter((arg) => !!arg).join(' ');
 
 export const inlineLink = (url: string, label: string) =>
@@ -13,7 +15,8 @@ export const numberOfViews = (views: number) => {
   return `${unitsWithComma}B`;
 };
 
-export const concatEllipsis = (str: string) => (str.length >= 160 ? str.substring(0, 160) + '...' : str);
+export const concatEllipsis = (str: string, limit = 160) =>
+  str.length >= limit ? str.substring(0, limit) + '...' : str;
 
 export const encodeURI = (str: string) => (str ? encodeURIComponent(str) : '');
 
@@ -27,3 +30,15 @@ export const randomizer = (list: any[]) => {
 };
 
 export const fetcher = (url: string) => fetch(url).then((r) => r.json());
+
+export const getScreenType = (width: number | null) => {
+  if (width) {
+    const { MOBILE, DESKTOP, TABLET } = ScreenSize;
+    if (width <= 640) return MOBILE;
+    if (width >= 1080) return DESKTOP;
+    return TABLET;
+  }
+  return null;
+};
+
+export const capitalize = (text = '') => (text ? text.substring(0, 1).toUpperCase() + text.substring(1) : text);

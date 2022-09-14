@@ -1,12 +1,10 @@
-.container {
+.layout {
     margin: 0 auto;
-    background: white;
-    max-width: 1080px;
+    background: var(--sepia);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     &__body {
         flex-grow: 1;
-        padding: 0 1.5rem;
     }
 }

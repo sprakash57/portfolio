@@ -2,13 +2,14 @@ import React from 'react';
 import { classnames } from '@/helpers/utils';
 import Link from 'next/link';
 import styles from './index.module.scss';
+import { FlattenSimpleInterpolation } from 'styled-components';
 
 type Props = {
   href: string;
   children: React.ReactNode | string;
   childProps?: Record<string, any>;
   isExternal?: boolean;
-  classForContainer?: string;
+  classForContainer?: string | FlattenSimpleInterpolation;
   [x: string]: any;
 };
 

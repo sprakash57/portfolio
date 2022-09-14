@@ -1,0 +1,77 @@
+.latest {
+    margin: 4rem 0;
+    h2 {
+        font-family: sans-serif;
+        font-size: 2.5rem;
+        text-align: center;
+        letter-spacing: 2px;
+        color: var(--arsenic);
+        margin: 0 0 3rem 0;
+    }
+    &__row {
+        display: flex;
+    }
+    &__card {
+        padding: 1rem;
+        margin: 0.5rem;
+        background-color: var(--gray20);
+        max-height: 500px;
+        max-width: 50%;
+        small {
+            color: var(--arsenic);
+            font-size: 0.9rem;
+            border-bottom: 4px solid var(--tomato);
+        }
+        h3 {
+            color: var(--arsenic);
+            font-weight: 600;
+        }
+        p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        a {   
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            text-align: center;
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            border-top: 3px solid var(--sepia);
+            border-right: 1px solid var(--sepia);
+            box-shadow: 2px 3px 5px 1px var(--black20);
+            color: var(--arsenic);
+            font-weight: 600;
+        }
+        figure {
+            margin: 1rem 0;
+            text-align: center;
+            img {
+                object-fit: cover;
+                border-radius: 4px;
+                border: 2px solid white;
+                box-shadow: 3px 9px 15px 2px var(--gray50);
+            }
+        }
+        iframe {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 640px) {
+        &__row {
+            flex-direction: column;
+        }
+        &__card {
+            max-width: 100%;
+            figure {
+                img {
+                    max-width: 360px;
+                }
+            }
+            iframe {
+                width: 100%;
+            }
+        }
+    }
+}

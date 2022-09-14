@@ -62,8 +62,10 @@ const About = ({ about }: { about: About }) => {
               type={name.toLowerCase() as Icons}
               icon={name}
               label={label}
+              iconHeight="0.8rem"
+              iconWidth="0.8rem"
+              iconColor="var(--tomato)"
               iconContainerStyle={styles.about__container}
-              iconStyle={classnames(styles.about__icon)}
               labelStyle={styles.about__iconlabel}
             />
           ))}

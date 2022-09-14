@@ -18,5 +18,10 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
     prependData: `@import "mixins.scss";`
+  },
+  experimental: { 
+    images: { 
+      allowFutureImage: true 
+    } 
   }
 }

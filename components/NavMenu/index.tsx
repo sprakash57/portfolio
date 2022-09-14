@@ -1,15 +1,56 @@
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { Icon, RouteLink } from '@/components/Elements';
-import Brand from '@/public/brand.svg';
+import Brand from '@/public/logo_square.png';
 import styles from './index.module.scss';
-import { Icons, SocialLinks } from '@/helpers/constants';
+import { Icons } from '@/helpers/constants';
+import { classnames } from '@/helpers/utils';
+
+const SOCIAL_LINKS: SocialLinksInNav[] = [
+  {
+    name: 'twitter',
+    color: 'pictonBlue',
+    url: 'https://twitter.com/sunny_pr_',
+  },
+  {
+    name: 'youtube',
+    url: 'https://www.youtube.com/c/sunnyprakash5712',
+    width: '22',
+    height: '22',
+  },
+  {
+    name: 'facebook',
+    color: 'denim',
+    url: 'https://www.facebook.com/suprdev',
+    background: true,
+  },
+  {
+    name: 'linkedin',
+    color: 'frenchBlue',
+    url: 'https://www.linkedin.com/in/sunnyprakash12',
+    background: true,
+  },
+];
 
 const NavMenu = () => {
   const router = useRouter();
+
   return (
-    <>
-      <nav className={styles.nav}>
+    <nav className={styles.nav}>
+      <section className={styles.nav__social}>
+        {SOCIAL_LINKS.map(({ name, url, height = '20', width = '20', color = 'white', background = false }) => (
+          <RouteLink key={name} href={url} isExternal>
+            <figure className={styles.nav__icons} title={name}>
+              <Icon name={name} width={width} height={height} color={`var(--${color})`} withBg={background} />
+            </figure>
+          </RouteLink>
+        ))}
+        <figure className={classnames(styles.nav__icons, styles['nav__icons--email'])} title="Email">
+          <Icon name={Icons.EMAIL} color="var(--sonicSilver)" width="25" height="25" />
+          <span>info@codesupr.com</span>
+        </figure>
+      </section>
+      <section className={styles.nav__navbar}>
         <RouteLink href="/" classForContainer={styles.nav__brand}>
           <Image src={Brand} alt="Brand" />
         </RouteLink>
@@ -20,7 +61,7 @@ const NavMenu = () => {
             classForContainer={router.asPath === '/' ? styles.active : ''}
             aria-current="page"
           >
-            Home
+            <span>Home</span>
           </RouteLink>
           <RouteLink
             href="/blogs"
@@ -28,7 +69,7 @@ const NavMenu = () => {
             classForContainer={router.asPath === '/blogs' ? styles.active : ''}
             aria-current="page"
           >
-            Blogs
+            <span>Blogs</span>
           </RouteLink>
           <RouteLink
             href="/projects"
@@ -36,7 +77,7 @@ const NavMenu = () => {
             classForContainer={router.asPath === '/projects' ? styles.active : ''}
             aria-current="page"
           >
-            Projects
+            <span>Services</span>
           </RouteLink>
           <RouteLink
             href="/about"
@@ -44,33 +85,11 @@ const NavMenu = () => {
             classForContainer={router.asPath === '/about' ? styles.active : ''}
             aria-current="page"
           >
-            About
+            <span>About</span>
           </RouteLink>
         </section>
-      </nav>
-      <section className={styles.weblinks}>
-        <RouteLink href={SocialLinks.TWITTER} isExternal>
-          <figure className={styles.weblinks__icons} title={Icons.TWITTER}>
-            <Icon name={Icons.TWITTER} width="16" height="16" />
-          </figure>
-        </RouteLink>
-        <RouteLink href={SocialLinks.GITHUB} isExternal>
-          <figure className={styles.weblinks__icons} title={Icons.GITHUB}>
-            <Icon name={Icons.GITHUB} width="16" height="16" />
-          </figure>
-        </RouteLink>
-        <RouteLink href={SocialLinks.LINKEDIN} isExternal>
-          <figure className={styles.weblinks__icons} title={Icons.LINKEDIN}>
-            <Icon name={Icons.LINKEDIN} width="18" height="18" />
-          </figure>
-        </RouteLink>
-        <RouteLink href={SocialLinks.YOUTUBE} isExternal>
-          <figure className={styles.weblinks__icons} style={{ padding: '0.1rem' }} title={Icons.YOUTUBE}>
-            <Icon name={Icons.YOUTUBE} width="18" height="18" />
-          </figure>
-        </RouteLink>
       </section>
-    </>
+    </nav>
   );
 };
 

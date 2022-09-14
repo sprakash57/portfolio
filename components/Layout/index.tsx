@@ -6,13 +6,13 @@ import Footer from '../Footer';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className={styles.container}>
+    <main className={styles.layout}>
       <Head>
-        <title>SUPR Dev</title>
-        <meta name="description" content="Shorten your link here" />
+        <title>Code SUPR</title>
+        <meta name="description" content="Web Development solutions" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className={styles.container__body}>
+      <section className={styles.layout__body}>
         <NavMenu />
         {children}
       </section>

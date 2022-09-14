@@ -57,6 +57,7 @@ const Blog = ({ post, extraPosts }: Props) => {
           label="Discuss on Twitter"
           labelStyle={styles.blogpage__label}
           iconStyle={styles.blogpage__icon}
+          iconWidth="1rem"
         />
       </section>
       <section>

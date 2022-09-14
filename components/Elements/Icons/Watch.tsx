@@ -1,18 +1,19 @@
 import React, { SVGAttributes } from 'react';
 
-const Watch = (props: SVGAttributes<SVGElement>) => {
+const Watch = ({ className = '', width, height, fill }: SVGAttributes<SVGElement>) => {
   return (
     <svg
-      {...props}
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-      role="img"
-      width="1.25em"
-      height="1em"
+      width={width}
+      height={height}
       preserveAspectRatio="xMidYMid meet"
-      viewBox="0 0 640 512"
+      viewBox="0 0 48 48"
     >
-      <path d="M592 0H48A48 48 0 0 0 0 48v320a48 48 0 0 0 48 48h240v32H112a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H352v-32h240a48 48 0 0 0 48-48V48a48 48 0 0 0-48-48zm-16 352H64V64h512z" />
+      <path
+        fill={fill}
+        d="M8.75 8A4.75 4.75 0 0 0 4 12.75v18.5A4.75 4.75 0 0 0 8.75 36h30.5A4.75 4.75 0 0 0 44 31.25v-18.5A4.75 4.75 0 0 0 39.25 8H8.75ZM6.5 12.75a2.25 2.25 0 0 1 2.25-2.25h30.5a2.25 2.25 0 0 1 2.25 2.25v18.5a2.25 2.25 0 0 1-2.25 2.25H8.75a2.25 2.25 0 0 1-2.25-2.25v-18.5Zm4.75 26.75a1.25 1.25 0 1 0 0 2.5h25.5a1.25 1.25 0 1 0 0-2.5h-25.5Z"
+      />
     </svg>
   );
 };
