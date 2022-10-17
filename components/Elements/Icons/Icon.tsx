@@ -31,6 +31,7 @@ import {
   Consult,
   Develop,
   Instagram,
+  Search,
 } from './index';
 
 const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white', withBg = false }: IconProps) => {
@@ -85,7 +86,7 @@ const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white',
     case Icons.CARET:
       return <Caret className={styles} width={width} height={height} fill={color} />;
     case Icons.REDDIT:
-      return <Reddit className={styles} width={width} height={height} />;
+      return <Reddit className={styles} width={width} height={height} fill={color} />;
     case Icons.ARROW:
       return <Arrow />;
     case Icons.CONSULT:
@@ -94,6 +95,8 @@ const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white',
       return <Develop className={styles} width={width} height={height} fill={color} />;
     case Icons.INSTAGRAM:
       return <Instagram className={styles} width={width} height={width} />;
+    case Icons.SEARCH:
+      return <Search className={styles} width={width} height={width} fill={color} />;
     default:
       return <Email className={styles} width={width} height={height} fill={color} />;
   }

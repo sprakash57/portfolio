@@ -5,39 +5,7 @@ import React from 'react';
 import s from './index.module.scss';
 import { Icon, RouteLink } from '@/components/Elements';
 import { Arrow } from '@/components/Elements/Icons';
-
-const SERVICES = [
-  {
-    icon: 'consult',
-    title: 'Consult',
-    body: `Know important "DOs" and "DON'Ts" about your Resume and LinkedIn profile. Get more recruiter's connect and opportunities.`,
-    route: 'srevices#consult',
-  },
-  {
-    icon: 'blog',
-    title: 'Read',
-    body: `Crisp and informative blogs related to web development, Career guidance, Jobs in Abroad, Product delivery and many more.`,
-    route: 'blogs',
-  },
-  {
-    icon: 'watch',
-    title: 'Watch',
-    body: `Rich tutorial videos at your disposal everytime. Not enough?! We also have videos related to Jobs in Europe, Visa assistance and Career advice.`,
-    route: 'videos',
-  },
-  {
-    icon: 'learn',
-    title: 'Learn',
-    body: `Something new everyday. All Tutorials, Quizzes, Projects and assiatance are in one place to succeed in your next Interview.`,
-    route: 'srevices#learn',
-  },
-  {
-    icon: 'develop',
-    title: 'Develop',
-    body: `Looking for experienced engineers for your next project setup. Or maybe someone who can fix critical bugs. Get the quote in mimimum time.`,
-    route: 'srevices#develop',
-  },
-];
+import { SERVICES } from '@/helpers/constants';
 
 const Services = () => {
   const { type: displayType } = useScreenDimension();

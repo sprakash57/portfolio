@@ -1,0 +1,44 @@
+.contact {
+    &__row {
+        padding: 5rem 0;
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 3px;
+            margin: 1rem 0 4rem 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        p {
+            line-height: 1.8;
+            max-width: 800px;
+            padding: 0 0.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 1rem auto 2rem auto;
+        }
+        span {
+            display: block;
+            padding: 1rem;
+            background-color: var(--tomato);
+            box-shadow: 2px 3px 5px 1px var(--black20);
+            font-size: 1.2rem;
+            margin: 0 auto;
+            width: fit-content;
+            text-align: center;
+        }
+        figure {
+            display: flex;
+            justify-content: space-around;
+            width: 320px;
+            margin: 0 auto;
+        }
+        &:nth-child(odd) {
+            background-color: var(--arsenic);
+            color: var(--sepia);
+        }
+        &:nth-child(even) {
+            background-color: var(--sepia);
+            color: var(--arsenic);
+        }
+    }
+}

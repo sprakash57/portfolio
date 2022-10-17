@@ -28,3 +28,4 @@ export { default as Consult } from './Consult';
 export { default as Develop } from './Develop';
 export { default as Arrow } from './Arrow';
 export { default as Instagram } from './Instagram';
+export { default as Search } from './Search';

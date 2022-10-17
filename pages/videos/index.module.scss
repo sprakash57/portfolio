@@ -1,0 +1,67 @@
+.videos {
+    &__row {
+        padding: 5rem 0;
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 3px;
+            margin: 1rem 0 4rem 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        p {
+            line-height: 1.8;
+            max-width: 800px;
+            padding: 0 0.5rem;
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 1rem auto 2rem auto;
+        }
+        &:nth-child(odd) {
+            background-color: var(--arsenic);
+            color: var(--sepia);
+        }
+        &:nth-child(even) {
+            background-color: var(--sepia);
+            color: var(--arsenic);
+        }
+    }
+    &__tutorials {
+        margin-top: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    &__video {
+        margin-bottom: 1rem;
+    }
+    &__more {
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        margin: 2rem auto 0 auto;
+        width: fit-content;
+        text-align: center;
+        transition: 0.5s;
+        border-radius: 2px;
+        &:hover {
+            box-shadow: inset 0 -3.5rem 0 0 var(--tomato);
+            span {
+                color: var(--sepia);
+            }
+        }
+        &:nth-child(odd) {
+            background-color: var(--sepia);
+            color: var(--arsenic);
+        }
+        &:nth-child(even) {
+            background-color: var(--arsenic);
+            color: var(--sepia);
+        }
+    }
+    @media screen and (max-width: 640px) {
+        &__video {
+            width: 100%;
+        }
+    }
+}
