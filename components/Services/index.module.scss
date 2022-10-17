@@ -5,6 +5,7 @@
         font-size: 2.5rem;
         text-align: center;
         letter-spacing: 2px;
+        color: var(--charcoal);
     }
     &__row {
         display: flex;
@@ -31,7 +32,7 @@
         strong {
             font-size: 1.2rem;
             letter-spacing: 1px;
-            color: var(--arsenic);
+            color: var(--charcoal);
         }
         &--roll {
             width: 100%;
@@ -40,11 +41,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
-            background-color: var(--arsenic);
+            background-color: var(--charcoal);
             position: absolute;
             transform: translateY(-100%);
             transform-origin: 50% 0%;
             transition: transform 0.3s linear;
+            border-radius: 2px;
             strong {
                 color: var(--sepia);
                 font-size: 1.5rem;
@@ -56,20 +58,14 @@
                 font-size: 0.8rem;
                 letter-spacing: 1px;
             }
-            a {
-                transform: rotate(90deg);
-            }
             span {
-                font-size: 1.5rem;
-                color: var(--sepia);
-                border-top: 3px solid var(--sepia);
-                border-left: 1px solid var(--sepia);
-                box-shadow: 2px 3px 5px 1px var(--black20);
-                padding: 0.5rem;
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
             }
         }
         &:hover {
-            cursor: pointer;
+            cursor: default;
             .services__item {
                 overflow: visible;
                 &--roll {
@@ -79,7 +75,7 @@
         }
     }
     &__mobile_item {
-        background-color: var(--arsenic);
+        background-color: var(--charcoal);
         display: flex;
         margin-bottom: 6px;
         figure {
@@ -101,19 +97,8 @@
             }
             span {
                 position: absolute;
-                transform: rotate(90deg);
-                bottom: 0rem;
-                right: 8px;
-                padding: 0.4rem;
-                background: var(--tomato);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 1.9rem;
-                height: 2rem;
-                border-left: 1px solid var(--black20);
-                box-shadow: 2px 3px 5px 1px var(--black20);
-                border-radius: 50%;
+                bottom: 0.5rem;
+                right: 0.5rem;
             }
         }
     }

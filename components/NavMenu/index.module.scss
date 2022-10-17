@@ -2,24 +2,22 @@
 	border-bottom: 4px solid var(--tomato);
 }
 @mixin active_menu {
-	color: var(--arsenic);
+	color: var(--charcoal);
 }
-
 .active {
 	@include highlight_link
 }
-
 .nav {
 	position: sticky;
 	top: 0;
 	z-index: 99;
 	&__social {
 		display: flex;
-		height: 30px;
+		height: 24px;
     	align-items: center;
 		justify-content: flex-end;
-		background: var(--white);
 		padding-right: 0.5rem;
+		background-color: var(--sepia);
 		&--container {
 			background-color: var(--arsenic);
 			box-shadow: none;
@@ -47,16 +45,12 @@
 			align-items: center;
 			margin-right: 0;
 			span {
-				font-size: 0.9rem;
+				font-size: 0.7rem;
 				letter-spacing: 1px;
 				margin-left: 0.5rem;
 				color: var(--arsenic);
 				font-weight: 600;
 			}
-		}
-		&:hover {
-			-webkit-filter: drop-shadow(1px 1px 8px rgba(0,0,0,0.4));
-            filter: drop-shadow(1px 1px 8px rgba(0,0,0,0.4));
 		}
 	}
 	&__navbar {
@@ -98,7 +92,7 @@
 	&__dropdown_btn {
 		color: var(--sepia);
 		cursor: pointer;
-		padding: 0.5rem;
+		padding: 0.4rem;
 		transition: 0.1s all ease-in-out;
 		display: flex;
 		align-items: center;

@@ -20,9 +20,9 @@ const HIGHLIGHTS = [
 
 const Highlights = () => {
   const settings: Settings = {
-    autoplay: false,
-    autoplaySpeed: 3500,
-    speed: 1500,
+    autoplay: true,
+    autoplaySpeed: 4000,
+    speed: 2000,
     dots: true,
     infinite: true,
     className: s.slides__dots,

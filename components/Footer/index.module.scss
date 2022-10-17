@@ -7,12 +7,12 @@
     &__image {
 		display: flex;
 		align-items: center;
-		width: 240px;
+		width: 160px;
 	}
     &__brand {
         min-width: 280px;
         p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--white);
             letter-spacing: 1px;
         }
@@ -24,7 +24,7 @@
         width: 100%;
         h3 {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             letter-spacing: 1px;
             border-bottom: 4px solid var(--tomato);
             width: fit-content;
@@ -37,6 +37,9 @@
         li {
             font-size: 0.9rem;
             line-height: 2.2;
+        }
+        a:hover {
+            color: var(--tomato);
         }
     }
     &__copyright {

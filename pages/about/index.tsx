@@ -30,7 +30,7 @@ const About = () => {
   const { aboutUs, whoWeAre, ourGoal, contactUs } = ABOUT;
   return (
     <section className={styles.about}>
-      <div className={styles.about__row}>
+      <div className={styles.about__row} id="intro">
         <h1>{aboutUs.title}</h1>
         <h3>{aboutUs.subtitle}</h3>
       </div>
@@ -50,11 +50,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className={styles.about__row}>
+      <div className={styles.about__row} id="goal">
         <h1>{ourGoal.title}</h1>
         <p>{ourGoal.description}</p>
       </div>
-      <div className={styles.about__row}>
+      <div className={styles.about__row} id="team">
         <h1>MEET OUR TEAM</h1>
         <div className={styles.about__team}>
           {TEAM.map((props: ITeamCard) => (
@@ -69,7 +69,7 @@ const About = () => {
           <span>Contact us</span>
         </RouteLink>
       </div>
-      <div className={styles.about__row}>
+      <div className={styles.about__row} id="location">
         <h1>FIND US</h1>
         <div className={styles.about__find_us}>
           <figure>

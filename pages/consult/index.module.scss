@@ -2,18 +2,18 @@
     &__item {
         padding: 7rem 2rem 3rem;
         &:nth-child(odd) {
-            background-color: var(--arsenic);
+            background-color: var(--charcoal);
             color: var(--white);
         }
         &:nth-child(even) {
             background-color: var(--sepia);
-            color: var(--arsenic);
+            color: var(--charcoal);
             .consult__link {
                 border-top: 3px solid var(--white);
                 border-right: 1px solid var(--white);
                 box-shadow: 2px 3px 5px 1px var(--black20);
                 background-color: var(--sepia);
-                color: var(--arsenic);
+                color: var(--charcoal);
             }
         }
     }
@@ -42,9 +42,10 @@
     &__link {
         display: block;
         padding: 1rem;
-        background-color: var(--arsenic);
+        background-color: var(--charcoal);
         border-top: 3px solid var(--tomato);
         border-right: 1px solid var(--tomato);
+        border-radius: 2px;
         box-shadow: 2px 3px 5px 1px var(--black20);
         font-size: 1rem;
         color: var(--sepia);

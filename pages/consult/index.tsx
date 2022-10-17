@@ -68,12 +68,7 @@ const Consult = () => {
           <div className={s.consult__row}>
             <div className={s.consult__title}>
               <h1>{title}</h1>
-              <Icon
-                name={icon}
-                width="80"
-                height="80"
-                color={index % 2 === 0 ? 'var(--sepia)' : 'var(--rebecapurple)'}
-              />
+              <Icon name={icon} width="80" height="80" color={index % 2 === 0 ? 'var(--sepia)' : 'var(--charcoal)'} />
             </div>
             <ul className={s.consult__list}>
               {points.map(({ id, body }) => (

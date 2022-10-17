@@ -1,0 +1,14 @@
+.arrow {
+    padding: 0.4rem;
+    background: var(--tomato);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-left: 1px solid var(--black20);
+    box-shadow: 2px 3px 5px 1px var(--black20);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--sepia);
+}

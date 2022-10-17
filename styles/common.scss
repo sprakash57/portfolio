@@ -1,7 +1,8 @@
 :root {
   // ----------------colors----------------------
   --americanBlue: hwb(221 17% 55%);
-  --arsenic: hwb(210 21% 73%);
+  --arsenic: hwb(212 21% 73%);
+  --arsenic90: hwb(212 21% 73% / 0.9);
   --black: hwb(0 0% 100%);
   --black20: hwb(0 0% 100% / 0.2);
   --black40: hwb(0 0% 100% / 0.4);
@@ -34,7 +35,6 @@
   --pictonBlue25: hwb(206 33% 7% / 0.25);
   --pictonBlue80: hwb(206 33% 7% / 0.80);
   --rhino: hwb(221 17% 55%);
-  --rebecapurple: hwb(270 20% 40%);
   --seaBlue: hwb(200 0% 40%);
   --sepia: hwb(40 87% 4%);
   --sonicSilver: hwb(0 47% 53%);
@@ -101,6 +101,7 @@ a {
 /* ---------------------Custom scrollbar------------- */
 ::-webkit-scrollbar {
   width: 0.5vw;
+  background-color: var(--sepia);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--arsenic);

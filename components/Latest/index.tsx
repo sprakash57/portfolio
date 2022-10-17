@@ -16,11 +16,11 @@ const LATEST = [
   },
   {
     section: 'video',
-    title: 'Best Visa to come to Germany',
-    cover: 'Best Visa to come to Germany',
+    title: 'German Work Visa',
+    cover: 'German Work Visa',
     description:
-      'This video is all about different ways how you can come to Germany. There are several visas for different purposes. Please watch the full video to get an idea of how you can come to Germany from your home country.',
-    url: '10r8WNHjWT4',
+      'We have shared our Work Visa for Germany experience that we had during 2021. There are major tips and challenges that will surely help you overcome any difficulties you face during your visa process.',
+    url: 'DSUbPGfAEgg',
   },
 ];
 

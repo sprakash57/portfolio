@@ -38,7 +38,9 @@ const Services = () => {
               <div className={s['services__mobile_item--desc']}>
                 <strong>{title}</strong>
                 <p>{body}</p>
-                <Arrow />
+                <RouteLink href={`/${route}`}>
+                  <Arrow />
+                </RouteLink>
               </div>
             </div>
           )

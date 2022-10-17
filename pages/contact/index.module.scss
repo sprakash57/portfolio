@@ -33,12 +33,12 @@
             margin: 0 auto;
         }
         &:nth-child(odd) {
-            background-color: var(--arsenic);
+            background-color: var(--charcoal);
             color: var(--sepia);
         }
         &:nth-child(even) {
             background-color: var(--sepia);
-            color: var(--arsenic);
+            color: var(--charcoal);
         }
     }
 }

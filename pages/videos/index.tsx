@@ -33,7 +33,7 @@ const Videos = () => {
   const { tutorials, career } = VIDEOS;
   return (
     <section className={s.videos}>
-      <div className={s.videos__row}>
+      <div className={s.videos__row} id="tutorials">
         <h1>TUTORIALS</h1>
         <p>
           These aren't just tutorials where we will rewrite some code and you will repeat it. Each video aims to solve
@@ -58,7 +58,7 @@ const Videos = () => {
           <h2 style={{ textAlign: 'center', letterSpacing: '8px' }}>COMING SOON...</h2>
         )}
       </div>
-      <div className={s.videos__row}>
+      <div className={s.videos__row} id="career">
         <h1>CAREER</h1>
         <p>
           You will learn not only how to write an impactful resume but also what it should contain. Also, these free

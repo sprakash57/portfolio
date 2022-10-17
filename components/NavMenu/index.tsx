@@ -45,7 +45,7 @@ const NavMenu = () => {
   return (
     <nav className={styles.nav}>
       <section className={styles.nav__social}>
-        {SOCIAL_LINKS.map(({ name, url, height = '20', width = '20', color = 'white', background = false }) => (
+        {SOCIAL_LINKS.map(({ name, url, height = '16', width = '16', color = 'white', background = false }) => (
           <RouteLink key={name} href={url} isExternal>
             <figure className={styles.nav__icons} title={name}>
               <Icon name={name} width={width} height={height} color={`var(--${color})`} withBg={background} />
@@ -53,7 +53,7 @@ const NavMenu = () => {
           </RouteLink>
         ))}
         <figure className={classnames(styles.nav__icons, styles['nav__icons--email'])} title="Email">
-          <Icon name={Icons.EMAIL} color="var(--sonicSilver)" width="25" height="25" />
+          <Icon name={Icons.EMAIL} color="var(--sonicSilver)" width="20" height="20" />
           <span>info@codesupr.com</span>
         </figure>
       </section>

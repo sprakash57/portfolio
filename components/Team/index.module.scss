@@ -1,7 +1,7 @@
 .team {
     margin: 4rem 0;
-    padding-top: 2rem;
-    background-color: var(--arsenic);
+    padding: 3rem 0;
+    background-color: var(--charcoal);
     h2 {
         font-family: sans-serif;
         font-size: 2.5rem;
@@ -19,8 +19,9 @@
         align-items: center;
         flex-direction: column;
         padding: 2rem;
+        border-radius: 2px;
         background-color: var(--onyx);
-        box-shadow: 0px -9px 20px 5px var(--black20);
+        box-shadow: -17px 17px 20px 0px hwb(0deg 0% 100% / 30%), -2px 2px 12px hwb(0deg 0% 100% / 30%);
         figure {
             margin: 0;
             width: 140px;

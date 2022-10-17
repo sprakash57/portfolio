@@ -17,12 +17,12 @@
             margin: 1rem auto 2rem auto;
         }
         &:nth-child(odd) {
-            background-color: var(--arsenic);
+            background-color: var(--charcoal);
             color: var(--sepia);
         }
         &:nth-child(even) {
             background-color: var(--sepia);
-            color: var(--arsenic);
+            color: var(--charcoal);
         }
     }
     &__tutorials {
@@ -39,24 +39,26 @@
         display: block;
         padding: 0.5rem 1rem;
         font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
         margin: 2rem auto 0 auto;
         width: fit-content;
         text-align: center;
         transition: 0.5s;
         border-radius: 2px;
-        &:hover {
-            box-shadow: inset 0 -3.5rem 0 0 var(--tomato);
-            span {
-                color: var(--sepia);
-            }
-        }
         &:nth-child(odd) {
-            background-color: var(--sepia);
-            color: var(--arsenic);
+            background-color: var(--arsenic);
+            border-top: 3px solid var(--tomato);
+            border-right: 1px solid var(--tomato);
+            box-shadow: 2px 3px 5px 1px var(--black20);
+            color: var(--sepia);
         }
         &:nth-child(even) {
-            background-color: var(--arsenic);
-            color: var(--sepia);
+            border-top: 3px solid var(--white);
+            border-right: 1px solid var(--white);
+            box-shadow: 2px 3px 5px 1px var(--black20);
+            background-color: var(--sepia);
+            color: var(--arsenic);
         }
     }
     @media screen and (max-width: 640px) {

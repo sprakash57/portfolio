@@ -28,34 +28,59 @@ const Footer = () => {
           <div>
             <h3>SERVICES</h3>
             <ul>
-              <li>Career in Web Engineering</li>
-              <li>Visa Sponsored Jobs</li>
-              <li>Resume review</li>
-              <li>Boost LinkedIn Profile</li>
-              <li>Web & App Development</li>
+              <li>
+                <RouteLink href="consult#job">Job Search</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/videos#career">Career Consultation</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/consult#career">Resume review</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/consult#career">Boost LinkedIn Profile</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/consult#engineering">Web Engineering</RouteLink>
+              </li>
             </ul>
           </div>
           <div>
             <h3>EXPLORE</h3>
             <ul>
-              <li>Blogs</li>
-              <li>Videos</li>
-              <li>Apps</li>
+              <li>
+                <RouteLink href="/blogs">Blogs</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/videos#tutorials">Tutorials</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/products">Products</RouteLink>
+              </li>
             </ul>
           </div>
           <div>
             <h3>COMPANY</h3>
             <ul>
-              <li>About</li>
-              <li>Goal</li>
-              <li>Location</li>
+              <li>
+                <RouteLink href="/about#intro">About</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/about#goal">Goal</RouteLink>
+              </li>
+              <li>
+                <RouteLink href="/about#location">Location</RouteLink>
+              </li>
             </ul>
           </div>
           <div>
             <h3>CONTACT</h3>
             <ul>
-              <li>Email</li>
+              <li>Facebook</li>
               <li>Twitter</li>
+              <li>
+                <RouteLink href="/contact">Email</RouteLink>
+              </li>
             </ul>
           </div>
         </div>
