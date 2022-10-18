@@ -1,7 +1,8 @@
 :root {
   // ----------------colors----------------------
   --americanBlue: hwb(221 17% 55%);
-  --arsenic: hwb(210 21% 73%);
+  --arsenic: hwb(212 21% 73%);
+  --arsenic90: hwb(212 21% 73% / 0.9);
   --black: hwb(0 0% 100%);
   --black20: hwb(0 0% 100% / 0.2);
   --black40: hwb(0 0% 100% / 0.4);
@@ -17,8 +18,10 @@
   --darkCharcoal25: hwb(0 20% 80% / 0.25);
   --denim: hwb(221 23% 41%);
   --denim25: hwb(221 23% 41% / 0.25);
+  --denim80: hwb(221 23% 41% / 0.8);
   --frenchBlue: hwb(201 0% 29%);
   --frenchBlue25: hwb(201 0% 29% / 0.25);
+  --frenchBlue80: hwb(201 0% 29% / 0.80);
   --gray: hwb(212 40% 55%);
   --gray20: hwb(212 40% 55% / 0.2);
   --gray50: hwb(212 40% 55% / 0.5);
@@ -27,16 +30,21 @@
   --loblolly50: hsla(210, 15%, 75%, 50%);
   --mahogany: hwb(15 0% 20%);
   --moonstone: hwb(200 20% 20%);
+  --onyx: hwb(207 20% 75%);
   --pictonBlue: hwb(206 33% 7%);
   --pictonBlue25: hwb(206 33% 7% / 0.25);
+  --pictonBlue80: hwb(206 33% 7% / 0.80);
   --rhino: hwb(221 17% 55%);
   --seaBlue: hwb(200 0% 40%);
+  --sepia: hwb(40 87% 4%);
   --sonicSilver: hwb(0 47% 53%);
   --sonicSilver25: hwb(0 47% 53% / 0.25);
+  --sonicSilver80: hwb(0 47% 53% / 0.8);
   --tomato: hwb(10 27% 4%);
   --tomato10: hwb(10 27% 4% / 0.1);
   --tomato25: hwb(10 27% 4% / 0.25);
   --tomato50: hwb(10 27% 4% / 0.5);
+  --tomato80: hwb(10 27% 4% / 0.8);
   --ufoGreen: hwb(140 20% 20%);
   --ufoGreen25: hwb(140 20% 20% / 25%);
   --yellow: hwb(53 1% 7%);
@@ -62,9 +70,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-h2, h3 {
-  color: var(--arsenic);
 }
 * {
   box-sizing: border-box;
@@ -96,9 +101,22 @@ h2, h3 {
 /* ---------------------Custom scrollbar------------- */
 ::-webkit-scrollbar {
   width: 0.5vw;
+  background-color: var(--sepia);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--arsenic);
-  border-radius: 20px;
 }
+/* ---------------------Overrides-------------------*/
+.slick-dots {
+  bottom: 0;
+  li button::before {
+    opacity: 1;
+    color: var(--sepia);
+  }
+  li.slick-active button::before {
+    opacity: 1;
+    color: var(--tomato);
+  }
+}
+
   

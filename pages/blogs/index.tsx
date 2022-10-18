@@ -15,7 +15,7 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
         .sort()
         .map((key) => ({ label: `${key}(${tagsFilter[key]})`, value: key })),
     ],
-    [posts]
+    [tagsFilter]
   );
   const [value, debouncedValue, setValue] = useDebounce('', 1000);
 
@@ -32,15 +32,10 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
       .filter((post) => post.title.toLowerCase().includes(debouncedValue.toLowerCase()))
       .filter((blog) => blog.tags.some((tag) => tag.includes(category)));
     setBlogs(filteredPosts);
-  }, [value, debouncedValue]);
+  }, [value, debouncedValue, category, posts]);
 
   return (
-    <section className="mv2">
-      <SectionHeader title="Blogs" icon="blog" />
-      <summary className={styles.summary}>
-        Total available blog posts are <strong style={{ color: 'var(--tomato)' }}>{posts.length}</strong>. Use search
-        bar or dropdown to filter them by title or tags.
-      </summary>
+    <section className={styles.blogs}>
       <div className={styles.filter}>
         <input
           className={styles.filter__input}
@@ -51,6 +46,10 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
         />
         <Dropdown options={options} onChange={handleFilter} selected={category} />
       </div>
+      <summary className={styles.summary}>
+        Total available blog posts are <strong style={{ color: 'var(--tomato)' }}>{posts.length}</strong>. Use search
+        bar or dropdown to filter them by title or tags.
+      </summary>
       {blogs.map((post) => (
         <BlogPost key={post.slug} post={post} />
       ))}

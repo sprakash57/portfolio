@@ -1,5 +1,6 @@
 import { Icons } from '@/helpers/constants';
 import React from 'react';
+import Arrow from './Arrow';
 import {
   Buymecoffee,
   GitHub,
@@ -10,7 +11,7 @@ import {
   Paypal,
   Sponsor,
   Check,
-  Read,
+  Learn,
   Explore,
   Watch,
   Youtube,
@@ -27,14 +28,18 @@ import {
   Caret,
   Whatsapp,
   Reddit,
+  Consult,
+  Develop,
+  Instagram,
+  Search,
 } from './index';
 
-const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white' }: IconProps) => {
+const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white', withBg = false }: IconProps) => {
   switch (name) {
     case Icons.FACEBOOK:
-      return <Facebook className={styles} width={width} height={height} fill={color} />;
+      return <Facebook className={styles} width={width} height={height} fill={color} withBg={withBg} />;
     case Icons.LINKEDIN:
-      return <LinkedIn className={styles} width={width} height={height} fill={color} />;
+      return <LinkedIn className={styles} width={width} height={height} fill={color} withBg={withBg} />;
     case Icons.TWITTER_DISCUSS:
     case Icons.TWITTER:
       return <Twitter className={styles} width={width} height={height} fill={color} />;
@@ -48,8 +53,8 @@ const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white' 
       return <Sponsor className={styles} width={width} height={height} fill={color} />;
     case Icons.CHECK:
       return <Check className={styles} width={width} height={height} fill={color} />;
-    case Icons.READ:
-      return <Read className={styles} width={width} height={height} fill={color} />;
+    case Icons.LEARN:
+      return <Learn className={styles} width={width} height={height} fill={color} />;
     case Icons.EXPLORE:
       return <Explore className={styles} width={width} height={height} fill={color} />;
     case Icons.WATCH:
@@ -81,7 +86,17 @@ const Icon = ({ name, styles = '', width = '20', height = '20', color = 'white' 
     case Icons.CARET:
       return <Caret className={styles} width={width} height={height} fill={color} />;
     case Icons.REDDIT:
-      return <Reddit className={styles} width={width} height={height} />;
+      return <Reddit className={styles} width={width} height={height} fill={color} />;
+    case Icons.ARROW:
+      return <Arrow />;
+    case Icons.CONSULT:
+      return <Consult className={styles} width={width} height={height} fill={color} />;
+    case Icons.DEVELOP:
+      return <Develop className={styles} width={width} height={height} fill={color} />;
+    case Icons.INSTAGRAM:
+      return <Instagram className={styles} width={width} height={width} />;
+    case Icons.SEARCH:
+      return <Search className={styles} width={width} height={width} fill={color} />;
     default:
       return <Email className={styles} width={width} height={height} fill={color} />;
   }

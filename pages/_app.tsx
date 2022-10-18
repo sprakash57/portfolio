@@ -1,8 +1,9 @@
 import type { AppProps } from 'next/app';
-import Layout from '@/components/Layout';
 import { SWRConfig } from 'swr';
 import '@/styles/globals.scss';
 import Script from 'next/script';
+import { fetcher } from '@/helpers/utils';
+import Layout from '@/components/Layout';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -19,7 +20,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           gtag('config', '${process.env.ANALYTICS_MEASUREMENT_ID}');
         `}
       </Script>
-      <SWRConfig value={{ revalidateOnFocus: false }}>
+      <SWRConfig value={{ fetcher, revalidateOnFocus: false, revalidateIfStale: false, shouldRetryOnError: false }}>
         <Layout>
           <Component {...pageProps} />
         </Layout>

@@ -1,0 +1,44 @@
+.slides {
+    overflow: hidden;
+    background: var(--charcoal);
+    height: 400px;
+    &__item {
+        color: var(--white);
+        text-align: center;
+        h1 {
+            font-size: 3rem;
+            letter-spacing: 4px;
+            margin: 3rem 0 5rem 0;
+            white-space: pre-wrap;
+        }
+        p {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            width: 380px;
+            white-space: pre-line;
+            margin: 0 auto;
+        }
+    }
+    &__dots {
+        height: 380px;
+    }
+    @media screen and (max-width: 600px) {
+        &__item {
+            h1 {
+                font-size: 2.5rem;
+                margin: 2.5rem 0;
+            }
+        }
+    }
+}
+.learnMore {
+    color: var(--white);
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin: 2rem 0;
+	border-top: 3px solid var(--tomato);
+    border-right: 1px solid var(--tomato);
+    box-shadow: 2px 3px 5px 1px var(--black20);
+}
+

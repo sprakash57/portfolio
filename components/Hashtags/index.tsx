@@ -1,13 +1,15 @@
 import React from 'react';
-import { TagsContainer, TagText } from './styled';
+import s from './index.module.scss';
 
-const Hashtags = ({ tags, inList = false }: { tags: string[]; inList?: boolean }) => {
+const Hashtags = ({ tags }: { tags: string[] }) => {
   return (
-    <TagsContainer inList={inList}>
+    <section className={s.tags}>
       {tags.map((tag) => (
-        <TagText key={tag}>{tag}</TagText>
+        <span className={s.tags__text} key={tag}>
+          {tag}
+        </span>
       ))}
-    </TagsContainer>
+    </section>
   );
 };
 
