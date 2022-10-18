@@ -1,13 +1,31 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+const isProduction = process.env.NODE_ENV === 'production';
 export default class CustomDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <body>
-          <Main />
-          <div id="portal" />
+        <Head>
+          {isProduction && (
+            <>
+              <script
+                async
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_MEASUREMENT_ID}`}
+              />
+              <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.ANALYTICS_MEASUREMENT_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+                }}
+              />
+            </>
+          )}
           <script
             defer
             data-name="BMC-Widget"
@@ -20,7 +38,11 @@ export default class CustomDocument extends Document {
             data-position="Right"
             data-x_margin="8"
             data-y_margin="8"
-          ></script>
+          />
+        </Head>
+        <body>
+          <Main />
+          <div id="portal" />
           <NextScript />
         </body>
       </Html>
