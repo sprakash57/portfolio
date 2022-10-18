@@ -1,5 +1,6 @@
-import { useEffect, useState, useMemo, useRef } from 'react';
-import { ScreenSize } from './constants';
+import { useRouter } from 'next/router';
+import { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import { URL } from 'url';
 import { getScreenType } from './utils';
 
 const debounce = (cb: any, delay: number) => {
@@ -93,22 +94,34 @@ export const useScrollToTop = (): [boolean, () => void] => {
 
 export const useScreenDimension = () => {
   const [windowWidth, setWindowWidth] = useState<number | null>(null);
-
   const hasWindow = typeof window !== 'undefined';
-
-  const getWidth = () => (hasWindow ? window.innerWidth : windowWidth);
-
-  const handleResize = () => setWindowWidth(getWidth());
+  const getWidth = useCallback(() => (hasWindow ? window.innerWidth : windowWidth), [hasWindow, windowWidth]);
+  const handleResize = useCallback(() => setWindowWidth(getWidth()), [getWidth]);
 
   useEffect(() => {
     if (hasWindow) {
       setWindowWidth(getWidth());
-
       window.addEventListener('resize', handleResize);
-
       return () => window.removeEventListener('resize', handleResize);
     }
-  }, [hasWindow]);
+  }, [hasWindow, getWidth, handleResize]);
 
   return { type: getScreenType(windowWidth), width: windowWidth };
+};
+
+export const useTrackPageViews = () => {
+  const { events } = useRouter();
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      if (typeof window.gtag !== 'undefined') {
+        window.gtag('config', process.env.ANALYTICS_MEASUREMENT_ID, {
+          page_path: url,
+        });
+      }
+    };
+    events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [events]);
 };

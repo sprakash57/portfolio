@@ -7,14 +7,17 @@ const HIGHLIGHTS = [
   {
     title: 'JOB READY PROFILE',
     body: 'Make your Resume and LinkedIn profile standout in the crowd.',
+    url: 'consult#job',
   },
   {
-    title: '5X YOUR SALARY',
-    body: 'Get visa sponsered job and boost your salary upto 5 times.',
+    title: '4X YOUR SALARY',
+    body: 'Get visa sponsered job and boost your salary upto 4 times.',
+    url: 'consult#career',
   },
   {
     title: 'APP ENGINEERING',
     body: 'Learn Web or App devleopment with modern tools. Deliver full-stack projects.',
+    url: 'videos',
   },
 ];
 
@@ -32,11 +35,11 @@ const Highlights = () => {
     <section className={s.slides}>
       {/*@ts-ignore */}
       <Slider {...settings}>
-        {HIGHLIGHTS.map(({ title, body }) => (
+        {HIGHLIGHTS.map(({ title, body, url }) => (
           <div key={title} className={s.slides__item}>
             <h1>{title}</h1>
             <p>{body}</p>
-            <RouteLink href="/" classForContainer={s.learnMore} aria-current="page">
+            <RouteLink href={`/${url}`} classForContainer={s.learnMore} aria-current="page">
               <span>Leran More</span>
             </RouteLink>
           </div>
