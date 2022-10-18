@@ -15,7 +15,7 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
         .sort()
         .map((key) => ({ label: `${key}(${tagsFilter[key]})`, value: key })),
     ],
-    [posts]
+    [tagsFilter]
   );
   const [value, debouncedValue, setValue] = useDebounce('', 1000);
 
@@ -32,7 +32,7 @@ const Blogs = ({ posts, tagsFilter }: { posts: Post[]; tagsFilter: Record<string
       .filter((post) => post.title.toLowerCase().includes(debouncedValue.toLowerCase()))
       .filter((blog) => blog.tags.some((tag) => tag.includes(category)));
     setBlogs(filteredPosts);
-  }, [value, debouncedValue]);
+  }, [value, debouncedValue, category, posts]);
 
   return (
     <section className={styles.blogs}>

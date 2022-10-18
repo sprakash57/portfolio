@@ -64,8 +64,8 @@ const Products = () => {
   return (
     <section className={s.products}>
       {PRODUCTS.map(({ title, body, logo, thumbnail, platforms, url, urlText }) => (
-        <div className={s.products__row}>
-          <div key={title} className={s.products__item}>
+        <div className={s.products__row} key={title}>
+          <div className={s.products__item}>
             <figure>
               <Image
                 src={logo}

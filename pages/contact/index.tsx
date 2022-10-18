@@ -18,7 +18,7 @@ const Contact = () => {
       <div className={s.contact__row}>
         <h1>REACH OUT TO US</h1>
         <p>
-          Let's connect on any of the platroms below. If you are active at the social media platforms, we are there too.
+          {`Let's connect on any of the platroms below. If you are active at the social media platforms, we are there too.`}
         </p>
         <figure>
           <RouteLink href={SocialLinks.YOUTUBE} title="Youtube" isExternal>

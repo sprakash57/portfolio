@@ -36,7 +36,7 @@ const Videos = () => {
       <div className={s.videos__row} id="tutorials">
         <h1>TUTORIALS</h1>
         <p>
-          These aren't just tutorials where we will rewrite some code and you will repeat it. Each video aims to solve
+          These are not just tutorials, where we will rewrite some code and you will repeat it. Each video aims to solve
           real world problems that developers encounter.
         </p>
         {tutorials.length ? (

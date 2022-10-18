@@ -56,7 +56,7 @@ const IconButton = ({
       default:
         return url;
     }
-  }, [type, url]);
+  }, [type, url, encodedUrl, text]);
 
   return (
     //@ts-ignore
