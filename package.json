@@ -5,11 +5,14 @@
     "name": "Sunny Prakash",
     "email": "info@codesupr.com"
   },
+  "homepage": "https://sunnyprakash.com",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/sprakash57/portfolio"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",

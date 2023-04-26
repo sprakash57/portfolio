@@ -1,0 +1,17 @@
+.footer {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 0.6rem;
+}
+.footer p {
+ font-size: 0.9rem;
+ letter-spacing: 1px;
+ margin: 0;
+}
+.copyright {
+ background: linear-gradient(66deg, rgba(232, 107, 77, 1) 40%, rgba(227, 162, 100, 1) 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+}
