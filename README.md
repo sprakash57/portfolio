@@ -2,7 +2,7 @@
 
 <hr />
 
-### Want to create yours?
+> Want to create yours?
 
 Clone/fork this repo and go to the directory and run below commands -
 
@@ -18,7 +18,7 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Technology Stack
+> Technology Stack
 
 - React
 - Typescript

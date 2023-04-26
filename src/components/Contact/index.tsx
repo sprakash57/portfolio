@@ -30,7 +30,7 @@ const Contact = () => {
    </p>
    <div className={s.contactEmail}>
     <span className={s.contactEmailText} ref={emailRef}>
-     info@codesupr.com
+     info@sunnyprakash.com
     </span>
     <span className={s.contactEmailClipIcon} role="button" title="Copy to clipboard" onClick={copyToClipboard}>
      {hasCopied ? <ClipboardChecked /> : <Clipboard />}
