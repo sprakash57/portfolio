@@ -1,0 +1,12 @@
+export { default as Facebook } from './Facebook';
+export { default as LinkedIn } from './Linkedin';
+export { default as Mastodon } from './Mastodon';
+export { default as Medium } from './Medium';
+export { default as Email } from './Email';
+export { default as Twitter } from './Twitter';
+export { default as Arrow } from './Arrow';
+export { default as Clipboard } from './Clipboard';
+export { default as Youtube } from './Youtube';
+export { default as Website } from './Website';
+export { default as ClipboardChecked } from './ClipboardChecked';
+export { default as Playstore } from './Playstore';
