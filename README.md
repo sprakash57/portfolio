@@ -1,6 +1,6 @@
-### [sunnyprakash.com](https://sunnyprakash.com) is my personal slice on the internet. Here you will find about myself and my work.
+[sunnyprakash.com](https://sunnyprakash.com) is my personal slice on the internet. Here you will find about myself and my work.
 
-<br />
+<hr />
 
 ### Want to create yours?
 
