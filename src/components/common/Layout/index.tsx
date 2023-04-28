@@ -1,30 +1,24 @@
-import React, { useId } from 'react';
+import React from 'react';
+import { Container, ContainerDivider, ContainerHeader } from './styled';
+import ScrollToView from '../ScrollToView';
+import { Sections } from 'src/constants';
 
-const styles: Record<string, React.CSSProperties> = {
- layout: {
-  width: '29rem',
-  maxWidth: '100%',
- },
- divider: {
-  border: 'none',
-  borderRadius: '0.5rem',
-  background: 'linear-gradient(66deg, rgba(232, 107, 77, 1) 40%, rgba(227, 162, 100, 1) 100%)',
-  height: '4px',
-  boxShadow: '0px 0px 20px 0px rgba(0, 0, 0, 0.5)',
-  margin: '4rem 0',
- },
-};
+interface Props {
+ children: React.ReactElement[];
+ header?: string;
+ scrollTo?: Sections;
+}
 
-const Layout = ({ children }: { children: React.ReactElement[] }) => {
+const Layout = ({ children, header = '', scrollTo = '' as Sections }: Props) => {
  return (
-  <div style={styles.layout}>
-   {children.map((child) => (
-    <React.Fragment key={useId()}>
-     {child}
-     <hr style={styles.divider} />
-    </React.Fragment>
+  <Container id={header || Sections.Introduction}>
+   {header && <ContainerHeader>{header}</ContainerHeader>}
+   {children.map((child, i) => (
+    <React.Fragment key={i}>{child}</React.Fragment>
    ))}
-  </div>
+   {scrollTo && <ScrollToView elementId={scrollTo} />}
+   <ContainerDivider />
+  </Container>
  );
 };
 

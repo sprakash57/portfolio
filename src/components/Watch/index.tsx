@@ -1,8 +1,7 @@
 import s from './index.module.css';
 import VideoPlayer from '../common/VideoPlayer';
 import { Sections, Urls } from 'src/constants';
-import ScrollToView from '../common/ScrollToView';
-import { SectionHeader } from '../common/Styled';
+import Layout from '../common/Layout';
 
 const data = [
  {
@@ -24,8 +23,7 @@ const data = [
 
 const Watch = () => {
  return (
-  <section id={Sections.Watch}>
-   <SectionHeader>Watch</SectionHeader>
+  <Layout header={Sections.Watch} scrollTo={Sections.Contact}>
    <article className={s.Watch}>
     {data.map(({ id, title, videoId }) => (
      <VideoPlayer key={id} videoId={videoId} title={title} />
@@ -40,10 +38,7 @@ const Watch = () => {
      Subscribe me
     </a>
    </div>
-   <div className="scrollBtn">
-    <ScrollToView elementId={Sections.Contact} />
-   </div>
-  </section>
+  </Layout>
  );
 };
 

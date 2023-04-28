@@ -1,12 +1,12 @@
 import styles from './index.module.css';
 import ProfilePhoto from '../../assets/sunny.jpg';
 import { LinkedIn, Facebook, Twitter, Mastodon, Medium } from '../../assets/icons';
-import ScrollToView from 'src/components/common/ScrollToView';
 import { Sections } from 'src/constants';
+import Layout from '../common/Layout';
 
 const Introduction = () => {
  return (
-  <section className={styles.introduction}>
+  <Layout scrollTo={Sections.Read}>
    <figure className={styles.figure}>
     <img src={ProfilePhoto} alt="Profile photo" className={styles.image} />
    </figure>
@@ -39,10 +39,7 @@ const Introduction = () => {
      </a>
     </li>
    </ul>
-   <div className="scrollBtn">
-    <ScrollToView elementId={Sections.Read} />
-   </div>
-  </section>
+  </Layout>
  );
 };
 

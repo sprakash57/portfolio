@@ -1,8 +1,7 @@
 import { Arrow } from 'src/assets/icons';
 import s from './index.module.css';
 import { Sections, Urls } from 'src/constants';
-import ScrollToView from 'src/components/common/ScrollToView';
-import { SectionHeader } from '../common/Styled';
+import Layout from '../common/Layout';
 
 const blogPosts = [
  {
@@ -24,8 +23,7 @@ const blogPosts = [
 
 const Read = () => {
  return (
-  <section id={Sections.Read}>
-   <SectionHeader>Read</SectionHeader>
+  <Layout header={Sections.Read} scrollTo={Sections.Explore}>
    <ul className={s.postsList}>
     {blogPosts.map(({ id, url, title }) => (
      <li key={id} className={s.postsListItem}>
@@ -45,10 +43,7 @@ const Read = () => {
      Subscribe
     </a>
    </article>
-   <div className="scrollBtn">
-    <ScrollToView elementId={Sections.Explore} />
-   </div>
-  </section>
+  </Layout>
  );
 };
 

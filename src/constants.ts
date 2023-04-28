@@ -15,8 +15,9 @@ export enum Urls {
 }
 
 export enum Sections {
-    Read = 'read',
-    Explore = 'explore',
-    Watch = 'watch',
-    Contact = 'contact'
+    Introduction = 'Introduction',
+    Read = 'Read',
+    Explore = 'Explore',
+    Watch = 'Watch',
+    Contact = 'Contact'
 }

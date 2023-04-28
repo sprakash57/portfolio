@@ -4,17 +4,15 @@ import Discogspedia from '../../assets/discogspedia.png';
 import Mealander from '../../assets/mealander.png';
 import Crs from '../../assets/crs.png';
 import { Sections, Urls } from 'src/constants';
-import ScrollToView from '../common/ScrollToView';
-import { SectionHeader } from '../common/Styled';
 import Github from 'src/assets/icons/Github';
 import Stackoverflow from 'src/assets/icons/Stackoverflow';
 import { Playstore } from 'src/assets/icons';
 import Codewars from 'src/assets/icons/Codewars';
+import Layout from '../common/Layout';
 
 const Explore = () => {
  return (
-  <section id={Sections.Explore}>
-   <SectionHeader>Explore</SectionHeader>
+  <Layout header={Sections.Explore} scrollTo={Sections.Watch}>
    <ul className={s.list}>
     <li className={s.listItem}>
      <a className={s.listItemLink} href="https://expattravelfinds.com" target="_blank" rel="noopener noreferrer">
@@ -74,10 +72,7 @@ const Explore = () => {
      </a>
     </li>
    </ul>
-   <div className="scrollBtn">
-    <ScrollToView elementId={Sections.Watch} />
-   </div>
-  </section>
+  </Layout>
  );
 };
 

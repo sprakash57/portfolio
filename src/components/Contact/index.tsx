@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Sections, Urls } from 'src/constants';
 import s from './index.module.css';
 import { Clipboard, Facebook, LinkedIn, Mastodon, Twitter, Youtube, Website, ClipboardChecked } from 'src/assets/icons';
-import { SectionHeader } from '../common/Styled';
+import Layout from '../common/Layout';
 
 const Contact = () => {
  const emailRef = useRef<HTMLSpanElement>(null);
@@ -19,8 +19,7 @@ const Contact = () => {
  }, [hasCopied]);
 
  return (
-  <section id={Sections.Contact} className={s.contanct}>
-   <SectionHeader>Contact</SectionHeader>
+  <Layout header={Sections.Contact}>
    <p className={s.contactPara}>
     Social media sites are excellent for chatting and connecting. I also have a handful of them, which I have listed
     here. These are great way to say &quot;Hi!&quot; and discuss about career opportunities, web development, Mobile
@@ -69,7 +68,7 @@ const Contact = () => {
      </a>
     </li>
    </ul>
-  </section>
+  </Layout>
  );
 };
 
