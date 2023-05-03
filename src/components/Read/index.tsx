@@ -5,7 +5,12 @@ import Layout from '../common/Layout';
 
 const blogPosts = [
  {
-  id: '1',
+  id: '4',
+  url: 'https://medium.com/@sunny-prakash/testing-solid-js-with-vitest-f9c030ff4197',
+  title: 'Testing Solid.js with Vitest',
+ },
+ {
+  id: '3',
   url: 'https://medium.com/@sunny-prakash/lesser-known-array-methods-in-javascript-31afbfa1d091',
   title: 'Lesser known array methods in JavaScript',
  },
@@ -15,7 +20,7 @@ const blogPosts = [
   title: 'Beyond console.log()',
  },
  {
-  id: '3',
+  id: '1',
   url: 'https://medium.com/@sunny-prakash/lets-talk-about-es2020-75ceb45b378c',
   title: 'Let’s talk about ES2020',
  },
