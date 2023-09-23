@@ -7,5 +7,8 @@ export default {
         darkPuce60: 'rgba(74, 56, 56, 60%)',
         onyx: '#363942',
         white: '#FFF'
+    },
+    screenSize: {
+      mobileS: '480px'
     }
 }

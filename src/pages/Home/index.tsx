@@ -1,30 +1,30 @@
 import { ThemeProvider } from '@emotion/react';
-import Contact from 'src/components/Contact';
-import Explore from 'src/components/Explore';
-import Footer from 'src/components/Footer';
-import Introduction from 'src/components/Introduction';
-import Read from 'src/components/Read';
-import Watch from 'src/components/Watch';
-import theme from 'src/theme';
-import './index.css';
+import Contact from 'components/Contact';
+import Explore from 'components/Explore';
+import Footer from 'components/Footer';
+import Introduction from 'components/Introduction';
+import Read from 'components/Read';
+import Watch from 'components/Watch';
+import theme from 'theme/index';
+import { HomeContainer, HomeWrapper, HomeInner } from './styled';
 
 const Home = () => {
- return (
-  <ThemeProvider theme={theme}>
-   <main className="App">
-    <div className="wrapper">
-     <div className="inner">
-      <Introduction />
-      <Read />
-      <Explore />
-      <Watch />
-      <Contact />
-      <Footer />
-     </div>
-    </div>
-   </main>
-  </ThemeProvider>
- );
+  return (
+    <ThemeProvider theme={theme}>
+      <HomeContainer className="App">
+        <HomeWrapper className="wrapper">
+          <HomeInner className="inner">
+            <Introduction />
+            <Read />
+            <Explore />
+            <Watch />
+            <Contact />
+            <Footer />
+          </HomeInner>
+        </HomeWrapper>
+      </HomeContainer>
+    </ThemeProvider>
+  );
 };
 
 export default Home;

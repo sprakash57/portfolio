@@ -10,3 +10,4 @@ export { default as Youtube } from './Youtube';
 export { default as Website } from './Website';
 export { default as ClipboardChecked } from './ClipboardChecked';
 export { default as Playstore } from './Playstore';
+export { default as Stackoverflow } from './Stackoverflow';
