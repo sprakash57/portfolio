@@ -32,7 +32,7 @@ const Read = () => {
       <ul className={s.postsList}>
         {blogPosts.map(({ id, url, title }) => (
           <li key={id} className={s.postsListItem}>
-            <a href={url} target="_blank" rel="noopener noreferrer" title={title} className={s.postLink}>
+            <a href={url} target='_blank' rel='noopener noreferrer' title={title} className={s.postLink}>
               <span>{title}</span>
               <Arrow className={s.readMore} />
             </a>
@@ -40,11 +40,11 @@ const Read = () => {
         ))}
       </ul>
       <article className={s.moreBlogs}>
-        <a href={Urls.Medium} target="_blank" rel="noopener noreferrer">
+        <a href={Urls.Medium} target='_blank' rel='noopener noreferrer'>
           More Blogs
         </a>{' '}
         <span>|</span>{' '}
-        <a href={Urls.SubscribeMedium} target="_blank" rel="noopener noreferrer">
+        <a href={Urls.SubscribeMedium} target='_blank' rel='noopener noreferrer'>
           Subscribe
         </a>
       </article>

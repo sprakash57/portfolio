@@ -11,9 +11,9 @@ import { HomeContainer, HomeWrapper, HomeInner } from './styled';
 const Home = () => {
   return (
     <ThemeProvider theme={theme}>
-      <HomeContainer className="App">
-        <HomeWrapper className="wrapper">
-          <HomeInner className="inner">
+      <HomeContainer className='App'>
+        <HomeWrapper className='wrapper'>
+          <HomeInner className='inner'>
             <Introduction />
             <Read />
             <Explore />

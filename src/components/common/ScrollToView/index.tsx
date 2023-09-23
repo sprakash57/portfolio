@@ -8,8 +8,8 @@ const ScrollToView = ({ elementId }: { elementId: string }) => {
   };
 
   return (
-    <Container role="button" onClick={handleClick} title="Next section">
-      <Arrow fill="#e86b4d" size="36" />
+    <Container role='button' onClick={handleClick} title='Next section'>
+      <Arrow fill='#e86b4d' size='36' />
     </Container>
   );
 };

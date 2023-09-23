@@ -30,11 +30,11 @@ const Watch = () => {
         ))}
       </article>
       <div className={s.moreVideos}>
-        <a href={Urls.Medium} target="_blank" rel="noopener noreferrer">
+        <a href={Urls.Medium} target='_blank' rel='noopener noreferrer'>
           More Videos
         </a>{' '}
         <span>|</span>{' '}
-        <a href={Urls.SubscribeYoutube} target="_blank" rel="noopener noreferrer">
+        <a href={Urls.SubscribeYoutube} target='_blank' rel='noopener noreferrer'>
           Subscribe me
         </a>
       </div>
