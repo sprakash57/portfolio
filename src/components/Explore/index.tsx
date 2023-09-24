@@ -1,77 +1,72 @@
-import s from './index.module.css';
-import Extraf from '../../assets/Extraf.png';
-import Discogspedia from '../../assets/discogspedia.png';
-import Mealander from '../../assets/mealander.png';
-import Crs from '../../assets/crs.png';
-import { Sections, Urls } from 'helpers/constants';
-import Github from 'assets/icons/Github';
-import Stackoverflow from 'assets/icons/Stackoverflow';
-import { Playstore } from 'assets/icons';
-import Codewars from 'assets/icons/Codewars';
-import Layout from '../common/Layout';
+import Extraf from 'assets/images/Extraf.png';
+import Discogspedia from 'assets/images/discogspedia.png';
+import Mealander from 'assets/images/mealander.png';
+import Crs from 'assets/images/crs.png';
+import { Icons, Sections, Urls } from 'helpers/constants';
+import Layout from 'components/Layout';
+import { FindOutMoreText, ProjectItem, ProjectsList } from './styled';
+import { TextField } from 'components/common';
+import { IconsList, IconsListItem } from 'components/common/styled';
+import Icon from 'assets/icons/Icon';
+
+const projects = [
+  {
+    id: '1',
+    url: 'https://expattravelfinds.com',
+    title: 'Expat Travel Finds',
+    image: 'Extraf.png',
+  },
+  {
+    id: '2',
+    url: 'https://sprakash57.github.io/create-react-saga',
+    title: 'Create React Saga',
+    image: 'crs.png',
+  },
+  {
+    id: '3',
+    url: 'https://discogspedia.netlify.app',
+    title: 'Discogspedia',
+    image: 'discogspedia.png',
+  },
+  {
+    id: '4',
+    url: 'https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat',
+    title: 'Mealander',
+    image: 'mealander.png',
+  },
+];
+
+const getImageUrl = (image: string) => {
+  const imagePath = {
+    'Extraf.png': Extraf,
+    'crs.png': Crs,
+    'mealander.png': Mealander,
+    'discogspedia.png': Discogspedia,
+  };
+  return imagePath[image as keyof typeof imagePath];
+};
 
 const Explore = () => {
   return (
     <Layout header={Sections.Explore} scrollTo={Sections.Watch}>
-      <ul className={s.list}>
-        <li className={s.listItem}>
-          <a className={s.listItemLink} href='https://expattravelfinds.com' target='_blank' rel='noopener noreferrer'>
-            <img className={s.listItemImg} src={Extraf} alt='Expat Travel Finds' />
-            <p>Expat Travel Finds</p>
-          </a>
-        </li>
-        <li className={s.listItem}>
-          <a
-            className={s.listItemLink}
-            href='https://sprakash57.github.io/create-react-saga'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <img className={`${s.listItemImg} ${s.crs}`} src={Crs} alt='Create React Saga' />
-            <p>Create React Saga</p>
-          </a>
-        </li>
-        <li className={s.listItem}>
-          <a className={s.listItemLink} href='https://codesupr.com' target='_blank' rel='noopener noreferrer'>
-            <img className={s.listItemImg} src={Discogspedia} alt='Discogspedia' />
-            <p>Discogspedia</p>
-          </a>
-        </li>
-        <li className={s.listItem}>
-          <a
-            className={s.listItemLink}
-            href='https://play.google.com/store/apps/details?id=com.insu.sunny.addeatrepeat'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <img className={s.listItemImg} src={Mealander} alt='Mealander' />
-            <p>Mealander</p>
-          </a>
-        </li>
-      </ul>
-      <p className={s.moreWork}>Find out more</p>
-      <ul className={s.socialList}>
-        <li className={s.socialListItem}>
-          <a href={Urls.Github} rel='noreferrer noopener' target='_blank' title='Github'>
-            <Github />
-          </a>
-        </li>
-        <li className={s.socialListItem}>
-          <a href={Urls.Stackoverflow} rel='noreferrer noopener' target='_blank' title='Stackoverflow'>
-            <Stackoverflow />
-          </a>
-        </li>
-        <li className={s.socialListItem}>
-          <a href={Urls.Playstore} rel='noreferrer noopener' target='_blank' title='Playstore'>
-            <Playstore />
-          </a>
-        </li>
-        <li className={s.socialListItem}>
-          <a href={Urls.Codewars} rel='noreferrer noopener' target='_blank' title='Codewars'>
-            <Codewars />
-          </a>
-        </li>
-      </ul>
+      <ProjectsList>
+        {projects.map(({ id, url, title, image }) => (
+          <ProjectItem key={id}>
+            <a href={url} target='_blank' rel='noopener noreferrer'>
+              <img src={getImageUrl(image)} alt={title} data-image={image} />
+              <TextField variant='P2'>{title}</TextField>
+            </a>
+          </ProjectItem>
+        ))}
+      </ProjectsList>
+      <FindOutMoreText variant='P2'>Find out more</FindOutMoreText>
+      <IconsList>
+        {[Icons.Github, Icons.Stackoverflow, Icons.Codewars, Icons.Playstore].map(icon => (
+          <IconsListItem key={icon}>
+            <Icon name={icon} url={Urls[icon as keyof typeof Urls]} />
+          </IconsListItem>
+        ))}
+      </IconsList>
     </Layout>
   );
 };

@@ -9,10 +9,10 @@ export const Container = styled.section`
 export const ContainerDivider = styled.hr`
   border: none;
   border-radius: 0.5rem;
-  background: linear-gradient(66deg, rgba(232, 107, 77, 1) 40%, rgba(227, 162, 100, 1) 100%);
+  background: ${({ theme }) => `linear-gradient(66deg, ${theme.colors.pastelRed} 40%, ${theme.colors.brownYellow} 100%)`};
   height: 4px;
   width: 100%;
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: ${({ theme }) => `0px 0px 20px 0px ${theme.colors.black50}`};
   margin: 2rem 0;
 `;
 
@@ -22,5 +22,5 @@ export const ContainerHeader = styled.h1`
   font-size: 2.8rem;
   font-weight: 700;
   letter-spacing: 1px;
-  text-shadow: 6px 6px 20px rgba(0, 0, 0, 0.5);
+  text-shadow: ${({ theme }) => `6px 6px 20px ${theme.colors.black50}`};
 `;

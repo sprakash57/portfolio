@@ -12,6 +12,7 @@ export enum Urls {
   Website = 'https://expattravelfinds.com/contact/',
   Youtube = 'https://www.youtube.com/c/ExpatTravelFinds',
   Playstore = 'https://play.google.com/store/apps/dev?id=6669510591494027903',
+  'Expat Travel Finds' = 'https://expattravelfinds.com/',
 }
 
 export enum Sections {
@@ -21,3 +22,18 @@ export enum Sections {
   Watch = 'Watch',
   Contact = 'Contact',
 }
+
+export const Icons = {
+  Linkedin: 'Linkedin',
+  Medium: 'Medium',
+  Twitter: 'Twitter',
+  Github: 'Github',
+  Arrow: 'Arrow',
+  Stackoverflow: 'Stackoverflow',
+  Playstore: 'Playstore',
+  Codewars: 'Codewars',
+  Facebook: 'Facebook',
+  'Expat Travel Finds': 'Expat Travel Finds',
+  ClipboardChecked: 'ClipboardChecked',
+  Clipboard: 'Clipboard',
+};

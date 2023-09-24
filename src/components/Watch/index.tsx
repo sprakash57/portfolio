@@ -1,43 +1,44 @@
-import s from './index.module.css';
-import VideoPlayer from 'components/common/VideoPlayer';
+import { VideoPlayer } from 'components/common';
 import { Sections, Urls } from 'helpers/constants';
-import Layout from 'components/common/Layout';
+import Layout from 'components/Layout';
+import { AnimateLink, VerticalDivider } from 'components/common/styled';
+import { MoreVideos, MoreVideosTitle } from './styled';
 
 const data = [
   {
     id: '1',
+    title: 'Tips for Start Deutsch A1',
+    videoId: 'HgIUwovVg-0',
+  },
+  {
+    id: '2',
     title: 'German work visa',
     videoId: 'DSUbPGfAEgg',
   },
   {
-    id: '2',
+    id: '3',
     title: 'Magdeburg',
     videoId: 'Rhk7iRReX1E',
-  },
-  {
-    id: '3',
-    title: 'Best Resume for visa sponsored jobs',
-    videoId: 'VmpA81mrY7E',
   },
 ];
 
 const Watch = () => {
   return (
     <Layout header={Sections.Watch} scrollTo={Sections.Contact}>
-      <article className={s.Watch}>
+      <article>
         {data.map(({ id, title, videoId }) => (
           <VideoPlayer key={id} videoId={videoId} title={title} />
         ))}
       </article>
-      <div className={s.moreVideos}>
-        <a href={Urls.Medium} target='_blank' rel='noopener noreferrer'>
-          More Videos
-        </a>{' '}
-        <span>|</span>{' '}
-        <a href={Urls.SubscribeYoutube} target='_blank' rel='noopener noreferrer'>
-          Subscribe me
-        </a>
-      </div>
+      <MoreVideos>
+        <AnimateLink href={Urls.Medium} target='_blank' rel='noopener noreferrer'>
+          <MoreVideosTitle variant='P2'>More videos</MoreVideosTitle>
+        </AnimateLink>
+        <VerticalDivider> | </VerticalDivider>
+        <AnimateLink href={Urls.SubscribeYoutube} target='_blank' rel='noopener noreferrer'>
+          <MoreVideosTitle variant='P2'>Subscribe</MoreVideosTitle>
+        </AnimateLink>
+      </MoreVideos>
     </Layout>
   );
 };

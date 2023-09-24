@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sections } from 'helpers/constants';
-import ScrollToView from 'components/common/ScrollToView';
+import { ScrollToView } from 'components/common';
 import { Container, ContainerDivider, ContainerHeader } from './styled';
 
 interface Props {

@@ -11,3 +11,5 @@ export { default as Website } from './Website';
 export { default as ClipboardChecked } from './ClipboardChecked';
 export { default as Playstore } from './Playstore';
 export { default as Stackoverflow } from './Stackoverflow';
+export { default as Github } from './Github';
+export { default as Codewars } from './Codewars';
