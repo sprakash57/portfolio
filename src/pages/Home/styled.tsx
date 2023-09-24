@@ -16,7 +16,9 @@ export const HomeWrapper = styled.div`
   max-width: 100%;
   background-color: #363942;
   box-shadow: 8px 8px 20px 2px #4a3838;
-  transition: opacity 0.625s ease 0s, transform 0.625s ease 0s;
+  transition:
+    opacity 0.625s ease 0s,
+    transform 0.625s ease 0s;
   color: white;
   padding: 3rem 3rem 1rem;
   border-radius: 0.875rem;
