@@ -25,7 +25,7 @@ const Contact = () => {
         about Web development, React ecosystem, JavaScript, Germany, Naruto and Elder Scrolls Online. If you prefer emails
         then send them to below address.
       </ContactText>
-      <ContactEmail>
+      <ContactEmail id='contact_email'>
         <ContactEmailText variant='P2' ref={emailRef}>
           info@sunnyprakash.com
         </ContactEmailText>

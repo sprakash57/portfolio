@@ -15,7 +15,7 @@ const Introduction = () => {
       <BioTextField variant='S'>
         Coder <Dot /> Blogger <Dot /> Story teller
       </BioTextField>
-      <IconsList>
+      <IconsList id='social_network'>
         {[Icons.Linkedin, Icons.Medium, Icons.Github, Icons.Twitter].map(icon => (
           <IconsListItem key={icon}>
             <Icon name={icon} url={Urls[icon as keyof typeof Urls]} />

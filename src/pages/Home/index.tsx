@@ -7,13 +7,17 @@ import Read from 'components/Read';
 import Watch from 'components/Watch';
 import theme from 'theme/index';
 import { HomeContainer, HomeWrapper, HomeInner } from './styled';
+import Resume from 'components/Resume';
+import Tour from 'components/Tour';
 
 const Home = () => {
   return (
     <ThemeProvider theme={theme}>
-      <HomeContainer className='App'>
-        <HomeWrapper className='wrapper'>
-          <HomeInner className='inner'>
+      <HomeContainer>
+        <Tour />
+        <HomeWrapper>
+          <Resume />
+          <HomeInner>
             <Introduction />
             <Read />
             <Explore />

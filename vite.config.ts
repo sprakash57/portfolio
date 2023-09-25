@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ['**/*.PDF'],
   resolve: {
     alias: [
       { find: 'components', replacement: '/src/components' },
@@ -13,4 +13,4 @@ export default defineConfig({
       { find: 'helpers', replacement: '/src/helpers' },
     ],
   },
-})
+});

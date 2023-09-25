@@ -36,4 +36,5 @@ export const Icons = {
   'Expat Travel Finds': 'Expat Travel Finds',
   ClipboardChecked: 'ClipboardChecked',
   Clipboard: 'Clipboard',
+  Download: 'Download',
 };

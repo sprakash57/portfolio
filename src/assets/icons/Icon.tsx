@@ -12,6 +12,7 @@ import {
   Website,
   Clipboard,
   ClipboardChecked,
+  Download,
 } from './index';
 import { Icons } from 'helpers/constants';
 
@@ -21,9 +22,10 @@ interface Props extends SVGAttributes<SVGElement> {
   size?: string;
   fill?: string;
   rotate?: number;
+  type?: string;
 }
 
-const Icon = ({ name, url, size, fill, rotate }: Props) => {
+const Icon = ({ name, url, size, fill, rotate, type }: Props) => {
   const icon = {
     [Icons.Linkedin]: <LinkedIn />,
     [Icons.Medium]: <Medium />,
@@ -37,11 +39,12 @@ const Icon = ({ name, url, size, fill, rotate }: Props) => {
     [Icons['Expat Travel Finds']]: <Website />,
     [Icons.Clipboard]: <Clipboard />,
     [Icons.ClipboardChecked]: <ClipboardChecked />,
+    [Icons.Download]: <Download size={size} />,
   };
 
   if (url) {
     return (
-      <a href={url} rel='noreferrer noopener' target='_blank' title={name}>
+      <a href={url} rel='noreferrer noopener' target='_blank' type={type} title={name}>
         {icon[name as keyof typeof icon]}
       </a>
     );
