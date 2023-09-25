@@ -22,10 +22,9 @@ interface Props extends SVGAttributes<SVGElement> {
   size?: string;
   fill?: string;
   rotate?: number;
-  type?: string;
 }
 
-const Icon = ({ name, url, size, fill, rotate, type }: Props) => {
+const Icon = ({ name, url, size, fill, rotate }: Props) => {
   const icon = {
     [Icons.Linkedin]: <LinkedIn />,
     [Icons.Medium]: <Medium />,
@@ -44,7 +43,7 @@ const Icon = ({ name, url, size, fill, rotate, type }: Props) => {
 
   if (url) {
     return (
-      <a href={url} rel='noreferrer noopener' target='_blank' type={type} title={name}>
+      <a href={url} rel='noreferrer noopener' target='_blank' title={name}>
         {icon[name as keyof typeof icon]}
       </a>
     );
