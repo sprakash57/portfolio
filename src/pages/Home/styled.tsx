@@ -10,6 +10,7 @@ export const HomeContainer = styled.main`
 `;
 
 export const HomeWrapper = styled.div`
+  position: relative;
   align-items: center;
   display: flex;
   justify-content: center;
@@ -22,6 +23,7 @@ export const HomeWrapper = styled.div`
   color: white;
   padding: 3rem 3rem 1rem;
   border-radius: 0.875rem;
+
   @media ${viewport.mobileS} {
     padding: 2rem;
     margin-top: 2rem;

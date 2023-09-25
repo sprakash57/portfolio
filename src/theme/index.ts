@@ -1,7 +1,7 @@
 import { fontWeight, variants } from './typography';
 import colors from './colors';
 
-export default {
+const theme = {
   colors,
   screenSize: {
     mobileS: '480px',
@@ -11,3 +11,5 @@ export default {
     variants,
   },
 };
+
+export default theme;

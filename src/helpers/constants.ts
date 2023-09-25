@@ -13,6 +13,7 @@ export enum Urls {
   Youtube = 'https://www.youtube.com/c/ExpatTravelFinds',
   Playstore = 'https://play.google.com/store/apps/dev?id=6669510591494027903',
   'Expat Travel Finds' = 'https://expattravelfinds.com/',
+  Resume = 'https://drive.google.com/file/d/1dePcbRVF-NXl1dzlAnf_p7R1PzJ8GXmZ/view?usp=sharing'
 }
 
 export enum Sections {
@@ -36,4 +37,5 @@ export const Icons = {
   'Expat Travel Finds': 'Expat Travel Finds',
   ClipboardChecked: 'ClipboardChecked',
   Clipboard: 'Clipboard',
+  Download: 'Download',
 };

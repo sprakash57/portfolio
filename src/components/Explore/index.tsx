@@ -1,7 +1,3 @@
-import Extraf from 'assets/images/Extraf.png';
-import Discogspedia from 'assets/images/discogspedia.png';
-import Mealander from 'assets/images/mealander.png';
-import Crs from 'assets/images/crs.png';
 import { Icons, Sections, Urls } from 'helpers/constants';
 import Layout from 'components/Layout';
 import { FindOutMoreText, ProjectItem, ProjectsList } from './styled';
@@ -36,16 +32,6 @@ const projects = [
   },
 ];
 
-const getImageUrl = (image: string) => {
-  const imagePath = {
-    'Extraf.png': Extraf,
-    'crs.png': Crs,
-    'mealander.png': Mealander,
-    'discogspedia.png': Discogspedia,
-  };
-  return imagePath[image as keyof typeof imagePath];
-};
-
 const Explore = () => {
   return (
     <Layout header={Sections.Explore} scrollTo={Sections.Watch}>
@@ -53,7 +39,7 @@ const Explore = () => {
         {projects.map(({ id, url, title, image }) => (
           <ProjectItem key={id}>
             <a href={url} target='_blank' rel='noopener noreferrer'>
-              <img src={getImageUrl(image)} alt={title} data-image={image} />
+              <img src={require(`assets/images/${image}`)} alt={title} data-image={image} />
               <TextField variant='P2'>{title}</TextField>
             </a>
           </ProjectItem>

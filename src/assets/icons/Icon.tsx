@@ -12,6 +12,7 @@ import {
   Website,
   Clipboard,
   ClipboardChecked,
+  Download,
 } from './index';
 import { Icons } from 'helpers/constants';
 
@@ -37,6 +38,7 @@ const Icon = ({ name, url, size, fill, rotate }: Props) => {
     [Icons['Expat Travel Finds']]: <Website />,
     [Icons.Clipboard]: <Clipboard />,
     [Icons.ClipboardChecked]: <ClipboardChecked />,
+    [Icons.Download]: <Download size={size} />,
   };
 
   if (url) {
