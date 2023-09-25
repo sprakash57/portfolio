@@ -19,7 +19,7 @@ export const variants = {
     letterSpacing: '2px',
   },
   [TextVariants.H2]: {
-    fontSize: '2.8rem',
+    fontSize: '1.6rem',
     fontWeight: 600,
     letterSpacing: '1px',
   },

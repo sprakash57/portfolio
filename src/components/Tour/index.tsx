@@ -1,5 +1,7 @@
-import { Steps } from 'intro.js-react';
+import ReactJoyride, { CallBackProps } from 'react-joyride';
 import { useLocalStorage } from 'helpers/hooks';
+import React from 'react';
+
 
 const Tour = () => {
   const [tourEnabled, setTourEnabled] = useLocalStorage<boolean>('sunnyprakash_tour', true);
@@ -7,40 +9,47 @@ const Tour = () => {
   const steps = [
     {
       title: 'Hello 👋',
-      element: '[alt="Profile photo"]',
-      intro: 'Let me show you around the place.',
+      target: '[alt="Profile photo"]',
+      content: 'Let me show you around the place.',
     },
     {
-      title: 'Connect',
-      element: '#social_network',
-      intro: 'My soical presence and easiest way to connect. I call them <strong>Ice Breakers</strong>.😆',
+      title: 'Social network',
+      target: '#social_network',
+      content: 'These platforms are the best way to connect. I call them Ice Breakers.😆',
     },
     {
       title: 'More to explore',
-      element: '#Introduction > [title="Next section"] > svg',
-      intro: 'This button will help you to reach out to more exciting content that I have to offer.🚀',
-    },
-    {
-      title: 'Lets talk!',
-      element: '#contact_email',
-      intro: 'Have Something to discuss? Send me an email and I will get back to you ASAP.🏃‍♂️',
+      target: '#Introduction > [title="Next section"] > svg',
+      content: 'This button will help you to reach out to more exciting content that I have to offer.🚀',
     },
     {
       title: 'Are you hiring?',
-      element: '#download_resume',
-      intro: 'Looking for a Frontend Developer who can take on new challanges? Here is my resume.🧾',
+      target: '#download_resume',
+      content: 'Looking for a Frontend Developer who can take on new challanges? Here is my resume.🧾',
     },
   ];
 
+  const handleCallback = React.useCallback((data: CallBackProps) => {
+    if (data.action === 'reset') {
+      setTourEnabled(false);
+    }
+  }, [setTourEnabled]);
+
   return (
-    <Steps
-      initialStep={0}
-      enabled={tourEnabled}
+    <ReactJoyride
+      run={tourEnabled}
+      callback={handleCallback}
       steps={steps}
-      onExit={() => setTourEnabled(false)}
-      options={{
-        showProgress: true,
-        showBullets: false,
+      continuous
+      showProgress
+      scrollDuration={600}
+      styles={{
+        spotlight: {
+          borderRadius: '8px'
+        },
+        options: {
+          overlayColor: 'rgba(0, 0, 0, 0.7)',
+        }
       }}
     />
   );

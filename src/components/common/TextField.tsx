@@ -7,6 +7,7 @@ interface Props {
   children: React.ReactNode;
   className?: string;
   htmlTag?: 'p';
+  id?: string;
 }
 
 const StyledText = styled.div<{ variant: keyof typeof TextVariants }>`
@@ -16,9 +17,9 @@ const StyledText = styled.div<{ variant: keyof typeof TextVariants }>`
   margin: 0.5rem 0;
 `;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const TextField = React.forwardRef(({ variant, children, className, htmlTag = 'p' }: Props, ref: React.LegacyRef<any>) => {
+const TextField = React.forwardRef(({ variant, children, className, htmlTag = 'p', id }: Props, ref: React.LegacyRef<any>) => {
   return (
-    <StyledText ref={ref} as={htmlTag} className={className} variant={variant}>
+    <StyledText id={id} ref={ref} as={htmlTag} className={className} variant={variant}>
       {children}
     </StyledText>
   );

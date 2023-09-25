@@ -1,6 +1,0 @@
-**/dist
-node_modules
-*.css
-index.html
-src/assets/images
-src/assets/*.PDF
