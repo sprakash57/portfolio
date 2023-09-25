@@ -2,7 +2,7 @@ import Icon from 'assets/icons/Icon';
 import { Icons } from 'helpers/constants';
 import theme from 'theme/index';
 import { Container, ContainerIcon } from './styled';
-import resumePdf from 'assets/Sunny_Prakash.pdf';
+import resumePdf from '../../assets/Sunny_Prakash.pdf';
 
 const Resume = () => {
   return (
