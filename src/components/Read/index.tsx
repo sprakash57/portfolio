@@ -6,6 +6,11 @@ import { AnimateLink, VerticalDivider } from 'components/common/styled';
 
 const blogPosts = [
   {
+    id: '1',
+    url: 'https://medium.com/javascript-in-plain-english/the-secret-to-debugging-your-live-react-native-android-app-34c703fbbf87',
+    title: 'The Secret to Debugging Your Live React Native Android App',
+  },
+  {
     id: '4',
     url: 'https://medium.com/javascript-in-plain-english/how-to-use-environment-variables-in-github-actions-workflows-598b583c1a92',
     title: 'How to use use Environment variables in Github Actions workflow',
@@ -19,11 +24,6 @@ const blogPosts = [
     id: '2',
     url: 'https://medium.com/@sunny-prakash/lesser-known-array-methods-in-javascript-31afbfa1d091',
     title: 'Lesser known array methods in JavaScript',
-  },
-  {
-    id: '1',
-    url: 'https://medium.com/@sunny-prakash/beyond-console-log-9af93a63c43c',
-    title: 'Beyond console.log()',
   },
 ];
 
