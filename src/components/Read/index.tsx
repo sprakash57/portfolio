@@ -6,6 +6,11 @@ import { AnimateLink, VerticalDivider } from 'components/common/styled';
 
 const blogPosts = [
   {
+    id: '2',
+    url: 'https://medium.com/@sunny-prakash/logging-express-js-apps-with-grafana-and-loki-aa8132172013',
+    title: 'Logging Express.js apps with Grafana and Loki',
+  },
+  {
     id: '1',
     url: 'https://medium.com/javascript-in-plain-english/the-secret-to-debugging-your-live-react-native-android-app-34c703fbbf87',
     title: 'The Secret to Debugging Your Live React Native Android App',
@@ -19,11 +24,6 @@ const blogPosts = [
     id: '3',
     url: 'https://medium.com/@sunny-prakash/testing-solid-js-with-vitest-f9c030ff4197',
     title: 'Testing Solid.js with Vitest',
-  },
-  {
-    id: '2',
-    url: 'https://medium.com/@sunny-prakash/lesser-known-array-methods-in-javascript-31afbfa1d091',
-    title: 'Lesser known array methods in JavaScript',
   },
 ];
 
