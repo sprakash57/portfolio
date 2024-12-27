@@ -6,6 +6,11 @@ import { AnimateLink, VerticalDivider } from 'components/common/styled';
 
 const blogPosts = [
   {
+    id: '3',
+    url: 'https://medium.com/javascript-in-plain-english/efficient-thumbnail-generation-for-pdf-more-in-express-js-2a883bde4d25',
+    title: 'Efficient thumbnail generation for PDFs & more in Express.js',
+  },
+  {
     id: '2',
     url: 'https://medium.com/@sunny-prakash/logging-express-js-apps-with-grafana-and-loki-aa8132172013',
     title: 'Logging Express.js apps with Grafana and Loki',
@@ -19,11 +24,6 @@ const blogPosts = [
     id: '4',
     url: 'https://medium.com/javascript-in-plain-english/how-to-use-environment-variables-in-github-actions-workflows-598b583c1a92',
     title: 'How to use use Environment variables in Github Actions workflow',
-  },
-  {
-    id: '3',
-    url: 'https://medium.com/@sunny-prakash/testing-solid-js-with-vitest-f9c030ff4197',
-    title: 'Testing Solid.js with Vitest',
   },
 ];
 
