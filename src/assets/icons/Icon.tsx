@@ -1,4 +1,4 @@
-import { SVGAttributes } from 'react';
+import { SVGAttributes } from "react";
 import {
   LinkedIn,
   Medium,
@@ -13,8 +13,9 @@ import {
   Clipboard,
   ClipboardChecked,
   Download,
-} from './index';
-import { Icons } from 'helpers/constants';
+  Copyright,
+} from "./index";
+import { Icons } from "helpers/constants";
 
 interface Props extends SVGAttributes<SVGElement> {
   name: string;
@@ -35,15 +36,16 @@ const Icon = ({ name, url, size, fill, rotate }: Props) => {
     [Icons.Stackoverflow]: <Stackoverflow />,
     [Icons.Arrow]: <Arrow size={size} fill={fill} rotate={rotate} />,
     [Icons.Facebook]: <Facebook />,
-    [Icons['Expat Travel Finds']]: <Website />,
+    [Icons["Expat Travel Finds"]]: <Website />,
     [Icons.Clipboard]: <Clipboard />,
     [Icons.ClipboardChecked]: <ClipboardChecked />,
     [Icons.Download]: <Download size={size} />,
+    [Icons.Copyright]: <Copyright size={size} />,
   };
 
   if (url) {
     return (
-      <a href={url} rel='noreferrer noopener' target='_blank' title={name}>
+      <a href={url} rel="noreferrer noopener" target="_blank" title={name}>
         {icon[name as keyof typeof icon]}
       </a>
     );
