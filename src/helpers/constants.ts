@@ -13,7 +13,7 @@ export enum Urls {
   Youtube = "https://www.youtube.com/c/ExpatTravelFinds",
   Playstore = "https://play.google.com/store/apps/dev?id=6669510591494027903",
   "Expat Travel Finds" = "https://expattravelfinds.com/",
-  Resume = "https://drive.google.com/file/d/1R6Dj6pQKRez7eF9TMf99l6rtHmXmOV0_/view?usp=sharing",
+  Resume = "https://drive.google.com/file/d/1l5bzbHAUXeWU-ueoH0Eo09-HcCwab5Jn/view?usp=sharing",
 }
 
 export enum Sections {
