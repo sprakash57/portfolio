@@ -1,4 +1,5 @@
 import type { Project } from "@/content/profile";
+import type { DownloadCount } from "@/lib/downloads";
 import type { RepoStats } from "@/lib/github";
 
 const relative = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
@@ -21,11 +22,24 @@ function byNewest(projects: Project[], stats: Map<string, RepoStats>) {
   return [...projects].sort((a, b) => time(b) - time(a));
 }
 
-export function Projects({ projects, stats }: { projects: Project[]; stats: Map<string, RepoStats> }) {
+const monthYear = new Intl.DateTimeFormat("en", { month: "short", year: "numeric", timeZone: "UTC" });
+
+type ProjectsProps = {
+  projects: Project[];
+  stats: Map<string, RepoStats>;
+  /** Live install totals, keyed by project name. */
+  downloads: Map<string, DownloadCount>;
+};
+
+export function Projects({ projects, stats, downloads }: ProjectsProps) {
   return (
     <ul className="grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
       {byNewest(projects, stats).map((p) => {
         const live = p.repo ? stats.get(p.repo) : undefined;
+        const installs = downloads.get(p.name);
+        const metric = installs
+          ? `${installs.total.toLocaleString("en")} installs since ${monthYear.format(new Date(installs.since))}`
+          : p.metric;
         return (
           <li key={p.name} className="group relative flex flex-col bg-bg p-6 transition-colors hover:bg-surface md:last:odd:col-span-2">
             <div className="flex items-center justify-between gap-4 font-mono text-xs text-muted">
@@ -51,7 +65,7 @@ export function Projects({ projects, stats }: { projects: Project[]; stats: Map<
             </h3>
             <p className="font-mono text-sm text-accent">{p.tagline}</p>
             <p className="mt-3 flex-1 leading-relaxed text-muted">{p.description}</p>
-            {p.metric && <p className="mt-4 font-mono text-sm text-ok">{p.metric}</p>}
+            {metric && <p className="mt-4 font-mono text-sm text-ok">{metric}</p>}
             <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-muted" aria-label="Tech stack">
               {p.stack.map((s) => (
                 <li key={s}>#{s.toLowerCase().replace(/\s+/g, "-")}</li>

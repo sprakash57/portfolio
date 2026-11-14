@@ -176,8 +176,13 @@ export type Project = {
   description: string;
   stack: string[];
   href: string;
-  /** Static metric you want to show (e.g. downloads); live stars are added automatically. */
+  /** Static metric you want to show; live stars are added automatically. */
   metric?: string;
+  /**
+   * Raw URL of a JSON file of daily install/download counts ({ "YYYY-MM-DD": n }). When set, the
+   * card shows the live total (refreshed hourly) instead of `metric`, which stays as the fallback.
+   */
+  downloadsUrl?: string;
   kind: "AI" | "Tool" | "App" | "Library" | "Service";
 };
 
@@ -201,7 +206,8 @@ export const projects: Project[] = [
       "Shows every Claude Code limit in the status line with a traffic light each: 5-hour, weekly, compaction, spend and prompt-cache warmth, plus reset times and a turn forecast. Runs locally with no telemetry.",
     stack: ["TypeScript", "Claude Code", "CLI"],
     href: "https://github.com/sprakash57/claude-usage-line",
-    metric: "145+ installs in 2 weeks",
+    metric: "150+ installs",
+    downloadsUrl: "https://raw.githubusercontent.com/sprakash57/claude-usage-line/main/.github/clones.json",
   },
   {
     repo: "snapteil",

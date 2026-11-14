@@ -18,6 +18,7 @@ import {
   skills,
   spokenLanguages,
 } from "@/content/profile";
+import { getDownloadCount } from "@/lib/downloads";
 import { getRepoStats } from "@/lib/github";
 import { getPosts } from "@/lib/medium";
 
@@ -25,7 +26,19 @@ import { getPosts } from "@/lib/medium";
 export const revalidate = 3600;
 
 export default async function Home() {
-  const [repoStats, posts] = await Promise.all([getRepoStats(links.github.user), getPosts(links.medium.user)]);
+  const tracked = projects.filter((p) => p.downloadsUrl);
+  const [repoStats, posts, counts] = await Promise.all([
+    getRepoStats(links.github.user),
+    getPosts(links.medium.user),
+    Promise.all(tracked.map((p) => getDownloadCount(p.downloadsUrl!))),
+  ]);
+  const downloads = new Map(
+    tracked.flatMap((p, i) => {
+      const count = counts[i];
+      return count ? [[p.name, count] as const] : [];
+    }),
+  );
+  const totalInstalls = [...downloads.values()].reduce((sum, d) => sum + d.total, 0);
 
   // Sections with no content are left out, along with their nav entries.
   const sections = [
@@ -43,7 +56,7 @@ export default async function Home() {
     profile.yearsOfExperience && { value: `${profile.yearsOfExperience}+`, label: "years shipping" },
     repoStats.size > 0 && { value: String(repoStats.size), label: "open-source repos" },
     posts.length > 0 && { value: `${posts.length}${posts.length >= 10 ? "+" : ""}`, label: "technical articles" },
-    { value: "145+", label: "plugin installs" },
+    totalInstalls > 0 && { value: totalInstalls.toLocaleString("en"), label: "plugin installs" },
   ].filter((s): s is { value: string; label: string } => Boolean(s));
 
   // Structured data: lets Google and AI assistants tie this page to the same person on GitHub,
@@ -92,7 +105,7 @@ export default async function Home() {
               </ExternalLink>
             }
           >
-            <Projects projects={projects} stats={repoStats} />
+            <Projects projects={projects} stats={repoStats} downloads={downloads} />
           </Section>
         )}
 
