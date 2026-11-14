@@ -20,7 +20,7 @@ export function GET() {
     "",
     profile.pitch,
     "",
-    `Location: ${profile.location}. Contact: ${profile.email}. Website: ${profile.siteUrl}`,
+    `Location: ${profile.location}. Contact: the form at ${profile.siteUrl}/#contact. Website: ${profile.siteUrl}`,
     "",
     "## Career",
     "",

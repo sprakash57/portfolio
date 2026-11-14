@@ -7,11 +7,12 @@ const isDev = process.env.NODE_ENV === "development";
 // locked to this origin. Medium cover images are proxied through /_next/image, so img-src stays 'self'.
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' blob: data:",
   "font-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self' https://challenges.cloudflare.com",
+  "frame-src https://challenges.cloudflare.com", // Turnstile (contact form bot check)
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
@@ -34,7 +35,11 @@ const nextConfig: NextConfig = {
     return [{ source: "/(.*)", headers: securityHeaders }];
   },
   // Inline the (small, atomic) Tailwind CSS into <head>: removes the only render-blocking request.
-  experimental: { inlineCss: true },
+  experimental: {
+    inlineCss: true,
+    // The contact form is the only server action; a few KB of text is all it ever needs.
+    serverActions: { bodySizeLimit: "64kb" },
+  },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn-images-1.medium.com", pathname: "/**" }],
   },

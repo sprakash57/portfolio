@@ -31,7 +31,7 @@ export const profile = {
   employer: { name: "Berliner Verlag", url: "https://berlinerverlag.com" },
   alumniOf: ["The University of Texas at Austin, McCombs School of Business", "Birla Institute of Technology, Mesra"],
   photo: "/sunny.jpg",
-  email: "info@sunnyprakash.com",
+  // The contact address is server-only: set CONTACT_TO in the environment (see .env.example).
   hobbies:
     "Off the clock: father, storyteller, Naruto fan, and you'll find me in The Elder Scrolls Online as @suprdev.",
   siteUrl: "https://sunnyprakash.com",

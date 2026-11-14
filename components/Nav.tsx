@@ -21,7 +21,6 @@ export function Nav({ sections }: { sections: { id: string; title: string }[] })
           sections={sections}
           handle={profile.handle}
           roles={[...profile.roles]}
-          email={profile.email}
         />
       </nav>
     </header>

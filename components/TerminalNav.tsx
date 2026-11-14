@@ -1,9 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { openContact } from "./ContactDialog";
 
 type Section = { id: string; title: string };
-type Props = { sections: Section[]; handle: string; roles: string[]; email: string };
+type Props = { sections: Section[]; handle: string; roles: string[] };
 type Line = { kind: "cmd" | "out" | "err"; text: string };
 
 const HELP = "commands: ls, cd <dir>, whoami, sudo hire sunny, clear, exit";
@@ -13,7 +14,7 @@ const HELP = "commands: ls, cd <dir>, whoami, sudo hire sunny, clear, exit";
  * (revealed line by line), and visitors can tap one or type commands with completion chips.
  * Uses a native <dialog> for focus trapping, Escape-to-close and an inert page behind it.
  */
-export function TerminalNav({ sections, handle, roles, email }: Props) {
+export function TerminalNav({ sections, handle, roles }: Props) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [history, setHistory] = useState<Line[]>([]);
   const [input, setInput] = useState("");
@@ -51,8 +52,9 @@ export function TerminalNav({ sections, handle, roles, email }: Props) {
     if (cmd === "help") return print({ kind: "out", text: HELP });
     if (cmd === "whoami") return print({ kind: "out", text: roles.join(" · ") });
     if (cmd === "sudo hire sunny") {
-      print({ kind: "out", text: "[sudo] permission granted. composing email…" });
-      return window.location.assign(`mailto:${email}?subject=Let's%20talk`);
+      print({ kind: "out", text: "[sudo] permission granted. opening mail…" });
+      close();
+      return openContact();
     }
     if (cmd === "cd" || cmd === "cd ~") return go("top");
     if (dirs.includes(target)) return go(target);

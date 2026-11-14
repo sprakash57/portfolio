@@ -1,4 +1,5 @@
 import { BrandIcon, isBrand } from "@/components/BrandIcon";
+import { ContactButton, ContactDialog } from "@/components/ContactDialog";
 import { Credentials, Recommendations } from "@/components/Credentials";
 import { Achievements } from "@/components/Achievements";
 import { Hero } from "@/components/Hero";
@@ -75,7 +76,7 @@ export default async function Home() {
       worksFor: { "@type": "Organization", ...profile.employer },
       alumniOf: profile.alumniOf.map((name) => ({ "@type": "CollegeOrUniversity", name })),
       address: { "@type": "PostalAddress", addressLocality: "Berlin", addressCountry: "DE" },
-      email: `mailto:${profile.email}`,
+      contactPoint: { "@type": "ContactPoint", contactType: "professional inquiries", url: `${profile.siteUrl}/#contact` },
       knowsAbout: skills.flatMap((g) => g.items),
       sameAs: Object.values(links).map((l) => l.href),
     },
@@ -148,12 +149,9 @@ export default async function Home() {
           <p className="max-w-xl text-2xl font-medium tracking-tight text-balance sm:text-3xl">
             Hiring for AI or full-stack leadership? Let&apos;s talk.
           </p>
-          <a
-            href={`mailto:${profile.email}`}
-            className="mt-8 inline-block rounded bg-accent px-5 py-2.5 font-mono font-medium text-bg transition-opacity hover:opacity-90"
-          >
+          <ContactButton className="mt-8 inline-block rounded bg-accent px-5 py-2.5 font-mono font-medium text-bg transition-opacity hover:opacity-90">
             get in touch
-          </a>
+          </ContactButton>
           <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-sm text-muted">
             {Object.entries(links).map(([key, l]) => (
               <li key={l.href}>
@@ -167,6 +165,7 @@ export default async function Home() {
           <p className="mt-10 max-w-xl text-sm text-muted">{profile.hobbies}</p>
         </Section>
       </main>
+      <ContactDialog />
       <footer className="border-t border-border">
         <p className="mx-auto max-w-5xl px-4 py-8 font-mono text-xs text-muted sm:px-6">
           © {new Date().getFullYear()} {profile.name} · built with Next.js · <span className="text-ok">exit 0</span>

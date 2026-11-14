@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { links, profile } from "@/content/profile";
 import { BrandIcon, isBrand } from "./BrandIcon";
+import { ContactButton } from "./ContactDialog";
 import { ExternalLink } from "./Section";
 
 // Literal class names so Tailwind can see them.
@@ -32,12 +33,9 @@ export function Hero({ stats }: { stats: { value: string; label: string }[] }) {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 font-mono text-sm">
-            <a
-              href={`mailto:${profile.email}`}
-              className="rounded bg-accent px-4 py-2 font-medium text-bg transition-opacity hover:opacity-90"
-            >
+            <ContactButton className="rounded bg-accent px-4 py-2 font-medium text-bg transition-opacity hover:opacity-90">
               get in touch
-            </a>
+            </ContactButton>
           </div>
           <p className="mt-6 flex flex-wrap gap-x-4 gap-y-1 font-mono text-sm text-muted">
             {Object.entries(links).map(([key, l]) => (
