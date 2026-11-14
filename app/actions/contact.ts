@@ -36,7 +36,7 @@ const field = (form: FormData, key: string) => {
   return typeof value === "string" ? value.trim() : "";
 };
 
-/** Strips line breaks so user input can never add email headers (e.g. via the name in Reply-To). */
+/** Strips line breaks so user input can never add email headers (e.g. via the name in the subject). */
 const oneLine = (s: string) => s.replace(/[\r\n]+/g, " ");
 
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
@@ -67,7 +67,10 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
   const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
 
   // 1. Honeypot: a filled hidden field means a bot. Report success so it learns nothing; send nothing.
-  if (field(form, "company") !== "") return { status: "success" };
+  if (field(form, "hp_extra") !== "") {
+    console.warn("[contact] dropped: honeypot filled");
+    return { status: "success" };
+  }
 
   const name = oneLine(field(form, "name")).slice(0, 200);
   const email = field(form, "email").slice(0, 300);
@@ -95,7 +98,10 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
   // 4. Timing trap, after validation so a person who clicks "send" too early sees field errors instead.
   //    A complete, valid message in under 3 seconds is a script: fake success, send nothing.
   const started = Number(field(form, "started"));
-  if (!Number.isFinite(started) || Date.now() - started < MIN_FILL_MS) return { status: "success" };
+  if (!Number.isFinite(started) || Date.now() - started < MIN_FILL_MS) {
+    console.warn("[contact] dropped: submitted too fast");
+    return { status: "success" };
+  }
 
   // 5. Human check, verified server-side with Cloudflare.
   if (!(await verifyTurnstile(field(form, "cf-turnstile-response"), ip))) {
@@ -106,7 +112,7 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
   const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, CONTACT_TO, CONTACT_FROM } = process.env;
   if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !CONTACT_TO) {
     if (process.env.NODE_ENV !== "production") {
-      console.info("[contact] SMTP not configured; message not sent (development):", { name, email, message });
+      console.info("[contact] SMTP not configured; message not sent (development)");
       return { status: "success" };
     }
     console.error("[contact] SMTP environment variables are missing");
@@ -124,13 +130,17 @@ export async function sendContact(_prev: ContactState, form: FormData): Promise<
       connectionTimeout: 10_000,
       socketTimeout: 15_000,
     });
-    await transport.sendMail({
+    const info = await transport.sendMail({
       from: { name: "Portfolio contact form", address: CONTACT_FROM || SMTP_USER },
       to: CONTACT_TO,
-      replyTo: { name, address: email },
-      subject: `Portfolio: message from ${name}`,
-      text: `${message}\n\n--\nFrom: ${name} <${email}>\nSent via the contact form on sunnyprakash.com`,
+      // No Reply-To header: Yahoo (and some other providers) reject messages whose Reply-To isn't the
+      // authenticated mailbox ("550 No MIME Reply-To header matches auth mailboxes"). The visitor's
+      // address goes first in the body instead, where mail apps turn it into a clickable link.
+      subject: `Portfolio: message from ${name} (${email})`,
+      text: `Reply to: ${name} <${email}>\n\n${message}\n\n--\nSent via the contact form on sunnyprakash.com`,
     });
+    // Log the SMTP server's acceptance (no personal data) so "sent but not received" can be traced.
+    console.info("[contact] sent", { messageId: info.messageId, response: info.response });
     return { status: "success" };
   } catch (error) {
     console.error("[contact] Sending failed", error);

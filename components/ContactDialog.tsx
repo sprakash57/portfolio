@@ -113,9 +113,15 @@ function ContactForm({ onDone }: { onDone: () => void }) {
     };
   }, []);
 
-  // A Turnstile token is single-use: issue a fresh one after a failed attempt.
+  // A Turnstile token is single-use: issue a fresh one after a failed attempt. On success the form (and the
+  // widget's element) is replaced by the confirmation, so remove the widget instead of leaving it orphaned.
   useEffect(() => {
-    if (state.status === "error" && widgetId.current) window.turnstile?.reset(widgetId.current);
+    if (!widgetId.current) return;
+    if (state.status === "error") window.turnstile?.reset(widgetId.current);
+    if (state.status === "success") {
+      window.turnstile?.remove(widgetId.current);
+      widgetId.current = null;
+    }
   }, [state]);
 
   const error = (f: ContactField) => state.fieldErrors?.[f];
@@ -137,11 +143,12 @@ function ContactForm({ onDone }: { onDone: () => void }) {
   return (
     <form ref={form} action={action} noValidate className="space-y-4 px-5 py-5">
       <input type="hidden" name="started" value={started} />
-      {/* Honeypot: invisible to people and screen readers, irresistible to form-filling bots. */}
+      {/* Honeypot: invisible to people and screen readers, irresistible to form-filling bots. The name and
+          label are deliberately meaningless so browser autofill never fills it for a real visitor. */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
         <label>
-          Company
-          <input name="company" tabIndex={-1} autoComplete="off" defaultValue="" />
+          Leave this empty
+          <input name="hp_extra" type="text" tabIndex={-1} autoComplete="new-password" defaultValue="" data-1p-ignore data-lpignore="true" />
         </label>
       </div>
 
