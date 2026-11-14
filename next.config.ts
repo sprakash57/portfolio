@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Inline the (small, atomic) Tailwind CSS into <head>: removes the only render-blocking request.
+  experimental: { inlineCss: true },
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "cdn-images-1.medium.com", pathname: "/**" }],
+  },
 };
 
 export default nextConfig;
