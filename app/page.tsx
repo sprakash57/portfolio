@@ -1,3 +1,4 @@
+import { BackToTop } from "@/components/BackToTop";
 import { BrandIcon, isBrand } from "@/components/BrandIcon";
 import { ContactButton, ContactDialog } from "@/components/ContactDialog";
 import { Credentials, Recommendations } from "@/components/Credentials";
@@ -166,9 +167,10 @@ export default async function Home() {
         </Section>
       </main>
       <ContactDialog />
+      <BackToTop />
       <footer className="border-t border-border">
         <p className="mx-auto max-w-5xl px-4 py-8 font-mono text-xs text-muted sm:px-6">
-          © {new Date().getFullYear()} {profile.name} · built with Next.js · <span className="text-ok">exit 0</span>
+          © {new Date().getFullYear()} {profile.name}
         </p>
       </footer>
     </>
