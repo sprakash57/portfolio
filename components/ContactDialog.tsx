@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { sendContact, type ContactField, type ContactState } from "@/app/actions/contact";
+import { resolvedTheme } from "@/lib/theme";
 
 const OPEN_EVENT = "contact:open";
 
@@ -102,7 +103,7 @@ function ContactForm({ onDone }: { onDone: () => void }) {
         widgetId.current = turnstile.render(widget.current, {
           sitekey: SITE_KEY,
           action: "contact",
-          theme: "auto",
+          theme: resolvedTheme(), // match the site's theme, including a manual override
           size: "flexible",
         });
       })

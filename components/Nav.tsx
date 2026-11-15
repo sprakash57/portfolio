@@ -1,5 +1,6 @@
 import { profile } from "@/content/profile";
 import { TerminalNav } from "./TerminalNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Nav({ sections }: { sections: { id: string; title: string }[] }) {
   return (
@@ -17,6 +18,7 @@ export function Nav({ sections }: { sections: { id: string; title: string }[] })
             </li>
           ))}
         </ul>
+        <ThemeToggle className="ml-auto sm:ml-0" />
         <TerminalNav
           sections={sections}
           handle={profile.handle}

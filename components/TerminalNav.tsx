@@ -1,13 +1,14 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { getTheme, setTheme, type Theme } from "@/lib/theme";
 import { openContact } from "./ContactDialog";
 
 type Section = { id: string; title: string };
 type Props = { sections: Section[]; handle: string; roles: string[] };
 type Line = { kind: "cmd" | "out" | "err"; text: string };
 
-const HELP = "commands: ls, cd <dir>, whoami, sudo hire sunny, clear, exit";
+const HELP = "commands: ls, cd <dir>, whoami, theme [light|dark|system], sudo hire sunny, clear, exit";
 
 /**
  * Mobile navigation as a tiny shell. The sections are listed as directories by `ls -la`
@@ -50,6 +51,12 @@ export function TerminalNav({ sections, handle, roles }: Props) {
     if (cmd === "exit") return close();
     if (cmd === "ls" || cmd === "ls -la") return print({ kind: "out", text: dirs.map((d) => `${d}/`).join("  ") });
     if (cmd === "help") return print({ kind: "out", text: HELP });
+    if (cmd === "theme") return print({ kind: "out", text: `theme: ${getTheme()} (usage: theme light|dark|system)` });
+    const themeArg = cmd.match(/^theme\s+(light|dark|system)$/)?.[1] as Theme | undefined;
+    if (themeArg) {
+      setTheme(themeArg);
+      return print({ kind: "out", text: `theme set to ${themeArg}` });
+    }
     if (cmd === "whoami") return print({ kind: "out", text: roles.join(" · ") });
     if (cmd === "sudo hire sunny") {
       print({ kind: "out", text: "[sudo] permission granted. opening mail…" });
@@ -68,7 +75,7 @@ export function TerminalNav({ sections, handle, roles }: Props) {
         type="button"
         onClick={open}
         aria-haspopup="dialog"
-        className="ml-auto rounded border border-border px-3 py-1 text-fg sm:hidden"
+        className="rounded border border-border px-3 py-1 text-fg sm:hidden"
       >
         <span className="text-accent">$</span> cd<span className="cursor" aria-hidden="true" />
         <span className="sr-only"> open navigation</span>
