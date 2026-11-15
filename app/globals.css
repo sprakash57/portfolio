@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Design tokens. Dark is the default; light applies when the OS prefers it, unless the visitor picked a
+   theme with the toggle (data-theme on <html>, set before first paint by the script in app/layout.tsx). */
+:root {
+  --bg: #0d0d0c;
+  --surface: #151513;
+  --border: #272623;
+  --fg: #ecebe6;
+  --muted: #9a978f;
+  --accent: #e86b4d;
+  --ok: #7cc69a;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f7f6f2;
+    --surface: #efede7;
+    --border: #dedad0;
+    --fg: #1b1a18;
+    --muted: #625f57;
+    --accent: #b9472a;
+    --ok: #2b744a;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #f7f6f2;
+  --surface: #efede7;
+  --border: #dedad0;
+  --fg: #1b1a18;
+  --muted: #625f57;
+  --accent: #b9472a;
+  --ok: #2b744a;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-ok: var(--ok);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Faint dot grid: the one decorative layer on the page. A fixed pseudo-element is composited,
+   unlike background-attachment: fixed, which repaints the whole viewport on every scroll. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.1em;
+  margin-left: 0.15ch;
+  vertical-align: text-bottom;
+  background: var(--accent);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+/* Mobile terminal nav: the sheet slides up, then each ls line "prints" in turn. */
+@keyframes term-open {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+@keyframes term-line {
+  from {
+    opacity: 0;
+    transform: translateX(-0.5rem);
+  }
+}
+
+dialog.term[open] {
+  animation: term-open 0.25s ease-out;
+}
+
+dialog.term[open] .term-line {
+  animation: term-line 0.2s ease-out both;
+  animation-delay: calc(0.15s + var(--i, 0) * 0.07s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.term[open],
+  dialog.term[open] .term-line {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .cursor {
+    animation: none;
+  }
+}
