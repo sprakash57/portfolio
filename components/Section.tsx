@@ -10,9 +10,9 @@ type SectionProps = {
 export function Section({ id, index, title, aside, children }: SectionProps) {
   const headingId = `${id}-heading`;
   return (
-    <section id={id} aria-labelledby={headingId} className="border-t border-border py-16 sm:py-20">
+    <section id={id} aria-labelledby={headingId} className="border-t border-border py-15">
       <div className="mb-10 flex items-baseline justify-between gap-4">
-        <div className="font-mono text-sm tracking-tight text-muted">
+        <div className="font-mono text-xl tracking-tight text-muted">
           <span className="text-accent" aria-hidden="true">
             {String(index).padStart(2, "0")}
           </span>
