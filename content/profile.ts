@@ -35,6 +35,8 @@ export const profile = {
   hobbies:
     "Off the clock: father, storyteller, Naruto fan, and you'll find me in The Elder Scrolls Online as @suprdev.",
   siteUrl: "https://sunnyprakash.com",
+  // First published (the repo's first commit). Used as ProfilePage.dateCreated in the structured data.
+  siteCreated: "2018-05-26",
 };
 
 export const links = {

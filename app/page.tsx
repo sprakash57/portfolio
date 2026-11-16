@@ -61,12 +61,24 @@ export default async function Home() {
     totalInstalls > 0 && { value: totalInstalls.toLocaleString("en"), label: "plugin installs" },
   ].filter((s): s is { value: string; label: string } => Boolean(s));
 
+  // dateModified reflects real content changes: the newest Medium post or push to a showcased repo.
+  // (Not "now": the page regenerates hourly, and claiming a change every hour would be inaccurate.)
+  const contentDates = [
+    ...posts.map((post) => post.date),
+    ...projects.flatMap((p) => (p.repo && repoStats.get(p.repo)?.pushedAt) || p.updated || []),
+  ].filter((d) => !Number.isNaN(Date.parse(d)));
+  const lastContentUpdate = contentDates.length
+    ? new Date(Math.max(...contentDates.map((d) => Date.parse(d)))).toISOString()
+    : undefined;
+
   // Structured data: lets Google and AI assistants tie this page to the same person on GitHub,
   // LinkedIn, Medium and Stack Overflow, with job title, employer and education.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
     url: profile.siteUrl,
+    dateCreated: profile.siteCreated,
+    ...(lastContentUpdate && { dateModified: lastContentUpdate }),
     mainEntity: {
       "@type": "Person",
       name: profile.name,
